@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class HandCtrl : MonoBehaviour
+public class HandCtrl : VRPlayer
 {
     [SerializeField] private InputActionProperty triggerActionProperty;
     [SerializeField] private InputActionProperty gripActionProperty;
@@ -60,14 +60,25 @@ public class HandCtrl : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider _collider)
     {
-        isColliding = true;
+        if(_collider.CompareTag("Steak"))
+        {
+            isColliding = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isColliding = false;
+        if (other.CompareTag("Steak"))
+        {
+            isColliding = false;
+        }
+    }
+
+    private void Test()
+    {
+        
     }
 
     private void TriggerAnim()
