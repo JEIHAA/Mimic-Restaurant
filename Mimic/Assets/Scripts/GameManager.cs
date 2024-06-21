@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
 {
     [Header("몬스터 매니저")]
     [SerializeField] private MonsterManager monstermanager = null;
-    [SerializeField] private SpawnManager spawnmanager = null; 
+    [Header("스폰 매니저")]
+    [SerializeField] private SpawnManager spawnmanager = null;
+    [Header("날짜 매니저")]
     [SerializeField] private TestDayManager daymanager = null; 
 
     #region["Awake is called when enable scriptable instance is loaded."] 
@@ -35,15 +37,16 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         monstermanager.MoveAll(); 
-
     }
     #endregion
 
     #region["테스트용"] 
     public void AddDay()
     {
-        daymanager.AddDay(); 
-
+        monstermanager.DestroyMonsterList(); 
+        daymanager.AddDay();
+        monstermanager.StrengthMonster();
+        spawnmanager.GoNextWave(); 
     }
     #endregion
 
