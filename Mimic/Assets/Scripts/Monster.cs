@@ -51,10 +51,9 @@ public class Monster : MonoBehaviour, IOnDamage
     #endregion
 
     #region["목표지점으로 이동"] 
-    public void Move()
-    {
-        //실제로는 지형 때문에 앞으로 움직여서는 안됨. 
-        transform.Translate(Vector3.forward * monsterSpeed * Time.deltaTime); 
+    public void Move(Transform vrplayer_transform)
+    { 
+        transform.position = Vector3.MoveTowards(transform.position, vrplayer_transform.position, monsterSpeed * Time.deltaTime); 
     }
     #endregion
 
@@ -74,6 +73,16 @@ public class Monster : MonoBehaviour, IOnDamage
         {
             SpawnManager.instance.FadeMonster(this); //몬스터 비활성화 
             //_collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); //방어막 쪽에 데미지를 입힘
+        }
+        if(_collider.name.Equals("VRPlayer"))
+        {
+            //공격 애니메이션 재생
+        }
+
+        //IOnDamage 인터페이스를 상속받는 오브젝트에게는 데미지를 입힐 수 있다. 
+        if(_collider.GetComponent<IOnDamage>() != null)
+        {
+            _collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); 
         }
     }
 }
