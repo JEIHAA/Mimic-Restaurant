@@ -15,11 +15,12 @@ public class Monster : MonoBehaviour, IOnDamage
     #region["오브젝트가 활성화될때마다 실행되는 메소드"] 
     private void OnEnable()
     {
-        Invoke("DestroySelf", 15f);
+        Invoke("DestroySelf", 60f);
         SetMonsterStat(); 
     }
     #endregion
 
+    #region["몬스터 스탯 설정하기"] 
     private void SetMonsterStat()
     {
         monsterHealth = monsterData.monsterHealth;
@@ -27,8 +28,9 @@ public class Monster : MonoBehaviour, IOnDamage
         Debug.Log("Current Monster Health: " + monsterHealth);
         Debug.Log("Current Monster Damage: " + monsterDamage); 
     }
+    #endregion
 
-    #region["15초가 지난 뒤에 자동으로 비활성화"] 
+    #region["60초가 지난 뒤에 자동으로 비활성화"] 
     private void DestroySelf()
     {
         SpawnManager.instance.FadeMonster(this); 
@@ -71,7 +73,7 @@ public class Monster : MonoBehaviour, IOnDamage
         if(_collider.name.Equals("Barrier"))  
         {
             SpawnManager.instance.FadeMonster(this); //몬스터 비활성화 
-            _collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); //방어막 쪽에 데미지를 입힘
+            //_collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); //방어막 쪽에 데미지를 입힘
         }
     }
 }

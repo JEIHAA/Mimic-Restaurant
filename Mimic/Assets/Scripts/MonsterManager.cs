@@ -25,6 +25,17 @@ public class MonsterManager : MonoBehaviour
     }
     #endregion
 
+    #region["자식 몬스터 오브젝트 지우기"] 
+    public void DestroyMonsterList()
+    {
+        foreach(Transform monster in transform)
+        {
+            Debug.Log("Monster List: " + monster.gameObject.name); 
+            Destroy(monster.gameObject);     
+        }
+    }
+    #endregion
+
     #region["몬스터 스탯 강화"] 
     public void StrengthMonster()
     {
