@@ -1,34 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\admin\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\mimic-restaurant\\mimic\\assets\\scripts\\conveyor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\conveyor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousTurnProvider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousTurnProvider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\volumetriclinebehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\volumetriclinebehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\shotbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shotbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\3_lobby\\makeroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\3_lobby\\makeroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,92 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Conveyor.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Conveyor.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Conveyor.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Conveyor.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Conveyor.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T00:38:30.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ActionBasedContinuousTurnProvider.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousTurnProvider.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousTurnProvider.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousTurnProvider.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousTurnProvider.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T06:49:40.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VolumetricLineBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VolumetricLineBehavior.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\VolumetricLineBehavior.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VolumetricLineBehavior.cs",
-              "RelativeToolTip": "Assets\\Scripts\\VolumetricLineBehavior.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T05:45:07.72Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ShotBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\ShotBehavior.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ShotBehavior.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\ShotBehavior.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ShotBehavior.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T05:40:32.766Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ShotBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs",
-              "RelativeDocumentMoniker": "Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs",
-              "RelativeToolTip": "Assets\\VolumetricLines\\BuiltInRenderPipeline\\ExampleScenes\\ExampleScripts\\ShotBehavior.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T01:43:49.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Gun.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Gun.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gun.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Gun.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gun.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T00:41:28.141Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HandCtrl.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\HandCtrl.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\HandCtrl.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\HandCtrl.cs",
-              "RelativeToolTip": "Assets\\Scripts\\HandCtrl.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEIAAAAAAAAA",
+              "Title": "MakeRoom.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\3_Lobby\\MakeRoom.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\3_Lobby\\MakeRoom.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\3_Lobby\\MakeRoom.cs",
+              "RelativeToolTip": "Assets\\Scripts\\3_Lobby\\MakeRoom.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAAAH8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T06:46:06.917Z",
+              "WhenOpened": "2024-06-21T02:51:36.256Z",
               "EditorCaption": ""
             }
           ]
