@@ -11,6 +11,7 @@ public class Conveyor : MonoBehaviour
 
     [SerializeField] private Material material;
     [SerializeField] private List<Collision> collisions = new List<Collision>();
+    [SerializeField] private List<Rigidbody> rbs = new List<Rigidbody>();
     [SerializeField] private LayerMask target;
 
     private void Start()
@@ -24,7 +25,7 @@ public class Conveyor : MonoBehaviour
         Debug.Log(capacity);
         if (_collision.gameObject.layer == target)
         {
-            collisions.Add(_collision);
+            rbs.Add(_collision.gameObject.GetComponent<Rigidbody>());
         }
         else
         { 
@@ -35,25 +36,24 @@ public class Conveyor : MonoBehaviour
     {
         if (ActiveConveyor(capacity)) 
         {
-            MoveObject(collisions);
+            MoveObject(rbs);
         }
     }
 
     private void OnCollisionExit(Collision _collision)
     {
         --capacity;
-        collisions.Remove(_collision);
-        ActiveConveyor(capacity);
+        rbs.Remove(_collision.gameObject.GetComponent<Rigidbody>());
+        if (ActiveConveyor(capacity))
+        {
+            MoveObject(rbs);
+        }
+
+            
     }
 
-    private void MoveObject(List<Collision> _collisions) 
+    private void MoveObject(List<Rigidbody> _rbs) 
     {
-        List<Rigidbody> rbs = new List<Rigidbody>();
-        foreach (Collision _collision in _collisions) 
-        {
-            rbs.Add(_collision.gameObject.GetComponent<Rigidbody>());
-        }
-        
         if (rbs.Count > 0)
         {
             Vector3 movement = direction.normalized * speed * Time.deltaTime;
