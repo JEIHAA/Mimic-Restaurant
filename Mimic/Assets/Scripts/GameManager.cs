@@ -42,8 +42,8 @@ public class GameManager : MonoBehaviour
     #region["테스트용"] 
     public void AddDay()
     {
-        daymanager.AddDay(); 
-
+        daymanager.AddDay();
+        monstermanager.StrengthMonster(); 
     }
     #endregion
 
