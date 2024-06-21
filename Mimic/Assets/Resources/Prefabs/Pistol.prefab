@@ -128,7 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe1f19ea5d5d3f4cbf946fdb1a84cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muzzle: {fileID: 0}
-  shotPrefab: {fileID: 0}
-  shotForce: 10
-  gunDamage: 100
+  bulletPrefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
+  poolSize: 20
+  bulletSpeed: 10

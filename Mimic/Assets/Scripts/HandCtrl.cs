@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class HandCtrl : VRPlayer
-{
+public class HandCtrl : MonoBehaviour   
+{ 
     [SerializeField] private InputActionProperty triggerActionProperty;
     [SerializeField] private InputActionProperty gripActionProperty;
     [SerializeField] private GameObject gun;
@@ -17,6 +17,7 @@ public class HandCtrl : VRPlayer
 
     private void Awake()
     {
+        gunComponent = gun.GetComponent<Gun>();
         handAnim = GetComponent<Animator>();
         gun.SetActive(false);
     }
@@ -50,15 +51,16 @@ public class HandCtrl : VRPlayer
         {
             if (gun.activeSelf && !triggerPressed)
             {
-                gunComponent.Shoot();
-                triggerPressed = true ; 
+                gunComponent.ShootBullet();
+                triggerPressed = true;
             }
         }
         else
         {
-            triggerPressed = false; 
+            triggerPressed = false;
         }
     }
+
 
     private void OnTriggerEnter(Collider _collider)
     {
@@ -74,11 +76,6 @@ public class HandCtrl : VRPlayer
         {
             isColliding = false;
         }
-    }
-
-    private void Test()
-    {
-        
     }
 
     private void TriggerAnim()

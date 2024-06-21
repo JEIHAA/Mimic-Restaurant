@@ -102,7 +102,6 @@ MonoBehaviour:
   monsterDamage: 10
   monsterSpeed: 10
   monsterData: {fileID: 11400000, guid: 0a2eecdf4d5fa4a4cbbb73477ab68c36, type: 2}
-  playerDamage: 100
 --- !u!136 &5282609391187561692
 CapsuleCollider:
   m_ObjectHideFlags: 0

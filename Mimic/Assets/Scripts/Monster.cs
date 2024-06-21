@@ -11,7 +11,6 @@ public class Monster : MonoBehaviour, IOnDamage
     [SerializeField] private int monsterDamage = 10; 
     [SerializeField] private float monsterSpeed = 10f;
     [SerializeField] private MonsterStat monsterData = null;
-    [SerializeField] private int playerDamage = 100;
 
     #region["오브젝트가 활성화될때마다 실행되는 메소드"] 
     private void OnEnable()
@@ -75,12 +74,8 @@ public class Monster : MonoBehaviour, IOnDamage
         if(_collider.name.Equals("Barrier"))  
         {
             SpawnManager.instance.FadeMonster(this); //몬스터 비활성화 
-            //_collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); //방어막 쪽에 데미지를 입힘
+            _collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); //방어막 쪽에 데미지를 입힘
         }
-        if (_collider.CompareTag("Bullet"))
-        {
-            Destroy(_collider.gameObject);  //총알 비활성화
-            OnDamage(playerDamage);
-        }
+
     }
 }
