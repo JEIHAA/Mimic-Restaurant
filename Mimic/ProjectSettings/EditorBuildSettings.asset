@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_MonsterSpawnTest.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 11613fd89e5f05244ac3fc20f9367ead,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6b92a64931a07c4429e7d4447027a4a4,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 461e5a3459131c14382c725d20b3e346,
+      type: 2}
