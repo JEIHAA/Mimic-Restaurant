@@ -1,15 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public Transform m_muzzle;
-    public GameObject m_shotPrefab;
+    public Transform muzzle;        
+    public GameObject shotPrefab;
+    public float shotForce = 15f;
+    [SerializeField] private int gunDamage = 100;
+
+    // 발사 메서드
 
     public void Shoot()
     {
-        GameObject go = GameObject.Instantiate(m_shotPrefab, m_muzzle.position, m_muzzle.rotation) as GameObject;
-        GameObject.Destroy(go, 2f);
+        GameObject shot = Instantiate(shotPrefab, muzzle.position, muzzle.rotation);
+
+        Rigidbody rb = shot.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.AddForce(muzzle.forward * shotForce, ForceMode.Impulse);
+        }
+
+        Destroy(shot, 2f);
     }
+
 }
