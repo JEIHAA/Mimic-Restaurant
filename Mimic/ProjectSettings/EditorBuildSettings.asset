@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Scene_SplashLogo.unity
+    guid: ea5d447ec70159648b14713600c5de8b
+  - enabled: 1
+    path: Assets/Scenes/Scene_StartGame.unity
+    guid: bb216745243094c4db38496f64e645af
+  - enabled: 1
+    path: Assets/Scenes/Scene_RoomName.unity
+    guid: 5a4f36b99299b364885629ebede862e9
+  - enabled: 1
+    path: Assets/Scenes/Scene_MonsterSpawnTest.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
