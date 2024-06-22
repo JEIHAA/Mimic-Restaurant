@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\WelcomeController.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\LetterKey.cs" />
+    <Compile Include="Assets\Scripts\PC\PCPlayerController.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +128,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Resources\Shaders\Bullet\SingleLine-LightSaber.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
+    <None Include="Assets\Resources\low_poly_fast_food_restaurant_v03_1\low_poly_fast_food_restaurant_v03_1\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Resources\Fonts\(English)balbaleo\More Info.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
