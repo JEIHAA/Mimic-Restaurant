@@ -23,11 +23,14 @@ public class Monster : MonoBehaviour, IOnDamage
 
     private Animator animator = null;
     private int status = 0;
+    private int previous_status = 0;
+    private bool Attackon = false;
 
     #region["오브젝트가 활성화될때마다 실행되는 메소드"] 
     private void OnEnable()
     {
-        animator = GetComponent<Animator>();     
+        animator = GetComponent<Animator>();
+        status = (int)MonsterStatus.Walking; 
         //Invoke("DestroySelf", 60f);
         SetMonsterStat(); 
     }
@@ -53,28 +56,44 @@ public class Monster : MonoBehaviour, IOnDamage
     #region["피격 메소드"] 
     public void OnDamage(int playerDamage)
     {
+        previous_status = status;
         animator.SetTrigger("Hitted");
         status = (int)MonsterStatus.GetAttacked; 
         //몬스터의 체력 - 플레이어의 공격력 
         monsterHealth -= playerDamage; 
         if (monsterHealth <= 0) 
         {
-            animator.SetTrigger("Death");
-            status = (int)MonsterStatus.Death; 
-            SpawnManager.instance.FadeMonster(this); 
+            StartCoroutine(MonsterDeathCoroutine()); 
             //몬스터 사망, 고기 드랍 
         }
-        animator.SetTrigger("Walk");
-        status = (int)MonsterStatus.Walking; 
+        else if(Attackon == false)
+        {
+            animator.SetTrigger("Walk");
+            status = (int)MonsterStatus.Walking;
+        }
+        else
+        {
+            animator.SetTrigger("Attack");
+            status = (int)MonsterStatus.Attack; 
+        }
     }
     #endregion
+
+    private IEnumerator MonsterDeathCoroutine()
+    {
+        animator.SetTrigger("Death");
+        status = (int)MonsterStatus.Death;
+        yield return new WaitForSeconds(1f); 
+        SpawnManager.instance.FadeMonster(this);
+        yield break; 
+    }
 
     #region["목표지점으로 이동"] 
     public void Move(Transform vrplayer_transform)
     { 
+        transform.LookAt(vrplayer_transform.position); 
         if(status == (int)MonsterStatus.Walking)
         {
-            transform.LookAt(vrplayer_transform.position); 
             transform.position = Vector3.MoveTowards(transform.position, vrplayer_transform.position, monsterSpeed * Time.deltaTime);
         }
     }
@@ -96,12 +115,13 @@ public class Monster : MonoBehaviour, IOnDamage
         {
             SpawnManager.instance.FadeMonster(this); //몬스터 비활성화 
             //_collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); //방어막 쪽에 데미지를 입힘
-        }
-        if(_collider.name.Equals("VRPlayer"))
+        } 
+        if(_collider.name.Equals("AttackSphere"))
         {
             status = (int)MonsterStatus.Attack;
             animator.SetTrigger("Attack");
             //공격 애니메이션 재생
+            Attackon = true;
         }
         //IOnDamage 인터페이스를 상속받는 오브젝트에게는 데미지를 입힐 수 있다. 
         if(_collider.GetComponent<IOnDamage>() != null)

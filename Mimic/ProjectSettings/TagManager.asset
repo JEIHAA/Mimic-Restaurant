@@ -17,12 +17,12 @@ TagManager:
   - Water
   - UI
   - Barrier
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Monster
+  - Ground
+  - GroundCheck
+  - PlayerCheck
+  - Player
+  - Bullet
   - 
   - 
   - 
