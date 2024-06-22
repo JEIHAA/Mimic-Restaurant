@@ -101,7 +101,7 @@ public class SpawnManager : MonoBehaviour
     private void SetMonsterPosandRot(Monster _monster, GameObject _spawnpoint)
     {
         _monster.transform.position = _spawnpoint.transform.position;
-        _monster.transform.rotation = _spawnpoint.transform.rotation;
+        //_monster.transform.rotation = _spawnpoint.transform.rotation;
         _monster.transform.SetParent(monstermanager.transform);
     }
     #endregion
