@@ -41,8 +41,8 @@ public class Monster : MonoBehaviour, IOnDamage
     {
         monsterHealth = monsterData.monsterHealth;
         monsterDamage = monsterData.monsterDamage;
-        Debug.Log("Current Monster Health: " + monsterHealth);
-        Debug.Log("Current Monster Damage: " + monsterDamage); 
+       // Debug.Log("Current Monster Health: " + monsterHealth);
+      //  Debug.Log("Current Monster Damage: " + monsterDamage); 
     }
     #endregion
 

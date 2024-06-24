@@ -66,7 +66,7 @@ public class Conveyor : MonoBehaviour
 
     private bool ActiveConveyor(int _capacity) 
     {
-        Debug.Log(_capacity);
+        //Debug.Log(_capacity);
         if (_capacity <= maxCapacity)
         {
             material.SetFloat("_ScrollSpeed", 0.5f);

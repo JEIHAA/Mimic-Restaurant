@@ -29,8 +29,8 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         if (hungry <= 0)
         {
             hungry = 0;
+       // Debug.Log("Hungry decreased by: " + amount + ". Current hungry: " + hungry);
         }
-        Debug.Log("Hungry decreased by: " + amount + ". Current hungry: " + hungry);
     }
 
     private void IncreaseHungry(int amount)

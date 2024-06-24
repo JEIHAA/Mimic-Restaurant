@@ -17,9 +17,15 @@ public class Gun : MonoBehaviour
         bulletPool = new List<GameObject>();
         InitializeBulletPool();
     }
+
     private void Update()
     {
         CheckBulletLifetime();
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            UpgradeAllBulletDamage();
+        }
     }
 
     private void InitializeBulletPool()
@@ -47,6 +53,12 @@ public class Gun : MonoBehaviour
             if (bulletRigidbody != null)
             {
                 bulletRigidbody.velocity = transform.forward * bulletSpeed;
+            }
+
+            Bullet bulletComponent = bullet.GetComponent<Bullet>();
+            if (bulletComponent != null)
+            {
+                bulletComponent.ResetDamage(); // 총알의 데미지 초기화
             }
 
             StartCoroutine(DisableBulletAfterLifetime(bullet));
@@ -91,5 +103,16 @@ public class Gun : MonoBehaviour
         }
     }
 
-
+    public void UpgradeAllBulletDamage()
+    {
+        foreach (GameObject bullet in bulletPool)
+        {
+            Bullet bulletComponent = bullet.GetComponent<Bullet>();
+            if (bulletComponent != null)
+            {
+                bulletComponent.UpgradeBullet();
+                Debug.Log("Bullet damage upgraded to: " + bulletComponent.GetCurrentDamage());
+            }
+        }
+    }
 }

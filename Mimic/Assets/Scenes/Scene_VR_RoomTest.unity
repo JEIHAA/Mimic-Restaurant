@@ -388,13 +388,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1383111706}
         m_TargetAssemblyTypeName: KeyBoard, Assembly-CSharp
         m_MethodName: OnTextClicked
-        m_Mode: 0
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ID
           m_BoolArgument: 0
         m_CallState: 2
   m_OnDeselect:
@@ -517,6 +517,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &159653381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3484128598961847049, guid: 02be27ab17ab3b14f954f65dc06dd738,
+    type: 3}
+  m_PrefabInstance: {fileID: 713010129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &162867378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3484128598961847049, guid: 02be27ab17ab3b14f954f65dc06dd738,
+    type: 3}
+  m_PrefabInstance: {fileID: 829879298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &243646300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1373,7 @@ PrefabInstance:
     - target: {fileID: 3484128598961847049, guid: 02be27ab17ab3b14f954f65dc06dd738,
         type: 3}
       propertyPath: m_Name
-      value: Keyboard(NickName)
+      value: NickNameKeyboard
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847049, guid: 02be27ab17ab3b14f954f65dc06dd738,
         type: 3}
@@ -1516,7 +1528,7 @@ PrefabInstance:
     - target: {fileID: 3484128598961847049, guid: 02be27ab17ab3b14f954f65dc06dd738,
         type: 3}
       propertyPath: m_Name
-      value: Keyboard(PassWord)
+      value: PassWordKeyboard
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847049, guid: 02be27ab17ab3b14f954f65dc06dd738,
         type: 3}
@@ -1805,7 +1817,7 @@ PrefabInstance:
     - target: {fileID: 3484128598961847049, guid: 02be27ab17ab3b14f954f65dc06dd738,
         type: 3}
       propertyPath: m_Name
-      value: Keyboard(ID)
+      value: IDKeyboard
       objectReference: {fileID: 0}
     - target: {fileID: 3484128598961847050, guid: 02be27ab17ab3b14f954f65dc06dd738,
         type: 3}
@@ -2433,7 +2445,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: PassWord
           m_BoolArgument: 0
         m_CallState: 2
   m_OnDeselect:
@@ -3129,13 +3141,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1383111706}
         m_TargetAssemblyTypeName: KeyBoard, Assembly-CSharp
         m_MethodName: OnTextClicked
-        m_Mode: 0
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: NickName
           m_BoolArgument: 0
         m_CallState: 2
   m_OnDeselect:
@@ -3253,7 +3265,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b22bc25c3c0524aa61af698a61d17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboards: []
+  keyboards:
+  - {fileID: 162867378}
+  - {fileID: 1967583509}
+  - {fileID: 159653381}
 --- !u!1 &1478172117
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,6 +3477,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1967583509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3484128598961847049, guid: 02be27ab17ab3b14f954f65dc06dd738,
+    type: 3}
+  m_PrefabInstance: {fileID: 726164845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1970878010
 GameObject:
   m_ObjectHideFlags: 0
