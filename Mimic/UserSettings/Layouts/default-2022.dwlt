@@ -194,8 +194,8 @@ MonoBehaviour:
     y: 463
     width: 810
     height: 468
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -220,8 +220,8 @@ MonoBehaviour:
     y: 0
     width: 352
     height: 931
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 346
     height: 931
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -462.34015, y: -795.7932, z: -1031.0298}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -462.34015, y: -795.7932, z: -1031.0298}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -820,11 +820,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.048677802, y: 0.7433709, z: -0.66512847, w: 0.054526802}
     speed: 2
-    m_Value: {x: 0.048669558, y: 0.743245, z: -0.6650158, w: 0.054517567}
+    m_Value: {x: 0.048677802, y: 0.7433709, z: -0.66512847, w: 0.0545268}
   m_Size:
     m_Target: 0.15773408
     speed: 2
-    m_Value: 0.13198847
+    m_Value: 0.15773408
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -960,9 +960,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: d6070000
       m_LastClickedID: 0
-      m_ExpandedIDs: de32fdffa857fdff326afdff766cfdff
+      m_ExpandedIDs: 3e31fdfffa55fdff8069fdff226cfdff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1032,7 +1032,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/VR
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1040,16 +1040,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Prefabs/VR
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6a0b0000
-    m_LastClickedID: 2922
-    m_ExpandedIDs: 00000000220600006e07000000ca9a3b
+    m_SelectedIDs: 22060000
+    m_LastClickedID: 1570
+    m_ExpandedIDs: 000000002206000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1108,18 +1108,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 00000000387d00007e78000056260100c626010070270100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PC
+      m_OriginalName: PC
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 2006
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
