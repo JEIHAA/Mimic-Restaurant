@@ -12,11 +12,16 @@ public class GameManager : MonoBehaviour
 {
     [Header("몬스터 매니저")]
     [SerializeField] private MonsterManager monstermanager = null;
-    [SerializeField] private SpawnManager spawnmanager = null; 
+    [Header("스폰 매니저")]
+    [SerializeField] private SpawnManager spawnmanager = null;
+    [Header("날짜 매니저")]
     [SerializeField] private TestDayManager daymanager = null;
+    [Header("VR 플레이어")]
+    [SerializeField] private Transform vrplayer_transform = null;
 
-    [Header("PC플레이어 컨트롤러")]
+    [Header("PC 플레이어")]
     [SerializeField] private PCPlayerController pcControll = null;
+
 
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
@@ -37,7 +42,7 @@ public class GameManager : MonoBehaviour
     #region["Update is called once per frame"] 
     private void Update()
     {
-        monstermanager?.MoveAll();
+        monstermanager.MoveAll(vrplayer_transform);
         pcControll?.PCPlayerMove();
     }
     #endregion
@@ -45,8 +50,10 @@ public class GameManager : MonoBehaviour
     #region["테스트용"] 
     public void AddDay()
     {
+        monstermanager.DestroyMonsterList(); 
         daymanager.AddDay();
-        monstermanager.StrengthMonster(); 
+        monstermanager.StrengthMonster();
+        spawnmanager.GoNextWave(); 
     }
     #endregion
 

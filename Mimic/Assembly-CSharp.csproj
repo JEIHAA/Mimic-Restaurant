@@ -60,24 +60,25 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\VolumetricLineBehavior.cs" />
-    <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyboardManager.cs" />
-    <Compile Include="Assets\Scripts\HandCtrl.cs" />
+    <Compile Include="Assets\Scripts\VR\HandCtrl.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\MemberDTO.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\SignupController.cs" />
-    <Compile Include="Assets\Scripts\VolumetricLineVertexData.cs" />
+    <Compile Include="Assets\Scripts\AttackSphere.cs" />
     <Compile Include="Assets\Scripts\MonsterManager.cs" />
     <Compile Include="Assets\Scripts\TestDayManager.cs" />
+    <Compile Include="Assets\Scripts\VR\VolumetricLineBehavior.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\GameManager_StartScene.cs" />
     <Compile Include="Assets\Scripts\testAttack.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\LoginMessageUIController.cs" />
     <Compile Include="Assets\Scripts\Scene_SplashLogo\SplashManager.cs" />
+    <Compile Include="Assets\Scripts\VR\Gun.cs" />
+    <Compile Include="Assets\Scripts\VR\Bullet.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
+    <Compile Include="Assets\Scripts\VR\KeyBoard.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\DBManager.cs" />
-    <Compile Include="Assets\Scripts\ShotBehavior.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\LoginController.cs" />
     <Compile Include="Assets\Scripts\Interface\IOnDamage.cs" />
     <Compile Include="Assets\Scripts\Conveyor.cs" />
@@ -85,6 +86,8 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
     <Compile Include="Assets\Scripts\Barrier.cs" />
+    <Compile Include="Assets\Scripts\VR\VRPlayer.cs" />
+    <Compile Include="Assets\Scripts\VR\VolumetricLineVertexData.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\WelcomeController.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\LetterKey.cs" />
     <Compile Include="Assets\Scripts\PC\PCPlayerController.cs" />
@@ -1002,6 +1005,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.XR.Hands.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1010,12 +1017,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
@@ -1060,6 +1067,10 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
@@ -1126,6 +1137,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1188,6 +1203,10 @@
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
