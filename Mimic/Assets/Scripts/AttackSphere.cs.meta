@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Mimic/Assets/Scripts/AttackSphere.cs.meta
 guid: 860e0e10ed18f4d4c9d8df2de6dc95e8
+========
+guid: 09968bd7464321b44ae0b05e42db1d6c
+>>>>>>>> origin/koyoungsuk:Mimic/Assets/Scripts/4_Room/ReadyRoom.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -56,6 +56,7 @@ public class SpawnManager : MonoBehaviour
     private Monster CreateMonster()
     {
         Monster instance = (Instantiate(monsterPrefab.gameObject) as GameObject).GetComponent<Monster>();
+        instance.OnDeathCallBack = monstermanager.MonsterDeathOnClick; 
         return instance;
     }
     #endregion

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Mimic/Assets/Resources/Images/Sprites/Lobby.meta
 guid: 8d4c865ce103c664ebdb84ce8971935b
+========
+guid: 5630836e66044b245917248a912cf109
+>>>>>>>> origin/koyoungsuk:Mimic/Assets/MimicUIImages/Sprites/Lobby.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

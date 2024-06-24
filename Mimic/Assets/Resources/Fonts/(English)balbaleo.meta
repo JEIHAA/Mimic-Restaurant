@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Mimic/Assets/Resources/Fonts/(English)balbaleo.meta
 guid: 435c4b13da856c0418b695367d305588
+========
+guid: 3c3ca43eb39bf5b4db916a58726eaa5e
+>>>>>>>> origin/koyoungsuk:Mimic/Assets/MimicUIImages/Icons.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
