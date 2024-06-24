@@ -62,36 +62,23 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\VolumetricLineBehavior.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
-    <Compile Include="Assets\Scripts\VR\HandCtrl.cs" />
-    <Compile Include="Assets\Scripts\MeatManager.cs" />
+    <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyboardManager.cs" />
     <Compile Include="Assets\Scripts\HandCtrl.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\MemberDTO.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\SignupController.cs" />
     <Compile Include="Assets\Scripts\VolumetricLineVertexData.cs" />
     <Compile Include="Assets\Scripts\AttackSphere.cs" />
     <Compile Include="Assets\Scripts\MonsterManager.cs" />
-    <Compile Include="Assets\Scripts\2_Login_StartGame\LoginController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\TestDayManager.cs" />
-    <Compile Include="Assets\Scripts\1_SplashLogo\SplashManager.cs" />
-    <Compile Include="Assets\Scripts\VR\VolumetricLineBehavior.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\GameManager_StartScene.cs" />
     <Compile Include="Assets\Scripts\testAttack.cs" />
-    <Compile Include="Assets\Scripts\2_Login_StartGame\LoginMessageUIController.cs" />
-    <Compile Include="Assets\Scripts\4_Room\ReadyRoom.cs" />
+    <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\LoginMessageUIController.cs" />
-    <Compile Include="Assets\Scripts\2_Login_StartGame\WelcomeController.cs" />
-    <Compile Include="Assets\Scripts\2_Login_StartGame\GameManager_StartScene.cs" />
     <Compile Include="Assets\Scripts\Scene_SplashLogo\SplashManager.cs" />
-    <Compile Include="Assets\Scripts\VR\Gun.cs" />
-    <Compile Include="Assets\Scripts\VR\Bullet.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
-    <Compile Include="Assets\Scripts\VR\KeyBoard.cs" />
-    <Compile Include="Assets\Scripts\2_Login_StartGame\DBManager.cs" />
-    <Compile Include="Assets\Scripts\Meat.cs" />
+    <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\DBManager.cs" />
-    <Compile Include="Assets\Scripts\ShotBehavior.cs" />
-    <Compile Include="Assets\Scripts\2_Login_StartGame\SignupController.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\LoginController.cs" />
     <Compile Include="Assets\Scripts\Interface\IOnDamage.cs" />
     <Compile Include="Assets\Scripts\Conveyor.cs" />
@@ -99,14 +86,12 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
     <Compile Include="Assets\Scripts\Barrier.cs" />
-    <Compile Include="Assets\Scripts\VR\VRPlayer.cs" />
-    <Compile Include="Assets\Scripts\VR\VolumetricLineVertexData.cs" />
-    <Compile Include="Assets\Scripts\3_Lobby\MakeRoom.cs" />
     <Compile Include="Assets\Scripts\Scene_StartGame\WelcomeController.cs" />
+    <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\LetterKey.cs" />
     <Compile Include="Assets\Scripts\PC\PCPlayerController.cs" />
+    <Compile Include="Assets\Scripts\KeyBoard.cs" />
     <Compile Include="Assets\Scripts\VRPlayer.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
-    <Compile Include="Assets\Scripts\2_Login_StartGame\MemberDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -146,6 +131,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Resources\Shaders\Bullet\SingleLine-LightSaber.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
+    <None Include="Assets\Resources\low_poly_fast_food_restaurant_v03_1\low_poly_fast_food_restaurant_v03_1\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Resources\Fonts\(English)balbaleo\More Info.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -505,30 +491,6 @@
     </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Android.GradleProject">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
