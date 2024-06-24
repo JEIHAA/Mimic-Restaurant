@@ -9,4 +9,10 @@ public class MonsterStat : ScriptableObject
 {
     public int monsterHealth = 300;
     public int monsterDamage = 10;
+
+    private void OnDisable()
+    {
+        monsterHealth = 300;
+        monsterDamage = 10; 
+    }
 }
