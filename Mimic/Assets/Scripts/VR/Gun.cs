@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject bulletPrefab; 
-    public int poolSize = 30; 
-    public float bulletSpeed = 10f; 
-    public float bulletLifetime = 2f; 
+    [SerializeField] private GameObject muzzle;
+    public GameObject bulletPrefab;
+    public int poolSize = 20;
+    public float bulletSpeed = 10f;
+    public float bulletLifetime = 2f;
 
-    private List<GameObject> bulletPool; 
+    private List<GameObject> bulletPool;
+
     private void Start()
     {
-        // 총알 풀 초기화
         bulletPool = new List<GameObject>();
+        InitializeBulletPool();
+    }
+    private void Update()
+    {
+        CheckBulletLifetime();
+    }
+
+    private void InitializeBulletPool()
+    {
         for (int i = 0; i < poolSize; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab);
@@ -28,9 +38,8 @@ public class Gun : MonoBehaviour
 
         if (bullet != null)
         {
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
-            
+            bullet.transform.position = muzzle.transform.position;
+            bullet.transform.rotation = muzzle.transform.rotation;
 
             bullet.SetActive(true);
 
@@ -44,12 +53,11 @@ public class Gun : MonoBehaviour
         }
     }
 
-
     IEnumerator DisableBulletAfterLifetime(GameObject bullet)
     {
         yield return new WaitForSeconds(bulletLifetime);
 
-        if (bullet.activeSelf) 
+        if (bullet.activeSelf)
         {
             bullet.SetActive(false);
         }
@@ -57,10 +65,9 @@ public class Gun : MonoBehaviour
 
     GameObject GetBulletFromPool()
     {
-        // 비활성화된 총알을 찾아 반환
         foreach (GameObject bullet in bulletPool)
         {
-            if (!bullet.activeInHierarchy)
+            if (!bullet.activeSelf)
             {
                 return bullet;
             }
@@ -68,4 +75,21 @@ public class Gun : MonoBehaviour
 
         return null;
     }
+
+    void CheckBulletLifetime()
+    {
+        foreach (GameObject bullet in bulletPool)
+        {
+            if (bullet.activeSelf)
+            {
+                float timeSinceActivated = Time.time - bullet.GetComponent<Bullet>().activationTime;
+                if (timeSinceActivated > bulletLifetime)
+                {
+                    bullet.SetActive(false);
+                }
+            }
+        }
+    }
+
+
 }
