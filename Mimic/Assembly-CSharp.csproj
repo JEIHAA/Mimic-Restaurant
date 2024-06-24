@@ -9,7 +9,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -74,7 +75,9 @@
     <Compile Include="Assets\Scripts\Scene_StartGame\LoginMessageUIController.cs" />
     <Compile Include="Assets\Scripts\Scene_SplashLogo\SplashManager.cs" />
     <Compile Include="Assets\Scripts\VR\Gun.cs" />
+    <Compile Include="Assets\Stylized_Astronaut\Character\AstronautThirdPersonCamera.cs" />
     <Compile Include="Assets\Scripts\VR\Bullet.cs" />
+    <Compile Include="Assets\Stylized_Astronaut\Character\AstronautPlayer.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
     <Compile Include="Assets\Scripts\VR\KeyBoard.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
@@ -127,9 +130,7 @@
     <None Include="Assets\Photon\PhotonLibs\Metro\Photon3Unity3D.dll" />
     <None Include="Assets\Resources\Shaders\Bullet\SingleLine-TextureAlphaBlended.shader" />
     <None Include="Assets\Resources\Shaders\ConveyorBelt.shader" />
-    <None Include="Assets\Resources\Shaders\Bullet\LineStrip-LightSaber.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Resources\Shaders\Bullet\SingleLine-LightSaber.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\Resources\low_poly_fast_food_restaurant_v03_1\low_poly_fast_food_restaurant_v03_1\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />

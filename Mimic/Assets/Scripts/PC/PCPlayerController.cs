@@ -4,31 +4,41 @@ using UnityEngine;
 
 public class PCPlayerController : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 10f;
-    private Rigidbody playerRb;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float rotateSpeed = 5f;
 
     private float inputH;
     private float inputV;
-    private Vector3 velocity = Vector3.zero;
 
+    private Rigidbody characterRigidbody;
+    private Animator anim;
 
-    private void Start()
+    void Start()
     {
-        playerRb = GetComponent<Rigidbody>();    
+        characterRigidbody = GetComponent<Rigidbody>();
+        anim = gameObject.GetComponentInChildren<Animator>();
     }
-
     public void PCPlayerMove()
     {
         inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
 
-        velocity = new Vector3(inputH, 0, inputV);
+        Vector3 velocity = new Vector3(-inputV, 0, inputH);
         velocity *= moveSpeed;
+
+        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+        {
+            anim.SetInteger("AnimationPar", 1);
+        }
+        else
+        {
+            anim.SetInteger("AnimationPar", 0);
+        }
 
         if (!(inputH == 0 && inputV == 0))
         {
-            playerRb.velocity = velocity;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(velocity), Time.deltaTime * moveSpeed);
+            characterRigidbody.velocity = velocity;
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(velocity), Time.deltaTime * rotateSpeed);
         }
     }
 }

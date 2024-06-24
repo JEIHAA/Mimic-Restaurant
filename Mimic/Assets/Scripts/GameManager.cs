@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     #region["Update is called once per frame"] 
     private void Update()
     {
-        monstermanager.MoveAll(vrplayer_transform);
+        monstermanager?.MoveAll(vrplayer_transform);
         pcControll?.PCPlayerMove();
     }
     #endregion
