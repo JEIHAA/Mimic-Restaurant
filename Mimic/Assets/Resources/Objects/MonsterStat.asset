@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MonsterStat
   m_EditorClassIdentifier: 
   monsterHealth: 300
-  monsterDamage: 10
+  monsterAttack: 10

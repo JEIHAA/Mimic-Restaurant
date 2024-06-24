@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class HandCtrl : MonoBehaviour   
-{ 
+public class HandCtrl : MonoBehaviour
+{
     [SerializeField] private InputActionProperty triggerActionProperty;
     [SerializeField] private InputActionProperty gripActionProperty;
     [SerializeField] private GameObject gun;
@@ -17,7 +17,6 @@ public class HandCtrl : MonoBehaviour
 
     private void Awake()
     {
-        gunComponent = gun.GetComponent<Gun>();
         handAnim = GetComponent<Animator>();
         gun.SetActive(false);
     }
@@ -51,31 +50,24 @@ public class HandCtrl : MonoBehaviour
         {
             if (gun.activeSelf && !triggerPressed)
             {
-                gunComponent.ShootBullet();
-                triggerPressed = true;
+                gunComponent.Shoot();
+                triggerPressed = true ; 
             }
         }
         else
         {
-            triggerPressed = false;
+            triggerPressed = false; 
         }
     }
 
-
-    private void OnTriggerEnter(Collider _collider)
+    private void OnTriggerEnter(Collider other)
     {
-        if(_collider.CompareTag("Steak"))
-        {
-            isColliding = true;
-        }
+        isColliding = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Steak"))
-        {
-            isColliding = false;
-        }
+        isColliding = false;
     }
 
     private void TriggerAnim()
