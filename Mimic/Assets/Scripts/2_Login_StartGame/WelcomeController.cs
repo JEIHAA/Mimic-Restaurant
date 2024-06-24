@@ -31,7 +31,7 @@ public class WelcomeController : MonoBehaviour
     public void StartButton()
     {
         //방 만드는 Scene로 이동 
-        SceneManager.LoadScene("Scene_RoomName");
+        SceneManager.LoadScene("3_Lobby");
         //아이디를 싱글톤으로 보내야 하기 때문에 여기서 게임 오브젝트를 파괴하지 않음. 
         DontDestroyOnLoad(gameObject);
     }

@@ -24,7 +24,7 @@ public class SplashManager : MonoBehaviour
     private IEnumerator SplashLogoCoroutine()
     {
         yield return new WaitForSeconds(3.4f);
-        SceneManager.LoadScene("Scene_StartGame"); 
+        SceneManager.LoadScene("2_Login_StartGame");
     }
     #endregion
 

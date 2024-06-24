@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\1_SplashLogo\SplashManager.cs" />
     <Compile Include="Assets\Scripts\testAttack.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginMessageUIController.cs" />
+    <Compile Include="Assets\Scripts\4_Room\ReadyRoom.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\WelcomeController.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\GameManager_StartScene.cs" />
