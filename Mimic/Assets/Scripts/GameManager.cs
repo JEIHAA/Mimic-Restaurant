@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour
     [Header("몬스터 매니저")]
     [SerializeField] private MonsterManager monstermanager = null;
     [SerializeField] private SpawnManager spawnmanager = null; 
-    [SerializeField] private TestDayManager daymanager = null; 
+    [SerializeField] private TestDayManager daymanager = null;
+
+    [Header("PC플레이어 컨트롤러")]
+    [SerializeField] private PCPlayerController pcControll = null;
 
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
@@ -34,8 +37,8 @@ public class GameManager : MonoBehaviour
     #region["Update is called once per frame"] 
     private void Update()
     {
-        monstermanager.MoveAll(); 
-
+        monstermanager?.MoveAll();
+        pcControll?.PCPlayerMove();
     }
     #endregion
 
