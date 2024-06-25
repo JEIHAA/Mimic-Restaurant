@@ -50,7 +50,7 @@ public class HandCtrl : MonoBehaviour
         {
             if (gun.activeSelf && !triggerPressed)
             {
-                gunComponent.Shoot();
+                gunComponent.ShootBullet();
                 triggerPressed = true ; 
             }
         }
