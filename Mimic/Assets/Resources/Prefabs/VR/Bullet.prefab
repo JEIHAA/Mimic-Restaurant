@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 499656}
   - component: {fileID: 2356442}
   - component: {fileID: 3370324}
-  - component: {fileID: 11489952}
   - component: {fileID: 836502281693857014}
   - component: {fileID: 8597229451415951000}
-  - component: {fileID: 4986164321298917436}
+  - component: {fileID: 5923405851649231882}
+  - component: {fileID: 2941167488439469224}
   m_Layer: 12
   m_Name: Bullet
   m_TagString: Bullet
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f68f8c3a3d76fb74cbb880d372c81620, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,25 +87,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136330}
   m_Mesh: {fileID: 0}
---- !u!114 &11489952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0884dceb0d4308c4eb8bc763c8f8deae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_templateMaterial: {fileID: 2100000, guid: f68f8c3a3d76fb74cbb880d372c81620, type: 2}
-  m_doNotOverwriteTemplateMaterialProperties: 1
-  m_startPos: {x: 0, y: 0, z: 0}
-  m_endPos: {x: 0, y: 0, z: 50}
-  m_lineColor: {r: 0.034482718, g: 1, b: 0, a: 0}
-  m_lineWidth: 66
-  m_lightSaberFactor: 0.747
 --- !u!54 &836502281693857014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -156,7 +137,7 @@ CapsuleCollider:
   m_Height: 59.1
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 25}
---- !u!114 &4986164321298917436
+--- !u!114 &5923405851649231882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +146,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 136330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 277c5f99ddb24f84f983e9ad27f7f4ad, type: 3}
+  m_Script: {fileID: 11500000, guid: f6c3e9545d0c9be4bac203fab1153ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  m_templateMaterial: {fileID: 2100000, guid: f68f8c3a3d76fb74cbb880d372c81620, type: 2}
+  m_doNotOverwriteTemplateMaterialProperties: 0
+  m_startPos: {x: 0, y: 0, z: 0}
+  m_endPos: {x: 0, y: 0, z: 100}
+  m_lineColor: {r: 0, g: 0, b: 0, a: 0}
+  m_lineWidth: 0
+  m_lightSaberFactor: 1
+--- !u!114 &2941167488439469224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cd62bf93c145f449ea60a8c8aac028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 100
+  activationTime: 0
