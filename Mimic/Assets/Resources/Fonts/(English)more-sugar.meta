@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Mimic/Assets/Resources/Fonts/(English)more-sugar.meta
 guid: 3b84f7aa977c75d41be8cac2974bec75
+========
+guid: 57841924ff40fca49a2ffb70b000e634
+>>>>>>>> origin/koyoungsuk:Mimic/Assets/MimicUIImages/Sprites.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

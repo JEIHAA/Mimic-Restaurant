@@ -6,6 +6,13 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour, IOnDamage 
 {
+    public delegate void OnDeathDelegate(GameObject _meat);
+    private OnDeathDelegate ondeathcallback = null;
+    public OnDeathDelegate OnDeathCallBack
+    {
+        set { ondeathcallback = value; }
+    }
+
     //몬스터 상태 Enum 
     public enum MonsterStatus
     {
@@ -20,6 +27,8 @@ public class Monster : MonoBehaviour, IOnDamage
     [SerializeField] private int monsterDamage = 10; 
     [SerializeField] private float monsterSpeed = 10f;
     [SerializeField] private MonsterStat monsterData = null;
+    [Header("고기 오브젝트")]
+    [SerializeField] private GameObject steak = null;
 
     private Animator animator = null;
     private int status = 0;
@@ -83,7 +92,10 @@ public class Monster : MonoBehaviour, IOnDamage
     {
         animator.SetTrigger("Death");
         status = (int)MonsterStatus.Death;
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(1f);
+        steak = Instantiate(steak) as GameObject;
+        steak.transform.position = Random.insideUnitSphere;
+        ondeathcallback?.Invoke(steak); 
         SpawnManager.instance.FadeMonster(this);
         yield break; 
     }
