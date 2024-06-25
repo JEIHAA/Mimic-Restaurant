@@ -56,7 +56,7 @@ public class Conveyor : MonoBehaviour
     {
         if (rbs.Count > 0)
         {
-            Vector3 movement = direction.normalized * speed * Time.deltaTime;
+            Vector3 movement = direction.normalized * speed * Time.deltaTime;//direction.normalized * speed * Time.deltaTime;
             foreach (Rigidbody rb in rbs) 
             {
                 rb.MovePosition(rb.position + movement);

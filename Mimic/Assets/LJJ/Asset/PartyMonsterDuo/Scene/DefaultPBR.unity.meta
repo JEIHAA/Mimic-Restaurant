@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: a8d6f90f0517aaa449276f57ed8579e8
+<<<<<<<< HEAD:Mimic/Assets/LJJ/Asset/PartyMonsterDuo/Scene/DefaultPBR.unity.meta
+guid: 11df6f106b78eed4f952e4d528a70793
+========
+guid: 8e9943edba4a7c84b99723eaf6b78b16
+>>>>>>>> origin/koyoungsuk:Mimic/Assets/LJJ/Asset/PartyMonsterDuo/Scene/DefaultPolyart.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

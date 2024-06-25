@@ -11,16 +11,28 @@ using UnityEngine;
 public class MonsterManager : MonoBehaviour
 {
     [SerializeField] private MonsterStat monsterData = null;
+    [SerializeField] private MeatManager meatmanager = null; 
 
     #region["전체 다 움직이기"] 
-    public void MoveAll()
+    public void MoveAll(Transform _vrplayer_position)
     {
         foreach(Monster monster in GetComponentsInChildren<Monster>())
         {
             if(monster.gameObject.activeSelf)
             {
-                monster.Move(); 
+                monster.Move(_vrplayer_position); 
             }
+        }
+    }
+    #endregion
+
+    #region["자식 몬스터 오브젝트 지우기"] 
+    public void DestroyMonsterList()
+    {
+        foreach(Transform monster in transform)
+        {
+            Debug.Log("Monster List: " + monster.gameObject.name); 
+            Destroy(monster.gameObject);     
         }
     }
     #endregion
@@ -32,4 +44,13 @@ public class MonsterManager : MonoBehaviour
         monsterData.monsterDamage += 10; 
     }
     #endregion
+
+    #region["몬스터가 죽을때 작동하는 콜백 메소드"] 
+    public void MonsterDeathOnClick(GameObject _steak)
+    {
+        //고기 매니저에 등록하기 
+        meatmanager.SetMeat(_steak); 
+    }
+    #endregion
+
 }

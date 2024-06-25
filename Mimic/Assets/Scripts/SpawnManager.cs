@@ -15,12 +15,12 @@ public class SpawnManager : MonoBehaviour
 {
     private IObjectPool<Monster> monsterpool = null;
 
-    private bool collectionCheck = true; 
-    [Header ("스폰 몬스터 기본 마리수")] 
+    private bool collectionCheck = true;
+    [Header("스폰 몬스터 기본 마리수")]
     //변경
-    [SerializeField] private int defaultnum = 10; 
+    [SerializeField] private int defaultnum = 10;
     //변경  
-    [Header ("스폰 몬스터 최대 마리수")]
+    [Header("스폰 몬스터 최대 마리수")]
     [SerializeField] private int maxnum = 50;
     [Header("스폰 몬스터 Prefab")]
     [SerializeField] private Monster monsterPrefab = null;
@@ -34,34 +34,40 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private MonsterManager monstermanager = null;
 
     public static SpawnManager instance = null; //Singleton 
-    
-        
+
+    private bool isMonsterAlreadyLoaded = false;
+
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
-        monsterpool = new ObjectPool<Monster>(CreateMonster, SpawnMonster, FadeMonster, DestroyMonster, collectionCheck, defaultnum, maxnum);
-        PreloadMonster(); 
-        StartCoroutine(SpawnMonsterCoroutine());
-        instance = this; 
+        InitMonster();
+        instance = this;
     }
     #endregion
 
+    public void InitMonster()
+    {
+        monsterpool = new ObjectPool<Monster>(CreateMonster, SpawnMonster, FadeMonster, DestroyMonster, collectionCheck, defaultnum, maxnum);
+        PreloadMonster(defaultnum);
+        StartCoroutine(SpawnMonsterCoroutine());
+    }
 
     #region["몬스터 인스턴스화 하기"] 
     private Monster CreateMonster()
     {
         Monster instance = (Instantiate(monsterPrefab.gameObject) as GameObject).GetComponent<Monster>();
-        return instance; 
+        instance.OnDeathCallBack = monstermanager.MonsterDeathOnClick; 
+        return instance;
     }
     #endregion
 
     #region["몬스터 미리 로드하기"] 
-    private void PreloadMonster()
+    private void PreloadMonster(int _num)
     {
-       for (int i = 0; i < defaultnum; ++i)
-       {
-           monsterpool.Release(CreateMonster()); 
-       }
+        for (int i = 0; i < _num; ++i)
+        {
+            monsterpool.Release(CreateMonster());
+        }
     }
     #endregion
 
@@ -69,14 +75,14 @@ public class SpawnManager : MonoBehaviour
     #region["1초마다 몬스터 스폰하기"] 
     private IEnumerator SpawnMonsterCoroutine()
     {
-        int spawnpoint_index = 0; 
-        for(int i=0; i<defaultnum; ++i)
+        int spawnpoint_index = 0;
+        for (int i = 0; i < defaultnum; ++i)
         {
-            if(spawnpoint_index < maxorder)
+            if (spawnpoint_index < maxorder)
             {
                 Monster monster = monsterpool.Get();
                 SetMonsterPosandRot(monster, spawnpoint[spawnpoint_index]);
-                SpawnMonster(monster); 
+                SpawnMonster(monster);
             }
             else
             {
@@ -85,10 +91,10 @@ public class SpawnManager : MonoBehaviour
                 SetMonsterPosandRot(monster, spawnpoint[spawnpoint_index]);
                 SpawnMonster(monster);
             }
-            ++spawnpoint_index; 
-            yield return new WaitForSeconds(spawn_second); 
+            ++spawnpoint_index;
+            yield return new WaitForSeconds(spawn_second);
         }
-        yield break; 
+        yield break;
     }
     #endregion
 
@@ -96,8 +102,8 @@ public class SpawnManager : MonoBehaviour
     private void SetMonsterPosandRot(Monster _monster, GameObject _spawnpoint)
     {
         _monster.transform.position = _spawnpoint.transform.position;
-        _monster.transform.rotation = _spawnpoint.transform.rotation;
-        _monster.transform.SetParent(monstermanager.transform); 
+        //_monster.transform.rotation = _spawnpoint.transform.rotation;
+        _monster.transform.SetParent(monstermanager.transform);
     }
     #endregion
 
@@ -111,23 +117,35 @@ public class SpawnManager : MonoBehaviour
     #region["몬스터 비활성화"] 
     public void FadeMonster(Monster _pooledObject)
     {
-        _pooledObject.gameObject.SetActive(false); 
+        _pooledObject.gameObject.SetActive(false);
     }
     #endregion
 
     #region["최대 개수를 초과했을 경우 몬스터를 파괴함"] 
     private void DestroyMonster(Monster _pooledObject)
     {
-        Destroy(_pooledObject.gameObject); 
+        Destroy(_pooledObject.gameObject);
     }
     #endregion
 
     #region["몬스터 풀 초기화"] 
     private void ClearMonsterPool()
     {
-        monsterpool.Clear(); 
+        monsterpool.Clear();
     }
     #endregion
 
-    
+    #region["다음 웨이브로 이동"] 
+    public void GoNextWave()
+    {
+        ClearMonsterPool(); 
+        defaultnum += 5;
+        if (maxorder < 7) 
+        {
+            maxorder += 2;
+        }
+        InitMonster(); 
+    }
+    #endregion
+
 }
