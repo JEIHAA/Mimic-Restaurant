@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     [Header("PC 플레이어")]
     [SerializeField] private PCPlayerController pcControll = null;
-
+    [SerializeField] private CameraMove cameraMove = null;
 
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         monstermanager?.MoveAll(vrplayer_transform);
         pcControll?.PCPlayerMove();
+        cameraMove?.FollowPlayer();
     }
     #endregion
 
