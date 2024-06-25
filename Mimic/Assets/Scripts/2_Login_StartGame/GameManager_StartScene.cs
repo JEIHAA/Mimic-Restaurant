@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
@@ -13,7 +14,12 @@ public class GameManager_StartScene : MonoBehaviour
     private WelcomeController welcomecontroller = null;
 
     [SerializeField] private GameObject messageui = null;
-    private GameObject messageui_instantiated = null; 
+    private GameObject messageui_instantiated = null;
+
+    [SerializeField] private Camera pccamera = null;
+    [SerializeField] private GameObject vr = null;
+    [SerializeField] private Canvas canvas = null;
+
 
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
@@ -29,6 +35,19 @@ public class GameManager_StartScene : MonoBehaviour
 
         signupcontroller.gameObject.SetActive(false);
         welcomecontroller.gameObject.SetActive(false); 
+
+        if(XRSettings.enabled)
+        {
+            vr.SetActive(true);
+            pccamera.gameObject.SetActive(false);
+            canvas.renderMode = RenderMode.WorldSpace; 
+        }
+        else
+        {
+            vr.SetActive(false);
+            pccamera.gameObject.SetActive(true);
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay; 
+        }
     }
     #endregion
 
