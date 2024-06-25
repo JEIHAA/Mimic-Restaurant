@@ -19,10 +19,6 @@ public class GameManager : MonoBehaviour
     [Header("VR 플레이어")]
     [SerializeField] private Transform vrplayer_transform = null;
 
-    [Header("PC 플레이어")]
-    [SerializeField] private PCPlayerController pcControll = null;
-
-
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
@@ -42,8 +38,7 @@ public class GameManager : MonoBehaviour
     #region["Update is called once per frame"] 
     private void Update()
     {
-        monstermanager.MoveAll(vrplayer_transform);
-        pcControll?.PCPlayerMove();
+        monstermanager.MoveAll(vrplayer_transform); 
     }
     #endregion
 

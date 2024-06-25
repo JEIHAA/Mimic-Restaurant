@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Mimic/Assets/Resources/Images/Sprites/Room.meta
 guid: 2b85d185ac54ab64b909862e46643477
+========
+guid: 85cc57f2984d27d44a37169ab115c65f
+>>>>>>>> origin/koyoungsuk:Mimic/Assets/MimicUIImages/Sprites/Room.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -3829,6 +3829,7 @@ MonoBehaviour:
   monsterDamage: 10
   monsterSpeed: 2
   monsterData: {fileID: 11400000, guid: 0a2eecdf4d5fa4a4cbbb73477ab68c36, type: 2}
+  steak: {fileID: 4179205776943551302, guid: 517e6530b9fe77748888b6ef19fb3a4a, type: 3}
 --- !u!54 &2913036959129221486
 Rigidbody:
   m_ObjectHideFlags: 0

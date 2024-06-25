@@ -11,6 +11,7 @@ using UnityEngine;
 public class MonsterManager : MonoBehaviour
 {
     [SerializeField] private MonsterStat monsterData = null;
+    [SerializeField] private MeatManager meatmanager = null; 
 
     #region["전체 다 움직이기"] 
     public void MoveAll(Transform _vrplayer_position)
@@ -43,4 +44,13 @@ public class MonsterManager : MonoBehaviour
         monsterData.monsterDamage += 10; 
     }
     #endregion
+
+    #region["몬스터가 죽을때 작동하는 콜백 메소드"] 
+    public void MonsterDeathOnClick(GameObject _steak)
+    {
+        //고기 매니저에 등록하기 
+        meatmanager.SetMeat(_steak); 
+    }
+    #endregion
+
 }
