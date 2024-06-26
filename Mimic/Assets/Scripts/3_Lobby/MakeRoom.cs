@@ -209,7 +209,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         // 방에 입장한 후 다음 씬으로 전환
-        SceneManager.LoadScene("4_Room");
+        Debug.Log("MasterClient join this room.");
+        string scenename = "4_Room"; 
+        if(XRSettings.enabled)
+        {
+            scenename += "_VR"; 
+        }
+        SceneManager.LoadScene(scenename); 
     }
 
     #region["이미 만들어진 방에 들어가기"] 

@@ -109,7 +109,10 @@ public class GameManager_StartScene : MonoBehaviour
                 //회원가입 성공(또는 그냥 닫기) 
                 signupcontroller.gameObject.SetActive(false);
                 logincontroller.gameObject.SetActive(true);
-                status_ui = (int)UIStatus.Login; 
+                if(XRSettings.enabled)
+                {
+                    CreateErrorMessageUI(3, 0); 
+                }
                 break;
             case 2:
                 //아이디 중복  

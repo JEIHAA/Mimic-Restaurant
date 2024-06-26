@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class HandCtrl_Login : MonoBehaviour
 {
-    [SerializeField] private InputActionProperty triggerActionProperty;
+   /* [SerializeField] private InputActionProperty triggerActionProperty;
     [SerializeField] private InputActionProperty gripActionProperty;
     private Animator handAnim;
     private bool triggerPressed = false;
@@ -37,7 +37,7 @@ public class HandCtrl_Login : MonoBehaviour
         float tvalue = triggerActionProperty.action.ReadValue<float>();
         if (tvalue > 0.9f)
         {
-         
+            triggerPressed = true;
         }
         else
         {
@@ -55,5 +55,5 @@ public class HandCtrl_Login : MonoBehaviour
     {
         float value = gripActionProperty.action.ReadValue<float>();
         handAnim.SetFloat("Grip", value);
-    }
+    }*/
 }
