@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/4_Room.unity
     guid: 33906cdbd3fbee946b970930a4632bc0
   - enabled: 1
+    path: Assets/Scenes/5_Loading.unity
+    guid: 88f87fc8a2a61764d8d25e551046b37a
+  - enabled: 1
     path: Assets/Scenes/Scene_VR_Test_2.unity
     guid: eb636d74b54873a45a08590dee59067e
   - enabled: 0

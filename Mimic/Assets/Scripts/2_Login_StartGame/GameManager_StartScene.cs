@@ -177,4 +177,18 @@ public class GameManager_StartScene : MonoBehaviour
     }
     #endregion
 
+    #region["설정 버튼"]
+    public void GoSettingBtn()
+    {
+
+    }
+    #endregion
+
+    #region["닫기 버튼"]
+    public void CloseBtn()
+    {
+        Application.Quit(); 
+    }
+    #endregion
+
 }

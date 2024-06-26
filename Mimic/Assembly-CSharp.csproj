@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\VolumetricLineBehavior.cs" />
     <Compile Include="Assets\Scripts\VR\HandCtrl_Login.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\Scripts\DayManager.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyboardManager.cs" />
     <Compile Include="Assets\Scripts\VR\HandCtrl.cs" />
     <Compile Include="Assets\Scripts\MeatManager.cs" />
@@ -72,7 +73,6 @@
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\5_Loading\LoadingController.cs" />
-    <Compile Include="Assets\Scripts\TestDayManager.cs" />
     <Compile Include="Assets\Scripts\1_SplashLogo\SplashManager.cs" />
     <Compile Include="Assets\Scripts\testAttack.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginMessageUIController.cs" />
