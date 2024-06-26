@@ -60,22 +60,23 @@
     <Analyzer Include="C:\Program Files\Unity 2022.3.27f1\Editor\2022.3.33f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\VolumetricLineBehavior.cs" />
-    <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyboardManager.cs" />
-    <Compile Include="Assets\Scripts\HandCtrl.cs" />
-    <Compile Include="Assets\Scripts\VolumetricLineVertexData.cs" />
+    <Compile Include="Assets\Scripts\VR\HandCtrl.cs" />
     <Compile Include="Assets\Scripts\MonsterManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginController.cs" />
     <Compile Include="Assets\Scripts\TestDayManager.cs" />
     <Compile Include="Assets\Scripts\1_SplashLogo\SplashManager.cs" />
+    <Compile Include="Assets\Scripts\VR\VolumetricLineBehavior.cs" />
     <Compile Include="Assets\Scripts\testAttack.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginMessageUIController.cs" />
     <Compile Include="Assets\Scripts\4_Room\ReadyRoom.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\WelcomeController.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\GameManager_StartScene.cs" />
+    <Compile Include="Assets\Scripts\VR\Gun.cs" />
+    <Compile Include="Assets\Scripts\VR\Bullet.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
+    <Compile Include="Assets\Scripts\VR\KeyBoard.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\DBManager.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
     <Compile Include="Assets\Scripts\ShotBehavior.cs" />
@@ -86,8 +87,11 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
     <Compile Include="Assets\Scripts\Barrier.cs" />
+    <Compile Include="Assets\Scripts\VR\VRPlayer.cs" />
+    <Compile Include="Assets\Scripts\VR\VolumetricLineVertexData.cs" />
     <Compile Include="Assets\Scripts\3_Lobby\MakeRoom.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\LetterKey.cs" />
+    <Compile Include="Assets\Scripts\PC\PCPlayerController.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\MemberDTO.cs" />
   </ItemGroup>
@@ -128,6 +132,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Resources\Shaders\Bullet\SingleLine-LightSaber.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
+    <None Include="Assets\Resources\low_poly_fast_food_restaurant_v03_1\low_poly_fast_food_restaurant_v03_1\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
