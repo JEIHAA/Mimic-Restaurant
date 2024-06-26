@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 /*
@@ -12,11 +13,24 @@ using UnityEngine.SceneManagement;
  */
 public class SplashManager : MonoBehaviour
 {
+    [SerializeField] private Canvas canvas = null;
+    [SerializeField] private GameObject vrobject = null;
+    [SerializeField] private Camera pccamera = null; 
 
     #region["Start is called before the first frame update"] 
     private void Start()
     {
         StartCoroutine(SplashLogoCoroutine()); 
+        if(XRSettings.enabled)
+        {
+            pccamera.gameObject.SetActive(false);
+            canvas.renderMode = RenderMode.WorldSpace;
+        }
+        else
+        {
+            pccamera.gameObject.SetActive(true);
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay; 
+        }
     }
     #endregion
 
