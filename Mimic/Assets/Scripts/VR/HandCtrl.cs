@@ -33,7 +33,6 @@ public class HandCtrl : MonoBehaviour
     private void GripButton()
     {
         float value = gripActionProperty.action.ReadValue<float>();
-        Debug.Log("grip value: " + value); 
         if (value > 0.8f && isColliding == false)
         {
             gun.SetActive(true);
