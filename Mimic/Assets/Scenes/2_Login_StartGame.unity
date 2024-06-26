@@ -512,10 +512,25 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1697831507}
-    - target: {fileID: 2535554069623729993, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+    - target: {fileID: 2646201749027076089, guid: bc1483c6bc0743e4498d91a9538d1cd5,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2759641594201698402}
+    - target: {fileID: 2646201749027076089, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoSettingBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646201749027076089, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager_StartScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646201749027076089, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3208493843706767919, guid: bc1483c6bc0743e4498d91a9538d1cd5,
         type: 3}
@@ -567,11 +582,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3531854731149833796, guid: bc1483c6bc0743e4498d91a9538d1cd5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4127256227088656373, guid: bc1483c6bc0743e4498d91a9538d1cd5,
         type: 3}
       propertyPath: vr
@@ -582,16 +592,43 @@ PrefabInstance:
       propertyPath: pccamera
       value: 
       objectReference: {fileID: 1697831507}
-    - target: {fileID: 4194092429632596593, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+    - target: {fileID: 7293438703330991079, guid: bc1483c6bc0743e4498d91a9538d1cd5,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2759641594201698402}
+    - target: {fileID: 7293438703330991079, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293438703330991079, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager_StartScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293438703330991079, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc1483c6bc0743e4498d91a9538d1cd5, type: 3}
+--- !u!114 &2759641594201698402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4127256227088656373, guid: bc1483c6bc0743e4498d91a9538d1cd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2759641594201698401}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0e3607d3b2de469a2207c11055932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
