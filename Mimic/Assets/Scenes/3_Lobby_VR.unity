@@ -230,6 +230,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1093344713}
     m_Modifications:
+    - target: {fileID: 389140203262326200, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 389140203262326200, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 389140203262326200, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 416323138}
+    - target: {fileID: 389140203262326200, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 389140203262326200, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisableKeyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 389140203262326200, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: KeyBoard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 389140203262326200, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 403818853406554747, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -289,6 +324,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 498
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734647459860475214, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734647459860475214, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734647459860475214, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 416323138}
+    - target: {fileID: 1734647459860475214, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734647459860475214, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DisableKeyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734647459860475214, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: KeyBoard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734647459860475214, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3274943519020530472, guid: ff3a0b198fda79b4dacd1ff8dee25f0e,
         type: 3}

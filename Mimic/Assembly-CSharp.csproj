@@ -99,6 +99,7 @@
     <Compile Include="Assets\Scripts\PC\PCPlayerController.cs" />
     <Compile Include="Assets\Scripts\KeyBoard.cs" />
     <Compile Include="Assets\Scripts\VRPlayer.cs" />
+    <Compile Include="Assets\Scripts\VR\HandMenu.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\MemberDTO.cs" />
   </ItemGroup>
