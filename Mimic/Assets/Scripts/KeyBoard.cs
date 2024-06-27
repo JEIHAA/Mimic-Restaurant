@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class KeyBoard : MonoBehaviour
 {
@@ -8,11 +9,7 @@ public class KeyBoard : MonoBehaviour
 
     private void Start()
     {
-        
-        foreach (GameObject keyboard in keyboards)
-        {
-            keyboard.SetActive(false);
-        }
+        DisableKeyboard();
     }
 
     public void OnTextClicked(string textboxName)
@@ -33,6 +30,13 @@ public class KeyBoard : MonoBehaviour
                 keyboard.SetActive(true);
                 break; 
             }
+        }
+    }
+    public void DisableKeyboard()
+    {
+        foreach (GameObject keyboard in keyboards)
+        {
+                keyboard.SetActive(false);
         }
     }
 }
