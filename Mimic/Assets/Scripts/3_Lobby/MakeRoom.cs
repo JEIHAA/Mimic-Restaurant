@@ -186,6 +186,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         roomOptions.PlayerTtl = 0;
         roomOptions.EmptyRoomTtl = 0;
         ExitGames.Client.Photon.Hashtable ht = new ExitGames.Client.Photon.Hashtable();
+        ExitGames.Client.Photon.Hashtable ht2 = new ExitGames.Client.Photon.Hashtable(); 
         //방을 만든 사람이 반장임. 
         if (XRSettings.enabled)
         {
@@ -197,10 +198,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
             //PC가 방장일때 
             ht.Add("IsMasterPC", true);
         }
+        //게임 시작 관련. 
+        ht2.Add("IsMainSceneLoaded", false);
         roomOptions.CustomRoomProperties = ht;
         PhotonNetwork.CreateRoom(roomName, roomOptions);
         PhotonNetwork.NickName = nickname_player;
-
+        PhotonNetwork.SetPlayerCustomProperties(ht2); 
         Debug.Log("Room Created");
         Debug.Log("Room Name: " + roomName);
     }
@@ -223,6 +226,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.JoinRoom(_roomname);
         PhotonNetwork.NickName = nickname_player;
+        ExitGames.Client.Photon.Hashtable ht2 = new ExitGames.Client.Photon.Hashtable();
+        ht2.Add("IsMainSceneLoaded", false); 
+        PhotonNetwork.SetPlayerCustomProperties(ht2);
     }
     #endregion
 

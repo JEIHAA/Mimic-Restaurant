@@ -35,8 +35,6 @@ public class SpawnManager : MonoBehaviour
 
     public static SpawnManager instance = null; //Singleton 
 
-    private bool isMonsterAlreadyLoaded = false;
-
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
@@ -138,7 +136,11 @@ public class SpawnManager : MonoBehaviour
     #region["다음 웨이브로 이동"] 
     public void GoNextWave()
     {
-        ClearMonsterPool(); 
+        ClearMonsterPool();
+        //몬스터 리스트 삭제 
+        monstermanager.DestroyMonsterList();
+        //몬스터 능력치 강화 
+        monstermanager.StrengthMonster(); 
         defaultnum += 5;
         if (maxorder < 7) 
         {

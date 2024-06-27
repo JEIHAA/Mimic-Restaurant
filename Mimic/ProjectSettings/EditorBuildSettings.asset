@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/1_SplashLogo.unity
     guid: ea5d447ec70159648b14713600c5de8b
   - enabled: 1
-    path: Assets/Scenes/2_Login_StartGame.unity
-    guid: bb216745243094c4db38496f64e645af
-  - enabled: 1
     path: Assets/Scenes/2_Login_StartGame_VR.unity
     guid: 742e460740861b649b2e050cfdcda53b
+  - enabled: 1
+    path: Assets/Scenes/2_Login_StartGame.unity
+    guid: bb216745243094c4db38496f64e645af
   - enabled: 1
     path: Assets/Scenes/3_Lobby.unity
     guid: 1d18aaa2ee514c94692a1d4f8e5d4a50
@@ -32,6 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_VR_Test_2.unity
     guid: eb636d74b54873a45a08590dee59067e
+  - enabled: 1
+    path: Assets/Scenes/Scene_VR_Test_3.unity
+    guid: 078c747031351624db3bb379fb0a1676
+  - enabled: 1
+    path: Assets/Scenes/Network_Test.unity
+    guid: 18f975cb5c4c8b7498ffe4a4e7392b16
   - enabled: 0
     path: Assets/Scenes/Scene_RoomName.unity
     guid: 5a4f36b99299b364885629ebede862e9

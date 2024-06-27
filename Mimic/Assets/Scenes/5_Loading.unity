@@ -415,7 +415,7 @@ MonoBehaviour:
   canvas: {fileID: 322984651}
   vr: {fileID: 617901687}
   pccamera: {fileID: 124748238}
-  mainscene: Scene_VR_Test_2
+  mainscene: Scene_VR_Test_3
 --- !u!1 &564795559
 GameObject:
   m_ObjectHideFlags: 0

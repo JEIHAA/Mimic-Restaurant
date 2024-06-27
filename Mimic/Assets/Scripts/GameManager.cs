@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour
     public void AddDay()
     {
         monstermanager.DestroyMonsterList(); 
-        daymanager.AddDay();
+        //daymanager.AddDay();
         monstermanager.StrengthMonster();
         spawnmanager.GoNextWave(); 
     }
     #endregion
-
+    
 }
