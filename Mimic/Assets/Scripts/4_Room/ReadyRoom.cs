@@ -122,7 +122,7 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
     public void StartGame()
     {
         Debug.LogError("Time to Start Game...");
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("5_Loading");
     }
     #endregion
 

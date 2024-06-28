@@ -24,6 +24,14 @@ public class LoginMessageUIController : MonoBehaviour
         {
             statustext.text = statustext_login[_statusindex]; 
         }
+        if(_type == 2) //VR전용 
+        {
+            statustext.text = "로그인해주세요."; 
+        }
+        if(_type == 3) //VR전용 
+        {
+            statustext.text = "로그인 성공!"; 
+        }
     }
 
     public void CloseBtn()

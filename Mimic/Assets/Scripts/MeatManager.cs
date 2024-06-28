@@ -58,5 +58,4 @@ public class MeatManager : MonoBehaviour
         }
     }
     #endregion
-
 }
