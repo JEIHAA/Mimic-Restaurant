@@ -26,6 +26,7 @@ public class Conveyor : MonoBehaviour
         if (_collision.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
             rbs.Add(_collision.gameObject.GetComponent<Rigidbody>());
+            Debug.Log("rbs Cnt"+rbs.Count);
         }
         else
         { 
@@ -36,6 +37,7 @@ public class Conveyor : MonoBehaviour
     {
         if (ActiveConveyor(capacity)) 
         {
+            Debug.Log(_collision.gameObject.name);
             MoveObject(rbs);
         }
     }
@@ -56,9 +58,10 @@ public class Conveyor : MonoBehaviour
     {
         if (rbs.Count > 0)
         {
-            Vector3 movement = direction.normalized * speed * Time.deltaTime;//direction.normalized * speed * Time.deltaTime;
+            Vector3 movement = direction.normalized * speed * Time.deltaTime; //direction.normalized * speed * Time.deltaTime;
             foreach (Rigidbody rb in rbs) 
             {
+                Debug.Log(rb.name);
                 rb.MovePosition(rb.position + movement);
             }
         }
