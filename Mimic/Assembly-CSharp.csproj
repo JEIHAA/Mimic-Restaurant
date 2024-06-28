@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
     <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\PC\Player\PCPlayerController.cs" />
+    <Compile Include="Assets\Scripts\UI\DateUIPresenter.cs" />
     <Compile Include="Assets\Scripts\3_Lobby\MakeRoom.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\LetterKey.cs" />
     <Compile Include="Assets\Scripts\KeyBoard.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\Scripts\VR\HandMenu.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\MemberDTO.cs" />
+    <Compile Include="Assets\Scripts\UI\PCUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

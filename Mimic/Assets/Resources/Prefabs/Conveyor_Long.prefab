@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  direction: {x: 0, y: 0, z: -1}
+  direction: {x: 0, y: 0, z: 1}
   capacity: 0
   maxCapacity: 3
   material: {fileID: 2100000, guid: cb3475d84aeda1543a873a2958429db7, type: 2}
