@@ -24,11 +24,11 @@ TagManager:
   - Player
   - Bullet
   - Resturant
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ResturantCull
+  - Conveyor
+  - Dispenser
+  - Customer
+  - Food
   - 
   - 
   - 

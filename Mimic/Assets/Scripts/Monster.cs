@@ -50,8 +50,8 @@ public class Monster : MonoBehaviour, IOnDamage
     {
         monsterHealth = monsterData.monsterHealth;
         monsterDamage = monsterData.monsterDamage;
-        Debug.Log("Current Monster Health: " + monsterHealth);
-        Debug.Log("Current Monster Damage: " + monsterDamage); 
+        //Debug.Log("Current Monster Health: " + monsterHealth);
+        //Debug.Log("Current Monster Damage: " + monsterDamage); 
     }
     #endregion
 
@@ -124,7 +124,7 @@ public class Monster : MonoBehaviour, IOnDamage
 
     private void OnTriggerEnter(Collider _collider)
     {
-        Debug.Log("collider.name: " + _collider.name); 
+        //Debug.Log("collider.name: " + _collider.name); 
         if(_collider.name.Equals("Barrier"))  
         {
             SpawnManager.instance.FadeMonster(this); //몬스터 비활성화 
