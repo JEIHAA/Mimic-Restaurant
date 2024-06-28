@@ -23,7 +23,7 @@ public class Conveyor : MonoBehaviour
     {
         ++capacity;
         Debug.Log(capacity);
-        if (_collision.gameObject.layer == target)
+        if (_collision.gameObject.layer == LayerMask.NameToLayer("Food"))
         {
             rbs.Add(_collision.gameObject.GetComponent<Rigidbody>());
         }
