@@ -16,13 +16,13 @@ EditorBuildSettings:
     guid: bb216745243094c4db38496f64e645af
   - enabled: 1
     path: Assets/Scenes/3_Lobby.unity
-    guid: 1d18aaa2ee514c94692a1d4f8e5d4a50
+    guid: 4adfb7757ff43674ab8a4ca20fc1fc36
   - enabled: 1
     path: Assets/Scenes/3_Lobby_VR.unity
     guid: 9e70c0dfff38f2b458259c95c54cdd8c
   - enabled: 1
     path: Assets/Scenes/4_Room.unity
-    guid: 33906cdbd3fbee946b970930a4632bc0
+    guid: 623d69de6362fde439dba4c6acf842b6
   - enabled: 1
     path: Assets/Scenes/4_Room_VR.unity
     guid: d701f0927c4b8b149b15b7e4f62aec99

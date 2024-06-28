@@ -28,12 +28,14 @@ public class DayManager : MonoBehaviourPun
         }
         else
         {
+            /*
             string scenename = "2_Login_StartGame"; 
             if (XRSettings.enabled)
             {
                 scenename += "_VR";
             }
             SceneManager.LoadScene(scenename);
+            */
         }
     }
     #endregion
