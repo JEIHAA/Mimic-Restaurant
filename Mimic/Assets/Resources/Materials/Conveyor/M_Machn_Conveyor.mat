@@ -130,7 +130,7 @@ Material:
     - _RowsY: 1
     - _Scale: 1.18
     - _ScrollDirection: 1
-    - _ScrollSpeed: 0
+    - _ScrollSpeed: 0.5
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
