@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [Header("스폰 매니저")]
     [SerializeField] private SpawnManager spawnmanager = null;
     [Header("날짜 매니저")]
-    [SerializeField] private TestDayManager daymanager = null;
+    [SerializeField] private DayManager daymanager = null;
     [Header("VR 플레이어")]
     [SerializeField] private Transform vrplayer_transform = null;
 
@@ -52,10 +52,10 @@ public class GameManager : MonoBehaviour
     public void AddDay()
     {
         monstermanager.DestroyMonsterList(); 
-        daymanager.AddDay();
+        //daymanager.AddDay();
         monstermanager.StrengthMonster();
         spawnmanager.GoNextWave(); 
     }
     #endregion
-
+    
 }

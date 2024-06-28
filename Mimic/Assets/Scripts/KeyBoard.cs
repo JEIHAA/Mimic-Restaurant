@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class KeyBoard : MonoBehaviour
 {
@@ -8,29 +9,34 @@ public class KeyBoard : MonoBehaviour
 
     private void Start()
     {
-        // 초기에 모든 키보드를 비활성화
-        foreach (GameObject keyboard in keyboards)
-        {
-            keyboard.SetActive(false);
-        }
+        DisableKeyboard();
     }
 
     public void OnTextClicked(string textboxName)
     {
-        // 모든 키보드를 숨기기
+        
         foreach (GameObject keyboard in keyboards)
         {
+            Debug.Log("다숨김");
             keyboard.SetActive(false);
         }
 
-        // 텍스트박스 이름에 따라 적절한 키보드를 찾아 활성화
         foreach (GameObject keyboard in keyboards)
         {
+            Debug.Log("KeyBoard: " + keyboard.name); 
             if (keyboard.name == textboxName + "Keyboard")
             {
+                Debug.Log("textbox name :" + textboxName);
                 keyboard.SetActive(true);
-                break; // 원하는 키보드를 찾았으면 루프 종료
+                break; 
             }
+        }
+    }
+    public void DisableKeyboard()
+    {
+        foreach (GameObject keyboard in keyboards)
+        {
+                keyboard.SetActive(false);
         }
     }
 }

@@ -56,7 +56,7 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         {
             IncreaseHungry(20);
             Debug.Log("hamburger +20 Current hungry: " + hungry);
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }

@@ -6,15 +6,42 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scene_SplashLogo.unity
+    path: Assets/Scenes/1_SplashLogo.unity
     guid: ea5d447ec70159648b14713600c5de8b
   - enabled: 1
-    path: Assets/Scenes/Scene_StartGame.unity
+    path: Assets/Scenes/2_Login_StartGame_VR.unity
+    guid: 742e460740861b649b2e050cfdcda53b
+  - enabled: 1
+    path: Assets/Scenes/2_Login_StartGame.unity
     guid: bb216745243094c4db38496f64e645af
   - enabled: 1
+    path: Assets/Scenes/3_Lobby.unity
+    guid: 1d18aaa2ee514c94692a1d4f8e5d4a50
+  - enabled: 1
+    path: Assets/Scenes/3_Lobby_VR.unity
+    guid: 9e70c0dfff38f2b458259c95c54cdd8c
+  - enabled: 1
+    path: Assets/Scenes/4_Room.unity
+    guid: 33906cdbd3fbee946b970930a4632bc0
+  - enabled: 1
+    path: Assets/Scenes/4_Room_VR.unity
+    guid: d701f0927c4b8b149b15b7e4f62aec99
+  - enabled: 1
+    path: Assets/Scenes/5_Loading.unity
+    guid: 88f87fc8a2a61764d8d25e551046b37a
+  - enabled: 1
+    path: Assets/Scenes/Scene_VR_Test_2.unity
+    guid: eb636d74b54873a45a08590dee59067e
+  - enabled: 1
+    path: Assets/Scenes/Scene_VR_Test_3.unity
+    guid: 078c747031351624db3bb379fb0a1676
+  - enabled: 1
+    path: Assets/Scenes/Network_Test.unity
+    guid: 18f975cb5c4c8b7498ffe4a4e7392b16
+  - enabled: 0
     path: Assets/Scenes/Scene_RoomName.unity
     guid: 5a4f36b99299b364885629ebede862e9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Black Whale Studio/VR Keyboard XRI/Scenes/DemoVRKeyboardUS.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
