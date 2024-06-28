@@ -111,20 +111,33 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
             }
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                startbutton.interactable = true;
-                startbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Start";
+                //방장일때만 시작 버튼을 누를 수 있다. => 방장이 아닌 쪽은 방장이 게임을 시작하면 게임을 자동으로 시작하게 된다. 
+                if(PhotonNetwork.IsMasterClient)
+                {
+                    startbutton.interactable = true;
+                    startbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Start";
+                }    
             }
         }
-
     }
 
     #region["게임 시작!"] 
     public void StartGame()
     {
+        if(PhotonNetwork.IsMasterClient)
+        {
+            //방장이면 동시에 게임으로 이동. 
+            photonView.RPC("GoGameScene", RpcTarget.All); 
+        }
+    }
+    #endregion
+
+    [PunRPC] 
+    public void GoGameScene()
+    {
         Debug.LogError("Time to Start Game...");
         SceneManager.LoadScene("5_Loading");
     }
-    #endregion
 
     #region["게임 나가기"]
     public void ExitGame()

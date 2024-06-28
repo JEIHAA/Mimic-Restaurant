@@ -93,7 +93,6 @@
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\UI\DateUIPresenter.cs" />
     <Compile Include="Assets\Scripts\3_Lobby\MakeRoom.cs" />

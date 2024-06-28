@@ -444,6 +444,8 @@ RectTransform:
   - {fileID: 3171053758908211473}
   - {fileID: 3460296034282847877}
   - {fileID: 1241326231186628285}
+  - {fileID: 3293019117885958431}
+  - {fileID: 5641190635265262942}
   m_Father: {fileID: 3572453138473578522}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2014,6 +2016,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1331639273702825581}
+  - component: {fileID: 5247035498268581555}
+  - component: {fileID: 6650113919163874782}
   m_Layer: 0
   m_Name: PC_Store_UI
   m_TagString: Untagged
@@ -2037,6 +2041,35 @@ Transform:
   - {fileID: 3572453138473578522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5247035498268581555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299885490196670279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da161b5e96a5fc458ce5b94a29a71b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiboxholder: {fileID: 135384426771412898}
+  upbutton: {fileID: 8271456689851915148}
+  downbutton: {fileID: 4918326324805194710}
+--- !u!114 &6650113919163874782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299885490196670279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73771441e7d8adc42a70ae985f637198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day_text: {fileID: 5976728451061554449}
+  second_text: {fileID: 0}
 --- !u!1 &1312016561662468219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,7 +2931,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 831076116759925525}
-  m_Father: {fileID: 3572453138473578522}
+  m_Father: {fileID: 6923659826715055260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2986,7 +3019,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8389026716119462298}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5247035498268581555}
+        m_TargetAssemblyTypeName: PCUIManager, Assembly-CSharp
+        m_MethodName: SetUpButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1843799007959359744
 GameObject:
   m_ObjectHideFlags: 0
@@ -9385,7 +9430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB808\uC2DC\uD53C \uC120\uD0DD"
+  m_text: "\uB808\uC2DC\uD53C \uC0C1\uC810"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a516e79e45098a448dfb50d8b14996f, type: 2}
   m_sharedMaterial: {fileID: 4868709644806750326, guid: 3a516e79e45098a448dfb50d8b14996f,
@@ -11104,7 +11149,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 201747229813820005}
-  m_Father: {fileID: 3572453138473578522}
+  m_Father: {fileID: 6923659826715055260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11192,7 +11237,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6905061051963498272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5247035498268581555}
+        m_TargetAssemblyTypeName: PCUIManager, Assembly-CSharp
+        m_MethodName: SetDownButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7721428528247530183
 GameObject:
   m_ObjectHideFlags: 0
@@ -11886,8 +11943,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4765041874998293626}
-  - {fileID: 3293019117885958431}
-  - {fileID: 5641190635265262942}
   - {fileID: 6923659826715055260}
   m_Father: {fileID: 1331639273702825581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
