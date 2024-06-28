@@ -454,6 +454,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 963154480643655371, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: m_text
+      value: (VR)
+      objectReference: {fileID: 0}
     - target: {fileID: 1593088660363605116, guid: b280e8940a91c344b88110bbfde30a98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -514,6 +519,27 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3759477940253852593, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944590096665507376, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cbf8c50625c0f0c43b6f686432a8dd73,
+        type: 3}
+    - target: {fileID: 5288589297015917546, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: pc_astro
+      value: 
+      objectReference: {fileID: 6769158738208405158}
+    - target: {fileID: 5288589297015917546, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: vr_astro
+      value: 
+      objectReference: {fileID: 6769158738208405157}
     - target: {fileID: 5932767448991384262, guid: b280e8940a91c344b88110bbfde30a98,
         type: 3}
       propertyPath: m_Name
@@ -529,6 +555,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ExitGame
       objectReference: {fileID: 0}
+    - target: {fileID: 6976310080964458276, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 401d2a0fc972ca04abc343bf61b1f93e,
+        type: 3}
+    - target: {fileID: 7003966480013470093, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cbf8c50625c0f0c43b6f686432a8dd73,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -544,6 +582,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db419a9cd0814534c987096ff1cdefeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6769158738208405157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6976310080964458276, guid: b280e8940a91c344b88110bbfde30a98,
+    type: 3}
+  m_PrefabInstance: {fileID: 6769158738208405155}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6769158738208405158 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1600743612180484960, guid: b280e8940a91c344b88110bbfde30a98,
+    type: 3}
+  m_PrefabInstance: {fileID: 6769158738208405155}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

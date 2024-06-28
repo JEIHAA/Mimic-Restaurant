@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.XR;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 /*
@@ -38,8 +39,11 @@ public class SpawnManager : MonoBehaviour
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
-        InitMonster();
-        instance = this;
+        if(XRSettings.enabled)
+        {
+            InitMonster();
+            instance = this;
+        } 
     }
     #endregion
 
