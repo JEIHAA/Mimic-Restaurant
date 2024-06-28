@@ -14,12 +14,10 @@ public class DayManager : MonoBehaviourPun
     private int day = 1; //1,2,3,4,5,6 
     private float seconds = 0f;
 
-    //실제로는 여기서 직접 내용을 출력하지는 않을꺼임.  
-    [SerializeField] private TextMeshProUGUI daytext = null;
-    [SerializeField] private TextMeshProUGUI minutetext = null;
-    [SerializeField] private TextMeshProUGUI secondtext = null;
-    //실제로는 튜토리얼이 다 끝나면 상태값을 true로 바꿈. 
-
+    [Header("PC UI Presenter")]
+    [SerializeField] private DateUIPresenter pcuipresenter = null;
+    [Header("VR(손목시계) UI Presenter")]
+    [SerializeField] private DateUIPresenter vruipresenter = null; 
 
     #region["게임매니저로 옮길예정"] 
     private void Start()
@@ -97,25 +95,27 @@ public class DayManager : MonoBehaviourPun
         {
             Debug.LogError("PhotonNetwork.Time: " + PhotonNetwork.Time);
             ++seconds;
+            if(day < 6f)
+            {
+                if (seconds == 60f)
+                {
+                    seconds = 0f;
+                    if (XRSettings.enabled) 
+                    {
+                        SpawnManager.instance.GoNextWave();
+                    }
+                    else
+                    {
+                        Debug.LogError("Client Wave...");
+                        //손님 다음 웨이브 
+                    }
+                    ++day;
+                }
+            }
             if (seconds == 30f)
             {
                 //쉬는시간
                 Debug.LogError("Break Time!");
-            }
-            if (seconds == 60f)
-            {
-                seconds = 0f;
-                //XRSettings.enabled
-                if (!PhotonNetwork.IsMasterClient) 
-                {
-                    SpawnManager.instance.GoNextWave();
-                }
-                else
-                {
-                    Debug.LogError("Client Wave...");
-                    //손님 다음 웨이브 
-                }
-                ++day;
             }
             //!XRSettings.enabled 
             if(PhotonNetwork.IsMasterClient)
@@ -123,8 +123,16 @@ public class DayManager : MonoBehaviourPun
                 //PC쪽에서 VR쪽으로 정보를 보내준다. 
                 photonView.RPC("SetSecondandDay", RpcTarget.OthersBuffered, day, seconds); 
             }
-            secondtext.text = "Second: " + seconds;
-            daytext.text = "Day: " + day;
+            //secondtext.text = "Second: " + seconds;
+            if(XRSettings.enabled)
+            {
+                //vruipresenter.SetDay(day);
+                //vruipresenter.SetSecond(seconds); 
+            }
+            else
+            {
+                pcuipresenter.SetDay(day); 
+            }
             yield return new WaitForSeconds(1f);
         }
         yield break;
