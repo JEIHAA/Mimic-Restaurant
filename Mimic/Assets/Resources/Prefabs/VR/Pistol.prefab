@@ -92,14 +92,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4136592400650912}
-  - component: {fileID: 2081505884742541218}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4136592400650912
 Transform:
   m_ObjectHideFlags: 0
@@ -116,18 +115,3 @@ Transform:
   - {fileID: 4288702197384964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2081505884742541218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420827811599730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe1f19ea5d5d3f4cbf946fdb1a84cd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
-  poolSize: 20
-  bulletSpeed: 10
