@@ -39,11 +39,11 @@ public class SpawnManager : MonoBehaviour
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
+        instance = this;
         if(XRSettings.enabled)
         {
             InitMonster();
-            instance = this;
-        } 
+        }
     }
     #endregion
 
