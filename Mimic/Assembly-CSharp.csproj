@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserDrink.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ControlAnimateLights.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\FactoryDispenser.cs" />
+    <Compile Include="Assets\Scripts\2_GameTitle\GameController_Setting.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
     <Compile Include="Assets\Scripts\PC\DoorMove.cs" />
     <Compile Include="Assets\Scripts\PC\CustomerSpawnManager.cs" />

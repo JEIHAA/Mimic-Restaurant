@@ -118,6 +118,7 @@ public class Customer : MonoBehaviour
                 TotallyFoodGetted = true; 
                 break; 
             }
+            yield return new WaitForEndOfFrame(); 
         }
         yield break; 
     }

@@ -25,6 +25,8 @@ public class GameManager_StartScene : MonoBehaviour
     private WelcomeController welcomecontroller = null;
 
     [SerializeField] private GameObject messageui = null;
+    [SerializeField] private GameObject settingui = null;
+    private GameObject settingui_instantiate = null;
     [SerializeField] private GameObject messageui_instantiated = null;
 
     [SerializeField] private KeyboardManager vr_keyboard = null;
@@ -160,30 +162,28 @@ public class GameManager_StartScene : MonoBehaviour
     }
     #endregion
 
-    //키보드 설정하는 방법: VR 컨트롤러의 조이스틱을 올렸다 내렸다 해서 텍스트 상자의 위치 조정 가능
-    //                    
-    #region["키보드 관련 1 (VR전용)"] 
-    private void SetKeyBoardUI(int _value)
-    {
-        switch(status_ui)
-        {
-            case 0: //Login
-                //조이스틱 위, 아래 값은 0과 1 사이이므로 상관없을지도? 
-                vr_keyboard.outputField = logincontroller.GetComponentsInChildren<TMP_InputField>()[_value]; 
-                break; 
-            case 1: //Signup 
-                vr_keyboard.outputField = signupcontroller.GetComponentsInChildren<TMP_InputField>()[_value]; 
-                break;
-            default:
-                break; 
-        }
-    }
-    #endregion
 
     #region["설정 버튼"]
     public void GoSettingBtn()
     {
+        if (!XRSettings.enabled && settingui_instantiate == null)
+        {
+            settingui_instantiate = Instantiate(settingui);
+            settingui_instantiate.GetComponentInChildren<GameController_Setting>().CloseSettingsOnClick = ExitSettingsOnClick;
+            logincontroller.gameObject.SetActive(false);
+        }
+        if(XRSettings.enabled)
+        {
+            CreateErrorMessageUI(4, 0); 
+        }
+    }
+    #endregion
 
+    #region["설정 닫기 버튼"]
+    public void ExitSettingsOnClick()
+    {
+        Destroy(settingui_instantiate);
+        logincontroller.gameObject.SetActive(true); 
     }
     #endregion
 

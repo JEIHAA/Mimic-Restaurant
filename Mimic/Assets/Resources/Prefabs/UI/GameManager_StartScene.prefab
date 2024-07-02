@@ -1056,9 +1056,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageui: {fileID: 1687323029761399444, guid: 0cd31b5cc63e0e14fb41b540bce813e4,
     type: 3}
-  pccamera: {fileID: 0}
-  vr: {fileID: 0}
-  canvas: {fileID: 1397655169972147510}
+  settingui: {fileID: 8298446197099106187, guid: 4e189f2d2a9ce274b94e226d16c4c9b7,
+    type: 3}
+  messageui_instantiated: {fileID: 0}
+  vr_keyboard: {fileID: 0}
 --- !u!1 &1590705115415906121
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,13 +2220,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1268977542148538703}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 4127256227088656373}
+        m_TargetAssemblyTypeName: GameManager_StartScene, Assembly-CSharp
+        m_MethodName: GoSettingBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
