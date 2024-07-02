@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour, IOnDamage 
 {
-    public delegate void OnDeathDelegate(GameObject _meat);
+    public delegate void OnDeathDelegate(GameObject _meat, int _meat_num);
     private OnDeathDelegate ondeathcallback = null;
     public OnDeathDelegate OnDeathCallBack
     {
@@ -23,8 +23,9 @@ public class Monster : MonoBehaviour, IOnDamage
     }
 
     [Header("몬스터 능력치(체력, 공격력, 속도)")]
-    [SerializeField] private int monsterHealth = 300; 
-    [SerializeField] private int monsterDamage = 10; 
+    private int monsterHealth = 300; 
+    private int monsterDamage = 10;
+    private int meatnum = 3; 
     [SerializeField] private float monsterSpeed = 10f;
     [SerializeField] private MonsterStat monsterData = null;
     [Header("고기 오브젝트")]
@@ -50,8 +51,7 @@ public class Monster : MonoBehaviour, IOnDamage
     {
         monsterHealth = monsterData.monsterHealth;
         monsterDamage = monsterData.monsterDamage;
-        //Debug.Log("Current Monster Health: " + monsterHealth);
-        //Debug.Log("Current Monster Damage: " + monsterDamage); 
+        meatnum = monsterData.meatnum; 
     }
     #endregion
 
@@ -97,7 +97,7 @@ public class Monster : MonoBehaviour, IOnDamage
         steak = Instantiate(steak) as GameObject;
         steak.transform.position = Random.insideUnitSphere;
         */
-        //ondeathcallback?.Invoke(steak); 
+        //ondeathcallback?.Invoke(steak, meat_num); 
         SpawnManager.instance.FadeMonster(this);
         yield break; 
     }
@@ -113,14 +113,6 @@ public class Monster : MonoBehaviour, IOnDamage
     }
     #endregion
 
-    #region["능력치 강화"]
-    public void StrengthMonster()
-    {
-        //1일(1스테이지)마다 몬스터 체력은 100, 몬스터 데미지는 5씩 증가한다. 
-        monsterData.monsterHealth += 100;
-        monsterData.monsterDamage += 5; 
-    }
-    #endregion
 
     private void OnTriggerEnter(Collider _collider)
     {

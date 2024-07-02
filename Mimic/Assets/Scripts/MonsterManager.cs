@@ -31,25 +31,38 @@ public class MonsterManager : MonoBehaviour
     {
         foreach(Transform monster in transform)
         {
-            Debug.Log("Monster List: " + monster.gameObject.name); 
             Destroy(monster.gameObject);     
         }
     }
     #endregion
 
     #region["몬스터 스탯 강화"] 
-    public void StrengthMonster()
+    public void StrengthMonster(int _round, int _wave)
     {
-        monsterData.monsterHealth += 100;
-        monsterData.monsterDamage += 10; 
+        monsterData.monsterHealth += 50;
+        if(_round % 2 == 0 && _wave == 1)
+        {
+            monsterData.monsterDamage += 3; 
+        }
+        if(_round % 2 != 0 && _wave == 2)
+        {
+            monsterData.monsterDamage += 2; 
+        }
+        if(_wave == 2)
+        {
+            monsterData.meatnum += 1; 
+        }
     }
     #endregion
 
     #region["몬스터가 죽을때 작동하는 콜백 메소드"] 
-    public void MonsterDeathOnClick(GameObject _steak)
+    public void MonsterDeathOnClick(GameObject _steak, int _meat_num)
     {
         //고기 매니저에 등록하기 
-        meatmanager.SetMeat(_steak); 
+        for (int i = 0; i < _meat_num; ++i)
+        {
+            meatmanager.SetMeat(_steak);
+        }
     }
     #endregion
 

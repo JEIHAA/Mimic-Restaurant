@@ -9,21 +9,12 @@ using Random = UnityEngine.Random;
 
 public class CustomerSpawnManager : MonoBehaviour
 {
-    //손님
-    public enum CustomerEnum
-    {
-        Alien,
-        Astronaut, 
-        Dog,
-        RobotCustomer
-    }
-
     [Header("손님 배열: 외계인, 외계인2, 강아지, 강아지2")]
     [SerializeField] private GameObject[] customer = null;
     [Header("손님 명수")]
     [SerializeField, Range(6, 10)] private int customer_num = 8;
     [Header("식당에 들어올 수 있는 손님 명수")]
-    [SerializeField, Range(6, 10)] private int customer_num_restaurant = 6; 
+    [SerializeField, Range(4, 10)] private int customer_num_restaurant = 6; 
     [Header("손님 시작점")]
     [SerializeField] private Transform customer_startpoint = null;
     [Header("식판 트리거(1~6)")] 
@@ -32,9 +23,8 @@ public class CustomerSpawnManager : MonoBehaviour
     private List<GameObject> customer_list_pools = new List<GameObject>();
     private List<int> foodtable_list = new List<int>();
     private List<int> customer_list = new List<int>(); 
-    public static CustomerSpawnManager instance = null;
 
-    private GameObject customer_getout = null;
+    public static CustomerSpawnManager instance = null; //Singleton 
 
     private void Awake()
     {
@@ -71,7 +61,6 @@ public class CustomerSpawnManager : MonoBehaviour
 
     private GameObject CreateCustomer(int _i)
     {
-        customer[_i].name += _i; 
         GameObject customer_object = Instantiate(customer[_i]);
         customer_object.transform.SetParent(transform);
         customer_object.transform.position = customer_startpoint.position;
@@ -156,7 +145,7 @@ public class CustomerSpawnManager : MonoBehaviour
         for (int i = 0; i < customer_num_restaurant; ++i)
         {
             GetCustomer(i);
-            yield return new WaitForSeconds(Random.Range(1f, 3f));
+            yield return new WaitForSeconds(Random.Range(3f, 6f));
         }
         yield break; 
     }
@@ -184,8 +173,7 @@ public class CustomerSpawnManager : MonoBehaviour
     #region["나간 손님 다시 불러오기"]
     public void EnterAgain()
     {   
-        GetCustomer(Random.Range(0, 7)); 
+        GetCustomer(Random.Range(0, 8)); 
     }
-    #endregion
-
+    #endregion 
 }
