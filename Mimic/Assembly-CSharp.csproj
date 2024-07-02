@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\VR\HandCtrl.cs" />
     <Compile Include="Assets\Scripts\MeatManager.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ButtonLamp.cs" />
+    <Compile Include="Assets\Scripts\PC\FoodInfo.cs" />
     <Compile Include="Assets\Scripts\VolumetricLineVertexData.cs" />
     <Compile Include="Assets\Scripts\MonsterManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginController.cs" />
@@ -90,14 +91,18 @@
     <Compile Include="Assets\Scripts\PC\Dispensers\FactoryDispenser.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
     <Compile Include="Assets\Scripts\PC\DoorMove.cs" />
+    <Compile Include="Assets\Scripts\PC\CustomerSpawnManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\DBManager.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\Monitor.cs" />
+    <Compile Include="Assets\Scripts\FoodStat.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
     <Compile Include="Assets\Scripts\Meat.cs" />
+    <Compile Include="Assets\Scripts\PC\Customer.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserHamburger.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\SignupController.cs" />
     <Compile Include="Assets\Scripts\Interface\IOnDamage.cs" />
     <Compile Include="Assets\Scripts\Conveyor.cs" />
+    <Compile Include="Assets\Scripts\PC\FoodTableCookSide.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PC\Curstomer.cs" />
@@ -106,6 +111,8 @@
     <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\PC\Player\PCPlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\DateUIPresenter.cs" />
+    <Compile Include="Assets\Scripts\FoodEnumInfo.cs" />
+    <Compile Include="Assets\Scripts\PC\FoodTable.cs" />
     <Compile Include="Assets\Scripts\3_Lobby\MakeRoom.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\LetterKey.cs" />
     <Compile Include="Assets\Scripts\KeyBoard.cs" />
@@ -1018,6 +1025,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1092,6 +1103,10 @@
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
@@ -1254,6 +1269,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Updater">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1272,6 +1291,10 @@
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">

@@ -34,16 +34,21 @@ public class SpawnManager : MonoBehaviour
     [SerializeField, Range(0f, 5f)] private float spawn_second = 0.5f;
     [SerializeField] private MonsterManager monstermanager = null;
 
+    [Header("라운드")]
+    [SerializeField] private int round = 1;
+    [Header("웨이브")]
+    [SerializeField] private int wave = 1;
+
     public static SpawnManager instance = null; //Singleton 
 
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
+        instance = this;
         if(XRSettings.enabled)
         {
             InitMonster();
-            instance = this;
-        } 
+        }
     }
     #endregion
 
@@ -144,14 +149,26 @@ public class SpawnManager : MonoBehaviour
         //몬스터 리스트 삭제 
         monstermanager.DestroyMonsterList();
         //몬스터 능력치 강화 
-        monstermanager.StrengthMonster(); 
-        defaultnum += 5;
+        monstermanager.StrengthMonster(round, wave);
+        if(round % 2 == 0 && wave == 1)  
+        {
+            defaultnum += 1;
+        }
+        if(wave == 2)
+        {
+            defaultnum += 2; 
+        }
         if (maxorder < 7) 
         {
             maxorder += 2;
         }
+        ++wave;
+        if(wave >= 2)
+        {
+            ++round; 
+        }
         InitMonster(); 
     }
     #endregion
-
+   
 }

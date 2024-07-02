@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - Monster
   - Hamburger
+  - Customer
+  - FoodTable
   layers:
   - Default
   - TransparentFX

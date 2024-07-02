@@ -10,7 +10,7 @@ using UnityEngine.XR;
  2024-06-20 작성자 : 고영석 
  수정 내용 : 
 */
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPun 
 {
     [Header("몬스터 매니저")]
     [SerializeField] private MonsterManager monstermanager = null;
@@ -25,14 +25,13 @@ public class GameManager : MonoBehaviour
 
     [Header("게임 시작 상태")] 
     [SerializeField] private bool isGameStarted = false;
-
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
         if(XRSettings.enabled)
         {
             //VR 
-            pcplayer_transform.gameObject.SetActive(false);
+            pcplayer_transform.gameObject.SetActive(false); 
         }
         else
         {
@@ -106,5 +105,15 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    
+    #region["PC 쪽에서 실행되야 하는거"]
+    [PunRPC]
+    public void MonsterArrivedToRestaurant()
+    {
+        if(!XRSettings.enabled)
+        {
+            CustomerSpawnManager.instance.IsMonsterArrivedToRestaurant(); 
+        }
+    }
+    #endregion
+
 }
