@@ -696,6 +696,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ExitGame
       objectReference: {fileID: 0}
+    - target: {fileID: 7060528243421266884, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8891099923457381016, guid: b280e8940a91c344b88110bbfde30a98,
         type: 3}
       propertyPath: m_Pivot.x

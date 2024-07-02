@@ -107,7 +107,6 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PC\Curstomer.cs" />
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\PC\Player\PCPlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\DateUIPresenter.cs" />
