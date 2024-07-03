@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR;
 
-public class OculusWristMenuController : MonoBehaviour
+public class HandUI : MonoBehaviour
 {
     public GameObject menuUI;
 
