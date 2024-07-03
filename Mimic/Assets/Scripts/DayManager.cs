@@ -47,7 +47,7 @@ public class DayManager : MonoBehaviourPun
         ht["IsMainSceneLoaded"] = true; //메인 Scene 로드 상태를 true로 바꾼다. 
         PhotonNetwork.LocalPlayer.SetCustomProperties(ht);
         //나머지 1명이 들어오기 전까지 대기하기 위해서 코루틴을 돌린다. 
-        StartCoroutine(CheckAllPlayersSceneLoaded());
+       // StartCoroutine(CheckAllPlayersSceneLoaded());
     }
     #endregion 
 

@@ -944,38 +944,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 5686134208185362930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25b71bec2076744448472d72baf7549e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f5f1b212facdde488d27de92f844729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   triggerActionProperty:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Trigger Action Property
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 4c91a7c5-c396-422e-8387-49856fd9ed77
+      m_Id: b61eeb50-d683-413f-a9c3-bb879c627efc
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
-  gripActionProperty:
-    m_UseReference: 1
+    m_Reference: {fileID: 0}
+  leftgripActionProperty:
+    m_UseReference: 0
     m_Action:
-      m_Name: Grip Action Property
+      m_Name: Leftgrip Action Property
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: f44dea82-dd0e-4cab-953d-e8916fc6b497
+      m_Id: d4256a35-4076-4549-a140-e202ab4ac3f6
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
-  xrcontroller: {fileID: 0}
+    m_Reference: {fileID: 0}
+  rightgripActionProperty:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Rightgrip Action Property
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 8ba4c9b5-a5a2-44ba-8879-6670f428e0d5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   gun: {fileID: 0}
-  handCollider: {fileID: 2222962240259776046}
+  gunComponent: {fileID: 0}
+  handAnim: {fileID: 0}
 --- !u!136 &2222962240259776046
 CapsuleCollider:
   m_ObjectHideFlags: 0

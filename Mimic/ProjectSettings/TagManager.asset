@@ -3,14 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - meat
-  - Steak
-  - Bullet
-  - Monster
-  - Hamburger
-  - LGun
-  - RGun
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,14 +11,6 @@ TagManager:
   - 
   - Water
   - UI
-  - Barrier
-  - Monster
-  - Ground
-  - GroundCheck
-  - PlayerCheck
-  - Player
-  - Bullet
-<<<<<<< Updated upstream
   - 
   - 
   - 
@@ -34,16 +19,13 @@ TagManager:
   - 
   - 
   - 
-=======
-  - Resturant
-  - ResturantCull
-  - Conveyor
-  - Dispenser
-  - Customer
-  - Food
-  - interactive
-  - Hand
->>>>>>> Stashed changes
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
