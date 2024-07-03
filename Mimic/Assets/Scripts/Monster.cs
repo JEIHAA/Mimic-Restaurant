@@ -93,11 +93,9 @@ public class Monster : MonoBehaviour, IOnDamage
         animator.SetTrigger("Death");
         status = (int)MonsterStatus.Death;
         yield return new WaitForSeconds(1f);
-        /*
         steak = Instantiate(steak) as GameObject;
         steak.transform.position = Random.insideUnitSphere;
-        */
-        //ondeathcallback?.Invoke(steak, meat_num); 
+        ondeathcallback?.Invoke(steak, meatnum); 
         SpawnManager.instance.FadeMonster(this);
         yield break; 
     }

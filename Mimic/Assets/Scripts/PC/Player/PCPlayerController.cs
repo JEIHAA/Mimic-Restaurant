@@ -35,7 +35,7 @@ public class PCPlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("f"))
         {
-            dispenser?.OperateDispenser();
+            dispenser?.OperateDispenser(gameObject);
 
             transform.LookAt(go.transform.position);
 

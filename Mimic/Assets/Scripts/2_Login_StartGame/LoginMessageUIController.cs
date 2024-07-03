@@ -32,6 +32,10 @@ public class LoginMessageUIController : MonoBehaviour
         {
             statustext.text = "로그인 성공!"; 
         }
+        if(_type == 4) //Easter Egg 
+        {
+            statustext.text = "ETXBELNULSTX"; 
+        }
     }
 
     public void CloseBtn()

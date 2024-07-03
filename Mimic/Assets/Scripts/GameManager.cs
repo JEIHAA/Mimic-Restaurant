@@ -1,14 +1,16 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 /*
  2024-06-20 작성자 : 고영석 
  수정 내용 : 
 */
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPun 
 {
     [Header("몬스터 매니저")]
     [SerializeField] private MonsterManager monstermanager = null;
@@ -18,42 +20,112 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DayManager daymanager = null;
     [Header("VR 플레이어")]
     [SerializeField] private Transform vrplayer_transform = null;
+    [Header("PC 플레이어")]
+    [SerializeField] private Transform pcplayer_transform = null;
+
+    [Header("게임 시작 상태")] 
+    [SerializeField] private bool isGameStarted = false;
+    private bool isStartSpawnCustomer = false;
 
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
-        
+        if(XRSettings.enabled)
+        {
+            //VR 
+            pcplayer_transform.gameObject.SetActive(false); 
+        }
+        else
+        {
+            //PC 
+            vrplayer_transform.gameObject.SetActive(false);
+            pcplayer_transform.GetComponentInChildren<Camera>().targetDisplay = 0; 
+        }
     }
     #endregion
 
-
+    
     #region["Start is called before the first frame update"] 
     private void Start()
     {
-        
+        if(PhotonNetwork.IsConnected)
+        {
+            CheckinMainScene();
+        }
+        AudioManager.instance.PlayBGM(); 
     }
     #endregion
+
+    #region["들어왔을때 바로 실행"] 
+    private void CheckinMainScene()
+    {
+        ExitGames.Client.Photon.Hashtable ht = PhotonNetwork.LocalPlayer.CustomProperties;
+        ht["IsMainSceneLoaded"] = true; //메인 Scene 로드 상태를 true로 바꾼다. 
+        PhotonNetwork.LocalPlayer.SetCustomProperties(ht);
+        //나머지 1명이 들어오기 전까지 대기하기 위해서 코루틴을 돌린다. 
+        StartCoroutine(CheckAllPlayersSceneLoaded());
+    }
+    #endregion
+
+    #region["모든 플레이어가 다 들어왔는지 검사: 모든 플레이어가 다 들어와야 타이머가 돌아간다."] 
+    private IEnumerator CheckAllPlayersSceneLoaded()
+    {
+        while (true)
+        {
+            Debug.LogError("Other Player's Name: " + PhotonNetwork.PlayerListOthers[0].NickName);
+            //다른 플레이어의 Scene Load상태가 true일때 => 다른 플레이어의 Start 메소드가 실행되었다는 뜻임. 
+            if ((bool)PhotonNetwork.PlayerListOthers[0].CustomProperties["IsMainSceneLoaded"])
+            {
+                isGameStarted = true; 
+                daymanager.StartTimer();
+                if (!XRSettings.enabled)
+                {
+                    CustomerSpawnManager.instance.StartSpawnCustomer();
+                }
+                break;
+            }
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    #endregion
+
 
 
     #region["Update is called once per frame"] 
-  /*  private void Update()
+    private void Update()
     {
-<<<<<<< Updated upstream
-        monstermanager.MoveAll(vrplayer_transform); 
-=======
-        monstermanager?.MoveAll(vrplayer_transform);
->>>>>>> Stashed changes
-    }*/
-    #endregion
-
-    #region["테스트용"] 
-    public void AddDay()
-    {
-        monstermanager.DestroyMonsterList(); 
-        //daymanager.AddDay();
-       // monstermanager.StrengthMonster();
-        spawnmanager.GoNextWave(); 
+        if(XRSettings.enabled && isGameStarted)
+        {
+            monstermanager?.MoveAll(vrplayer_transform);
+            SetSkyBox(); 
+        }
     }
     #endregion
-    
+
+    /*
+    #region["PC 쪽에서 실행되야 하는거"]
+    [PunRPC]
+    public void MonsterArrivedToRestaurant()
+    {
+        if(!XRSettings.enabled)
+        {
+            CustomerSpawnManager.instance.IsMonsterArrivedToRestaurant(); 
+        }
+    }
+    #endregion
+    */
+
+    private void SetSkyBox()
+    {
+        int wave = SpawnManager.instance.GetWave();
+        switch(wave)
+        {
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break; 
+        }
+    }
 }
