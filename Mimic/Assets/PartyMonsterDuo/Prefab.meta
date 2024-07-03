@@ -1,5 +1,13 @@
 fileFormatVersion: 2
-guid: 0980b5a31ea67c6478c0b25712e5d4f7
+<<<<<<< Updated upstream
+<<<<<<<< HEAD:Mimic/Assets/PartyMonsterDuo/Prefab.meta
+guid: 652b78d22c5b0644393dce0a8cfd50be
+========
+guid: 7a42d7c26f86a2541af7b2d1a00e048f
+>>>>>>>> origin/koyoungsuk:Mimic/Assets/MimicUIImages.meta
+=======
+guid: 2d7be82135ff57c49bf382ef6f26fa92
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

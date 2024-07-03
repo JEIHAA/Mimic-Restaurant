@@ -7,8 +7,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private GameObject muzzle;
     public GameObject bulletPrefab;
     public int poolSize = 20;
-    public float bulletSpeed = 10f;
-    public float bulletLifetime = 2f;
+    [SerializeField] private BulletStat bulletData = null;
+    public float bulletLifetime = 5f;
 
     private List<GameObject> bulletPool;
 
@@ -21,18 +21,14 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         CheckBulletLifetime();
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            UpgradeAllBulletDamage();
-        }
     }
 
     private void InitializeBulletPool()
     {
+        GameObject bulletManager = GameObject.Find("BulletManager");
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject bullet = Instantiate(bulletPrefab);
+            GameObject bullet = Instantiate(bulletPrefab, bulletManager.transform);
             bullet.SetActive(false);
             bulletPool.Add(bullet);
         }
@@ -52,20 +48,14 @@ public class Gun : MonoBehaviour
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             if (bulletRigidbody != null)
             {
-                bulletRigidbody.velocity = transform.forward * bulletSpeed;
-            }
-
-            Bullet bulletComponent = bullet.GetComponent<Bullet>();
-            if (bulletComponent != null)
-            {
-                bulletComponent.ResetDamage(); // 총알의 데미지 초기화
+                bulletRigidbody.velocity = transform.forward * bulletData.bulletSpeed;
             }
 
             StartCoroutine(DisableBulletAfterLifetime(bullet));
         }
     }
 
-    IEnumerator DisableBulletAfterLifetime(GameObject bullet)
+    private IEnumerator DisableBulletAfterLifetime(GameObject bullet)
     {
         yield return new WaitForSeconds(bulletLifetime);
 
@@ -88,7 +78,7 @@ public class Gun : MonoBehaviour
         return null;
     }
 
-    void CheckBulletLifetime()
+    private void CheckBulletLifetime()
     {
         foreach (GameObject bullet in bulletPool)
         {
@@ -103,16 +93,4 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public void UpgradeAllBulletDamage()
-    {
-        foreach (GameObject bullet in bulletPool)
-        {
-            Bullet bulletComponent = bullet.GetComponent<Bullet>();
-            if (bulletComponent != null)
-            {
-                bulletComponent.UpgradeBullet();
-                Debug.Log("Bullet damage upgraded to: " + bulletComponent.GetCurrentDamage());
-            }
-        }
-    }
 }

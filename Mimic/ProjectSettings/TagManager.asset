@@ -9,8 +9,8 @@ TagManager:
   - Bullet
   - Monster
   - Hamburger
-  - Customer
-  - FoodTable
+  - LGun
+  - RGun
   layers:
   - Default
   - TransparentFX
@@ -25,14 +25,25 @@ TagManager:
   - PlayerCheck
   - Player
   - Bullet
+<<<<<<< Updated upstream
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+=======
   - Resturant
   - ResturantCull
   - Conveyor
   - Dispenser
   - Customer
   - Food
-  - 
-  - 
+  - interactive
+  - Hand
+>>>>>>> Stashed changes
   - 
   - 
   - 

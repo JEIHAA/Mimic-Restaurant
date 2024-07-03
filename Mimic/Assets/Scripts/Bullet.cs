@@ -4,40 +4,40 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int baseDamage = 100;
-    private int currentDamage;
+    [SerializeField] private int bulletDamage = 100;
+    [SerializeField] private int bulletSpeed = 10;
+    [SerializeField] private BulletStat bulletData = null;
     [HideInInspector] public float activationTime;
 
     private void OnTriggerEnter(Collider _collider)
     {
         if (_collider.CompareTag("Monster"))
         {
-            _collider.GetComponent<IOnDamage>().OnDamage(currentDamage);
+            _collider.GetComponent<IOnDamage>().OnDamage(bulletDamage);
         }
     }
 
     private void OnEnable()
     {
         activationTime = Time.time;
+        SetBulletStat();
     }
 
-    private void Start()
+    private void SetBulletStat()
     {
-        ResetDamage();
+        bulletDamage = bulletData.bulletDamage;
+        bulletSpeed = bulletData.bulletSpeed;
+       // Debug.Log("CurrentDamage: " + bulletDamage);
     }
 
-    public void ResetDamage()
+    public void UpgradeDamage()
     {
-        currentDamage = baseDamage;
+       // Debug.Log("UpgradeDamage");
+        bulletData.bulletDamage += 100;
     }
 
-    public void UpgradeBullet()
+    public void UpgradeSpeed()
     {
-        currentDamage += 100;
-    }
-
-    public int GetCurrentDamage()
-    {
-        return currentDamage;
+        bulletData.bulletSpeed += 2;
     }
 }
