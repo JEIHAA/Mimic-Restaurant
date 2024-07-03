@@ -14,10 +14,16 @@ public class PCUIManager : MonoBehaviour
     [SerializeField] private Button upbutton = null;
     [Header("아래로 내리는 버튼: UI 보여주기")]
     [SerializeField] private Button downbutton = null;
-    #region["Awake is called when enable scriptable instance is loaded."] 
+    [Header("설정 UI")]
+    [SerializeField] private GameObject settingui = null; 
+
 
     private Vector3 originaluibox_transform = Vector3.zero;
-    private Vector3 newuibox_transform = Vector3.zero; 
+    private Vector3 newuibox_transform = Vector3.zero;
+    private GameObject settingui_instantiate = null;
+
+    #region["Awake is called when enable scriptable instance is loaded."] 
+
     private void Awake()
     {
         originaluibox_transform = uiboxholder.GetComponent<RectTransform>().position; 
@@ -26,19 +32,7 @@ public class PCUIManager : MonoBehaviour
     }
     #endregion
 
-    #region["Start is called before the first frame update"] 
-    private void Start()
-    {
-        
-    }
-    #endregion
-
-    #region["Update is called once per frame"] 
-    private void Update()
-    {
-        
-    }
-    #endregion
+    
 
     #region["UI 위로 숨기기"] 
     public void SetUpButton()
@@ -50,14 +44,34 @@ public class PCUIManager : MonoBehaviour
 
 
     #region["UI 아래로 내리기"] 
-
     public void SetDownButton()
     {
         //uiboxholder.GetComponent<RectTransform>().position = originaluibox_transform; 
+        
         StartCoroutine(DownUICoroutine()); 
     }
     #endregion
 
+    #region["설정화면 들어가기"]
+    public void SettingButton()
+    { 
+        if(settingui_instantiate == null)
+        {
+            settingui_instantiate = Instantiate(settingui);
+            settingui_instantiate.GetComponentInChildren<GameController_Setting>().CloseSettingsOnClick = ReplayBGM;
+            Time.timeScale = 0f; 
+        }
+    }
+    #endregion
+
+    #region["브금 재설정"]
+    public void ReplayBGM()
+    {
+        AudioManager.instance.PlayBGM();
+        Destroy(settingui_instantiate);
+        Time.timeScale = 1f; 
+    }
+    #endregion
 
     #region["위로 올리는 코루틴"] 
     private IEnumerator UpUICoroutine()
@@ -85,4 +99,9 @@ public class PCUIManager : MonoBehaviour
     }
     #endregion
 
+
+    public void UpgradeGrillButton()
+    {
+        //MoneyManager.instance.ShowGrillSpeedIncrease(); 
+    }
 }

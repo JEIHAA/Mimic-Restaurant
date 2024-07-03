@@ -12,14 +12,13 @@ using UnityEngine.XR;
 
 public class DayManager : MonoBehaviourPun
 {
+    [SerializeField] private DateUIPresenter dateuipresenter = null;
+
     private int day = 1; //1,2,3,4
     private float seconds = 0f;
-    private float breaktime = 0f; 
-    //실제로는 여기서 직접 내용을 출력하지는 않을꺼임.  
-    [SerializeField] private TextMeshProUGUI daytext = null;
-    [SerializeField] private TextMeshProUGUI minutetext = null;
-    [SerializeField] private TextMeshProUGUI secondtext = null;
-    //실제로는 튜토리얼이 다 끝나면 상태값을 true로 바꿈. 
+    private float breaktime = 0f;
+
+    private bool isBreakTime = false;
 
     #region["시간 더하는 메소드"] 
     public void StartTimer() 
@@ -36,18 +35,26 @@ public class DayManager : MonoBehaviourPun
         while (true)
         {
             Debug.LogError("PhotonNetwork.Time: " + PhotonNetwork.Time);
-            ++seconds;
             if (seconds == 110f || seconds == 360f)
             {
+                isBreakTime = true; 
                 StartCoroutine(BreakTimeCoroutine()); //쉬는시간 코루틴
+                if(!isBreakTime) 
+                {
+                    ++seconds; 
+                }
             }
-            if(XRSettings.enabled)
+            else
+            {
+                ++seconds;
+            }
+            if(!XRSettings.enabled)
             {
                 //PC쪽에서 VR쪽으로 정보를 보내준다. 
                 photonView.RPC("SetSecondandDay", RpcTarget.OthersBuffered, day, seconds); 
             }
-            secondtext.text = "Second: " + seconds;
-            daytext.text = "Day: " + day;
+            dateuipresenter.SetSecond(seconds);
+            dateuipresenter.SetDay(day);
             yield return new WaitForSeconds(1f);
         }
     }
@@ -70,9 +77,11 @@ public class DayManager : MonoBehaviourPun
         while (breaktime < 20f)
         {
             ++breaktime;
+            dateuipresenter.SetBreakTime(breaktime); 
             yield return new WaitForSeconds(1f);
         }
         breaktime = 0f;
+        isBreakTime = false; 
         CustomerSpawnManager.instance.Restart();   //쉬는시간 끝 
         if (XRSettings.enabled)
         {
@@ -82,11 +91,14 @@ public class DayManager : MonoBehaviourPun
     }
     #endregion
 
+    #region["VR와 PC끼리 동기화"] 
     [PunRPC]
-    public void SetSecondandDay(int _day, float _seconds)
+    public void SetSecondandDay(int _day, float _seconds, float _breaktime)
     {
         seconds = _seconds;
-        day = _day; 
+        day = _day;
+        breaktime = _breaktime; 
     }
+    #endregion
 
 }

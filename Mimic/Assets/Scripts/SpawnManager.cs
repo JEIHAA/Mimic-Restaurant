@@ -171,4 +171,8 @@ public class SpawnManager : MonoBehaviour
     }
     #endregion
    
+    public int GetWave()
+    {
+        return wave; 
+    }
 }

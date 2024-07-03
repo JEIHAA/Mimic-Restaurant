@@ -14,12 +14,12 @@ public class CustomerSpawnManager : MonoBehaviour
     [Header("손님 명수")]
     [SerializeField, Range(6, 10)] private int customer_num = 8;
     [Header("식당에 들어올 수 있는 손님 명수")]
-    [SerializeField, Range(4, 10)] private int customer_num_restaurant = 6; 
+    [SerializeField, Range(4, 10)] private int customer_num_restaurant = 6;
     [Header("손님 시작점")]
     [SerializeField] private Transform customer_startpoint = null;
     [Header("손님 나가는 지점")]
-    [SerializeField] private Transform customer_endpoint = null; 
-    [Header("식판 트리거(1~5)")] 
+    [SerializeField] private Transform customer_endpoint = null;
+    [Header("식판 트리거(1~5)")]
     [SerializeField] private Transform[] foodtable_trigger = null;
 
     private List<GameObject> customer_list_pools = new List<GameObject>();
@@ -34,34 +34,31 @@ public class CustomerSpawnManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
+    public void StartSpawnCustomer()
     {
-        //PC에서만 동작한다: 최적화를 위해서 PC에서만 해야하는거는 VR에서는 동작을 안하도록 한다. 
-        if (!XRSettings.enabled)
+        //초기 손님 오브젝트 풀 생성 
+        for (int i = 0; i < customer_num; ++i)
         {
-            //초기 손님 오브젝트 풀 생성 
-            for (int i = 0; i < customer_num; ++i)
+            if (i >= 0 && i < 2)
             {
-                if (i >= 0 && i < 2)
-                {
-                    customer_list_pools.Add(CreateCustomer(0));
-                }
-                if (i >= 2 && i < 4)
-                {
-                    customer_list_pools.Add(CreateCustomer(1));
-                }
-                if (i >= 4 && i < 6)
-                {
-                    customer_list_pools.Add(CreateCustomer(2));
-                }
-                if (i >= 6 && i < 8)
-                {
-                    customer_list_pools.Add(CreateCustomer(3));
-                }
+                customer_list_pools.Add(CreateCustomer(0));
             }
-            StartCoroutine(SpawnCustomer());
+            if (i >= 2 && i < 4)
+            {
+                customer_list_pools.Add(CreateCustomer(1));
+            }
+            if (i >= 4 && i < 6)
+            {
+                customer_list_pools.Add(CreateCustomer(2));
+            }
+            if (i >= 6 && i < 8)
+            {
+                customer_list_pools.Add(CreateCustomer(3));
+            }
         }
+        StartCoroutine(SpawnCustomer());
     }
+
 
     #region["초기 손님 오브젝트 풀 생성"] 
     private GameObject CreateCustomer(int _i)
@@ -69,7 +66,7 @@ public class CustomerSpawnManager : MonoBehaviour
         GameObject customer_object = Instantiate(customer[_i]);
         customer_object.transform.SetParent(transform);
         customer_object.transform.position = customer_startpoint.position;
-        customer_object.gameObject.SetActive(false);  
+        customer_object.gameObject.SetActive(false);
         return customer_object;
     }
     #endregion
@@ -77,8 +74,8 @@ public class CustomerSpawnManager : MonoBehaviour
     #region["손님 데려오기"] 
     public GameObject GetCustomer(int _i)
     {
-        GameObject customer_object = null; 
-        if(isBreakTime == false)
+        GameObject customer_object = null;
+        if (isBreakTime == false)
         {
             customer_object = customer_list_pools[customer_list[_i]];
             if (!customer_object.activeSelf) //비활성화된 손님만 활성화할 것. 
@@ -96,14 +93,14 @@ public class CustomerSpawnManager : MonoBehaviour
                 }
             }
         }
-        return customer_object; 
+        return customer_object;
     }
     #endregion
 
     #region["손님 내보내기"]
     public void FadeCustomer(GameObject _customer, Boolean _isNotMonsterArrived)
     {
-       _customer.GetComponentInChildren<Customer>().GoAway(_customer, _isNotMonsterArrived);        
+        _customer.GetComponentInChildren<Customer>().GoAway(_customer, _isNotMonsterArrived);
     }
     #endregion  
 
@@ -113,16 +110,16 @@ public class CustomerSpawnManager : MonoBehaviour
     {
         foodtable_list.Clear();
         int currentNumber = Random.Range(_min, _max);
-        for(int i=0; i<_max;)
+        for (int i = 0; i < _max;)
         {
-            if(foodtable_list.Contains(currentNumber))
+            if (foodtable_list.Contains(currentNumber))
             {
-                currentNumber = Random.Range(_min, _max); 
+                currentNumber = Random.Range(_min, _max);
             }
             else
             {
                 foodtable_list.Add(currentNumber);
-                ++i; 
+                ++i;
             }
         }
     }
@@ -147,19 +144,19 @@ public class CustomerSpawnManager : MonoBehaviour
     }
     #endregion
 
-    #region["손님 스폰하는 코루틴: 처음에만 작동함."] 
+    #region["손님 스폰하는 코루틴"] 
     private IEnumerator SpawnCustomer()
     {
         //랜덤 리스트를 미리 생성해 놓는다 => 중복값 생성 방지를 위함. 
         //손님 오브젝트 또한 중복해서 생성되면 겹쳐져서 한쪽이 사라짐... 
         CreateUnDulpicateRandomFood(0, customer_num_restaurant - 1);
-        CreateUnDulipicateRandomCustomer(0, customer_num - 1); 
+        CreateUnDulipicateRandomCustomer(0, customer_num - 1);
         for (int i = 0; i < customer_num_restaurant; ++i)
         {
             GetCustomer(i);
             yield return new WaitForSeconds(Random.Range(3f, 6f));
         }
-        yield break; 
+        yield break;
     }
     #endregion
 
@@ -189,7 +186,7 @@ public class CustomerSpawnManager : MonoBehaviour
     #region["나간 손님 다시 불러오기"]
     public void EnterAgain()
     {
-        if(isBreakTime == false)
+        if (isBreakTime == false)
         {
             StartCoroutine(EnterAgainCoroutine());
         }
@@ -199,7 +196,7 @@ public class CustomerSpawnManager : MonoBehaviour
     #region["손님 다시 돌아오는 코루틴"]
     public IEnumerator EnterAgainCoroutine()
     {
-        yield return new WaitForEndOfFrame(); 
+        yield return new WaitForEndOfFrame();
         GetCustomer(Random.Range(0, 5));
         yield break;
     }
@@ -208,12 +205,13 @@ public class CustomerSpawnManager : MonoBehaviour
     public void BreakTime()
     {
         //쉬는 시간에는 새로운 손님을 받지 않음. 
-        isBreakTime = true; 
+        isBreakTime = true;
     }
 
     public void Restart()
     {
         //쉬는시간 끝
-        isBreakTime = false; 
+        isBreakTime = false;
+        StartCoroutine(SpawnCustomer()); 
     }
 }

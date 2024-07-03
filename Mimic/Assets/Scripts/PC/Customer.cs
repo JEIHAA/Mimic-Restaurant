@@ -236,7 +236,7 @@ public class Customer : MonoBehaviour
         {
             //제대로 받았음. 
             Debug.Log("Thank you");
-            //MoneyManager.instance.AddMoney(money_per_customer); 
+            MoneyManager.instance.AddMoney(money_per_customer); 
         }
         GoAway(endpoint.gameObject, true); 
         yield break; 

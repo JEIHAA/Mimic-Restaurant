@@ -10,7 +10,7 @@ using UnityEngine.UI;
 //작성자: 고영석
 //수정자: 
 //최초작성: 2024-04-22
-//최종작성: 2024-07 
+//최종작성: 2024-07-03 
 
 public class GameController_Setting : MonoBehaviour
 {

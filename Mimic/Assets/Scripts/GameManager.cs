@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviourPun
 
     [Header("게임 시작 상태")] 
     [SerializeField] private bool isGameStarted = false;
+    private bool isStartSpawnCustomer = false;
+
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
@@ -76,6 +78,10 @@ public class GameManager : MonoBehaviourPun
             {
                 isGameStarted = true; 
                 daymanager.StartTimer();
+                if (!XRSettings.enabled)
+                {
+                    CustomerSpawnManager.instance.StartSpawnCustomer();
+                }
                 break;
             }
             yield return new WaitForSeconds(1f);
@@ -91,6 +97,7 @@ public class GameManager : MonoBehaviourPun
         if(XRSettings.enabled && isGameStarted)
         {
             monstermanager?.MoveAll(vrplayer_transform);
+            SetSkyBox(); 
         }
     }
     #endregion
@@ -107,4 +114,18 @@ public class GameManager : MonoBehaviourPun
     }
     #endregion
     */
+
+    private void SetSkyBox()
+    {
+        int wave = SpawnManager.instance.GetWave();
+        switch(wave)
+        {
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break; 
+        }
+    }
 }
