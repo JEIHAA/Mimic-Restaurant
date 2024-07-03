@@ -1,19 +1,37 @@
+using Keyboard;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
 public class GameManager_StartScene : MonoBehaviour
 {
+    //VR전용
+    public enum UIStatus
+    {
+        Login,
+        Signup,
+        Welcome 
+    }
+
+
     private LoginController logincontroller = null;
     private SignupController signupcontroller = null;
     private WelcomeController welcomecontroller = null;
 
     [SerializeField] private GameObject messageui = null;
-    private GameObject messageui_instantiated = null; 
+    [SerializeField] private GameObject messageui_instantiated = null;
+
+    [SerializeField] private KeyboardManager vr_keyboard = null;
+
+    //VR전용
+    private int status_ui = 0;
+
 
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
@@ -29,6 +47,13 @@ public class GameManager_StartScene : MonoBehaviour
 
         signupcontroller.gameObject.SetActive(false);
         welcomecontroller.gameObject.SetActive(false); 
+
+        if(SceneManager.GetActiveScene().name.Contains("VR"))
+        {
+            //VR일때
+            CreateErrorMessageUI(2, 0);
+            status_ui = (int)UIStatus.Login; 
+        }
     }
     #endregion
 
@@ -45,7 +70,8 @@ public class GameManager_StartScene : MonoBehaviour
                 //로그인 성공
                 logincontroller.gameObject.SetActive(false);
                 welcomecontroller.gameObject.SetActive(true);
-                welcomecontroller.SetText(_id); 
+                welcomecontroller.SetText(_id);
+                status_ui = (int)UIStatus.Welcome; 
                 break;
             case 2:
                 //아이디와 비밀번호가 올바르지 않음. 
@@ -64,6 +90,7 @@ public class GameManager_StartScene : MonoBehaviour
     #region["회원가입 버튼을 눌렀을때 실행되는 콜백 함수"]
     public void OnSignupOnClick()
     {
+        status_ui = (int)UIStatus.Signup; 
         logincontroller.gameObject.SetActive(false);
         signupcontroller.gameObject.SetActive(true); 
     }
@@ -82,6 +109,10 @@ public class GameManager_StartScene : MonoBehaviour
                 //회원가입 성공(또는 그냥 닫기) 
                 signupcontroller.gameObject.SetActive(false);
                 logincontroller.gameObject.SetActive(true);
+                if(XRSettings.enabled)
+                {
+                    CreateErrorMessageUI(3, 0); 
+                }
                 break;
             case 2:
                 //아이디 중복  
@@ -124,8 +155,25 @@ public class GameManager_StartScene : MonoBehaviour
              * 1: 아이디와 비밀번호 둘 중 하나를 입력하지 않았음
              * 2: 서버 오류 
             */
-            messageui_instantiated.GetComponent<LoginMessageUIController>().SetText(_type, _statusindex); 
         }
+        messageui_instantiated.GetComponent<LoginMessageUIController>().SetText(_type, _statusindex);
     }
     #endregion
+
+
+
+    #region["설정 버튼"]
+    public void GoSettingBtn()
+    {
+
+    }
+    #endregion
+
+    #region["닫기 버튼"]
+    public void CloseBtn()
+    {
+        Application.Quit(); 
+    }
+    #endregion
+
 }

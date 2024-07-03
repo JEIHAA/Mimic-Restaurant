@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\3_lobby\\makeroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\3_lobby\\makeroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\ui\\pcuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\pcuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\4_room\\readyroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\4_room\\readyroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\assets\\scripts\\1_splashlogo\\splashmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\1_splashlogo\\splashmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\ui\\dateuipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\dateuipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\assets\\scripts\\2_login_startgame\\gamemanager_startscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,45 +26,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MakeRoom.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\3_Lobby\\MakeRoom.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\3_Lobby\\MakeRoom.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\3_Lobby\\MakeRoom.cs",
-              "RelativeToolTip": "Assets\\Scripts\\3_Lobby\\MakeRoom.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAAAIAAAAA1AAAA",
+              "DocumentIndex": 2,
+              "Title": "DateUIPresenter.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\DateUIPresenter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\DateUIPresenter.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\DateUIPresenter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\DateUIPresenter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T02:51:36.256Z",
+              "WhenOpened": "2024-07-01T05:35:20.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PCUIManager.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\PCUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PCUIManager.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\PCUIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\PCUIManager.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAEgAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T05:34:12.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ReadyRoom.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\4_Room\\ReadyRoom.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\4_Room\\ReadyRoom.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\4_Room\\ReadyRoom.cs",
-              "RelativeToolTip": "Assets\\Scripts\\4_Room\\ReadyRoom.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAwwGkAAAAbAAAA",
+              "Title": "MoneyManager.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\MoneyManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\MoneyManager.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\MoneyManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PC\\MoneyManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T02:53:14.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SplashManager.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\1_SplashLogo\\SplashManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\1_SplashLogo\\SplashManager.cs",
-              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\1_SplashLogo\\SplashManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\1_SplashLogo\\SplashManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T01:25:02.339Z",
+              "WhenOpened": "2024-07-01T04:00:55.902Z",
               "EditorCaption": ""
             },
             {
@@ -75,7 +75,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
               "RelativeToolTip": "Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACUAAAAXAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAUwCMAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-24T01:17:28.102Z",
               "EditorCaption": ""

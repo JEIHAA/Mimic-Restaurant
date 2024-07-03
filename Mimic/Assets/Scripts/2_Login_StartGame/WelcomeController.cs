@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
@@ -31,7 +32,12 @@ public class WelcomeController : MonoBehaviour
     public void StartButton()
     {
         //방 만드는 Scene로 이동 
-        SceneManager.LoadScene("3_Lobby");
+        string scenename = "3_Lobby"; 
+        if(XRSettings.enabled)
+        {
+            scenename += "_VR"; 
+        }
+        SceneManager.LoadScene(scenename);
         //아이디를 싱글톤으로 보내야 하기 때문에 여기서 게임 오브젝트를 파괴하지 않음. 
         DontDestroyOnLoad(gameObject);
     }
