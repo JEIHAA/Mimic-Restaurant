@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: 210_ClayToyL SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1609585860
   material: {fileID: 7139473490005425538}
-  materialHashCode: 0
+  materialHashCode: -875199132
   m_Version: 1.1.0
   m_SourceFontFileGUID: 76129e1754268524db1d6f8c1bd6210f
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 76129e1754268524db1d6f8c1bd6210f,
@@ -2811,9 +2811,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.85714287
+    - _ScaleRatioB: 0.6964286
+    - _ScaleRatioC: 0.6964286
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

@@ -3,42 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\admin\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\mimic-restaurant\\mimic\\assets\\scripts\\vr\\handmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\handmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\admin\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\mimic-restaurant\\mimic\\assets\\scripts\\vr\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vrplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vrplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\bulletstat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\bulletstat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\conveyor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\conveyor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\black whale studio\\vr keyboard xri\\scripts\\keyboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\black whale studio\\vr keyboard xri\\scripts\\keyboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\bulletmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\bulletmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Library\\PackageCache\\com.unity.inputsystem@1.7.0\\InputSystem\\Utilities\\DelegateHelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.inputsystem@1.7.0\\InputSystem\\Utilities\\DelegateHelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,6 +47,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\starmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\starmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\handmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\handmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\vrstroebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\vrstroebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -58,6 +68,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -178,11 +189,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
+=======
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+>>>>>>> Stashed changes
               "Title": "Gun.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Gun.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gun.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Gun.cs",
               "RelativeToolTip": "Assets\\Scripts\\Gun.cs",
+<<<<<<< Updated upstream
               "ViewState": "AQIAACAAAAAAAAAAAAAQwCMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-20T00:41:28.141Z"
@@ -196,11 +215,40 @@
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Bullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAHAAAA",
+=======
+              "ViewState": "AQIAAAUAAAAAAAAAAADwv10AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T07:11:13.582Z"
+              "WhenOpened": "2024-07-03T02:53:41.725Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T02:11:13.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BulletStat.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\BulletStat.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\BulletStat.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\BulletStat.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VR\\BulletStat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
+>>>>>>> Stashed changes
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T03:10:05.621Z"
+            },
+            {
+              "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 11,
               "Title": "Barrier.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Barrier.cs",
@@ -208,8 +256,92 @@
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Barrier.cs",
               "RelativeToolTip": "Assets\\Scripts\\Barrier.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+=======
+              "DocumentIndex": 7,
+              "Title": "StarManager.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\StarManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\StarManager.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\StarManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VR\\StarManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T03:39:13.415Z"
+              "WhenOpened": "2024-07-03T02:42:41.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BulletManager.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\BulletManager.cs",
+              "RelativeDocumentMoniker": "Assets\\BulletManager.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\BulletManager.cs",
+              "RelativeToolTip": "Assets\\BulletManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T02:29:21.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Barrier.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Barrier.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Barrier.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Barrier.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Barrier.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAADwvxEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T02:11:22.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HandMenu.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\HandMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\HandMenu.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\HandMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VR\\HandMenu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T01:52:21.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VRPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VRPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VRPlayer.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VRPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VRPlayer.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAiwD4AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T01:51:13.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HandCtrl.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\HandCtrl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\HandCtrl.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\HandCtrl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VR\\HandCtrl.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAAABwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T01:51:23.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VrStroeButton.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VrStroeButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\VrStroeButton.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VrStroeButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VR\\VrStroeButton.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T01:51:29.192Z"
             }
           ]
         }

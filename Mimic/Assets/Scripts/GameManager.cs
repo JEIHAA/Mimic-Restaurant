@@ -38,7 +38,11 @@ public class GameManager : MonoBehaviour
     #region["Update is called once per frame"] 
     private void Update()
     {
+<<<<<<< Updated upstream
         monstermanager.MoveAll(vrplayer_transform); 
+=======
+        monstermanager?.MoveAll(vrplayer_transform);
+>>>>>>> Stashed changes
     }
     #endregion
 
