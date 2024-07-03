@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - meat
+  - Steak
+  - Bullet
+  - Monster
+  - Hamburger
+  - Customer
+  - FoodTable
+  - Food
   layers:
   - Default
   - TransparentFX
@@ -13,18 +20,18 @@ TagManager:
   - Water
   - UI
   - Barrier
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Monster
+  - Ground
+  - GroundCheck
+  - PlayerCheck
+  - Player
+  - Bullet
+  - Resturant
+  - ResturantCull
+  - Conveyor
+  - Dispenser
+  - Customer
+  - Food
   - 
   - 
   - 

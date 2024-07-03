@@ -50,7 +50,7 @@ public class HandCtrl : MonoBehaviour
         {
             if (gun.activeSelf && !triggerPressed)
             {
-                //gunComponent.Shoot();
+                gunComponent.ShootBullet();
                 triggerPressed = true ; 
             }
         }
@@ -62,7 +62,7 @@ public class HandCtrl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isColliding = true;
+        isColliding = true; 
     }
 
     private void OnTriggerExit(Collider other)

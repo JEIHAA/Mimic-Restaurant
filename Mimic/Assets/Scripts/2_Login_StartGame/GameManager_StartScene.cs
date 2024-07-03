@@ -25,6 +25,8 @@ public class GameManager_StartScene : MonoBehaviour
     private WelcomeController welcomecontroller = null;
 
     [SerializeField] private GameObject messageui = null;
+    [SerializeField] private GameObject settingui = null;
+    private GameObject settingui_instantiate = null;
     [SerializeField] private GameObject messageui_instantiated = null;
 
     [SerializeField] private KeyboardManager vr_keyboard = null;
@@ -56,6 +58,11 @@ public class GameManager_StartScene : MonoBehaviour
         }
     }
     #endregion
+
+    private void Start()
+    {
+        AudioManager.instance.PlayBGM(); 
+    }
 
     #region["로그인 버튼을 눌렀을때 실행되는 콜백 함수"] 
     public void OnLoginOnClick(int _result, string _id)
@@ -161,11 +168,27 @@ public class GameManager_StartScene : MonoBehaviour
     #endregion
 
 
-
     #region["설정 버튼"]
     public void GoSettingBtn()
     {
+        if (!XRSettings.enabled && settingui_instantiate == null)
+        {
+            settingui_instantiate = Instantiate(settingui);
+            settingui_instantiate.GetComponentInChildren<GameController_Setting>().CloseSettingsOnClick = ExitSettingsOnClick;
+            logincontroller.gameObject.SetActive(false);
+        }
+        if(XRSettings.enabled)
+        {
+            CreateErrorMessageUI(4, 0); 
+        }
+    }
+    #endregion
 
+    #region["설정 닫기 버튼"]
+    public void ExitSettingsOnClick()
+    {
+        Destroy(settingui_instantiate);
+        logincontroller.gameObject.SetActive(true); 
     }
     #endregion
 

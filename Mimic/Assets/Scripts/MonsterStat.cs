@@ -7,12 +7,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MonsterStat", menuName = "ScriptableObjects/MonsterStat", order = 1)]
 public class MonsterStat : ScriptableObject
 {
-    public int monsterHealth = 300;
+    public int monsterHealth = 500; 
     public int monsterDamage = 10;
+    public int meatnum = 3; 
 
     private void OnDisable()
     {
-        monsterHealth = 300;
-        monsterDamage = 10; 
+        monsterHealth = 500; 
+        monsterDamage = 10;
+        meatnum = 3; 
     }
 }

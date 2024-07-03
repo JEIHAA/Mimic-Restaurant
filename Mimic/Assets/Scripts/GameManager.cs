@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviourPun
         {
             CheckinMainScene();
         }
+        AudioManager.instance.PlayBGM(); 
     }
     #endregion
 
@@ -73,19 +74,8 @@ public class GameManager : MonoBehaviourPun
             //다른 플레이어의 Scene Load상태가 true일때 => 다른 플레이어의 Start 메소드가 실행되었다는 뜻임. 
             if ((bool)PhotonNetwork.PlayerListOthers[0].CustomProperties["IsMainSceneLoaded"])
             {
-                /*
-                 * 방장일때만 모든 플레이어에서 StartGame 메소드를 실행한다.
-                 * => 방장은 항상 존재하며, 방장 플레이어 쪽에서 이 메소드가 실행되면 모든 플레이어에서 StartGame 메소드가 실행하게 된다.
-                 *    다른 플레이어에서는 IF문 조건 때문에 실행 자체가 안되어 메소드가 중복 실행되는 일이 없다. 
-                */
-                /*
-                if(PhotonNetwork.IsMasterClient)
-                {
-                    photonView.RPC("StartTimer", RpcTarget.All);
-                }
-                */
                 isGameStarted = true; 
-                //daymanager.StartTimer();
+                daymanager.StartTimer();
                 break;
             }
             yield return new WaitForSeconds(1f);
@@ -105,6 +95,7 @@ public class GameManager : MonoBehaviourPun
     }
     #endregion
 
+    /*
     #region["PC 쪽에서 실행되야 하는거"]
     [PunRPC]
     public void MonsterArrivedToRestaurant()
@@ -115,5 +106,5 @@ public class GameManager : MonoBehaviourPun
         }
     }
     #endregion
-
+    */
 }

@@ -59,7 +59,7 @@ namespace Keyboard
         [SerializeField] private Color selectedColor = Color.blue;
         
         [Header("Output Field Settings")]
-        [SerializeField] private TMP_InputField outputField;
+        public TMP_InputField outputField;
         [SerializeField] private Button enterButton;
         [SerializeField] private int maxCharacters = 15;
         [SerializeField] private int minCharacters = 3;
@@ -81,11 +81,13 @@ namespace Keyboard
             
             CheckTextLength();
 
+           
             speechButton.interactable = false;
             
             numbersKeyboard.SetActive(false);
             specialCharactersKeyboard.SetActive(false);
             lettersKeyboard.SetActive(true);
+           
 
             spacebarButton.onClick.AddListener(OnSpacePress);
             deleteButton.onClick.AddListener(OnDeletePress);
@@ -96,9 +98,11 @@ namespace Keyboard
             switchNumSpecButtonText = switchNumberSpecialButton.GetComponentInChildren<TextMeshProUGUI>();
             keyChannel.RaiseKeyColorsChangedEvent(normalColor, highlightedColor, pressedColor, selectedColor);
             
+            
             switchNumberSpecialButton.gameObject.SetActive(false);
             numbersKeyboard.SetActive(false);
             specialCharactersKeyboard.SetActive(false);
+            
 
             if (!autoCapsAtStart) return;
             ActivateShift();
