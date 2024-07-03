@@ -86,7 +86,7 @@ public class GameController_Setting : MonoBehaviour
     #region["효과음 샘플 재생"] 
     private IEnumerator PlayTestEffect()
     {
-        AudioClip clip = Resources.Load("Audio\\Player\\맞았을 때\\Play_Scream") as AudioClip;
+        AudioClip clip = Resources.Load("Audio\\") as AudioClip;
         audiosource.clip = clip;
         audiosource.volume = volume_bgm / 10f;
         audiosource.Play();
@@ -99,7 +99,7 @@ public class GameController_Setting : MonoBehaviour
     #region["배경음악 샘플 재생"]
     private IEnumerator PlayTestBGM()
     {
-        AudioClip clip = Resources.Load("Audio\\Startscreen_bgm") as AudioClip;
+        AudioClip clip = Resources.Load("Audio\\PC_BGM") as AudioClip;
         audiosource.clip = clip;
         audiosource.volume = volume_bgm / 10f;
         audiosource.Play();

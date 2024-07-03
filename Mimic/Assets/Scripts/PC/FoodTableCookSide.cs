@@ -6,14 +6,19 @@ using UnityEngine;
 
 public class FoodTableCookSide : MonoBehaviour, IDispenser
 {
+    private GameObject food = null;
 
-    public void OperateDispenser()
-    {
-        Debug.Log("You need Food..."); 
-    }
 
-    private void OnTriggerStay()
+    public void OperateDispenser(GameObject _player)
     {
-        Debug.Log("collider.gameObject.name: " + GetComponent<Collider>().gameObject.name); 
+        if (_player.GetComponentInChildren<FoodTest>().gameObject != null)
+        {
+            food = _player.GetComponentInChildren<FoodTest>().gameObject;
+            if(GetComponentInChildren<FoodTable>() != null)
+            {
+                food.transform.position = GetComponentInChildren<FoodTable>().gameObject.transform.position;
+                food.transform.SetParent(transform);
+            }
+        }
     }
 }

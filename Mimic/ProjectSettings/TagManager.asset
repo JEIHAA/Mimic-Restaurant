@@ -11,6 +11,7 @@ TagManager:
   - Hamburger
   - Customer
   - FoodTable
+  - Food
   layers:
   - Default
   - TransparentFX

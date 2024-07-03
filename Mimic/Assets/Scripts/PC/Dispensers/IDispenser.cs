@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDispenser
 {
-    public void OperateDispenser();
+    public void OperateDispenser(GameObject _player);
 }

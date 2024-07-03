@@ -59,6 +59,11 @@ public class GameManager_StartScene : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        AudioManager.instance.PlayBGM(); 
+    }
+
     #region["로그인 버튼을 눌렀을때 실행되는 콜백 함수"] 
     public void OnLoginOnClick(int _result, string _id)
     {
