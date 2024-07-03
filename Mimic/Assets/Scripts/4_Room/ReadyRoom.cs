@@ -26,6 +26,10 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
     [SerializeField] private Image pc_ready = null;
     [Header("VR쪽 Ready")]
     [SerializeField] private Image vr_ready = null;
+    [Header("PC쪽 아이콘")]
+    [SerializeField] private Image pc_astro = null;
+    [Header("VR쪽 아이콘")]
+    [SerializeField] private Image vr_astro = null;
 
     #region["다른 플레이어가 입장했을때 실행되는 메소드"] 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -35,14 +39,19 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
         {
             //현재 플레이어가 VR => 다른 플레이어는 PC! 
             pc_nickname.text = "(PC)" + newPlayer.NickName;
+            pc_astro.gameObject.SetActive(true); 
         }
         else
         {
             //현재 플레이어가 PC => 다른 플레이어는 VR! 
             vr_nickname.text = "(VR)" + newPlayer.NickName;
+            vr_astro.gameObject.SetActive(true); 
         }
-        startbutton.interactable = true;
-        startbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Start";
+        if(PhotonNetwork.IsMasterClient)
+        {
+            startbutton.interactable = true;
+            startbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Start";
+        }
     }
     #endregion
 
@@ -63,10 +72,12 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
             if (XRSettings.enabled)
             {
                 pc_nickname.text = "(PC)";
+                pc_astro.gameObject.SetActive(false); 
             }
             else
             {
                 vr_nickname.text = "(VR)";
+                vr_astro.gameObject.SetActive(false); 
             }
             startbutton.interactable = false;
             startbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Ready";
@@ -84,11 +95,13 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
             {
                 //VR 
                 vr_nickname.text = "(VR)" + PhotonNetwork.LocalPlayer.NickName;
+                pc_astro.gameObject.SetActive(false); 
             }
             else
             {
                 //PC
                 pc_nickname.text = "(PC)" + PhotonNetwork.LocalPlayer.NickName;
+                vr_astro.gameObject.SetActive(false); 
             }
             ExitGames.Client.Photon.Hashtable ht = PhotonNetwork.CurrentRoom.CustomProperties;
             if ((bool)ht["IsMasterPC"])
@@ -98,7 +111,7 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
                 pc_crown.gameObject.SetActive(true);
                 vr_crown.gameObject.SetActive(false);
                 pc_ready.gameObject.SetActive(false);
-                vr_crown.gameObject.SetActive(true);
+                vr_ready.gameObject.SetActive(true);
             }
             else
             {
@@ -111,8 +124,22 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
             }
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
             {
-                startbutton.interactable = true;
-                startbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Start";
+                if(XRSettings.enabled)
+                {
+                    pc_nickname.text = "(PC)" + PhotonNetwork.PlayerListOthers[0].NickName;
+                    pc_astro.gameObject.SetActive(true); 
+                }
+                else
+                {
+                    vr_nickname.text = "(VR)" + PhotonNetwork.PlayerListOthers[0].NickName;
+                    vr_astro.gameObject.SetActive(true); 
+                }
+
+                if(PhotonNetwork.IsMasterClient)
+                {
+                    startbutton.interactable = true;
+                    startbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Start";
+                }
             }
         }
 
@@ -121,10 +148,19 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
     #region["게임 시작!"] 
     public void StartGame()
     {
+        if(PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("GoGameScene", RpcTarget.All);
+        }
+    }
+    #endregion
+
+    [PunRPC]
+    public void GoGameScene()
+    {
         Debug.LogError("Time to Start Game...");
         SceneManager.LoadScene("5_Loading");
     }
-    #endregion
 
     #region["게임 나가기"]
     public void ExitGame()

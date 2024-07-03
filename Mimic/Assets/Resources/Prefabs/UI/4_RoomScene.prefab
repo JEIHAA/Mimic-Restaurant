@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2b425fdc61b84da4a9d908756f47ff91, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 401d2a0fc972ca04abc343bf61b1f93e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bb39f98d47a8efe4a8b8fdc211b9c5b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbf8c50625c0f0c43b6f686432a8dd73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bb39f98d47a8efe4a8b8fdc211b9c5b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbf8c50625c0f0c43b6f686432a8dd73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1167,6 +1167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593088660363605116}
   - component: {fileID: 5288589297015917546}
+  - component: {fileID: 3759477940253852593}
   m_Layer: 0
   m_Name: 4_RoomScene
   m_TagString: Untagged
@@ -1210,6 +1211,30 @@ MonoBehaviour:
   vr_crown: {fileID: 3527841494777158072}
   pc_ready: {fileID: 4944590096665507376}
   vr_ready: {fileID: 7003966480013470093}
+  pc_astro: {fileID: 1600743612180484960}
+  vr_astro: {fileID: 6976310080964458276}
+--- !u!114 &3759477940253852593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932767448991384262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6946198219511415773
 GameObject:
   m_ObjectHideFlags: 0

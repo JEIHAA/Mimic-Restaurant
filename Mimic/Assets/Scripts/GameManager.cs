@@ -36,14 +36,14 @@ public class GameManager : MonoBehaviour
 
 
     #region["Update is called once per frame"] 
-    private void Update()
+  /*  private void Update()
     {
 <<<<<<< Updated upstream
         monstermanager.MoveAll(vrplayer_transform); 
 =======
         monstermanager?.MoveAll(vrplayer_transform);
 >>>>>>> Stashed changes
-    }
+    }*/
     #endregion
 
     #region["테스트용"] 
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     {
         monstermanager.DestroyMonsterList(); 
         //daymanager.AddDay();
-        monstermanager.StrengthMonster();
+       // monstermanager.StrengthMonster();
         spawnmanager.GoNextWave(); 
     }
     #endregion

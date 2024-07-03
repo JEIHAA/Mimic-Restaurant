@@ -1,0 +1,11 @@
+Model Information:
+* title:	Deep fryer
+* source:	https://sketchfab.com/3d-models/deep-fryer-1c89c6ba3e5d4148b84f32f13fa00eb1
+* author:	FractDesign - Huguet Rémi (https://sketchfab.com/blendercreation)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Deep fryer" (https://sketchfab.com/3d-models/deep-fryer-1c89c6ba3e5d4148b84f32f13fa00eb1) by FractDesign - Huguet Rémi (https://sketchfab.com/blendercreation) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
