@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,18 +13,19 @@ public class MoneyManager : MonoBehaviour
     #region 변수
     [SerializeField] private TextMeshProUGUI TotalMoneyText = null;
 
-    [SerializeField] private TextMeshProUGUI[] AddPriceTexts = new TextMeshProUGUI[3];
-    [SerializeField] private TextMeshProUGUI[] MachineLevelTexts = new TextMeshProUGUI[3];
-    [SerializeField] private TextMeshProUGUI[] MachineMoneyTexts = new TextMeshProUGUI[3];
-    [SerializeField] private TextMeshProUGUI Increase_Sales_Money_Lv_Text = null;
-    [SerializeField] private TextMeshProUGUI IncreaseSalesMoney_Text = null;
-    [SerializeField] private TextMeshProUGUI Increase_Food_Hunger_Lv_Text = null;
-    [SerializeField] private TextMeshProUGUI Increase_Food_Hunger_Level_Text = null;
+    [SerializeField] private TextMeshProUGUI[] AddPriceTexts = new TextMeshProUGUI[3]; //추가금액
+    [SerializeField] private TextMeshProUGUI[] MachineLevelTexts = new TextMeshProUGUI[3]; //머신 레벨
+    [SerializeField] private TextMeshProUGUI[] MachineMoneyTexts = new TextMeshProUGUI[3]; //머신 돈
+    [SerializeField] private TextMeshProUGUI Increase_Sales_Money_Lv_Text = null;  //스킬-돈 증가 텍스트
+    [SerializeField] private TextMeshProUGUI IncreaseSalesMoney_Text = null; //스킬-돈 증가 텍스트 
+    [SerializeField] private TextMeshProUGUI Increase_Food_Hunger_Lv_Text = null; //스킬-증가 텍스트
+    [SerializeField] private TextMeshProUGUI Increase_Food_Hunger_Level_Text = null; //스킬- 
 
     private int TotalMoney = 0;
     private int[] AddPrices = new int[3];
-    [SerializeField] private int[] MachineLevels = new int[3];
-    [SerializeField] private int[] MachineMoneys = new int[3];
+    [SerializeField] private int[] MachineLevels = null; 
+    [SerializeField] private int[] MachineMoneys = null; 
+
     private int Increase_Sales_Money_Lv = 0;
     private int IncreaseSalesMoney = 0;
     private int Increase_Food_Hunger_Lv = 0;
@@ -56,7 +58,7 @@ public class MoneyManager : MonoBehaviour
 
     public void PrintMachineLevel(int index)
     {
-        MachineLevelTexts[index].text = MachineLevels[index].ToString();
+        MachineLevelTexts[index].text = "Lv." + MachineLevels[index];
     }
 
     public void PrintMachineMoney(int index)
@@ -115,16 +117,13 @@ public class MoneyManager : MonoBehaviour
         switch (index)
         {
             case 0:
-                //그릴 
-                MachineSpeedIncrease(120, 5, index);
+                MachineSpeedIncrease(5, index);
                 break;
             case 1:
-                //탄산음료 
-                MachineSpeedIncrease(140, 7, index);
+                MachineSpeedIncrease(7, index);
                 break;
             case 2:
-                //음료 
-                MachineSpeedIncrease(150, 8, index);
+                MachineSpeedIncrease(8, index);
                 break;
         }
     }
@@ -157,18 +156,16 @@ public class MoneyManager : MonoBehaviour
         PrintIncreaseSalesMoney();
     }
 
-    private void MachineSpeedIncrease(int baseCost, int rateIncrement, int index)
+    private void MachineSpeedIncrease(int _rateIncrement, int _index)
     {
-        /*
-        for (int i = 0; i < 5; i++)
+        if (MachineLevels[_index] < 5)
         {
-            int cost = baseCost + 100 * i;
-            int rate = rateIncrement * (i + 1);
-            message += $"단계 {i + 1}: 비용 {cost}, 증가율 {rate}%\n";
+            ++MachineLevels[_index];
+            MachineMoneys[_index] += 100;
+            _rateIncrement *= MachineLevels[_index];
         }
-        */
-        MachineLevels[index]++;
-        PrintMachineLevel(index);
+        PrintMachineLevel(_index);
+        PrintMachineMoney(_index);
     }
 
     #endregion

@@ -2,6 +2,7 @@ using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -76,6 +77,8 @@ public class GameManager : MonoBehaviourPun
             //다른 플레이어의 Scene Load상태가 true일때 => 다른 플레이어의 Start 메소드가 실행되었다는 뜻임. 
             if ((bool)PhotonNetwork.PlayerListOthers[0].CustomProperties["IsMainSceneLoaded"])
             {
+                //만약 다른 플레이어가 이미 들어와있는데 누가 나가서 게임이 멈췄을 경우 그 플레이어의 게임을 다시 시작시킴. 
+                photonView.RPC("RestartGameOtherSide", RpcTarget.Others); 
                 isGameStarted = true; 
                 daymanager.StartTimer();
                 if (!XRSettings.enabled)
@@ -98,22 +101,35 @@ public class GameManager : MonoBehaviourPun
         {
             monstermanager?.MoveAll(vrplayer_transform);
             SetSkyBox(); 
+            if(Input.GetKey(KeyCode.Escape)) //PC용 => 종료 
+            {
+                if(PhotonNetwork.IsConnected)
+                {
+                    photonView.RPC("STX_BSDC1", RpcTarget.Others); 
+                    PhotonNetwork.LeaveRoom();
+                }
+                Application.Quit(); 
+            }
         }
     }
     #endregion
 
-    /*
-    #region["PC 쪽에서 실행되야 하는거"]
+ 
+    #region["현재 플레이어가 나가면 다른 플레이어는 게임이 멈춤."]
     [PunRPC]
-    public void MonsterArrivedToRestaurant()
+    public void STX_BSDC1()
     {
-        if(!XRSettings.enabled)
-        {
-            CustomerSpawnManager.instance.IsMonsterArrivedToRestaurant(); 
-        }
+        Time.timeScale = 0f; 
     }
     #endregion
-    */
+
+    #region["새로운 플레이어가 들어오면 게임을 다시 시작"]
+    [PunRPC]
+    public void RestartGameOtherSide()
+    {
+        Time.timeScale = 1f; 
+    }
+    #endregion 
 
     private void SetSkyBox()
     {

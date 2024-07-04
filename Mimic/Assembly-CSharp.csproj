@@ -85,7 +85,6 @@
     <Compile Include="Assets\Scripts\VR\StarManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginMessageUIController.cs" />
     <Compile Include="Assets\Scripts\4_Room\ReadyRoom.cs" />
-    <Compile Include="Assets\Scripts\MoneyManager.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\IDispenser.cs" />
@@ -95,6 +94,7 @@
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserDrink.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ControlAnimateLights.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\FactoryDispenser.cs" />
+    <Compile Include="Assets\Scripts\PC\MoneyManager.cs" />
     <Compile Include="Assets\Scripts\2_GameTitle\GameController_Setting.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
     <Compile Include="Assets\Scripts\PC\DoorMove.cs" />
