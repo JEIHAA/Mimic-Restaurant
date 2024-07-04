@@ -6,8 +6,18 @@ using UnityEngine;
 
 public class FoodTableCookSide : MonoBehaviour, IDispenser
 {
+    public IEnumerator GenerateFood(GameObject _food)
+    {
+        yield return new WaitForSeconds(0f);
+        throw new System.NotImplementedException();
+    }
 
-    public void OperateDispenser()
+    public bool GetIsGenerate()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OperateDispenser(GameObject _go)
     {
         Debug.Log("You need Food..."); 
     }

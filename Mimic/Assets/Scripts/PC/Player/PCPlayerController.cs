@@ -32,10 +32,10 @@ public class PCPlayerController : MonoBehaviour
 
     private void InteractDispenser(GameObject go) {
         IDispenser dispenser = go.GetComponent<IDispenser>();
-
+        if (dispenser == null) { return;  }
         if (Input.GetKeyDown("f"))
         {
-            dispenser?.OperateDispenser();
+            dispenser.OperateDispenser(this.gameObject);
 
             transform.LookAt(go.transform.position);
 

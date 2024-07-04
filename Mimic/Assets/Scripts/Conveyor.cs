@@ -5,6 +5,7 @@ using UnityEngine;
 public class Conveyor : MonoBehaviour
 { 
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float rotationSpeed = 1f; 
     [SerializeField] private Vector3 direction = Vector3.forward;
     [SerializeField] private int capacity = 0;
     [SerializeField] private int maxCapacity = 10;
@@ -12,22 +13,22 @@ public class Conveyor : MonoBehaviour
     [SerializeField] private Material material;
     [SerializeField] private List<Collision> collisions = new List<Collision>();
     [SerializeField] private List<Rigidbody> rbs = new List<Rigidbody>();
-    [SerializeField] private LayerMask target;
 
     private void Start()
     {
-        //material = GetComponent<Material>();
+        material = GetComponent<MeshRenderer>().material;
+        ActiveConveyor(capacity);
     }
 
     private void OnCollisionEnter(Collision _collision)
     {
-        ++capacity;
-        Debug.Log(capacity);
-        if (_collision.gameObject.layer == LayerMask.NameToLayer("Food"))
+        if (_collision.gameObject.layer == LayerMask.NameToLayer("Food") || _collision.gameObject.layer == LayerMask.NameToLayer("Ingredient"))
         {
+            ++capacity;
+            _collision.gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
             rbs.Add(_collision.gameObject.GetComponent<Rigidbody>());
-            Debug.Log("rbs Cnt"+rbs.Count);
         }
+
         else
         { 
             // Æ¨°Ü³»±â
@@ -37,47 +38,43 @@ public class Conveyor : MonoBehaviour
     {
         if (ActiveConveyor(capacity)) 
         {
-            Debug.Log(_collision.gameObject.name);
             MoveObject(rbs);
         }
     }
 
     private void OnCollisionExit(Collision _collision)
     {
-        --capacity;
-        rbs.Remove(_collision.gameObject.GetComponent<Rigidbody>());
-        if (ActiveConveyor(capacity))
+        if (_collision.gameObject.layer == LayerMask.NameToLayer("Food") || _collision.gameObject.layer == LayerMask.NameToLayer("Ingredient")) 
         {
-            MoveObject(rbs);
-        }
-
-            
+            --capacity;
+            rbs.Remove(_collision.gameObject.GetComponent<Rigidbody>());
+        }            
     }
 
     private void MoveObject(List<Rigidbody> _rbs) 
     {
         if (rbs.Count > 0)
         {
-            Vector3 movement = direction.normalized * speed * Time.deltaTime; //direction.normalized * speed * Time.deltaTime;
+            Vector3 movement = direction.normalized * speed * Time.deltaTime;
             foreach (Rigidbody rb in rbs) 
             {
-                Debug.Log(rb.name);
-                rb.MovePosition(rb.position + movement);
+               rb.MovePosition(rb.position + movement);
             }
         }
     }
 
     private bool ActiveConveyor(int _capacity) 
     {
-        //Debug.Log(_capacity);
         if (_capacity <= maxCapacity)
         {
             material.SetFloat("_ScrollSpeed", 0.5f);
+            material.SetFloat("_ScrollDirection", direction.z * -1);
             return true;
         }
         else
         { 
             material.SetFloat("_ScrollSpeed", 0f);
+            material.SetFloat("_ScrollDirection", direction.z * -1);
             return false;
         }
     }

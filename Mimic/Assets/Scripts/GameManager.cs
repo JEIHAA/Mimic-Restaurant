@@ -31,12 +31,12 @@ public class GameManager : MonoBehaviourPun
         if(XRSettings.enabled)
         {
             //VR 
-            pcplayer_transform.gameObject.SetActive(false); 
+            pcplayer_transform.gameObject?.SetActive(false); 
         }
         else
         {
             //PC 
-            vrplayer_transform.gameObject.SetActive(false);
+            //vrplayer_transform.gameObject?.SetActive(false);
             pcplayer_transform.GetComponentInChildren<Camera>().targetDisplay = 0; 
         }
     }

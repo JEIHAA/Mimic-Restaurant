@@ -28,7 +28,7 @@ public class Customer : MonoBehaviour
     private GameObject foodtable = null; //자기 자신의 식판
     
     private GameObject food_getted = null; //받은 음식 
-    private FoodInfo foodinfo = new FoodInfo(); //음식 정보 
+    private OrderInfo orderInfo = new OrderInfo(); //음식 정보 
     private Transform foodtable_trigger_g = null; //자기 자신의 식판 트리거
 
     //손님 1명이 낸 돈 총합 
@@ -59,23 +59,23 @@ public class Customer : MonoBehaviour
         animator.SetTrigger("Walking");
         animation_status = (int)Status.Walking;
 
-        SetWantedFoodList();
+        //SetWantedFoodList();
         speechbubble.SetActive(false); 
     }
     #endregion
     
 
     #region["원하는 음식 정하기"] 
-    private void SetWantedFoodList()
+/*    private void SetWantedFoodList()
     {
         int foodnum = Random.Range(1, max_foodnum + 1);
 
         for (int i = 0; i < foodnum; ++i)
         {
             //음식 이름을 랜덤으로 가져와서 추가 
-            wantedfood.Add(foodinfo.GetRandomFoodName());
+            wantedfood.Add(orderInfo.GetRandomFoodName());
         }
-    }
+    }*/
     #endregion
 
 
@@ -129,7 +129,7 @@ public class Customer : MonoBehaviour
 
         for (int i = 0; i < wantedfood.Count; ++i)
         {
-            timer += foodinfo.GetFoodTimer(wantedfood[i]);
+            timer += orderInfo.GetFoodTimer(wantedfood[i]);
         }
 
         timer = timer / wantedfood.Count;
