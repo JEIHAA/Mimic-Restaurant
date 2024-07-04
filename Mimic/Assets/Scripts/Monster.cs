@@ -1,10 +1,11 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
-public class Monster : MonoBehaviour, IOnDamage 
+public class Monster : MonoBehaviourPun, IOnDamage 
 {
     public delegate void OnDeathDelegate(GameObject _meat, int _meat_num);
     private OnDeathDelegate ondeathcallback = null;
@@ -93,8 +94,7 @@ public class Monster : MonoBehaviour, IOnDamage
         animator.SetTrigger("Death");
         status = (int)MonsterStatus.Death;
         yield return new WaitForSeconds(1f);
-        steak = Instantiate(steak) as GameObject;
-        steak.transform.position = Random.insideUnitSphere;
+        steak = PhotonNetwork.Instantiate("Prefabs\\Steak", new Vector3(0f, 1.5f, 0f), Quaternion.identity); 
         ondeathcallback?.Invoke(steak, meatnum); 
         SpawnManager.instance.FadeMonster(this);
         yield break; 
