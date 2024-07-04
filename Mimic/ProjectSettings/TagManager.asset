@@ -12,6 +12,7 @@ TagManager:
   - Customer
   - FoodTable
   - Food
+  - RGun
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - Dispenser
   - Customer
   - Food
-  - 
+  - Button
   - 
   - 
   - 

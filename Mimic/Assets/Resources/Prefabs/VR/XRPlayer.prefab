@@ -1012,7 +1012,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4091331465639207173}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4091331465639207173}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 0}
-  m_TurnSpeed: 110
+  m_TurnSpeed: 120
   m_LeftHandTurnAction:
     m_UseReference: 1
     m_Action:
@@ -1413,7 +1413,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHungry: 100
   hungry: 0
+  decreaseHungry: 5
   playerHP: 10
+  increaseHungry: 50
+  hungryGauge: {fileID: 0}
 --- !u!135 &5845955123446921287
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1854,7 +1857,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4652027343249799436}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1966,7 +1969,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4652027343249799436}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -2688,7 +2691,7 @@ MonoBehaviour:
   muzzle: {fileID: 338669415946009988}
   bulletPrefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
   poolSize: 20
-  bulletSpeed: 20
+  bulletData: {fileID: 0}
   bulletLifetime: 2
 --- !u!1001 &1799638928133517460
 PrefabInstance:
@@ -2945,21 +2948,33 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
-  gripActionProperty:
-    m_UseReference: 1
+  leftgripActionProperty:
+    m_UseReference: 0
     m_Action:
-      m_Name: Grip Action Property
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 68bc0f0f-cc2b-42f3-925c-2c97691dd4b7
+      m_Id: 6d1645e1-5fd0-4d5f-85ef-3c3bb567d516
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
+    m_Reference: {fileID: 0}
+  rightgripActionProperty:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 9a719cb5-6e81-4af4-84cb-19ad4e4c8387
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   gun: {fileID: 1543181467215243385}
   gunComponent: {fileID: 0}
+  handAnim: {fileID: 0}
 --- !u!1001 &2134707897576418862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3086,7 +3101,7 @@ MonoBehaviour:
   muzzle: {fileID: 332659301820977115}
   bulletPrefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
   poolSize: 20
-  bulletSpeed: 20
+  bulletData: {fileID: 0}
   bulletLifetime: 2
 --- !u!4 &2138844444611083406 stripped
 Transform:
@@ -3349,18 +3364,30 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
-  gripActionProperty:
-    m_UseReference: 1
+  leftgripActionProperty:
+    m_UseReference: 0
     m_Action:
-      m_Name: Grip Action Property
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: f2e239a4-fe78-4271-b984-8aa3c699f5c8
+      m_Id: 7a936bec-2a1f-416d-b61b-883e84fee17c
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
+    m_Reference: {fileID: 0}
+  rightgripActionProperty:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 08729a7a-1abd-4b5c-acab-4fee9b6fdccf
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   gun: {fileID: 2136128688871979868}
   gunComponent: {fileID: 0}
+  handAnim: {fileID: 0}
