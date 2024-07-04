@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: BulletStat
   m_EditorClassIdentifier: 
   bulletDamage: 100
+  bulletSpeed: 20

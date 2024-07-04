@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\4_Room\ReadyRoom.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\VR\VRLevelText.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\IDispenser.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\WelcomeController.cs" />
     <Compile Include="Assets\Scripts\PC\OrderInfo.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\Scripts\VR\HandUI.cs" />
     <Compile Include="Assets\Scripts\PC\FoodTable.cs" />
     <Compile Include="Assets\Scripts\3_Lobby\MakeRoom.cs" />
+    <Compile Include="Assets\Scripts\VR\DisableButtonOnClicks.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\LetterKey.cs" />
     <Compile Include="Assets\Scripts\KeyBoard.cs" />
     <Compile Include="Assets\Scripts\VR\VrStroeButton.cs" />

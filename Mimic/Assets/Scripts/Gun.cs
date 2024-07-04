@@ -8,7 +8,7 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;
     public int poolSize = 20;
     [SerializeField] private BulletStat bulletData = null;
-    public float bulletLifetime = 5f;
+    public float bulletLifetime = 3f;
 
     private List<GameObject> bulletPool;
 

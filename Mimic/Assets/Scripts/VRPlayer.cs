@@ -19,7 +19,6 @@ public class VRPlayer : MonoBehaviour, IOnDamage
 
     private void Start()
     {
-        hungry = maxHungry;
         hungryGauge.value = maxHungry;
         StartCoroutine(HungerDecreaseRoutine());
     }

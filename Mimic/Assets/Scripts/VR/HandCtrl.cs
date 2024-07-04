@@ -15,8 +15,10 @@ public class HandCtrl : MonoBehaviour
     [SerializeField] private Gun gunComponent;
     [SerializeField] private Animator handAnim;
     private bool isColliding = false;
-    private bool triggerPressed = false;
+   // private bool triggerPressed = false;  
     private bool pistolOn = false;
+    private Coroutine shootingCoroutine;
+    [SerializeField] private float shootingSpeed = 1f;
 
     private void Awake()
     {
@@ -47,32 +49,8 @@ public class HandCtrl : MonoBehaviour
         }
     }
 
-   /* private void LeftGripButton()
-    {
-        float leftValue = leftgripActionProperty.action.ReadValue<float>();
-        if (leftValue > 0.8f)
-        {
-            gun.SetActive(true);
-        }
-        else
-        {
-            gun.SetActive(false);
-        }
-    }
-     private void RightGripButton()
-     {
-         float rightValue = rightgripActionProperty.action.ReadValue<float>();
-         if (rightValue > 0.8f && isColliding == false)
-         {
-             gun.SetActive(true);
-         }
-         else
-         {
-             gun.SetActive(false);
-         }
-     }*/
 
-     private void TriggerButton()
+    /* private void TriggerButton()
      {
          float tvalue = triggerActionProperty.action.ReadValue<float>();
          if (tvalue > 0.9f)
@@ -87,7 +65,41 @@ public class HandCtrl : MonoBehaviour
          {
              triggerPressed = false; 
          }
-     }
+     }*/
+
+    private void TriggerButton()
+    {
+        float tvalue = triggerActionProperty.action.ReadValue<float>();
+        if (tvalue > 0.9f && gun.activeSelf)
+        {
+            if (shootingCoroutine == null)
+            {
+                shootingCoroutine = StartCoroutine(ShootCoroutine());
+            }
+        }
+        else
+        {
+            if (shootingCoroutine != null)
+            {
+                StopCoroutine(shootingCoroutine);
+                shootingCoroutine = null;
+            }
+        }
+    }
+
+    private IEnumerator ShootCoroutine()
+    {
+        while (true)
+        {
+            gunComponent.ShootBullet();
+            yield return new WaitForSeconds(1f/shootingSpeed); // Adjust this time interval as needed
+        }
+    }
+
+    public void UpgradeShootingSpeed()
+    {
+        shootingSpeed += 1f;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
