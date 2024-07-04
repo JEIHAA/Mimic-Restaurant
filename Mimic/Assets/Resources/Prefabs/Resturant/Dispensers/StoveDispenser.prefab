@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &812743893093900726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4413974243451997990}
+  m_Layer: 16
+  m_Name: FoodGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4413974243451997990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812743893093900726}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.28, y: 1.66, z: 0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4170838686422674218}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1273878578888127506
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +42,7 @@ GameObject:
   - component: {fileID: 3625086153531389131}
   - component: {fileID: 1729971992679812060}
   - component: {fileID: 4886711901801347006}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,12 +57,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273878578888127506}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.59999996, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.92953193, y: 0.047160566, z: 0.3398713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1729971992679812060
 MeshFilter:
@@ -94,7 +125,7 @@ GameObject:
   - component: {fileID: 3089217910185825379}
   - component: {fileID: 5531998014586188442}
   - component: {fileID: 3906101007808303668}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,12 +140,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375741225299919215}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.275, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.054531246, y: 0.047160566, z: 0.339871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5531998014586188442
 MeshFilter:
@@ -177,7 +208,7 @@ GameObject:
   - component: {fileID: 1616544673503133265}
   - component: {fileID: 2636274574424926235}
   - component: {fileID: 7312540469141188526}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,12 +223,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606954299125569677}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5795321, y: 0.047160566, z: 0.33987138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2636274574424926235
 MeshFilter:
@@ -260,7 +291,7 @@ GameObject:
   - component: {fileID: 8072513938398354428}
   - component: {fileID: 483477420925117860}
   - component: {fileID: 6390858180619492352}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,12 +306,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821450607856841488}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.12046859, y: 0.047160566, z: 0.33987108}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &483477420925117860
 MeshFilter:
@@ -342,9 +373,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4170838686422674218}
   - component: {fileID: 1151970207023298181}
-  - component: {fileID: 2388403750304225075}
-  m_Layer: 0
-  m_Name: HamburgetDispenser
+  - component: {fileID: 3936620940489197513}
+  m_Layer: 16
+  m_Name: StoveDispenser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,22 +391,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
   m_LocalPosition: {x: -0.5457425, y: 0.6646941, z: -1.8221506}
-  m_LocalScale: {x: 0.5504031, y: 0.5504031, z: 0.5504031}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 4130825683073081439}
-  - {fileID: 5949114307923182645}
   - {fileID: 1791280868904924363}
-  - {fileID: 2410505858054123527}
-  - {fileID: 1584796224133753609}
-  - {fileID: 8072513938398354428}
-  - {fileID: 3089217910185825379}
-  - {fileID: 7067587798262679770}
-  - {fileID: 3405689974596129483}
-  - {fileID: 1616544673503133265}
-  - {fileID: 5678324189731358173}
-  - {fileID: 3625086153531389131}
-  - {fileID: 8491597464972920787}
+  - {fileID: 4413974243451997990}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!65 &1151970207023298181
@@ -397,9 +417,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 1.5, z: 1.5}
-  m_Center: {x: 0, y: 0.8, z: 1}
---- !u!114 &2388403750304225075
+  m_Size: {x: 3.1677377, y: 1.5, z: 3.3675642}
+  m_Center: {x: -0.2938655, y: 0.79999995, z: 1.0111957}
+--- !u!114 &3936620940489197513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,10 +428,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2151490998589706304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d052f3fada3d2843b2896994d5fb1bf, type: 3}
+  m_Script: {fileID: 11500000, guid: f22406dc11ddba145967742161163e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dispenserType: 1
+  foodGenerator: {fileID: 4413974243451997990}
+  output: {fileID: 0}
+  isGenerate: 0
 --- !u!1 &2758914773619378225
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +445,7 @@ GameObject:
   - component: {fileID: 4130825683073081439}
   - component: {fileID: 9106288469023154518}
   - component: {fileID: 2880761015930450991}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ovendoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,12 +460,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2758914773619378225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4403688, y: 0.5434317, z: 0.40382785}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1108371, y: -0.26247245, z: 0.30743083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9106288469023154518
 MeshFilter:
@@ -506,7 +528,7 @@ GameObject:
   - component: {fileID: 5678324189731358173}
   - component: {fileID: 8298469243341726258}
   - component: {fileID: 7553899807307982022}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,12 +543,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3338750422933215238}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.42499998, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7545314, y: 0.047160566, z: 0.33987066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8298469243341726258
 MeshFilter:
@@ -589,7 +611,7 @@ GameObject:
   - component: {fileID: 2410505858054123527}
   - component: {fileID: 5187291538570428563}
   - component: {fileID: 643596372981880089}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,12 +626,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3355972145102214404}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.79999995, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.47046855, y: 0.047160566, z: 0.339871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5187291538570428563
 MeshFilter:
@@ -672,7 +694,7 @@ GameObject:
   - component: {fileID: 7067587798262679770}
   - component: {fileID: 2306464823986342345}
   - component: {fileID: 5467597490681709498}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,12 +709,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4194720287412756136}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.099999994, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.22953153, y: 0.047160566, z: 0.3398707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2306464823986342345
 MeshFilter:
@@ -755,7 +777,7 @@ GameObject:
   - component: {fileID: 3405689974596129483}
   - component: {fileID: 6265540864304759192}
   - component: {fileID: 8869187442094463849}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,12 +792,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5046560770446854135}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.074999996, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.40453136, y: 0.047160566, z: 0.33987057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6265540864304759192
 MeshFilter:
@@ -839,7 +861,7 @@ GameObject:
   - component: {fileID: 4636689599091853779}
   - component: {fileID: 698122605677885864}
   - component: {fileID: 4802890615232344605}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,10 +877,22 @@ Transform:
   m_GameObject: {fileID: 5469012360062155546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3295317, y: 0.8059042, z: 0.09639724}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_LocalPosition: {x: 0.3295317, y: 0.942, z: 0.09639724}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 4130825683073081439}
+  - {fileID: 5949114307923182645}
+  - {fileID: 2410505858054123527}
+  - {fileID: 1584796224133753609}
+  - {fileID: 8072513938398354428}
+  - {fileID: 3089217910185825379}
+  - {fileID: 7067587798262679770}
+  - {fileID: 3405689974596129483}
+  - {fileID: 1616544673503133265}
+  - {fileID: 5678324189731358173}
+  - {fileID: 3625086153531389131}
+  - {fileID: 8491597464972920787}
   m_Father: {fileID: 4170838686422674218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4636689599091853779
@@ -930,8 +964,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.8000002, y: 1.7237363, z: 0.9257785}
-  m_Center: {x: -0.3295317, y: 0.055963702, z: 0.005774126}
+  m_Size: {x: 1.8000003, y: 1.0281581, z: 0.9257785}
+  m_Center: {x: -0.32953182, y: -0.29182652, z: 0.0057741343}
 --- !u!1 &8056057430582649352
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +977,7 @@ GameObject:
   - component: {fileID: 1584796224133753609}
   - component: {fileID: 7820316554747838197}
   - component: {fileID: 7687466457107822666}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -958,12 +992,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8056057430582649352}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.625, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.29546872, y: 0.047160566, z: 0.3398709}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7820316554747838197
 MeshFilter:
@@ -1026,7 +1060,7 @@ GameObject:
   - component: {fileID: 8491597464972920787}
   - component: {fileID: 751929649327063677}
   - component: {fileID: 113601306727315457}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1041,12 +1075,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8301104508340488438}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.775, y: 0.85306466, z: 0.43626842}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.104531, y: 0.047160566, z: 0.3398706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &751929649327063677
 MeshFilter:
@@ -1109,7 +1143,7 @@ GameObject:
   - component: {fileID: 5949114307923182645}
   - component: {fileID: 3193675237773755965}
   - component: {fileID: 1972424423144030411}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ovendoor_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,12 +1158,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8823853095186368604}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.45227262, y: 0.5434317, z: 0.40382785}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7818042, y: -0.26247245, z: 0.30743045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4170838686422674218}
+  m_Father: {fileID: 1791280868904924363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3193675237773755965
 MeshFilter:

@@ -13,6 +13,7 @@ TagManager:
   - FoodTable
   - Food
   - RGun
+  - Ingredient
   layers:
   - Default
   - TransparentFX
@@ -34,8 +35,8 @@ TagManager:
   - Customer
   - Food
   - Button
-  - 
-  - 
+  - FoodBound
+  - Ingredient
   - 
   - 
   - 

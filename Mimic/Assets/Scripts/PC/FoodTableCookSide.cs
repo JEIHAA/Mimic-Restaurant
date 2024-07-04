@@ -8,6 +8,15 @@ public class FoodTableCookSide : MonoBehaviour, IDispenser
 {
     private GameObject food = null;
 
+    public IEnumerator GenerateFood(GameObject _food)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public bool GetIsGenerate()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public void OperateDispenser(GameObject _player)
     {
