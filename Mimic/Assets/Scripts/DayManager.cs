@@ -16,12 +16,11 @@ public class DayManager : MonoBehaviourPun
 
     private int day = 1; //1,2,3,4
     private float seconds = 0f;
+    private float seconds_hidden = 0f; //
     private float breaktime = 0f;
 
-    private bool isBreakTime = false;
-
     #region["시간 더하는 메소드"] 
-    public void StartTimer() 
+    public void StartTimer()
     {
         Debug.LogError("All Player's Scene Loaded... Now Start Game...");
         StartCoroutine(AddDayCoroutine());
@@ -34,24 +33,32 @@ public class DayManager : MonoBehaviourPun
     {
         while (true)
         {
-            Debug.LogError("PhotonNetwork.Time: " + PhotonNetwork.Time);
-            if (seconds == 110f || seconds == 360f)
+            //110초 또는 360초: 쉬는시간 시작 
+            if (seconds == 100f)
             {
-                isBreakTime = true; 
-                StartCoroutine(BreakTimeCoroutine()); //쉬는시간 코루틴
-                if(!isBreakTime) 
-                {
-                    ++seconds; 
-                }
+                seconds = 0f;
+                StartCoroutine(BreakTimeCoroutine());
+                yield break;
             }
             else
             {
                 ++seconds;
             }
-            if(!XRSettings.enabled)
+            if(seconds_hidden == 260f)
             {
-                //PC쪽에서 VR쪽으로 정보를 보내준다. 
-                photonView.RPC("SetSecondandDay", RpcTarget.OthersBuffered, day, seconds); 
+                seconds_hidden = 0f;
+                if(day < 4)
+                {
+                    ++day;
+                    Debug.LogError("day: " + day); 
+                }
+            }
+            ++seconds_hidden;
+            Debug.LogError("seconds_hidden: " + seconds_hidden); 
+            //!XRSettings.enabled
+            if (PhotonNetwork.IsMasterClient) //PC -> VR
+            {
+                photonView.RPC("SetSecondandDay", RpcTarget.OthersBuffered, day, seconds, seconds_hidden);
             }
             dateuipresenter.SetSecond(seconds);
             dateuipresenter.SetDay(day);
@@ -63,42 +70,48 @@ public class DayManager : MonoBehaviourPun
     #region["쉬는시간 코루틴"] 
     private IEnumerator BreakTimeCoroutine()
     {
-        if(seconds == 360f) 
-        {
-            //1라운드가 끝나면 1일 올린다. 
-            ++day; 
-        }
-        if(day == 4)
-        {
-            //게임 끝? 
-        }
-        seconds = 0f;
         CustomerSpawnManager.instance.BreakTime(); //쉬는시간 시작 
-        while (breaktime < 20f)
+        while (breaktime < 30f)
         {
             ++breaktime;
-            dateuipresenter.SetBreakTime(breaktime); 
+            ++seconds_hidden;
+            Debug.LogError("seconds_hidden: " + seconds_hidden); 
+            //!XRSettings.enabled 
+            if (PhotonNetwork.IsMasterClient) //PC -> VR 
+            {
+                photonView.RPC("SetBreakTime", RpcTarget.OthersBuffered, breaktime, seconds_hidden);
+            }
+            dateuipresenter.SetBreakTime(breaktime);
             yield return new WaitForSeconds(1f);
         }
         breaktime = 0f;
-        isBreakTime = false; 
         CustomerSpawnManager.instance.Restart();   //쉬는시간 끝 
+        StartCoroutine(AddDayCoroutine()); //시계 시작 
         if (XRSettings.enabled)
         {
             SpawnManager.instance.GoNextWave();
         }
-        yield break; 
+        yield break;
     }
     #endregion
 
+
     #region["VR와 PC끼리 동기화"] 
     [PunRPC]
-    public void SetSecondandDay(int _day, float _seconds, float _breaktime)
+    public void SetSecondandDay(int _day, float _seconds, float _seconds_hidden)
     {
         seconds = _seconds;
+        seconds_hidden = _seconds_hidden; 
         day = _day;
-        breaktime = _breaktime; 
+    }
+
+    [PunRPC]
+    public void SetBreakTime(float _breaktime, float _seconds_hidden)
+    {
+        breaktime = _breaktime;
+        seconds_hidden = _seconds_hidden; 
     }
     #endregion
+
 
 }

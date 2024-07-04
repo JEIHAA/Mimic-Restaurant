@@ -16,7 +16,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// [CreateAssetMenu(fileName = "KeyChannel", menuName = "Channels/KeyChannel")]
+//[CreateAssetMenu(fileName = "KeyChannel", menuName = "Channels/KeyChannel")]
 namespace Keyboard
 {
     public class KeyChannel : ScriptableObject

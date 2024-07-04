@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
@@ -12,36 +11,61 @@ public class DateUIPresenter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI second_text = null;
     [SerializeField] private TextMeshProUGUI breaktime_text = null;
 
-    
+    private void Start()
+    {
+        breaktime_text.transform.parent.gameObject.SetActive(false); 
+    }
+
     public void SetDay(int _day)
     {
         day_text.text = _day + "일";
-        Debug.LogError("Day: " + _day); 
     }
 
     public void SetSecond(float _second)
     {
-        if(second_text != null)
+        if(!second_text.transform.parent.gameObject.activeSelf)
         {
-            if (_second < 60f) //1분 미만 
+            second_text.transform.parent.gameObject.SetActive(true);
+            breaktime_text.transform.parent.gameObject.SetActive(false); 
+        }
+        if(_second < 60f) //1분 미만 
+        {
+            if(_second < 10f)
             {
-                second_text.text = "00:" + (int)_second;
+                second_text.text = "00: 0" + _second; 
             }
-            else //1분 초과 
+            else
             {
-                second_text.text = "0" + (int)(_second / 60f) + ":" + (int)(_second - 60f);
+                second_text.text = "00: " + _second;
             }
         }
-        Debug.LogError("Second: " + (int)_second); 
+        else //1분 이상 
+        {
+            if((_second - 60f) < 10f)
+            {
+                second_text.text = "0" + (int)(_second / 60f) + ":0" + (_second - 60f);
+            }
+            else
+            {
+                second_text.text = "0" + (int)(_second / 60f) + ":" + (_second - 60f);
+            }
+        }
     }
 
     public void SetBreakTime(float _breaktime)
     {
-        if(breaktime_text != null)
+        if (!breaktime_text.transform.parent.gameObject.activeSelf)
         {
-            //쉬는시간 설정 
-            breaktime_text.text = "00: " + (int)_breaktime;
+            breaktime_text.transform.parent.gameObject.SetActive(true);
+            second_text.transform.parent.gameObject.SetActive(false); 
         }
-        Debug.LogError("BreakTime: " + (int)_breaktime);  
+        if (_breaktime < 10f)
+        {
+            breaktime_text.text = "00: 0" + _breaktime;
+        }
+        else
+        {
+            breaktime_text.text = "00: " + _breaktime;
+        }
     }
 }

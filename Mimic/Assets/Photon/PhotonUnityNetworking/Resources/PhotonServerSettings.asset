@@ -49,6 +49,9 @@ MonoBehaviour:
   - SetSecondandDay
   - GoGameScene
   - MonsterArrivedToRestaurant
+  - SetBreakTime
+  - STX_BSDC1
+  - RestartGameOtherSide
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

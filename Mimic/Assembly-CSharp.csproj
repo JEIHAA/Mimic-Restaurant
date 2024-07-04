@@ -83,7 +83,6 @@
     <Compile Include="Assets\Scripts\testAttack.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginMessageUIController.cs" />
     <Compile Include="Assets\Scripts\4_Room\ReadyRoom.cs" />
-    <Compile Include="Assets\Scripts\MoneyManager.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\IDispenser.cs" />
@@ -93,6 +92,7 @@
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserDrink.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ControlAnimateLights.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\FactoryDispenser.cs" />
+    <Compile Include="Assets\Scripts\PC\MoneyManager.cs" />
     <Compile Include="Assets\Scripts\2_GameTitle\GameController_Setting.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
     <Compile Include="Assets\Scripts\PC\DoorMove.cs" />
@@ -172,6 +172,7 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Resources\Shaders\7_InGameStore\7_StoreShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
