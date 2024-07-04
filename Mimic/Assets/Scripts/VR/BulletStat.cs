@@ -7,11 +7,11 @@ using UnityEngine;
 public class BulletStat : ScriptableObject
 {
     public int bulletDamage = 100;
-    public int bulletSpeed = 10;
+    public int bulletSpeed = 20;
 
     private void OnDisable()
     {
         bulletDamage = 100;
-        bulletSpeed = 10;
+        bulletSpeed = 20;
     }
 }
