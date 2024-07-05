@@ -14,7 +14,7 @@ public class FoodSizeChanger : MonoBehaviour
         if (_collider.CompareTag("Food"))
         {
             //À½½Ä
-            _collider.gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+            _collider.gameObject.transform.localScale -= new Vector3(0.3f, 0.3f, 0.3f);
         }
     }
 }

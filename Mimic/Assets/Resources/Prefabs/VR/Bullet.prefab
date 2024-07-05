@@ -91,7 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cd62bf93c145f449ea60a8c8aac028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 100
+  bulletDamage: 100
+  bulletSpeed: 20
+  bulletData: {fileID: 11400000, guid: a841e2db0b88fc242b9566b8aa569c69, type: 2}
   activationTime: 0
 --- !u!33 &3370324
 MeshFilter:
