@@ -945,6 +945,7 @@ GameObject:
   - component: {fileID: 8361427322307641476}
   - component: {fileID: 9177561693881010837}
   - component: {fileID: 7367765591994286886}
+  - component: {fileID: 4947649324103705462}
   m_Layer: 5
   m_Name: PistolBtn
   m_TagString: Untagged
@@ -1093,6 +1094,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4947649324103705462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811900667182637019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0224622ed73f6344b15ad1c46f56c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myButton: {fileID: 7367765591994286886}
+  maxClicks: 4
 --- !u!1 &2121028499519331403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,81 +1877,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4241247043002723280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1001071628725611062}
-  - component: {fileID: 5596433656690761804}
-  - component: {fileID: 6768942833348605174}
-  m_Layer: 5
-  m_Name: Img_UP
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1001071628725611062
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4241247043002723280}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6503882849969360292}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 98, y: 51}
-  m_SizeDelta: {x: 80, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5596433656690761804
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4241247043002723280}
-  m_CullTransparentMesh: 1
---- !u!114 &6768942833348605174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4241247043002723280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f0082edb246bbe04482a6e2ab3b99f11, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4352654499218000600
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,6 +2368,7 @@ GameObject:
   - component: {fileID: 7370283659214948508}
   - component: {fileID: 45927527796479882}
   - component: {fileID: 8781397002613401283}
+  - component: {fileID: 8788835460056450284}
   m_Layer: 5
   m_Name: Improving_Gun_Firing_RatesBtn
   m_TagString: Untagged
@@ -2449,7 +2390,6 @@ RectTransform:
   m_Children:
   - {fileID: 6745880969096122318}
   - {fileID: 1632711955241518746}
-  - {fileID: 1001071628725611062}
   - {fileID: 3544549894206856013}
   - {fileID: 6532025048923621650}
   m_Father: {fileID: 4257561484024255435}
@@ -2487,7 +2427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9672bb044ff3c7046a08dc9a13dfc1f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 307beb4505408e2408992f8f87b7e846, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2542,8 +2482,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BulletManager, Assembly-CSharp
-        m_MethodName: UpgradeSpeed
+        m_TargetAssemblyTypeName: HandCtrl, Assembly-CSharp
+        m_MethodName: UpgradeShootingSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2577,6 +2517,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HandCtrl, Assembly-CSharp
+        m_MethodName: UpgradeShootingSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8788835460056450284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868976745259531672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0224622ed73f6344b15ad1c46f56c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myButton: {fileID: 8781397002613401283}
+  maxClicks: 4
 --- !u!1 &5853306967625960221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2927,7 +2893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2001e9be47a19c446ad6290cb47a884f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1516aa54a6856c4c97afd94d7942cd1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3006,7 +2972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9672bb044ff3c7046a08dc9a13dfc1f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 307beb4505408e2408992f8f87b7e846, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3354,7 +3320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8bf52875bab3d4d47920fc31b78269e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1516aa54a6856c4c97afd94d7942cd1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

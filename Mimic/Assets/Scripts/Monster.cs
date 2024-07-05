@@ -94,7 +94,7 @@ public class Monster : MonoBehaviourPun, IOnDamage
         animator.SetTrigger("Death");
         status = (int)MonsterStatus.Death;
         yield return new WaitForSeconds(1f);
-        steak = PhotonNetwork.Instantiate("Prefabs\\Steak", new Vector3(0f, 1.5f, 0f), Quaternion.identity); 
+        steak = PhotonNetwork.Instantiate("Prefabs\\Food\\Ingredient\\Steak", new Vector3(0f, 1.5f, 0f), Quaternion.identity); 
         ondeathcallback?.Invoke(steak, meatnum); 
         SpawnManager.instance.FadeMonster(this);
         yield break; 
