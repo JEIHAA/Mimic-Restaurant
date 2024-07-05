@@ -61,57 +61,72 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\VolumetricLineBehavior.cs" />
+    <Compile Include="Assets\Scripts\VR\HandCtrl_Login.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\DayManager.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyboardManager.cs" />
     <Compile Include="Assets\Scripts\PC\Player\CameraMove.cs" />
+    <Compile Include="Assets\Scripts\PC\FoodTest.cs" />
     <Compile Include="Assets\Scripts\VR\HandCtrl.cs" />
     <Compile Include="Assets\Scripts\MeatManager.cs" />
+    <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ButtonLamp.cs" />
+    <Compile Include="Assets\Scripts\UI\SpeechBubble.cs" />
     <Compile Include="Assets\Scripts\VolumetricLineVertexData.cs" />
     <Compile Include="Assets\Scripts\MonsterManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\5_Loading\LoadingController.cs" />
-    <Compile Include="Assets\Scripts\TestDayManager.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserFried.cs" />
+    <Compile Include="Assets\Scripts\UIPresenter_Test.cs" />
     <Compile Include="Assets\Scripts\1_SplashLogo\SplashManager.cs" />
     <Compile Include="Assets\Scripts\PC\Player\PCPlayerManager.cs" />
     <Compile Include="Assets\Scripts\testAttack.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginMessageUIController.cs" />
     <Compile Include="Assets\Scripts\4_Room\ReadyRoom.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\IDispenser.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\WelcomeController.cs" />
+    <Compile Include="Assets\Scripts\PC\OrderInfo.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\GameManager_StartScene.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserDrink.cs" />
+    <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ControlAnimateLights.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\FactoryDispenser.cs" />
     <Compile Include="Assets\Scripts\PC\MoneyManager.cs" />
+    <Compile Include="Assets\Scripts\2_GameTitle\GameController_Setting.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
-    <Compile Include="Assets\Scripts\VR\KeyBoard.cs" />
+    <Compile Include="Assets\Scripts\PC\DoorMove.cs" />
     <Compile Include="Assets\Scripts\PC\CustomerSpawnManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\DBManager.cs" />
+    <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\Monitor.cs" />
+    <Compile Include="Assets\Scripts\FoodStat.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
     <Compile Include="Assets\Scripts\Meat.cs" />
     <Compile Include="Assets\Scripts\PC\Customer.cs" />
-    <Compile Include="Assets\Scripts\ShotBehavior.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserHamburger.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\SignupController.cs" />
     <Compile Include="Assets\Scripts\Interface\IOnDamage.cs" />
     <Compile Include="Assets\Scripts\Conveyor.cs" />
+    <Compile Include="Assets\Scripts\PC\FoodTableCookSide.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\PC\Curstomer.cs" />
+    <Compile Include="Assets\Scripts\EffectAudioManager.cs" />
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Barrier.cs" />
+    <Compile Include="Assets\Scripts\PC\Player\PCPlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\DateUIPresenter.cs" />
+    <Compile Include="Assets\Scripts\FoodEnumInfo.cs" />
+    <Compile Include="Assets\Scripts\PC\FoodTable.cs" />
     <Compile Include="Assets\Scripts\3_Lobby\MakeRoom.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\LetterKey.cs" />
-    <Compile Include="Assets\Scripts\PC\PCPlayerController.cs" />
+    <Compile Include="Assets\Scripts\KeyBoard.cs" />
     <Compile Include="Assets\Scripts\VRPlayer.cs" />
+    <Compile Include="Assets\Scripts\VR\HandMenu.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
-    <Compile Include="Assets\Scripts\UI\PCUIManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\MemberDTO.cs" />
+    <Compile Include="Assets\Scripts\UI\PCUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -119,6 +134,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Resources\Shaders\Bullet\_LineStripShader.cginc" />
     <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
+    <None Include="Assets\Resources\Images\Sprites\Img_PC_Food\Timer\Timer_Color.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Resources\Shaders\CullOffBarrier.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
@@ -137,6 +153,7 @@
     <None Include="Assets\Resources\Shaders\Bullet\_SingleLineShader.cginc" />
     <None Include="Assets\Resources\Shaders\Bullet\LineStrip-TextureAdditive.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Resources\Fonts\(English)more-sugar\1001fonts-more-sugar-eula.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
     <None Include="Assets\Packages\BCrypt.Net-Next.4.0.3\lib\netstandard2.1\BCrypt.Net-Next.dll" />
@@ -146,12 +163,12 @@
     <None Include="Assets\Photon\PhotonLibs\Metro\Photon3Unity3D.dll" />
     <None Include="Assets\Resources\Shaders\Bullet\SingleLine-TextureAlphaBlended.shader" />
     <None Include="Assets\Resources\Shaders\ConveyorBelt.shader" />
-    <None Include="Assets\Resources\Shaders\Bullet\LineStrip-LightSaber.shader" />
+    <None Include="Assets\Resources\fryer\license.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Resources\Shaders\Bullet\SingleLine-LightSaber.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
-    <None Include="Assets\Resources\low_poly_fast_food_restaurant_v03_1\low_poly_fast_food_restaurant_v03_1\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Resources\Fonts\(English)balbaleo\More Info.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
@@ -505,7 +522,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Photon3Unity3D">
@@ -1036,12 +1053,20 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.XR.Hands">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Hands.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
@@ -1052,12 +1077,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
@@ -1102,6 +1127,14 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
@@ -1168,6 +1201,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1232,6 +1269,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
       <Private>False</Private>
@@ -1256,6 +1297,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Updater">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1274,6 +1319,10 @@
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">

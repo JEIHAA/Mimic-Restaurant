@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\ui\\pcuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\pcuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\assets\\scripts\\2_login_startgame\\gamemanager_startscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\2_login_startgame\\gamemanager_startscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\ui\\dateuipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\assets\\scripts\\ui\\dateuipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\dateuipresenter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\assets\\scripts\\2_login_startgame\\gamemanager_startscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\2_login_startgame\\gamemanager_startscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\mimic-restaurant\\mimic\\assets\\scripts\\pc\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Customer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Customer.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Customer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PC\\Customer.cs",
+              "ViewState": "AQIAAAIBAAAAAAAAAIAwwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T09:26:29.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "DateUIPresenter.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\DateUIPresenter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\DateUIPresenter.cs",
@@ -43,39 +60,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PCUIManager.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\PCUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PCUIManager.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\PCUIManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\PCUIManager.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAAEgAAAAOAAAA",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAAAIYAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-01T05:34:12.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MoneyManager.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\MoneyManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\MoneyManager.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\MoneyManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\PC\\MoneyManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKwAAAAAAAAA",
+              "ViewState": "AQIAAKQAAAAAAAAAAAAmwMEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-01T04:00:55.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "GameManager_StartScene.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
               "RelativeToolTip": "Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAUwCMAAAAEAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAwwCMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-24T01:17:28.102Z",
               "EditorCaption": ""
