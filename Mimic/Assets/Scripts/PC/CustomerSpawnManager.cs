@@ -156,7 +156,7 @@ public class CustomerSpawnManager : MonoBehaviour
         for (int i = 0; i < customer_num_restaurant; ++i)
         {
             GetCustomer(i);
-            yield return new WaitForSeconds(Random.Range(3f, 6f));
+            yield return new WaitForSeconds(Random.Range(5f, 10f));
         }
         yield break;
     }

@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using UnityEngine;
 
@@ -14,9 +15,9 @@ public class DispenserHamburger : MonoBehaviour, IDispenser
 
     public void OperateDispenser(GameObject _player)
     {
-        Debug.Log(this.name+"사용");        
+        Debug.Log(this.name + "사용");
         GameObject food = _player.GetComponentInChildren<BindFood>().Food;
-        
+
         if (food == null && output != null)
         {
             Debug.Log("음식 가져감");
@@ -46,11 +47,11 @@ public class DispenserHamburger : MonoBehaviour, IDispenser
             _player.GetComponentInChildren<BindFood>().Food = null;
             StartCoroutine(GenerateFood(food));
         }
-        else { Debug.Log("뭐가 문제임?");  }
+        else { Debug.Log("뭐가 문제임?"); }
     }
 
     public IEnumerator GenerateFood(GameObject _food)
-    {   
+    {
         if (_food.GetComponent<Ingredients>().IsCooked)
         {
             _food.GetComponent<Ingredients>().IsCooking = true;
@@ -62,7 +63,17 @@ public class DispenserHamburger : MonoBehaviour, IDispenser
 
             _food.GetComponent<Ingredients>().IsCooking = false;
             Destroy(_food);
-            output = Instantiate(_food.GetComponent<Ingredients>().NextLevel, foodGenerator.position, Quaternion.identity);
+
+            if (!PhotonNetwork.IsConnected)
+            {
+                output = Instantiate(_food.GetComponent<Ingredients>().NextLevel, foodGenerator.position, Quaternion.identity);
+            }
+            else
+            {
+                output = PhotonNetwork.Instantiate("Prefabs\\Food\\Hamburger", foodGenerator.position, Quaternion.identity); 
+            }
+           
+
         }
         isGenerate = false;
     }

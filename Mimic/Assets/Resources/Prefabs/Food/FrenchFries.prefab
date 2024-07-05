@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2496848225428314722}
   - component: {fileID: -4467836482282230803}
   - component: {fileID: -2652159782135946444}
+  - component: {fileID: -6845085688717919166}
+  - component: {fileID: -5543041687646773734}
   m_Layer: 18
   m_Name: FrenchFries
   m_TagString: Food
@@ -299,3 +301,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437e97c430316894d9d5ae070319f5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6845085688717919166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901131158816726108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &-5543041687646773734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901131158816726108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
