@@ -13,8 +13,10 @@ public class BurgerInfo : FoodInfo, IGetFoodInfo
     public enum Hamburger
     {
         Hamburger,        //햄버거 
+        /*
         Cheeseburger,     //치즈햄버거 
         Shrimpburger,     //새우햄버거 
         Octopusburger     //문어햄버거 
+        */ 
     }
 }

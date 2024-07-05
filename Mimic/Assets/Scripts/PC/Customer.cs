@@ -50,8 +50,9 @@ public class Customer : MonoBehaviour
     [SerializeField] private Image speechbubble = null; //말풍선 메인 이미지 
     [SerializeField] private Image timerimage = null;   //타이머 이미지 
     [SerializeField] private Image[] foodimage = null; //음식 이미지 
-
+    
     private Transform endpoint = null;
+    private OrderInfo orderinfo = null;
 
     #region["활성화되었을때 실행됨"] 
     private void OnEnable()
@@ -89,6 +90,11 @@ public class Customer : MonoBehaviour
         }
     }
 
+    public void SetOrderInfo(OrderInfo _orderinfo)
+    {
+        orderinfo = _orderinfo; 
+    }
+
     #region["음식 이미지 끄기: 초기화"] 
     private void SetFoodImageDisable()
     {
@@ -113,7 +119,7 @@ public class Customer : MonoBehaviour
         for (int i = 0; i < foodnum; ++i)
         {
             //음식 이름을 랜덤으로 가져와서 추가 
-            Dictionary<string, Sprite> foodinfo = OrderInfo.instance.GetRandomFoodInfo();
+            Dictionary<string, Sprite> foodinfo = orderinfo.GetRandomFoodInfo();
             string foodname = foodinfo.Keys.ToList<String>()[0];
             Debug.Log("FoodName: " + foodname);
             wantedfood.Add(foodname);
@@ -158,6 +164,7 @@ public class Customer : MonoBehaviour
                 wantedfood.Remove(wantedfood[i]);
                 wantedfood_sprite.Remove(i); 
                 foodimage[i].sprite = null;
+                foodimage[i].gameObject.SetActive(false);
                 break; 
             }
         }
@@ -175,7 +182,8 @@ public class Customer : MonoBehaviour
             {
                 ++count;
                 GiveMoney(food_getted);
-                food_getted.SetActive(false); 
+                Destroy(food_getted.gameObject);
+                food_getted = null; 
                 //Photon Maybe? 
             }
             if(count >= wantedfood_num)
@@ -195,7 +203,7 @@ public class Customer : MonoBehaviour
         float duration = 0f; 
         for (int i = 0; i < wantedfood.Count; ++i)
         {
-            timer += OrderInfo.instance.GetFoodTimer(wantedfood[i]);
+            timer += orderinfo.GetFoodTimer(wantedfood[i]);
         }
 
         //타이머 설정: 주문한 음식의 평균 + 5초 
@@ -236,7 +244,9 @@ public class Customer : MonoBehaviour
         {
             //제대로 받았음. 
             Debug.Log("Thank you");
-            MoneyManager.instance.AddMoney(money_per_customer); 
+            //MoneyManager.instance.AddMoney(money_per_customer); 
+
+            speechbubble.gameObject.SetActive(false); 
         }
         GoAway(endpoint.gameObject, true); 
         yield break; 
@@ -285,7 +295,7 @@ public class Customer : MonoBehaviour
             {
                 animator.SetTrigger("Idle");
             }
-            //foodtable.GetComponentInChildren<FoodTable>().OnGetFoodOnClick = GetFood;
+            foodtable.transform.parent.gameObject.GetComponentInChildren<FoodTable>().OnGetFoodOnClick = GetFood; 
             collider.enabled = false;
             SpeechBubble(foodtable_trigger_g.transform.position); //말풍선 출력 
             StartCoroutine(SpeechBubbleCoroutine()); //말풍선 관련 COROUTINE 

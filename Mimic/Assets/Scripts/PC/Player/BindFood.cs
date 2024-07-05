@@ -28,6 +28,7 @@ public class BindFood : MonoBehaviour
         {
             //if (_other.GetComponent<Ingredients>().IsCooking) return;
             Debug.Log("GetFood");
+            
             if (_other.gameObject.transform.parent != null)
             {
                 food = _other.gameObject.transform.parent.gameObject;
@@ -36,6 +37,7 @@ public class BindFood : MonoBehaviour
             { 
                 food = _other.gameObject;
             }
+            food.GetComponent<Collider>().enabled = false; 
             SetFoodPos();
         }
     }
@@ -46,6 +48,7 @@ public class BindFood : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
+                food.GetComponent<Collider>().enabled = true; 
                 food.transform.parent = null;
                 foreach (Rigidbody rb in food.GetComponentsInChildren<Rigidbody>())
                 {

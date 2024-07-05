@@ -13,8 +13,10 @@ public class DrinkInfo : FoodInfo, IGetFoodInfo
     public enum Drink
     {
         ColaDrink,        //콜라
+        /*
         CiderDrink,       //사이다(사과술 아님) 
         EnergyDrink,      //에너지 음료 
         WaterMelonDrink   //수박 음료 
+        */ 
     }
 }

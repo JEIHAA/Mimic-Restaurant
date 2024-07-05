@@ -18,6 +18,7 @@ public class FoodTable : MonoBehaviour
         //나중에 음식 오브젝트에 음식 태그 추가해야함. 
         if(_collider.CompareTag("Food"))
         {
+            Debug.Log("Food Getted");
             ongetfoodonclick?.Invoke(_collider.gameObject); 
         }
     }

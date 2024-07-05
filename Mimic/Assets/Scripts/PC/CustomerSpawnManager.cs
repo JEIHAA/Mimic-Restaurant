@@ -21,6 +21,7 @@ public class CustomerSpawnManager : MonoBehaviour
     [SerializeField] private Transform customer_endpoint = null;
     [Header("식판 트리거(1~5)")]
     [SerializeField] private Transform[] foodtable_trigger = null;
+    [SerializeField] private OrderInfo orderinfo = null;
 
     private List<GameObject> customer_list_pools = new List<GameObject>();
     private List<int> foodtable_list = new List<int>();
@@ -84,6 +85,7 @@ public class CustomerSpawnManager : MonoBehaviour
                 customer_object.SetActive(true);
                 customer_object.GetComponent<Customer>().SetEndPoint(customer_endpoint);
                 customer_object.GetComponent<Customer>().Move(foodtable_trigger[_i]);
+                customer_object.GetComponent<Customer>().SetOrderInfo(orderinfo); 
             }
             else
             {

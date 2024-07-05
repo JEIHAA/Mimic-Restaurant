@@ -13,7 +13,9 @@ public class FriesInfo : FoodInfo, IGetFoodInfo
     public enum Fries
     {
         FrenchFries,     //°¨ÀÚÆ¢±è
+        /*
         CheeseFries,     //Ä¡Áî °¨ÀÚÆ¢±è 
         VolcanoFries     //º¼ÄÉÀÌ³ë °¨ÀÚÆ¢±è 
+        */
     }
 }

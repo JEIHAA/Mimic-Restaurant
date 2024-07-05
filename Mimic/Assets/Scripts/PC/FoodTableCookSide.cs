@@ -20,14 +20,33 @@ public class FoodTableCookSide : MonoBehaviour, IDispenser
 
     public void OperateDispenser(GameObject _player)
     {
-        if (_player.GetComponentInChildren<FoodTest>().gameObject != null)
+        if (_player.GetComponentInChildren<FoodInfo>().gameObject != null)
         {
-            food = _player.GetComponentInChildren<FoodTest>().gameObject;
-            if(GetComponentInChildren<FoodTable>() != null)
+            food = _player.GetComponentInChildren<FoodInfo>().gameObject;
+            //가지고 있는 게 음식이어야 줄 수 있음. 
+            if (GetComponentInChildren<FoodTable>() != null)
             {
                 food.transform.position = GetComponentInChildren<FoodTable>().gameObject.transform.position;
                 food.transform.SetParent(transform);
             }
+            else
+            {
+                Debug.Log("This is not Food.");
+            }
+        }
+        else
+        {
+
         }
     }
+
+    private void OnTriggerStay(Collider _collider)
+    {
+        if(_collider.name.Equals("PCPlayer"))
+        {
+            
+            food = _collider.GetComponentInChildren<FoodInfo>().gameObject; 
+        }
+    }
+
 }

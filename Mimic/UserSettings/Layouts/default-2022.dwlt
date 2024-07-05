@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 53
+  controlID: 82
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 54
+  controlID: 83
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 81
+  controlID: 84
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -795,9 +795,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.4905043, y: 10.743553, z: 35.01793}
+    m_Target: {x: -6.990054, y: 5.1481843, z: 38.578224}
     speed: 2
-    m_Value: {x: 1.4905043, y: 10.743553, z: 35.01793}
+    m_Value: {x: -6.990054, y: 5.1481843, z: 38.578224}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -843,13 +843,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.043956947, y: -0.84414893, z: 0.52970773, w: 0.07005346}
+    m_Target: {x: -0.15283753, y: -0.15584338, z: 0.024416573, w: -0.9755946}
     speed: 2
-    m_Value: {x: 0.04406159, y: -0.8433461, z: 0.5309687, w: 0.069986835}
+    m_Value: {x: -0.15429863, y: -0.15580444, z: 0.024649987, w: -0.97535086}
   m_Size:
-    m_Target: 0.35284635
+    m_Target: 3.314668
     speed: 2
-    m_Value: 0.35284635
+    m_Value: 3.314668
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1052,10 +1052,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 295}
-      m_SelectedIDs: 58faffff
-      m_LastClickedID: -1448
-      m_ExpandedIDs: c055feff28e6ffff2ce6ffff3ae6ffffd4e6fffffce6ffff9af3ffff26f6ffff3cf6ffff52f6ffff68f6ffff7ef6ffff94f6ffffa2f6ffff58faffffbefaffff20fbffffae7c0000e4800000a08300007e84000076860000
+      scrollPos: {x: 0, y: 135}
+      m_SelectedIDs: 2cf0ffff
+      m_LastClickedID: -4052
+      m_ExpandedIDs: 22d8ffff26d8ffff32d8ffff92f5ffffaef9ffff1cfbffff487c0000d07c0000488000005e8100008482000010840000ee840000f2840000f28600002a870000aa870000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1173,7 +1173,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/Resturant/Customers
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1181,30 +1181,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Prefabs/Resturant/Customers
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic"
+  m_LastProjectPath: E:\New Folder\School Study\Academy\Unity Project\MimicRestaurant\Mimic-Restaurant\Mimic
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 122}
-    m_SelectedIDs: 46bb0000
-    m_LastClickedID: 47942
-    m_ExpandedIDs: 0000000098ba0000aeba0000b4ba000018bb000030bb000000ca9a3b
+    scrollPos: {x: 0, y: 170}
+    m_SelectedIDs: 0ebb0000
+    m_LastClickedID: 47886
+    m_ExpandedIDs: 000000000abb00000cbb00000ebb000010bb000012bb000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Scripts
+      m_OriginalName: Scripts
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 47886
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 13}
     m_SearchString: 
@@ -1218,7 +1218,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 000000000abb00000cbb00000ebb000010bb000012bb0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1245,22 +1245,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 04860100ecdf000006e000003cdd000052de000080df00008c880000
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 04860100ecdf000006e000003cdd000052de000080df00008c8800009c890000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: FoodTable
+      m_OriginalName: FoodTable
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 29988
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 13}
     m_CreateAssetUtility:
