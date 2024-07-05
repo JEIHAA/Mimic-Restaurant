@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 53
+  controlID: 28
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 54
+  controlID: 29
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 822
     height: 468
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -217,8 +217,8 @@ MonoBehaviour:
     y: 468
     width: 822
     height: 479
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 83
+  controlID: 76
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -292,7 +292,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 241
+    width: 353
     height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
@@ -316,9 +316,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 241
+    x: 353
     y: 0
-    width: 452
+    width: 340
     height: 947
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
@@ -796,9 +796,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.619543, y: 4.601832, z: 17.389677}
+    m_Target: {x: -1.9729382, y: 2.211738, z: 11.300976}
     speed: 2
-    m_Value: {x: 7.619543, y: 4.601832, z: 17.389677}
+    m_Value: {x: -1.9729382, y: 2.211738, z: 11.300976}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -844,13 +844,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.016219068, y: 0.93777156, z: -0.34433103, w: 0.04412046}
+    m_Target: {x: 0.016884435, y: -0.2507045, z: 0.0042025177, w: 0.968013}
     speed: 2
-    m_Value: {x: 0.016217537, y: 0.93768305, z: -0.3442985, w: 0.044116296}
+    m_Value: {x: 0.013973779, y: -0.25214198, z: 0.0034707075, w: 0.9675832}
   m_Size:
-    m_Target: 2.6718273
+    m_Target: 4.183405
     speed: 2
-    m_Value: 2.6718273
+    m_Value: 4.183405
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2023,24 +2023,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 999}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0253f7ff0453f7ff0653f7ff0853f7ff1053f7ff1653f7ff2453f7ff2853f7ff3853f7ff6053f7ff3c0bf9ff480bf9fffc0bf9ff000cf9ff060cf9ff100cf9fff610f9fffa10f9ff0011f9ff0a11f9ff921cf9ff101df9ff0230f9ff5c30f9ff6830f9ffb631f9ff8c7bf9ff6084f9ffc684f9ffd08ff9fffa90f9ff7691f9ff8c95f9ffd6b9f9ffbc5efaff1a99faff06b8faff68fefaff403afbffb63afbff685dfbffe87bfbffb695fbff1297fbff069cfbff0aa4fbff88a4fbffa8abfbffb4c7fbff56f2fbff760efcfff263fcff7266fcffd6d1fcfffaedfcff0af0fcff745a02002ca1020084a502004ea90200a4ad020068b20200c6b50200c6b702007eb8020092c302004ac602005ac90200c4db02008ee10200e82c0400742e04007e35040064360400e0380400a43d04000241040000430400b8430400
+      scrollPos: {x: 0, y: 7}
+      m_SelectedIDs: 4a1efbff441cfbff
+      m_LastClickedID: -320444
+      m_ExpandedIDs: 461cfbff4c1efbffa023fbff0424fbff0824fbffaa38fbff00cefbff04cefbff06cefbff2433fcff16a7fcffcad1fcffecedfcff06f0fcffe807020080100200661102002c2f0200482f0200b83002007a320200e0320200ac360200c4370200aa380200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Steak(Clone)
-        m_OriginalName: Steak(Clone)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -341802
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -2073,7 +2073,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1227
     y: 73
-    width: 239
+    width: 351
     height: 926
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2092,7 +2092,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 243
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -2119,9 +2119,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1468
+    x: 1580
     y: 73
-    width: 451
+    width: 339
     height: 926
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2134,7 +2134,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: conve
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -2144,38 +2144,38 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs/Food
+    - Assets/Resources/Prefabs/Food/Ingredient
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: conve
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Prefabs/Food
+  - Assets/Resources/Prefabs/Food/Ingredient
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\New Folder\School Study\Academy\Unity Project\MimicRestaurant\Mimic-Restaurant\Mimic
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 250}
-    m_SelectedIDs: 14490000
-    m_LastClickedID: 18708
-    m_ExpandedIDs: 000000000c4100003842000068420000d4420000e04200001c46000014490000f449000000ca9a3b
+    scrollPos: {x: 0, y: 22}
+    m_SelectedIDs: b4520000
+    m_LastClickedID: 21172
+    m_ExpandedIDs: 000000000c4100003842000068420000d44200001449000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scene_SplashLogo
-      m_OriginalName: Scene_SplashLogo
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 17296
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 13}
     m_SearchString: 
@@ -2216,22 +2216,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 04860100ecdf000006e000003cdd000052de000080df00008c880000e08c0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: MoneyManager
-      m_OriginalName: MoneyManager
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 38740
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 13}
     m_CreateAssetUtility:

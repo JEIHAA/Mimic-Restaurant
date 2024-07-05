@@ -61,7 +61,7 @@ public class Conveyor : MonoBehaviour
             Vector3 movement = direction.normalized * speed * Time.deltaTime; //direction.normalized * speed * Time.deltaTime;
             foreach (Rigidbody rb in rbs) 
             {
-                Debug.Log(rb.name);
+                rb.velocity = direction.normalized * speed * Time.deltaTime;
                 rb.MovePosition(rb.position + movement);
             }
         }

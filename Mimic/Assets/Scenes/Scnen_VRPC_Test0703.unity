@@ -32170,6 +32170,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hamburger
       objectReference: {fileID: 0}
+    - target: {fileID: 3273809035834959297, guid: 0c42e70e85c111f4ba58f2e1cd4db443,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3382540715453266239, guid: 0c42e70e85c111f4ba58f2e1cd4db443,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44061,6 +44066,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783078263611115908, guid: b2b66c321fc1a9f46bfc69490f3542a2,
+        type: 3}
+      propertyPath: direction.z
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8608697440885895671, guid: b2b66c321fc1a9f46bfc69490f3542a2,
         type: 3}
@@ -56267,6 +56277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783078263611115908, guid: b2b66c321fc1a9f46bfc69490f3542a2,
+        type: 3}
+      propertyPath: direction.z
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8608697440885895671, guid: b2b66c321fc1a9f46bfc69490f3542a2,
         type: 3}
@@ -75122,6 +75137,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082162121668326150, guid: b92d60ece33e9284dae5f75cbf63b164,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6265418842797566583, guid: b92d60ece33e9284dae5f75cbf63b164,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6773641728408377707, guid: b92d60ece33e9284dae5f75cbf63b164,
         type: 3}
