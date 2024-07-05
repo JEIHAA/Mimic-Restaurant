@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\PC\Customer.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserHamburger.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\SignupController.cs" />
+    <Compile Include="Assets\Scripts\PC\ConveyorTrigger.cs" />
     <Compile Include="Assets\Scripts\Interface\IOnDamage.cs" />
     <Compile Include="Assets\Scripts\Conveyor.cs" />
     <Compile Include="Assets\Scripts\PC\FoodTableCookSide.cs" />

@@ -68,6 +68,7 @@ public class SpawnManager : MonoBehaviour
     }
     #endregion
 
+
     #region["몬스터 미리 로드하기"] 
     private void PreloadMonster(int _num)
     {
@@ -77,7 +78,6 @@ public class SpawnManager : MonoBehaviour
         }
     }
     #endregion
-
 
     #region["1초마다 몬스터 스폰하기"] 
     private IEnumerator SpawnMonsterCoroutine()
