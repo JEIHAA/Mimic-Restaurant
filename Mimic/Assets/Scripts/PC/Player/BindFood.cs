@@ -42,13 +42,14 @@ public class BindFood : MonoBehaviour
         }
     }
 
+    
     public void DropFood() 
     {
         if (hasFood)
         {
             if (Input.GetKeyDown("e"))
             {
-                food.GetComponent<Collider>().enabled = true; 
+                food.GetComponent<Collider>().enabled = true;
                 food.transform.parent = null;
                 foreach (Rigidbody rb in food.GetComponentsInChildren<Rigidbody>())
                 {

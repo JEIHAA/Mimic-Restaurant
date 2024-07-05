@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class FoodTable : MonoBehaviour
 {
+    /*
     public delegate void OnGetFoodDelegate(GameObject _food);
     private OnGetFoodDelegate ongetfoodonclick = null;
     public OnGetFoodDelegate OnGetFoodOnClick
@@ -13,6 +14,7 @@ public class FoodTable : MonoBehaviour
         set { ongetfoodonclick = value;  }
     }
     
+    /*
     private void OnTriggerEnter(Collider _collider)
     {
         //나중에 음식 오브젝트에 음식 태그 추가해야함. 
@@ -22,5 +24,5 @@ public class FoodTable : MonoBehaviour
             ongetfoodonclick?.Invoke(_collider.gameObject); 
         }
     }
-
+    */ 
 }

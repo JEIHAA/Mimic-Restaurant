@@ -11,6 +11,7 @@ using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 using Image = UnityEngine.UI.Image;
 using System.Linq;
+using Unity.VisualScripting;
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
 public class Customer : MonoBehaviour
@@ -121,7 +122,6 @@ public class Customer : MonoBehaviour
             //음식 이름을 랜덤으로 가져와서 추가 
             Dictionary<string, Sprite> foodinfo = orderinfo.GetRandomFoodInfo();
             string foodname = foodinfo.Keys.ToList<String>()[0];
-            Debug.Log("FoodName: " + foodname);
             wantedfood.Add(foodname);
             wantedfood_sprite.Add(i, foodinfo[foodname]); 
         }
@@ -147,18 +147,17 @@ public class Customer : MonoBehaviour
     {
         while(speechbubble.gameObject.activeSelf)
         {
-            //speechbubble.transform.LookAt(speechbubble.transform.position + Camera.main.transform.rotation * Vector3.back, Camera.main.transform.rotation * Vector3.down);
             yield return new WaitForEndOfFrame(); 
         }
         yield break; 
     }
 
     #region["음식 받기"] 
-    public void GetFood(GameObject _food)
+    public void GetFood(GameObject _food, GameObject _player)
     {
         for(int i=0; i<wantedfood.Count; ++i)
         {
-            if (wantedfood[i].Contains(_food.name))
+            if (_food.name.Contains(wantedfood[i]))
             {
                 food_getted = _food;
                 wantedfood.Remove(wantedfood[i]);
@@ -166,6 +165,12 @@ public class Customer : MonoBehaviour
                 foodimage[i].sprite = null;
                 foodimage[i].gameObject.SetActive(false);
                 break; 
+            }
+            else
+            {
+                _food.GetComponent<Collider>().enabled = false;
+                _food.transform.position = _player.GetComponentInChildren<BindFood>().transform.position;
+                _food.transform.SetParent(_player.GetComponentInChildren<BindFood>().transform); 
             }
         }
     }
@@ -188,8 +193,8 @@ public class Customer : MonoBehaviour
             }
             if(count >= wantedfood_num)
             {
-                TotallyFoodGetted = true; 
-                break; 
+                TotallyFoodGetted = true;
+                count = 0; 
             }
             yield return new WaitForEndOfFrame(); 
         }
@@ -209,7 +214,6 @@ public class Customer : MonoBehaviour
         //타이머 설정: 주문한 음식의 평균 + 5초 
         timer = timer / wantedfood.Count;
         timer += 5f;
-
 
         duration = timer;
         //타이머 비율 설정: 3으로 나눈다. 
@@ -295,7 +299,8 @@ public class Customer : MonoBehaviour
             {
                 animator.SetTrigger("Idle");
             }
-            foodtable.transform.parent.gameObject.GetComponentInChildren<FoodTable>().OnGetFoodOnClick = GetFood; 
+            foodtable.GetComponentInParent<FoodTableCookSide>().IsUsedByCustomer = true; 
+            foodtable.GetComponentInParent<FoodTableCookSide>().OnGetFoodOnClick = GetFood; 
             collider.enabled = false;
             SpeechBubble(foodtable_trigger_g.transform.position); //말풍선 출력 
             StartCoroutine(SpeechBubbleCoroutine()); //말풍선 관련 COROUTINE 
@@ -328,6 +333,7 @@ public class Customer : MonoBehaviour
             {
                 collider.enabled = true;
             }
+            foodtable.GetComponentInParent<FoodTableCookSide>().IsUsedByCustomer = false; 
             agent.SetDestination(_startpoint.transform.position);
             yield return new WaitForEndOfFrame();
         }
