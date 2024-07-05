@@ -126,7 +126,6 @@ public class Customer : MonoBehaviour
     #region["¸»Ç³¼± Ãâ·Â"]
     private void SpeechBubble(Vector3 _newpos) 
     {
-        /*
         speechbubble.gameObject.SetActive(true);
         SetWantedFoodList();
 
@@ -135,7 +134,6 @@ public class Customer : MonoBehaviour
             foodimage[i].gameObject.SetActive(true);
             foodimage[i].sprite = wantedfood_sprite[i];
         }
-        */
     }        
     #endregion
 

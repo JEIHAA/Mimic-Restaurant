@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviourPun
             CheckinMainScene();
         }
         AudioManager.instance.PlayBGM();
-        //CustomerSpawnManager.instance.StartSpawnCustomer(); //임시(네트워크X) 
+        CustomerSpawnManager.instance.StartSpawnCustomer(); //임시(네트워크X) 
     }
     #endregion
 
