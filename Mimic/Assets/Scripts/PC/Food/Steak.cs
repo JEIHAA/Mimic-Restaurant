@@ -16,4 +16,6 @@ public class Steak : Ingredients, ICooking
         Debug.Log("ÆÄ±«!!!!!!!!!!!!!!!!!!!!");
         //this.gameObject.SetActive(false);
     }
+
+    
 }

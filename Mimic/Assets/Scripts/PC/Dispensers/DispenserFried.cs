@@ -1,12 +1,31 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class DispenserFried : MonoBehaviour, IDispenser
+public class DispenserFried : DispenserWait, IDispenser
 {
     [SerializeField] private Transform foodGenerator;
     [SerializeField] private GameObject outputPrefab;
     [SerializeField] private GameObject output;
     [SerializeField] private bool isGenerate = false;
+
+    public static DispenserFried instance = null;
+
+    private float timer_wait = 3f;
+
+    public void UpgradeTimer(float _timer)
+    {
+        if(timer_wait > 0)
+        {
+            timer_wait -= (_timer * timer_wait); 
+        }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        instance = this; 
+    }
 
     public bool GetIsGenerate()
     {
@@ -47,7 +66,8 @@ public class DispenserFried : MonoBehaviour, IDispenser
     public IEnumerator GenerateFood(GameObject _outputPrefab)
     {
         Debug.Log("Æ¢±â´Â Áß...");
-        yield return new WaitForSeconds(3f);
+        StartCoroutine(WaitTimer(timer_wait)); 
+        yield return new WaitForSeconds(timer_wait);
 
         output = Instantiate(_outputPrefab, foodGenerator.position, Quaternion.identity);
 

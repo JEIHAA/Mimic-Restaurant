@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,6 +30,62 @@ public class CustomerSpawnManager : MonoBehaviour
     private Boolean isBreakTime = false;
 
     public static CustomerSpawnManager instance = null; //Singleton 
+
+    //나중에 정산 UI에 출력할 정보들임. 
+    private int customer_getted_num = 0;
+    private int customer_notgetted_num = 0;
+    private int money_getted = 0;
+
+    #region["받은 손님 명수 증가시키기"] 
+    public void IncreaseCustomer()
+    {
+        ++customer_getted_num; 
+    }
+    #endregion
+
+    #region["받지 못한 손님 명수 증가시키기"]
+    public void IncreaseCustomerNotGet()
+    {
+        ++customer_notgetted_num; 
+    }
+    #endregion
+
+    #region["돈을 받을 때마다 이 메소드가 실행"]
+    public void IncreaseMoney(int _money)
+    {
+        money_getted += _money; 
+    }
+    #endregion
+
+    #region["받은 손님 명수 돌려주기"] 
+    public int GetCustomerNum()
+    {
+        return customer_getted_num; 
+    }
+    #endregion
+
+    #region["받지 못한 손님 명수 돌려주기"]
+    public int NotGetCustomerNum()
+    {
+        return customer_notgetted_num; 
+    }
+    #endregion
+
+    #region["돈 돌려주기"]
+    public int GetMoney()
+    {
+        return money_getted; 
+    }
+    #endregion
+
+    #region["PC 정산 정보 초기화하기"] 
+    public void ClearCustomer()
+    {
+        customer_getted_num = 0;
+        customer_notgetted_num = 0;
+        money_getted = 0; 
+    }
+    #endregion
 
     private void Awake()
     {

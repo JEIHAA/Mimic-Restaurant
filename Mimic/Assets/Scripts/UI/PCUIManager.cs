@@ -54,13 +54,6 @@ public class PCUIManager : MonoBehaviour
     }
     #endregion
 
-    #region["Update is called once per frame"] 
-    private void Update()
-    {
-        
-    }
-    #endregion
-
     #region UI 기능 
     #region["UI 위로 숨기기"] 
     public void SetUpButton()

@@ -242,14 +242,16 @@ public class Customer : MonoBehaviour
             //시간 초과 
             Debug.Log("Too Late");
             //화내는 효과음 재생 
+            CustomerSpawnManager.instance.IncreaseCustomerNotGet(); //받지 못한 손님 명수 증가시키기 
             speechbubble.gameObject.SetActive(false); 
         }
         if(TotallyFoodGetted)
         {
             //제대로 받았음. 
             Debug.Log("Thank you");
-            //MoneyManager.instance.AddMoney(money_per_customer); 
-
+            CustomerSpawnManager.instance.IncreaseCustomer(); //받은 손님 명수 증가시키기 
+            CustomerSpawnManager.instance.IncreaseMoney(money_per_customer); 
+            MoneyManager.instance.AddMoney(money_per_customer); 
             speechbubble.gameObject.SetActive(false); 
         }
         GoAway(endpoint.gameObject, true); 
@@ -261,8 +263,8 @@ public class Customer : MonoBehaviour
     private void GiveMoney(GameObject _food)
     {
         //아마 음식 클래스는 Food 클래스를 부모 클래스로 가져아 할것이라고 봄. 
-        //int money = _food.GetComponent<Food>().GetMoney(); 
-        //money_per_customer += money; 
+        int money = _food.GetComponent<FoodInfo>().GetMoney(); 
+        money_per_customer += money; 
     }
     #endregion  
 

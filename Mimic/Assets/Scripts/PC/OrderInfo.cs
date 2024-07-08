@@ -88,9 +88,9 @@ public class OrderInfo : MonoBehaviour
         Dictionary<string, float> timer_list_ = new Dictionary<string, float>();
         Type foodtype = typeof(FoodInfo.Food);
 
-        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.Hamburger), 15f); //Hamburger 
-        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.FrenchFries), 20f); //FrenchFries 
-        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.Drink), 10f); //Drink 
+        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.Hamburger), 25f); //Hamburger 
+        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.FrenchFries), 30f); //FrenchFries 
+        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.Drink), 20f); //Drink 
         return timer_list_; 
     }
     #endregion

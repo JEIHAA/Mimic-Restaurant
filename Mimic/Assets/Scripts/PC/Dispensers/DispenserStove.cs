@@ -4,11 +4,28 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static FoodInfo;
 
-public class DispenserStove : MonoBehaviour, IDispenser
+public class DispenserStove : DispenserWait, IDispenser
 {
     [SerializeField] private Transform foodGenerator;
     [SerializeField] private GameObject output;
     [SerializeField] private bool isGenerate = false;
+
+    private float timer_wait = 3f;
+
+    [HideInInspector] public static DispenserStove instance = null; 
+    protected override void Awake()
+    {
+        base.Awake();
+        instance = this; 
+    }
+
+    public void UpgradeTimer(float _timer)
+    {
+        if(timer_wait > 0)
+        {
+            timer_wait -= (_timer * timer_wait); 
+        }
+    }
 
     public bool GetIsGenerate() 
     {
@@ -61,7 +78,8 @@ public class DispenserStove : MonoBehaviour, IDispenser
             _food.transform.transform.position = foodGenerator.position;
             Debug.Log("음식 내려놓음");
 
-            yield return new WaitForSeconds(3f);
+            StartCoroutine(WaitTimer(timer_wait)); 
+            yield return new WaitForSeconds(timer_wait);
 
             _food.GetComponent<Ingredients>().IsCooking = false;
             Destroy(_food);
@@ -70,11 +88,4 @@ public class DispenserStove : MonoBehaviour, IDispenser
         }
     }
 
-    /*private void OnTriggerExit(Collider _other)
-    {
-        if (_other.gameObject.layer == LayerMask.NameToLayer("Food") || _other.gameObject.layer == LayerMask.NameToLayer("Ingredients")) 
-        {
-            isGenerate = false;
-        }       
-    }*/
 }
