@@ -30,7 +30,7 @@ public class MeatManager : MonoBehaviour
     {
         if(meatnum < maxmeatnum)
         {
-            transform.SetParent(_meat.transform); 
+            _meat.transform.SetParent(transform);
             ++meatnum;
         }
     }

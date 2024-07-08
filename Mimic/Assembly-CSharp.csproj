@@ -75,6 +75,11 @@
     <Compile Include="Assets\Scripts\VolumetricLineVertexData.cs" />
     <Compile Include="Assets\Scripts\MonsterManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginController.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="Assets\Scripts\PC\Food\Interface\ICooking.cs" />
+    <Compile Include="Assets\Scripts\VR\VREatFood.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\5_Loading\LoadingController.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserFried.cs" />
