@@ -8,7 +8,16 @@ using UnityEngine.AI;
 
 public class MoneyManager : MonoBehaviour
 {
+    //Singleton 
     public static MoneyManager instance = null;
+
+    //기계 
+    public enum Machine
+    {
+        Grill, //그릴 
+        Drink, //음료 
+        Fryer  //튀김 
+    }
 
     #region 변수
     [SerializeField] private TextMeshProUGUI TotalMoneyText = null;
@@ -21,16 +30,19 @@ public class MoneyManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Increase_Food_Hunger_Lv_Text = null; //스킬-증가 텍스트
     [SerializeField] private TextMeshProUGUI Increase_Food_Hunger_Text = null; //스킬- 
 
-    private int TotalMoney = 0;
-    private int[] AddPrices = new int[3];
+    [Header("전체 돈")]
+    [SerializeField] private int TotalMoney = 0; //전체 돈 
     [SerializeField] private int[] MachineLevels = new int[3];
     [SerializeField] private int[] MachineMoneys = new int[3];
-    [SerializeField] private int[] rates = new int[3]; //비율 증가
+    [SerializeField] private int[] foodMoneys = new int[3];
+    [SerializeField] private TextMeshProUGUI[] foodMoney_text = null;
 
+    [Header("초기 판매 돈 레벨")]
     private int Increase_Sales_Money_Lv = 1;
+    [Header("초기 음식 공복도")]
     private int Increase_Food_Hunger_Lv = 1;
 
-    [Header("초기 공복도 비용")] 
+    [Header("초기 공복도 비용")]
     [SerializeField] private int Food_Hunger_Money = 100;
     [Header("초기 공복도 비율")]
     [SerializeField] private int Food_Hunger_Rate = 10;
@@ -39,7 +51,16 @@ public class MoneyManager : MonoBehaviour
     [Header("초기 판매가격 증가할때 드는 비용")]
     [SerializeField] private int Sale_Money_Cost = 150;
     [Header("판매가격 증가")]
-    [SerializeField] private int Sale_Money = 50; 
+    [SerializeField] private int Sale_Money = 50;
+
+    [Header("기계")]
+    [SerializeField] private DispenserHamburger[] hamburgerdispenser = null;
+    [SerializeField] private DispenserStove[] stovedispenser = null;
+    [SerializeField] private DispenserDrink[] drinkdispenser = null;
+    [SerializeField] private DispenserFried[] frydispenser = null;
+
+    [Header("음식 Scriptable Object")]
+    [SerializeField] private FoodStat[] foodstat = null;
 
     private void Awake()
     {
@@ -54,15 +75,9 @@ public class MoneyManager : MonoBehaviour
     }
 
     #region 각 추가금액,레벨,머니 표시
-
     public void Print_SalesAmount_Money()
     {
         TotalMoneyText.text = TotalMoney.ToString();
-    }
-
-    public void PrintAddPrice(int index)
-    {
-        AddPriceTexts[index].text = AddPrices[index].ToString();
     }
 
     public void PrintMachineLevel(int index)
@@ -70,11 +85,11 @@ public class MoneyManager : MonoBehaviour
         MachineLevelTexts[index].text = "Lv." + MachineLevels[index];
         if (MachineLevels[index] == 5)
         {
-            MachineLevelTexts[index].text = "Lv.Max" ;
+            MachineLevelTexts[index].text = "Lv.Max";
             //MachineLevelTexts[index].GetComponent<RectTransform>().position += new Vector3(-25f, 0f, 0f);
             RectTransform rectTransform = MachineLevelTexts[index].GetComponent<RectTransform>();
             // 텍스트의 위치를 고정합니다.
-            rectTransform.anchoredPosition = new Vector3(+40f, rectTransform.anchoredPosition.y,0);
+            rectTransform.anchoredPosition = new Vector3(+40f, rectTransform.anchoredPosition.y, 0);
         }
     }
 
@@ -86,27 +101,33 @@ public class MoneyManager : MonoBehaviour
     public void PrintIncrease_Sales_Money_Lv()
     {
         Increase_Sales_Money_Lv_Text.text = "Lv." + Increase_Sales_Money_Lv.ToString();
-        if (Increase_Sales_Money_Lv == 5) 
+        if (Increase_Sales_Money_Lv == 5)
         {
             Increase_Sales_Money_Lv_Text.text = "Lv.Max";
-            //Increase_Sales_Money_Lv_Text.GetComponent<RectTransform>().position += new Vector3(-25f, 0f, 0f);
             RectTransform rectTransform = Increase_Sales_Money_Lv_Text.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = new Vector3(+40f, rectTransform.anchoredPosition.y, 0);
         }
     }
 
+    private void PrintFoodMoney_Each()
+    {
+        //햄버거, 감자튀김, 콜라
+        for (int i = 0; i < foodMoneys.Length; ++i)
+        {
+            foodMoney_text[i].text = foodMoneys[i].ToString();
+        }
+    }
     public void PrintIncreaseSalesMoney()
     {
-        IncreaseSalesMoney_Text.text = Sale_Money_Cost.ToString(); 
+        IncreaseSalesMoney_Text.text = Sale_Money_Cost.ToString();
     }
 
     public void PrintIncrease_Food_Hunger_Lv()
     {
         Increase_Food_Hunger_Lv_Text.text = "Lv. " + Increase_Food_Hunger_Lv.ToString();
-        if (Increase_Food_Hunger_Lv == 5) 
+        if (Increase_Food_Hunger_Lv == 5)
         {
             Increase_Food_Hunger_Lv_Text.text = "Lv.Max";
-            //Increase_Food_Hunger_Lv_Text.GetComponent<RectTransform>().position += new Vector3(-25f, 0f, 0f);
             RectTransform rectTransform = Increase_Food_Hunger_Lv_Text.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = new Vector3(+40f, rectTransform.anchoredPosition.y, 0);
         }
@@ -114,7 +135,7 @@ public class MoneyManager : MonoBehaviour
 
     public void PrintIncrease_Food_Hunger()
     {
-        Increase_Food_Hunger_Text.text = Food_Hunger_Money.ToString(); 
+        Increase_Food_Hunger_Text.text = Food_Hunger_Money.ToString();
     }
 
     #endregion
@@ -123,14 +144,21 @@ public class MoneyManager : MonoBehaviour
 
     public void AddMoney(int _Money)
     {
+        Debug.Log("Money: " + _Money);
         TotalMoney += _Money;
         Print_SalesAmount_Money();
     }
 
     public void MinusMoney(int _Money)
     {
-        TotalMoney -= _Money;
-        Print_SalesAmount_Money();
+        if(TotalMoney > 0)
+        {
+            if(TotalMoney > _Money)
+            {
+                TotalMoney -= _Money;
+                Print_SalesAmount_Money();
+            }
+        }
     }
 
     #endregion
@@ -150,56 +178,103 @@ public class MoneyManager : MonoBehaviour
     {
         switch (index)
         {
-            case 0:
+            case (int)Machine.Grill: //Grill 
                 MachineSpeedIncrease(5, index);
                 break;
-            case 1:
+            case (int)Machine.Drink: //Drink 
                 MachineSpeedIncrease(7, index);
                 break;
-            case 2:
-                MachineSpeedIncrease(8, index);
+            case (int)Machine.Fryer: //Fries  
+                MachineSpeedIncrease(6, index);
                 break;
         }
     }
 
     private void HungerIncrease()
     {
-        if(Increase_Food_Hunger_Lv < 5)
+        if (TotalMoney > 0)
         {
-            MinusMoney(Food_Hunger_Money); //초기 비용만큼 돈을 뺀다. 
-            Food_Hunger_Money += 100; //비용 증가(간격: 100) 
-            ++Increase_Food_Hunger_Lv; //레벨 증가 
-            Food_Hunger_Rate += 10; //비율 증가 
+            if (Increase_Food_Hunger_Lv < 5)
+            {
+                MinusMoney(Food_Hunger_Money); //초기 비용만큼 돈을 뺀다. 
+                for(int i=0; i<foodstat.Length; ++i)
+                {
+                    float rate = foodstat[i].hungerrestore * (Food_Hunger_Rate / 100f);
+                    foodstat[i].hungerrestore += (int)rate;
+                }
+                Food_Hunger_Money += 100; //비용 증가(간격: 100) 
+                ++Increase_Food_Hunger_Lv; //레벨 증가 
+                Food_Hunger_Rate += 10; //비율 증가 
+            }
+            PrintIncrease_Food_Hunger_Lv();
+            PrintIncrease_Food_Hunger();
         }
-        PrintIncrease_Food_Hunger_Lv();
-        PrintIncrease_Food_Hunger(); 
     }
 
     private void MoneyIncrease()
-    { 
-        if(Increase_Sales_Money_Lv < 5)
+    {
+        if (TotalMoney > 0)
         {
-            MinusMoney(Sale_Money_Cost);
-            Sale_Money_Cost += 100;
-            ++Increase_Sales_Money_Lv;
-            Sale_Money += 50; 
+            if (Increase_Sales_Money_Lv < 5)
+            {
+                MinusMoney(Sale_Money_Cost);
+                for (int i = 0; i < foodMoneys.Length; ++i)
+                {
+                    foodMoneys[i] += Sale_Money; 
+                    foodstat[i].money += Sale_Money; 
+                }
+                PrintFoodMoney_Each();
+                Sale_Money_Cost += 100;
+                ++Increase_Sales_Money_Lv;
+                Sale_Money += 50;
+            }
+            PrintIncrease_Sales_Money_Lv();
+            PrintIncreaseSalesMoney();
         }
-        PrintIncrease_Sales_Money_Lv(); 
-        PrintIncreaseSalesMoney();
-
     }
+
     private void MachineSpeedIncrease(int _rateIncrement, int _index)
     {
-        if (MachineLevels[_index] < 5)
+        if (TotalMoney > 0)
         {
-            MinusMoney(MachineMoneys[_index]); //쓴 만큼 뺀다. 
-            ++MachineLevels[_index];
-            MachineMoneys[_index] += 100;
-            _rateIncrement *= MachineLevels[_index];
+            if (MachineLevels[_index] < 5)
+            {
+                MinusMoney(MachineMoneys[_index]); //쓴 만큼 뺀다. 
+                float newrate_int = _rateIncrement * MachineLevels[_index];
+                float minusrate = newrate_int / 100f;  
+                Debug.Log("minusrate: " + minusrate); 
+                switch (_index)
+                {
+                    case (int)Machine.Grill:
+                        for (int i = 0; i < stovedispenser.Length; ++i)
+                        {
+                            stovedispenser[i].UpgradeTimer(minusrate);
+                        }
+                        for (int i = 0; i < hamburgerdispenser.Length; ++i)
+                        {
+                            hamburgerdispenser[i].UpgradeTimer(minusrate);
+                        }
+                        break;
+                    case (int)Machine.Drink:
+                        for (int i = 0; i < drinkdispenser.Length; ++i)
+                        {
+                            drinkdispenser[i].UpgradeTimer(minusrate);
+                        }
+                        break;
+                    case (int)Machine.Fryer:
+                        for (int i = 0; i < frydispenser.Length; ++i)
+                        {
+                            frydispenser[i].UpgradeTimer(minusrate);
+                        }
+                        break;
+                }
+                ++MachineLevels[_index];
+                MachineMoneys[_index] += 100;
+            }
+            PrintMachineLevel(_index);
+            PrintMachineMoney(_index);
         }
-        PrintMachineLevel(_index);
-        PrintMachineMoney(_index);
     }
-  
+
     #endregion
 }

@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 100
+  bulletSpeed: 20
   bulletData: {fileID: 11400000, guid: a841e2db0b88fc242b9566b8aa569c69, type: 2}
   activationTime: 0
 --- !u!33 &3370324

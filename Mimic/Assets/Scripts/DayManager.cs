@@ -27,34 +27,26 @@ public class DayManager : MonoBehaviourPun
     }
     #endregion
 
-
     #region["날짜 더하는 코루틴"] 
     private IEnumerator AddDayCoroutine()
     {
         while (true)
         {
-            //110초 또는 360초: 쉬는시간 시작 
+            ++seconds;  
             if (seconds == 100f)
             {
-                seconds = 0f;
                 StartCoroutine(BreakTimeCoroutine());
-                yield break;
             }
-            else
+            if(seconds == 260f)
             {
-                ++seconds;
-            }
-            if(seconds_hidden == 260f)
-            {
-                seconds_hidden = 0f;
                 if(day < 4)
                 {
                     ++day;
-                    Debug.LogError("day: " + day); 
+                    seconds = 0f;
+                    //정산화면 출력 
+                    yield break; 
                 }
             }
-            ++seconds_hidden;
-            Debug.LogError("seconds_hidden: " + seconds_hidden); 
             //!XRSettings.enabled
             if (PhotonNetwork.IsMasterClient) //PC -> VR
             {
@@ -70,12 +62,14 @@ public class DayManager : MonoBehaviourPun
     #region["쉬는시간 코루틴"] 
     private IEnumerator BreakTimeCoroutine()
     {
-        CustomerSpawnManager.instance.BreakTime(); //쉬는시간 시작 
+        if(XRSettings.enabled)
+        {
+            //쉬는시간이 시작되면 몬스터를 삭제하고 리스트를 초기화한다. 
+            SpawnManager.instance.deleteMonster(); 
+        }
         while (breaktime < 30f)
         {
             ++breaktime;
-            ++seconds_hidden;
-            Debug.LogError("seconds_hidden: " + seconds_hidden); 
             //!XRSettings.enabled 
             if (PhotonNetwork.IsMasterClient) //PC -> VR 
             {
@@ -85,10 +79,9 @@ public class DayManager : MonoBehaviourPun
             yield return new WaitForSeconds(1f);
         }
         breaktime = 0f;
-        CustomerSpawnManager.instance.Restart();   //쉬는시간 끝 
-        StartCoroutine(AddDayCoroutine()); //시계 시작 
         if (XRSettings.enabled)
         {
+            //몬스터 다시 스폰 
             SpawnManager.instance.GoNextWave();
         }
         yield break;

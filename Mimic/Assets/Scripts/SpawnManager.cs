@@ -5,6 +5,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.XR;
+using Random = UnityEngine.Random;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 /*
@@ -23,8 +24,8 @@ public class SpawnManager : MonoBehaviour
     //변경  
     [Header("스폰 몬스터 최대 마리수")]
     [SerializeField] private int maxnum = 50;
-    [Header("스폰 몬스터 Prefab")]
-    [SerializeField] private Monster monsterPrefab = null;
+    [Header("스폰 몬스터 Prefab 배열: 랜덤 스폰")]
+    [SerializeField] private Monster[] monsterPrefab_arr = null; 
     [Header("스폰 포인트 Prefab")]
     [SerializeField] private GameObject[] spawnpoint = null;
     [Header("스폰 포인트 순서")]
@@ -62,7 +63,7 @@ public class SpawnManager : MonoBehaviour
     #region["몬스터 인스턴스화 하기"] 
     private Monster CreateMonster()
     {
-        Monster instance = (Instantiate(monsterPrefab.gameObject) as GameObject).GetComponent<Monster>();
+        Monster instance = (Instantiate(monsterPrefab_arr[Random.Range(0, monsterPrefab_arr.Length)].gameObject) as GameObject).GetComponent<Monster>();
         instance.OnDeathCallBack = monstermanager.MonsterDeathOnClick; 
         return instance;
     }
@@ -139,6 +140,14 @@ public class SpawnManager : MonoBehaviour
     private void ClearMonsterPool()
     {
         monsterpool.Clear();
+    }
+    #endregion
+
+    #region["몬스터 삭제"]
+    public void deleteMonster()
+    {
+        ClearMonsterPool();
+        monstermanager.DestroyMonsterList(); 
     }
     #endregion
 

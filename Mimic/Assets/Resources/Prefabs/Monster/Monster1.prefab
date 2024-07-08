@@ -2879,7 +2879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5762902411667128243}
   - component: {fileID: 2484677511069871163}
-  m_Layer: 9
+  m_Layer: 7
   m_Name: Bodies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3202,7 +3202,7 @@ GameObject:
   - component: {fileID: 5762902411667128297}
   - component: {fileID: 5762902411664305897}
   - component: {fileID: 6167053441686703899}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: Glove01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3825,9 +3825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27c6156f3e87df4fada8e570e40b713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterSpeed: 5
+  monsterSpeed: 10
   monsterData: {fileID: 11400000, guid: 0a2eecdf4d5fa4a4cbbb73477ab68c36, type: 2}
-  steak: {fileID: 4179205776943551302, guid: 219e253d2043b4bf382f7fbe08130e26, type: 3}
+  steak: {fileID: 8617365242264766431, guid: d1cf3186e02a8e74d94240576bf0c135, type: 3}
 --- !u!54 &2913036959129221486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3853,7 +3853,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &5762902411667481589
 GameObject:

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FoodSizeChanger : MonoBehaviour
 {
-    
     private void OnTriggerEnter(Collider _collider)
     {
         if (_collider.CompareTag("Ingredient"))
@@ -20,10 +19,10 @@ public class FoodSizeChanger : MonoBehaviour
         if (_collider.CompareTag("Food"))
         {
             //À½½Ä
-            if (_collider.GetComponent<FoodInfo>().IsGoVR == false)
+            if(_collider.GetComponent<FoodInfo>().IsGoVR == false)
             {
                 _collider.gameObject.transform.localScale -= new Vector3(0.3f, 0.3f, 0.3f);
-                _collider.GetComponent<FoodInfo>().IsGoVR = true;
+                _collider.GetComponent<FoodInfo>().IsGoVR = true; 
             }
         }
     }

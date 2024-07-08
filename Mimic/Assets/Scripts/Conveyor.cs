@@ -12,18 +12,18 @@ public class Conveyor : MonoBehaviour
     [SerializeField] private Material material;
     [SerializeField] private List<Collision> collisions = new List<Collision>();
     [SerializeField] private List<Rigidbody> rbs = new List<Rigidbody>();
-    [SerializeField] private LayerMask target;
 
     private void Start()
     {
-        //material = GetComponent<Material>();
+        material = GetComponent<MeshRenderer>().material;
+        ActiveConveyor(capacity);
     }
 
     private void OnCollisionEnter(Collision _collision)
     {
         ++capacity;
         Debug.Log(capacity);
-        if (_collision.gameObject.layer == LayerMask.NameToLayer("Food"))
+        if (_collision.gameObject.layer == LayerMask.NameToLayer("Food") || _collision.gameObject.layer == LayerMask.NameToLayer("Ingredient"))
         {
             rbs.Add(_collision.gameObject.GetComponent<Rigidbody>());
             Debug.Log("rbs Cnt"+rbs.Count);
@@ -61,7 +61,7 @@ public class Conveyor : MonoBehaviour
             Vector3 movement = direction.normalized * speed * Time.deltaTime; //direction.normalized * speed * Time.deltaTime;
             foreach (Rigidbody rb in rbs) 
             {
-                Debug.Log(rb.name);
+                rb.velocity = direction.normalized * speed * Time.deltaTime;
                 rb.MovePosition(rb.position + movement);
             }
         }
@@ -69,15 +69,16 @@ public class Conveyor : MonoBehaviour
 
     private bool ActiveConveyor(int _capacity) 
     {
-        //Debug.Log(_capacity);
         if (_capacity <= maxCapacity)
         {
             material.SetFloat("_ScrollSpeed", 0.5f);
+            material.SetFloat("_ScrollDirection", direction.z * -1);
             return true;
         }
         else
         { 
             material.SetFloat("_ScrollSpeed", 0f);
+            material.SetFloat("_ScrollDirection", direction.z * -1);
             return false;
         }
     }

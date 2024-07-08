@@ -34,24 +34,35 @@ public class OrderInfo : MonoBehaviour
         Dictionary<string, Sprite> foodinfolist = new Dictionary<string, Sprite>();
 
         int foodnum = 0; 
-        switch(Random.Range(0, Enum.GetValues(typeof(FoodEnumInfo.Food)).Length))
+        switch(Random.Range(0, Enum.GetValues(typeof(FoodInfo.Food)).Length))
         {
-            case (int)FoodEnumInfo.Food.Hamburger:
-                foodnum = GetRandomFoodNum(typeof(FoodEnumInfo.Hamburger));
-                enumstr = GetFoodNameByTypeandNumber(typeof(FoodEnumInfo.Hamburger), foodnum); 
+            case (int)FoodInfo.Food.Hamburger:
+                //foodnum = GetRandomFoodNum(typeof(BurgerInfo.Hamburger));
+                foodnum = 0; 
+                enumstr = GetFoodNameByTypeandNumber(typeof(BurgerInfo.Hamburger), foodnum);
+                Debug.Log("enumstr: " + enumstr); 
                 sprite = hamburger[foodnum];     
                 break;
-            case (int)FoodEnumInfo.Food.FrenchFries:
-                foodnum = GetRandomFoodNum(typeof(FoodEnumInfo.FrenchFries));
-                enumstr = GetFoodNameByTypeandNumber(typeof(FoodEnumInfo.FrenchFries), foodnum);
+            case (int)FoodInfo.Food.FrenchFries:
+                //foodnum = GetRandomFoodNum(typeof(FriesInfo.Fries));
+                foodnum = 0; 
+                enumstr = GetFoodNameByTypeandNumber(typeof(FriesInfo.Fries), foodnum);
+                Debug.Log("enumstr: " + enumstr);
                 sprite = fries[foodnum]; 
                 break;
-            case (int)FoodEnumInfo.Food.Drink:
-                foodnum = GetRandomFoodNum(typeof(FoodEnumInfo.Drink)); 
-                enumstr = GetFoodNameByTypeandNumber(typeof(FoodEnumInfo.Drink), foodnum); 
+            case (int)FoodInfo.Food.Drink:
+                //foodnum = GetRandomFoodNum(typeof(DrinkInfo.Drink)); 
+                foodnum = 0; 
+                enumstr = GetFoodNameByTypeandNumber(typeof(DrinkInfo.Drink), foodnum);
+                Debug.Log("enumstr: " + enumstr);
                 sprite = drink[foodnum]; 
                 break;
             default:
+                //foodnum = GetRandomFoodNum(typeof(BurgerInfo.Hamburger));
+                foodnum = 0;
+                enumstr = GetFoodNameByTypeandNumber(typeof(BurgerInfo.Hamburger), foodnum);
+                Debug.Log("enumstr: " + enumstr);
+                sprite = hamburger[foodnum];
                 break; 
         }
         foodinfolist.Add(enumstr, sprite);
@@ -62,7 +73,7 @@ public class OrderInfo : MonoBehaviour
 
     private int GetRandomFoodNum(Type _enumtype)
     {
-        return Random.Range(0, Enum.GetValues(_enumtype).Length);
+        return Random.Range(0, Enum.GetValues(_enumtype).Length + 1);
     }
 
 
@@ -75,11 +86,11 @@ public class OrderInfo : MonoBehaviour
     private Dictionary<string, float> SetTimerList()
     {
         Dictionary<string, float> timer_list_ = new Dictionary<string, float>();
-        Type foodtype = typeof(FoodEnumInfo.Food);
+        Type foodtype = typeof(FoodInfo.Food);
 
-        timer_list_.Add(Enum.GetName(foodtype, (int)FoodEnumInfo.Food.Hamburger), 15f); //Hamburger 
-        timer_list_.Add(Enum.GetName(foodtype, (int)FoodEnumInfo.Food.FrenchFries), 20f); //FrenchFries 
-        timer_list_.Add(Enum.GetName(foodtype, (int)FoodEnumInfo.Food.Drink), 10f); //Drink 
+        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.Hamburger), 25f); //Hamburger 
+        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.FrenchFries), 30f); //FrenchFries 
+        timer_list_.Add(Enum.GetName(foodtype, (int)FoodInfo.Food.Drink), 20f); //Drink 
         return timer_list_; 
     }
     #endregion
@@ -90,15 +101,15 @@ public class OrderInfo : MonoBehaviour
         float timer = 0f; 
         if(_foodname.Contains("burger"))
         {
-            timer = timer_list[Enum.GetName(typeof(FoodEnumInfo.Food), 0)];  //Hamburger 
+            timer = timer_list[Enum.GetName(typeof(FoodInfo.Food), (int)FoodInfo.Food.Hamburger)];  //Hamburger 
         }
         if(_foodname.Contains("Fries"))
         {
-            timer = timer_list[Enum.GetName(typeof(FoodEnumInfo.Food), 1)];  //FrenchFries 
+            timer = timer_list[Enum.GetName(typeof(FoodInfo.Food), (int)FoodInfo.Food.FrenchFries)];  //FrenchFries 
         }
         if(_foodname.Contains("Drink"))
         {
-            timer = timer_list[Enum.GetName(typeof(FoodEnumInfo.Food), 2)];  //Drink 
+            timer = timer_list[Enum.GetName(typeof(FoodInfo.Food), (int)FoodInfo.Food.Drink)];  //Drink 
         }
         return timer; 
     }

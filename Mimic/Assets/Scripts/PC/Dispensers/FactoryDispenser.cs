@@ -6,7 +6,7 @@ public class FactoryDispenser : MonoBehaviour
 {
     private enum DispenserType
     {
-        None, Hamburger, Fried, Drink
+        None, Stove, Hamburger, Fried, Drink
     }
 
     [SerializeField] private DispenserType dispenserType;
@@ -19,6 +19,9 @@ public class FactoryDispenser : MonoBehaviour
         {
             case DispenserType.Hamburger:
                 dispenser = this.gameObject.AddComponent<DispenserHamburger>();
+                break;
+            case DispenserType.Stove:
+                dispenser = this.gameObject.AddComponent<DispenserStove>();
                 break;
             case DispenserType.Fried:
                 dispenser = this.gameObject.AddComponent<DispenserFried>();

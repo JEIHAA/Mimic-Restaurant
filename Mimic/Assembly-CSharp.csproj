@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\VR\HandCtrl_Login.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\DayManager.cs" />
+    <Compile Include="Assets\Scripts\PC\Dispensers\DispenserWait.cs" />
     <Compile Include="Assets\Scripts\VR\BulletStat.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyboardManager.cs" />
     <Compile Include="Assets\Scripts\PC\Player\CameraMove.cs" />
@@ -75,25 +76,26 @@
     <Compile Include="Assets\Scripts\VolumetricLineVertexData.cs" />
     <Compile Include="Assets\Scripts\MonsterManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginController.cs" />
-<<<<<<< Updated upstream
-=======
     <Compile Include="Assets\Scripts\PC\Food\Interface\ICooking.cs" />
-    <Compile Include="Assets\Scripts\VR\VREatFood.cs" />
->>>>>>> Stashed changes
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\5_Loading\LoadingController.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserFried.cs" />
     <Compile Include="Assets\Scripts\UIPresenter_Test.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\BurgerInfo.cs" />
     <Compile Include="Assets\Scripts\1_SplashLogo\SplashManager.cs" />
     <Compile Include="Assets\Scripts\PC\Player\PCPlayerManager.cs" />
     <Compile Include="Assets\Scripts\testAttack.cs" />
     <Compile Include="Assets\Scripts\VR\StarManager.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\LoginMessageUIController.cs" />
+    <Compile Include="Assets\Scripts\PC\Player\BindFood.cs" />
     <Compile Include="Assets\Scripts\4_Room\ReadyRoom.cs" />
+    <Compile Include="Assets\Scripts\PC\Dispensers\DispenserStove.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\Hamburger.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\Key.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\VR\VRLevelText.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\IDispenser.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\FriesInfo.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\WelcomeController.cs" />
     <Compile Include="Assets\Scripts\PC\OrderInfo.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\GameManager_StartScene.cs" />
@@ -104,28 +106,38 @@
     <Compile Include="Assets\Scripts\2_GameTitle\GameController_Setting.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
     <Compile Include="Assets\Scripts\PC\DoorMove.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\Coke.cs" />
     <Compile Include="Assets\BulletManager.cs" />
     <Compile Include="Assets\Scripts\PC\CustomerSpawnManager.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\Foodnfo.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\DBManager.cs" />
+    <Compile Include="Assets\Scripts\PC\Dispensers\DispenserCounter.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\Monitor.cs" />
     <Compile Include="Assets\Scripts\FoodStat.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\DrinkInfo.cs" />
     <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
     <Compile Include="Assets\Scripts\Meat.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\Steak.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\Ingredients.cs" />
     <Compile Include="Assets\Scripts\PC\Customer.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserHamburger.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\SignupController.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\Interface\IGetFoodInfo.cs" />
     <Compile Include="Assets\Scripts\Interface\IOnDamage.cs" />
     <Compile Include="Assets\Scripts\Conveyor.cs" />
     <Compile Include="Assets\Scripts\PC\FoodTableCookSide.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\PC\Curstomer.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\SteakCooked.cs" />
     <Compile Include="Assets\Scripts\EffectAudioManager.cs" />
     <Compile Include="Assets\Scripts\MonsterStat.cs" />
     <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\PC\Player\PCPlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\DateUIPresenter.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\FoodManager.cs" />
     <Compile Include="Assets\Scripts\FoodEnumInfo.cs" />
+    <Compile Include="Assets\Scripts\PC\FoodSizeChanger.cs" />
+    <Compile Include="Assets\Scripts\PC\Food\FrenchFries.cs" />
     <Compile Include="Assets\Scripts\VR\HandUI.cs" />
     <Compile Include="Assets\Scripts\PC\FoodTable.cs" />
     <Compile Include="Assets\Scripts\3_Lobby\MakeRoom.cs" />
@@ -537,6 +549,30 @@
     </Reference>
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.GradleProject">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HamburgerStat
   m_EditorClassIdentifier: 
   money: 150
-  hungerrestore: 0
+  hungerrestore: 10

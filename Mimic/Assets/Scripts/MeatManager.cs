@@ -8,6 +8,7 @@ using UnityEngine.Pool;
 public class MeatManager : MonoBehaviour
 {    
     private int meatnum = 0;
+    private int meatnum_acummulated = 0;
 
     [SerializeField] private int maxmeatnum = 10;
 
@@ -25,13 +26,22 @@ public class MeatManager : MonoBehaviour
     }
     #endregion
 
+    #region["누적 고기 개수 반환: 정산 UI에 출력"]
+    public int GetMeatNumAcummlated()
+    {
+        return meatnum_acummulated; 
+    }
+    #endregion
+
     #region["고기 받아와서 등록하기"] 
     public void SetMeat(GameObject _meat)
     {
         if(meatnum < maxmeatnum)
         {
-            _meat.transform.SetParent(transform);
+            //transform.SetParent(_meat.transform); 
+            _meat.transform.SetParent(transform); 
             ++meatnum;
+            ++meatnum_acummulated; 
         }
     }
     #endregion
@@ -53,7 +63,7 @@ public class MeatManager : MonoBehaviour
     {
         if(meatnum > 0)
         {
-            Destroy(_meat);
+            _meat.transform.SetParent(null); 
             --meatnum; 
         }
     }
