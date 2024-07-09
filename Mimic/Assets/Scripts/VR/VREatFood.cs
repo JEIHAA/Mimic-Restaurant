@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class VREatFood : MonoBehaviour
 {
+    public VRPlayer vrPlayer;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hamburger"))
         {
-           // IncreaseHungry(increaseHungry);
-            // Debug.Log("hamburger +20 Current hungry: " + hungry);
+            vrPlayer.IncreaseHungry(vrPlayer.increaseHungry);
             other.gameObject.SetActive(false);
         }
     }

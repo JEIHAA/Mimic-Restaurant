@@ -2,55 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-
-//2024-05-22: CUSTOM UNITY TEMPLATE 
-
+//2024-05-22: CUSTOM UNITY TEMPLATE
 public class MeatManager : MonoBehaviour
-{    
+{
     private int meatnum = 0;
     private int meatnum_acummulated = 0;
-
-    [SerializeField] private int maxmeatnum = 10;
-
-    public static MeatManager instance = null; //Singleton 
-
+    public static MeatManager instance = null; //Singleton
     private void Awake()
     {
-        instance = this; 
+        instance = this;
     }
 
-    #region["고기 개수 반환하는 메소드"] 
+    #region["고기 개수 반환하는 메소드"]
     public int GetMeatNum()
     {
-        return meatnum; 
+        return meatnum;
     }
     #endregion
 
     #region["누적 고기 개수 반환: 정산 UI에 출력"]
     public int GetMeatNumAcummlated()
     {
-        return meatnum_acummulated; 
+        return meatnum_acummulated;
     }
     #endregion
 
-    #region["고기 받아와서 등록하기"] 
+    #region["고기 정산 정보 지우기"]
+    public void ClearMeatAcummlated()
+    {
+        meatnum_acummulated = 0;
+    }
+    #endregion
+
+    #region["고기 받아와서 등록하기"]
     public void SetMeat(GameObject _meat)
     {
-        if(meatnum < maxmeatnum)
-        {
-            //transform.SetParent(_meat.transform); 
-            _meat.transform.SetParent(transform); 
+        
+            //transform.SetParent(_meat.transform);
+            _meat.transform.SetParent(transform);
             ++meatnum;
-            ++meatnum_acummulated; 
-        }
+            ++meatnum_acummulated;
+        
     }
     #endregion
 
-    #region["몬스터한테 플레이어가 데미지를 입으면 이 메소드를 실행함"] 
+    #region["몬스터한테 플레이어가 데미지를 입으면 이 메소드를 실행함"]
     public void LoseMeatByMonster()
     {
-        //맨 마지막에 있는거 파괴함. 
-        if(meatnum > 0)
+        //맨 마지막에 있는거 파괴함.
+        if (meatnum > 0)
         {
             Destroy(GetComponentsInChildren<Meat>()[meatnum - 1].gameObject);
             --meatnum;
@@ -61,10 +61,10 @@ public class MeatManager : MonoBehaviour
     #region["고기를 사용하는 메소드"]
     public void UseMeat(GameObject _meat)
     {
-        if(meatnum > 0)
+        if (meatnum > 0)
         {
-            _meat.transform.SetParent(null); 
-            --meatnum; 
+            _meat.transform.SetParent(null);
+            --meatnum;
         }
     }
     #endregion

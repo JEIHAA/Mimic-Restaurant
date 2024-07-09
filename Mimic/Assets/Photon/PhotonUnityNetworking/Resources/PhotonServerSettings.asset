@@ -52,6 +52,7 @@ MonoBehaviour:
   - SetBreakTime
   - STX_BSDC1
   - RestartGameOtherSide
+  - SendMoneyToVR
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

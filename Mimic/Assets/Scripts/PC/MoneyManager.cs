@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,8 +6,9 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.XR;
 
-public class MoneyManager : MonoBehaviour
+public class MoneyManager : MonoBehaviourPun
 {
     //Singleton 
     public static MoneyManager instance = null;
@@ -62,6 +64,9 @@ public class MoneyManager : MonoBehaviour
     [Header("음식 Scriptable Object")]
     [SerializeField] private FoodStat[] foodstat = null;
 
+    [Header("VR UI")]
+    [SerializeField] private VRUI vrui = null;
+
     private void Awake()
     {
         if (instance == null)
@@ -74,12 +79,25 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
+    #region["VR 쪽에 돈정보 전달"]
+    [PunRPC]
+    public void SendMoneyToVR(int _totalMoney)
+    {
+        vrui.GetTotalMoneyFromPC(_totalMoney);
+    }
+    #endregion
+
+
     #region 각 추가금액,레벨,머니 표시
     public void Print_SalesAmount_Money()
     {
         TotalMoneyText.text = TotalMoney.ToString();
+        if (!XRSettings.enabled && PhotonNetwork.IsConnected)
+        {
+            //PC -> VR
+            photonView.RPC("SendMoneyToVR", RpcTarget.OthersBuffered, TotalMoney);
+        }
     }
-
     public void PrintMachineLevel(int index)
     {
         MachineLevelTexts[index].text = "Lv." + MachineLevels[index];

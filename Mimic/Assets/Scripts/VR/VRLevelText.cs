@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
 public class VRLevelText : MonoBehaviour
 {
-    public TMP_Text levelText; 
-
+    public TMP_Text levelText;
     private int currentLevel = 1;
     private int currentMoney = 100;
-    [SerializeField]private int maxLevel = 5; 
-
+    [SerializeField] private int maxLevel = 5;
     public void UpgradeLevel()
     {
         if (currentLevel < maxLevel)
@@ -20,12 +17,10 @@ public class VRLevelText : MonoBehaviour
         }
         else
         {
-            currentLevel = maxLevel; 
+            currentLevel = maxLevel;
         }
-
-        UpgradeLevelText(); 
+        UpgradeLevelText();
     }
-
     public void UpgradeMoney()
     {
         if (currentLevel < maxLevel)
@@ -37,7 +32,6 @@ public class VRLevelText : MonoBehaviour
         {
             currentLevel = maxLevel;
         }
-
         UpgradeMoneyText();
     }
 
@@ -45,14 +39,13 @@ public class VRLevelText : MonoBehaviour
     {
         if (currentLevel < maxLevel)
         {
-            levelText.text = "LV" + currentLevel.ToString(); 
+            levelText.text = "LV" + currentLevel.ToString();
         }
         else
         {
-            levelText.text = "LV.MAX"; 
+            levelText.text = "LV.MAX";
         }
     }
-
     private void UpgradeMoneyText()
     {
         if (currentLevel < maxLevel)

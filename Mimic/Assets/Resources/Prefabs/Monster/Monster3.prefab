@@ -3825,7 +3825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27c6156f3e87df4fada8e570e40b713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterSpeed: 15
+  monsterSpeed: 5
   monsterData: {fileID: 11400000, guid: 0a2eecdf4d5fa4a4cbbb73477ab68c36, type: 2}
   steak: {fileID: 8617365242264766431, guid: d1cf3186e02a8e74d94240576bf0c135, type: 3}
 --- !u!54 &2913036959129221486

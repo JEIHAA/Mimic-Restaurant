@@ -8,20 +8,20 @@ public class VRPlayer : MonoBehaviour, IOnDamage
     [Header("최대 공복도")]
     [SerializeField] private int maxHungry = 100;
     [Header("현재 공복도")]
-    [SerializeField] private int hungry;
+    [SerializeField] public int hungry;
     [Header("초당 줄어드는 공복도")]
-    [SerializeField] private int decreaseHungry = 1;
+    [SerializeField] public int decreaseHungry = 5;
     [Header("플레이어 체력")]
     [SerializeField] private int playerHP = 10;
     [Header("햄버거 공복도 회복량")]
-    [SerializeField] private int increaseHungry = 50;
+    [SerializeField] public int increaseHungry = 50;
     [SerializeField] private Slider hungryGauge;
 
     private void Start()
     {
         hungry = maxHungry;
         hungryGauge.value = maxHungry;
-        StartCoroutine(HungerDecreaseRoutine());
+        //StartCoroutine(HungerDecreaseRoutine());
     }
 
     private IEnumerator HungerDecreaseRoutine()
@@ -45,7 +45,7 @@ public class VRPlayer : MonoBehaviour, IOnDamage
     }
 
 
-    private void IncreaseHungry(int amount)
+    public void IncreaseHungry(int amount)
     {
         hungry += amount;
         hungryGauge.value += amount;
@@ -65,19 +65,14 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         playerHP -= damage;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void GunEnergyUpgrade()
     {
-        if (other.CompareTag("Hamburger"))
-        {
-            IncreaseHungry(increaseHungry);
-           // Debug.Log("hamburger +20 Current hungry: " + hungry);
-            other.gameObject.SetActive(false);
-        }
+        decreaseHungry -= 1;
     }
 
-    public void UpgardeMaxHungry()
+   /* public void UpgardeMaxHungry()
     {
         maxHungry += 100;
         hungryGauge.maxValue = maxHungry;
-    }
+    }*/
 }

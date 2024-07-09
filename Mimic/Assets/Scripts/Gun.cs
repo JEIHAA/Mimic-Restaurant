@@ -54,10 +54,9 @@ public class Gun : MonoBehaviour
 
             StartCoroutine(DisableBulletAfterLifetime(bullet));
 
-            vrPlayer.DecreaseHungry(5); 
+            vrPlayer.DecreaseHungry(vrPlayer.decreaseHungry); 
         }
     }
-
 
     private IEnumerator DisableBulletAfterLifetime(GameObject bullet)
     {
