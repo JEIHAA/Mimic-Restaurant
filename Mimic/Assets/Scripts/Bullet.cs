@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     {
         if (_collider.CompareTag("Monster"))
         {
-            _collider.GetComponent<IOnDamage>().OnDamage(bulletDamage);
+            _collider.GetComponent<IOnDamage>().OnDamage(bulletDamage, null);
         }
     }
 

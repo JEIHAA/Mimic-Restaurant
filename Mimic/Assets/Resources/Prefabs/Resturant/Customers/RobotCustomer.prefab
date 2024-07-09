@@ -16,12 +16,12 @@ PrefabInstance:
     - target: {fileID: 3432378784141143538, guid: 45e190865ca83e145ad2dba6beb105bb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.512
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 3432378784141143538, guid: 45e190865ca83e145ad2dba6beb105bb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.007
+      value: -1.28
       objectReference: {fileID: 0}
     - target: {fileID: 3432378784141143538, guid: 45e190865ca83e145ad2dba6beb105bb,
         type: 3}
@@ -535,6 +535,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7804a197e8516db48af8d0426cdfce1a, type: 2}
+    - target: {fileID: 5866666021909216657, guid: bcf7e5f572d078f4ba2e602e9897b86c,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6016349230849131448, guid: bcf7e5f572d078f4ba2e602e9897b86c,
         type: 3}
       propertyPath: m_Layer

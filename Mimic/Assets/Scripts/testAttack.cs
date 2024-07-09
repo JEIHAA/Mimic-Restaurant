@@ -8,7 +8,7 @@ public class testAttack : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         IOnDamage onDamage = other.GetComponent<IOnDamage>();
-        onDamage?.OnDamage(damage);
+        onDamage?.OnDamage(damage, null);
         Debug.Log("-"+damage);
     }
 }

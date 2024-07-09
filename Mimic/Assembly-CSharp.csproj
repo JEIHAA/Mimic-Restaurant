@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\PC\MoneyManager.cs" />
     <Compile Include="Assets\Scripts\2_GameTitle\GameController_Setting.cs" />
     <Compile Include="Assets\Scripts\UI\GageUIPresenter.cs" />
+    <Compile Include="Assets\Scripts\UI\AdjustUIManager.cs" />
     <Compile Include="Assets\Scripts\PC\DoorMove.cs" />
     <Compile Include="Assets\Scripts\PC\Food\Coke.cs" />
     <Compile Include="Assets\BulletManager.cs" />

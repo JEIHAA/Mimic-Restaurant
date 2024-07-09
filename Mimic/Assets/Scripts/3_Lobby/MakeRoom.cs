@@ -110,6 +110,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
                         roomBtn.SetActive(false);
                         roomBtn.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
                         break;
+                    /*
                     case 1: //1명만 들어왔을때 
                         //누가 나갔을때 실행: 반대쪽을 바꿔준다. 
                         if (XRSettings.enabled)
@@ -122,6 +123,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
                         }
                         statustext.text = "Ready"; 
                         break;
+                   */ 
                     case 2:
                         //다 들어왔을때 실행: 반대쪽을 1씩 올린다. 
                         if (XRSettings.enabled)

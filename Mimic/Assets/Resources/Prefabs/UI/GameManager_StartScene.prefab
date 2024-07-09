@@ -1056,9 +1056,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageui: {fileID: 1687323029761399444, guid: 0cd31b5cc63e0e14fb41b540bce813e4,
     type: 3}
-  pccamera: {fileID: 0}
-  vr: {fileID: 0}
-  canvas: {fileID: 1397655169972147510}
+  settingui: {fileID: 8298446197099106187, guid: 4e189f2d2a9ce274b94e226d16c4c9b7,
+    type: 3}
+  messageui_instantiated: {fileID: 0}
+  vr_keyboard: {fileID: 0}
 --- !u!1 &1590705115415906121
 GameObject:
   m_ObjectHideFlags: 0

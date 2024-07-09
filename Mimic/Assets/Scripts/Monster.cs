@@ -1,11 +1,13 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
-public class Monster : MonoBehaviourPun, IOnDamage 
+public class Monster : MonoBehaviourPun, IOnDamage
 {
     public delegate void OnDeathDelegate(GameObject _meat, int _meat_num);
     private OnDeathDelegate ondeathcallback = null;
@@ -26,7 +28,9 @@ public class Monster : MonoBehaviourPun, IOnDamage
     [Header("몬스터 능력치(체력, 공격력, 속도)")]
     private int monsterHealth = 300; 
     private int monsterDamage = 10;
-    private int meatnum = 3; 
+    private int meatnum = 3;
+    private GameObject spawnpoint = null;
+
     [SerializeField] private float monsterSpeed = 10f;
     [SerializeField] private MonsterStat monsterData = null;
     [Header("고기 오브젝트")]
@@ -36,10 +40,18 @@ public class Monster : MonoBehaviourPun, IOnDamage
     private int status = 0;
     private int previous_status = 0;
     private bool Attackon = false;
+    private bool isEscape = false;
+
+    #region["시작포인트 설정"]
+    public void SetSpawnPoint(GameObject _spawnpoint)
+    {
+        spawnpoint = _spawnpoint; 
+    }
+    #endregion
 
     #region["오브젝트가 활성화될때마다 실행되는 메소드"] 
     private void OnEnable()
-    {
+    { 
         animator = GetComponent<Animator>();
         status = (int)MonsterStatus.Walking; 
         //Invoke("DestroySelf", 60f);
@@ -63,8 +75,10 @@ public class Monster : MonoBehaviourPun, IOnDamage
     }
     #endregion
 
+
+
     #region["피격 메소드"] 
-    public void OnDamage(int playerDamage)
+    public void OnDamage(int playerDamage, GameObject _object)
     {
         previous_status = status;
         animator.SetTrigger("Hitted");
@@ -104,21 +118,41 @@ public class Monster : MonoBehaviourPun, IOnDamage
     public void Move(Transform vrplayer_transform)
     { 
         transform.LookAt(vrplayer_transform.position); 
-        if(status == (int)MonsterStatus.Walking)
+        if(status == (int)MonsterStatus.Walking && !isEscape)
         {
+            //걷는 상태인데 도망가지는 않을때. 
             transform.position = Vector3.MoveTowards(transform.position, vrplayer_transform.position, monsterSpeed * Time.deltaTime);
         }
     }
     #endregion
 
+    public void MonsterEscape() 
+    {
+        status = (int)MonsterStatus.Walking;
+        animator.SetTrigger("Walk");
+        Attackon = false;
+        spawnpoint.GetComponent<Collider>().enabled = true;
+        isEscape = true;
+        StartCoroutine(EscapeMonsterCoroutine(spawnpoint.transform));       
+    }
+
+    #region["도망갈때는 따로 코루틴을 돌린다. => 프레임 드랍 없기를 바래야지..."] 
+    private IEnumerator EscapeMonsterCoroutine(Transform _startpoint)
+    {
+        while (status == (int)MonsterStatus.Walking && isEscape)
+        {
+            transform.LookAt(_startpoint.position);
+            transform.position = Vector3.MoveTowards(transform.position, _startpoint.position, monsterSpeed * Time.deltaTime); 
+        }
+        yield break; 
+    }
+    #endregion
 
     private void OnTriggerEnter(Collider _collider)
     {
-        //Debug.Log("collider.name: " + _collider.name); 
         if(_collider.name.Equals("Barrier"))  
         {
             SpawnManager.instance.FadeMonster(this); //몬스터 비활성화 
-            //_collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); //방어막 쪽에 데미지를 입힘
         } 
         if(_collider.name.Equals("AttackSphere"))
         {
@@ -127,10 +161,16 @@ public class Monster : MonoBehaviourPun, IOnDamage
             //공격 애니메이션 재생
             Attackon = true;
         }
+        if(_collider.name.Equals(spawnpoint.name))
+        {
+            spawnpoint.GetComponent<Collider>().enabled = false;
+            isEscape = false;
+            SpawnManager.instance.FadeMonster(this);  
+        }
         //IOnDamage 인터페이스를 상속받는 오브젝트에게는 데미지를 입힐 수 있다. 
         if(_collider.GetComponent<IOnDamage>() != null)
         {
-            _collider.GetComponent<IOnDamage>().OnDamage(monsterDamage); 
+            _collider.GetComponent<IOnDamage>().OnDamage(monsterDamage, gameObject); 
         }
     }
 }

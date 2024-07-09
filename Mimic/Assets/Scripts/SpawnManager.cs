@@ -46,10 +46,11 @@ public class SpawnManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        if(XRSettings.enabled)
+        if (XRSettings.enabled)
         {
             InitMonster();
         }
+        //InitMonster(); 
     }
     #endregion
 
@@ -112,6 +113,7 @@ public class SpawnManager : MonoBehaviour
         _monster.transform.position = _spawnpoint.transform.position;
         //_monster.transform.rotation = _spawnpoint.transform.rotation;
         _monster.transform.SetParent(monstermanager.transform);
+        _monster.GetComponent<Monster>().SetSpawnPoint(_spawnpoint); //시작 포인트 설정 
     }
     #endregion
 
@@ -154,9 +156,6 @@ public class SpawnManager : MonoBehaviour
     #region["다음 웨이브로 이동"] 
     public void GoNextWave()
     {
-        ClearMonsterPool();
-        //몬스터 리스트 삭제 
-        monstermanager.DestroyMonsterList();
         //몬스터 능력치 강화 
         monstermanager.StrengthMonster(round, wave);
         if(round % 2 == 0 && wave == 1)  

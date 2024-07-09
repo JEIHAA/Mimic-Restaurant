@@ -14,6 +14,13 @@ public class DayManager : MonoBehaviourPun
 {
     [SerializeField] private DateUIPresenter dateuipresenter = null;
 
+    public delegate void OnAdjustDelegate();
+    private OnAdjustDelegate adjustonclick = null;
+    public OnAdjustDelegate AdjustOnClick
+    {
+        set { adjustonclick = value;  }
+    }
+
     private int day = 1; //1,2,3,4
     private float seconds = 0f;
     private float seconds_hidden = 0f; //
@@ -37,6 +44,11 @@ public class DayManager : MonoBehaviourPun
             {
                 StartCoroutine(BreakTimeCoroutine());
             }
+            if(seconds >= 248f)
+            {
+                //이때부터 손님 스폰을 중단한다. 
+                CustomerSpawnManager.instance.BreakTime(); 
+            }
             if(seconds == 260f)
             {
                 if(day < 4)
@@ -44,11 +56,12 @@ public class DayManager : MonoBehaviourPun
                     ++day;
                     seconds = 0f;
                     //정산화면 출력 
+                    adjustonclick?.Invoke(); 
                     yield break; 
                 }
             }
             //!XRSettings.enabled
-            if (PhotonNetwork.IsMasterClient) //PC -> VR
+            if (!XRSettings.enabled) //PC -> VR
             {
                 photonView.RPC("SetSecondandDay", RpcTarget.OthersBuffered, day, seconds, seconds_hidden);
             }
@@ -71,7 +84,7 @@ public class DayManager : MonoBehaviourPun
         {
             ++breaktime;
             //!XRSettings.enabled 
-            if (PhotonNetwork.IsMasterClient) //PC -> VR 
+            if (!XRSettings.enabled) //PC -> VR 
             {
                 photonView.RPC("SetBreakTime", RpcTarget.OthersBuffered, breaktime, seconds_hidden);
             }
@@ -79,8 +92,9 @@ public class DayManager : MonoBehaviourPun
             yield return new WaitForSeconds(1f);
         }
         breaktime = 0f;
-        if (XRSettings.enabled)
+        if (XRSettings.enabled && seconds >= 260f) 
         {
+            //260초가 되면 쉬는시간이 끝나지만 라운드가 끝나기 때문에 정산이 끝날때까지는 몬스터를 스폰하지 않는다. 
             //몬스터 다시 스폰 
             SpawnManager.instance.GoNextWave();
         }

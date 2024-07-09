@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,8 +6,9 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.XR;
 
-public class MoneyManager : MonoBehaviour
+public class MoneyManager : MonoBehaviourPun
 {
     //Singleton 
     public static MoneyManager instance = null;
@@ -62,6 +64,9 @@ public class MoneyManager : MonoBehaviour
     [Header("À½½Ä Scriptable Object")]
     [SerializeField] private FoodStat[] foodstat = null;
 
+    [Header("VR UI")]
+    [SerializeField] private VRLevelText vrui = null;
+
     private void Awake()
     {
         if (instance == null)
@@ -78,6 +83,11 @@ public class MoneyManager : MonoBehaviour
     public void Print_SalesAmount_Money()
     {
         TotalMoneyText.text = TotalMoney.ToString();
+        if(!XRSettings.enabled && PhotonNetwork.IsConnected)
+        {
+            //PC -> VR
+            photonView.RPC("SendMoneyToVR", RpcTarget.OthersBuffered, TotalMoney); 
+        }
     }
 
     public void PrintMachineLevel(int index)
@@ -109,7 +119,7 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
-    private void PrintFoodMoney_Each()
+    public void PrintFoodMoney_Each()
     {
         //ÇÜ¹ö°Å, °¨ÀÚÆ¢±è, ÄÝ¶ó
         for (int i = 0; i < foodMoneys.Length; ++i)
@@ -147,6 +157,7 @@ public class MoneyManager : MonoBehaviour
         Debug.Log("Money: " + _Money);
         TotalMoney += _Money;
         Print_SalesAmount_Money();
+        
     }
 
     public void MinusMoney(int _Money)
@@ -277,4 +288,13 @@ public class MoneyManager : MonoBehaviour
     }
 
     #endregion
+
+    #region["VR ÂÊ¿¡ µ·Á¤º¸ Àü´Þ"]
+    [PunRPC]
+    public void SendMoneyToVR(int _totalMoney) 
+    {
+        vrui.GetTotalMoneyFromPC(_totalMoney); 
+    }
+    #endregion
+
 }

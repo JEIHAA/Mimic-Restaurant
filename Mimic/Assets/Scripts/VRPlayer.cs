@@ -41,7 +41,6 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         {
             hungry = 0;
             hungryGauge.value = 0;
-       // Debug.Log("Hungry decreased by: " + amount + ". Current hungry: " + hungry);
         }
     }
 
@@ -57,11 +56,16 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         //Debug.Log("Hungry increased by: " + amount + ". Current hungry: " + hungry);
     }
 
-    public void OnDamage(int damage)
+    public void OnDamage(int damage, GameObject _monster)
     {
         //플레이어는 고기를 잃어버린다. 
-        MeatManager.instance.LoseMeatByMonster(); 
+        MeatManager.instance.LoseMeatByMonster(_monster); 
         playerHP -= damage;
+        if(playerHP <= 0)
+        {
+            //PC한테도 VR가 게임 오버됬는지 알려줘야 하나? 
+            //VR는 이상태에서 아무것도 못하게 된다. 
+        }
     }
 
     private void OnTriggerEnter(Collider other)

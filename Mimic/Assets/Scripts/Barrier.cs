@@ -16,7 +16,7 @@ public class Barrier : MonoBehaviour, IOnDamage
         barrierGauge.value = maxHP;
     }
 
-    public void OnDamage(int damage)
+    public void OnDamage(int damage, GameObject _object)
     {
         barrierHP -= damage;
         barrierGauge.value -= damage;

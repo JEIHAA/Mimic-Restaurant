@@ -10,6 +10,7 @@ public class VRLevelText : MonoBehaviour
 
     private int currentLevel = 1;
     private int currentMoney = 100;
+    private int TotalMoney = 0;
     [SerializeField]private int maxLevel = 5; 
 
     public void UpgradeLevel()
@@ -41,6 +42,11 @@ public class VRLevelText : MonoBehaviour
         UpgradeMoneyText();
     }
 
+    public void GetTotalMoneyFromPC(int _money)
+    {
+        TotalMoney = _money; 
+    }
+
     private void UpgradeLevelText()
     {
         if (currentLevel < maxLevel)
@@ -53,6 +59,7 @@ public class VRLevelText : MonoBehaviour
         }
     }
 
+   
     private void UpgradeMoneyText()
     {
         if (currentLevel < maxLevel)

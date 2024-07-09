@@ -23,10 +23,13 @@ public class GameManager : MonoBehaviourPun
     [SerializeField] private Transform vrplayer_transform = null;
     [Header("PC 플레이어")]
     [SerializeField] private Transform pcplayer_transform = null;
+    [Header("PC UI")]
+    [SerializeField] private PCUIManager pcui = null;
+    [Header("VR 정산 UI")]
+    [SerializeField] private AdjustUIManager vradjustui = null;
 
     [Header("게임 시작 상태")] 
     [SerializeField] private bool isGameStarted = false;
-    private bool isStartSpawnCustomer = false;
 
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
@@ -34,7 +37,8 @@ public class GameManager : MonoBehaviourPun
         if(XRSettings.enabled)
         {
             //VR 
-            pcplayer_transform.gameObject.SetActive(false); 
+            pcplayer_transform.gameObject.SetActive(false);
+            vradjustui.gameObject.SetActive(false);
         }
         else
         {
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviourPun
             vrplayer_transform.gameObject.SetActive(false);
             pcplayer_transform.GetComponentInChildren<Camera>().targetDisplay = 0; 
         }
+        daymanager.AdjustOnClick = AdjustOnClick; 
     }
     #endregion
 
@@ -54,7 +59,7 @@ public class GameManager : MonoBehaviourPun
             CheckinMainScene();
         }
         AudioManager.instance.PlayBGM();
-        //CustomerSpawnManager.instance.StartSpawnCustomer(); //임시(네트워크X) 
+        CustomerSpawnManager.instance.StartSpawnCustomer(); //임시(네트워크X) 
     }
     #endregion
 
@@ -99,23 +104,23 @@ public class GameManager : MonoBehaviourPun
     private void Update()
     {
         if(XRSettings.enabled && isGameStarted)
-        {
+        { 
             monstermanager?.MoveAll(vrplayer_transform);
             SetSkyBox(); 
-            if(Input.GetKey(KeyCode.Escape)) //PC용 => 종료 
+        }
+        //monstermanager?.MoveAll(vrplayer_transform); 
+        if (Input.GetKey(KeyCode.Escape)) //PC용 => 종료 
+        {
+            if (PhotonNetwork.IsConnected)
             {
-                if(PhotonNetwork.IsConnected)
-                {
-                    photonView.RPC("STX_BSDC1", RpcTarget.Others); 
-                    PhotonNetwork.LeaveRoom();
-                }
-                Application.Quit(); 
+                photonView.RPC("STX_BSDC1", RpcTarget.Others);
+                PhotonNetwork.LeaveRoom();
             }
+            Application.Quit();
         }
     }
     #endregion
 
- 
     #region["현재 플레이어가 나가면 다른 플레이어는 게임이 멈춤."]
     [PunRPC]
     public void STX_BSDC1()
@@ -143,6 +148,19 @@ public class GameManager : MonoBehaviourPun
                 break;
             default:
                 break; 
+        }
+    }
+
+    public void AdjustOnClick()
+    {
+        //정산 UI 출력
+        if(!XRSettings.enabled)
+        {
+            pcui.AdjustUI(); 
+        }
+        else
+        {
+            vradjustui.gameObject.SetActive(true); 
         }
     }
 }

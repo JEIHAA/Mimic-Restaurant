@@ -10,7 +10,7 @@ public class VrStroeButton : MonoBehaviour
     public GameObject button;
     GameObject presser;
     bool isPressed;
-
+    
     private void Start()
     {
         storeMenu.SetActive(false);
