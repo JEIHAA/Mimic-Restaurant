@@ -65,7 +65,7 @@ public class MoneyManager : MonoBehaviourPun
     [SerializeField] private FoodStat[] foodstat = null;
 
     [Header("VR UI")]
-    [SerializeField] private VRLevelText vrui = null;
+    [SerializeField] private VRUI vrui = null;
 
     private void Awake()
     {

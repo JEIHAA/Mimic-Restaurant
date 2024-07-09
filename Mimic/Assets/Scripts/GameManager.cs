@@ -38,14 +38,14 @@ public class GameManager : MonoBehaviourPun
         {
             //VR 
             pcplayer_transform.gameObject.SetActive(false);
-            vradjustui.gameObject.SetActive(false);
         }
         else
         {
             //PC 
-            vrplayer_transform.gameObject.SetActive(false);
+            //vrplayer_transform.gameObject.SetActive(false);
             pcplayer_transform.GetComponentInChildren<Camera>().targetDisplay = 0; 
         }
+        vradjustui.gameObject.SetActive(false);
         daymanager.AdjustOnClick = AdjustOnClick; 
     }
     #endregion
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviourPun
             monstermanager?.MoveAll(vrplayer_transform);
             SetSkyBox(); 
         }
-        //monstermanager?.MoveAll(vrplayer_transform); 
+        monstermanager?.MoveAll(vrplayer_transform); 
         if (Input.GetKey(KeyCode.Escape)) //PC¿ë => Á¾·á 
         {
             if (PhotonNetwork.IsConnected)

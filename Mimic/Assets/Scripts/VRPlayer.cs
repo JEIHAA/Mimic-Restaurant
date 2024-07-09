@@ -58,10 +58,10 @@ public class VRPlayer : MonoBehaviour, IOnDamage
     }
 
 
-    public void OnDamage(int damage)
+    public void OnDamage(int damage, GameObject _monster)
     {
         //플레이어는 고기를 잃어버린다. 
-        MeatManager.instance.LoseMeatByMonster(); 
+        //MeatManager.instance.LoseMeatByMonster(_monster); 
         playerHP -= damage;
     }
 

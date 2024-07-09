@@ -79,6 +79,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
+        Debug.LogError("Length: " + roomList.Count); 
         foreach (RoomInfo roominfo in roomList)
         {
             //맨처음에 들어왔을때 
@@ -203,7 +204,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         //게임 시작 관련. 
         ht2.Add("IsMainSceneLoaded", false);
         roomOptions.CustomRoomProperties = ht;
-        PhotonNetwork.CreateRoom(roomName, roomOptions);
+        PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
         PhotonNetwork.NickName = nickname_player;
         PhotonNetwork.SetPlayerCustomProperties(ht2); 
         Debug.Log("Room Created");

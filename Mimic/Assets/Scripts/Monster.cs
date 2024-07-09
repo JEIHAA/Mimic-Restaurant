@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -41,11 +42,13 @@ public class Monster : MonoBehaviourPun, IOnDamage
     private int previous_status = 0;
     private bool Attackon = false;
     private bool isEscape = false;
+    private bool isRotate = false; 
 
     #region["시작포인트 설정"]
     public void SetSpawnPoint(GameObject _spawnpoint)
     {
-        spawnpoint = _spawnpoint; 
+        spawnpoint = _spawnpoint;
+        Debug.Log("spawnpoint: " + spawnpoint); 
     }
     #endregion
 
@@ -53,7 +56,10 @@ public class Monster : MonoBehaviourPun, IOnDamage
     private void OnEnable()
     { 
         animator = GetComponent<Animator>();
-        status = (int)MonsterStatus.Walking; 
+        status = (int)MonsterStatus.Walking;
+        Attackon = false;
+        isRotate = false;
+        isEscape = false; 
         //Invoke("DestroySelf", 60f);
         SetMonsterStat(); 
     }
@@ -67,14 +73,6 @@ public class Monster : MonoBehaviourPun, IOnDamage
         meatnum = monsterData.meatnum; 
     }
     #endregion
-
-    #region["60초가 지난 뒤에 자동으로 비활성화"] 
-    private void DestroySelf()
-    {
-        SpawnManager.instance.FadeMonster(this); 
-    }
-    #endregion
-
 
 
     #region["피격 메소드"] 
@@ -105,6 +103,7 @@ public class Monster : MonoBehaviourPun, IOnDamage
 
     private IEnumerator MonsterDeathCoroutine()
     {
+
         animator.SetTrigger("Death");
         status = (int)MonsterStatus.Death;
         yield return new WaitForSeconds(1f);
@@ -128,11 +127,11 @@ public class Monster : MonoBehaviourPun, IOnDamage
 
     public void MonsterEscape() 
     {
-        status = (int)MonsterStatus.Walking;
-        animator.SetTrigger("Walk");
-        Attackon = false;
+        Debug.Log("Here?"); 
         spawnpoint.GetComponent<Collider>().enabled = true;
+        isRotate = true; 
         isEscape = true;
+        Invoke("OnFade", 10f); 
         StartCoroutine(EscapeMonsterCoroutine(spawnpoint.transform));       
     }
 
@@ -142,7 +141,8 @@ public class Monster : MonoBehaviourPun, IOnDamage
         while (status == (int)MonsterStatus.Walking && isEscape)
         {
             transform.LookAt(_startpoint.position);
-            transform.position = Vector3.MoveTowards(transform.position, _startpoint.position, monsterSpeed * Time.deltaTime); 
+            transform.position = Vector3.MoveTowards(transform.position, _startpoint.position, monsterSpeed * Time.deltaTime);
+            yield return new WaitForEndOfFrame(); 
         }
         yield break; 
     }
@@ -156,21 +156,47 @@ public class Monster : MonoBehaviourPun, IOnDamage
         } 
         if(_collider.name.Equals("AttackSphere"))
         {
-            status = (int)MonsterStatus.Attack;
-            animator.SetTrigger("Attack");
-            //공격 애니메이션 재생
-            Attackon = true;
+            if(MeatManager.instance.GetMeatNum() <= 0)
+            {
+                status = (int)MonsterStatus.Attack;
+                animator.SetTrigger("Attack");
+                //공격 애니메이션 재생
+                Attackon = true;
+            }
+            else
+            {
+                if(!isEscape)
+                {
+                    isEscape = true;
+                    MeatManager.instance.LoseMeatByMonster(gameObject);
+                    MonsterEscape();
+                }
+            }
         }
-        if(_collider.name.Equals(spawnpoint.name))
+        if(_collider.name.Contains("SpawnPoint"))
         {
-            spawnpoint.GetComponent<Collider>().enabled = false;
+            Debug.Log("Why Not Here?");
+            isRotate = false;
             isEscape = false;
-            SpawnManager.instance.FadeMonster(this);  
+            spawnpoint.GetComponent<Collider>().enabled = false;
+            SpawnManager.instance.FadeMonster(this);
+            Destroy(GetComponentInChildren<Steak>().gameObject); 
         }
         //IOnDamage 인터페이스를 상속받는 오브젝트에게는 데미지를 입힐 수 있다. 
         if(_collider.GetComponent<IOnDamage>() != null)
         {
             _collider.GetComponent<IOnDamage>().OnDamage(monsterDamage, gameObject); 
+        }
+    }
+
+
+    private void OnFade()
+    {
+        if (isEscape && GetComponentInChildren<Steak>().gameObject != null)
+        {
+            spawnpoint.GetComponent<Collider>().enabled = false;
+            SpawnManager.instance.FadeMonster(this);
+            Destroy(GetComponentInChildren<Steak>().gameObject);
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class Barrier : MonoBehaviour, IOnDamage
 {
@@ -13,13 +14,19 @@ public class Barrier : MonoBehaviour, IOnDamage
     private void Start()
     {
         barrierHP = maxHP;
-        barrierGauge.value = maxHP;
+        if(XRSettings.enabled)
+        {
+            barrierGauge.value = maxHP;
+        }
     }
 
     public void OnDamage(int damage, GameObject _object)
     {
         barrierHP -= damage;
-        barrierGauge.value -= damage;
+        if(XRSettings.enabled)
+        {
+            barrierGauge.value -= damage;
+        }
         if (barrierHP <= 0)
         {
             this.gameObject.SetActive(false);

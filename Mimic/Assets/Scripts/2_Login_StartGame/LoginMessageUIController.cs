@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
@@ -12,7 +13,11 @@ public class LoginMessageUIController : MonoBehaviour
     [SerializeField, TextArea] private string[] statustext_login = null;
     [Header("회원가입 오류 메시지")]
     [SerializeField, TextArea] private string[] statustext_signup = null;
-    [SerializeField] private TextMeshProUGUI statustext = null; 
+    [SerializeField] private TextMeshProUGUI statustext = null;
+
+    [Header("로그인 실패 시: 혼란스러운 우주인 이미지")]
+    [SerializeField] private Image astro_confused = null;
+
 
     public void SetText(int _type, int _statusindex)
     {
@@ -23,6 +28,10 @@ public class LoginMessageUIController : MonoBehaviour
         if(_type == 1) //로그인
         {
             statustext.text = statustext_login[_statusindex]; 
+            if(_statusindex == 0)
+            {
+                astro_confused.enabled = true; 
+            }
         }
         if(_type == 2) //VR전용 
         {

@@ -19,7 +19,6 @@ public class GameManager_StartScene : MonoBehaviour
         Welcome 
     }
 
-
     private LoginController logincontroller = null;
     private SignupController signupcontroller = null;
     private WelcomeController welcomecontroller = null;
@@ -48,8 +47,9 @@ public class GameManager_StartScene : MonoBehaviour
         signupcontroller.OnClickInSignupOnClick = OnClickInSignupOnClick; 
 
         signupcontroller.gameObject.SetActive(false);
-        welcomecontroller.gameObject.SetActive(false); 
+        welcomecontroller.gameObject.SetActive(false);
 
+        status_ui = (int)UIStatus.Login; 
         if(SceneManager.GetActiveScene().name.Contains("VR"))
         {
             //VR¿œ∂ß
@@ -175,7 +175,7 @@ public class GameManager_StartScene : MonoBehaviour
         {
             settingui_instantiate = Instantiate(settingui);
             settingui_instantiate.GetComponentInChildren<GameController_Setting>().CloseSettingsOnClick = ExitSettingsOnClick;
-            logincontroller.gameObject.SetActive(false);
+            //logincontroller.gameObject.SetActive(false);
         }
         if(XRSettings.enabled)
         {
@@ -188,7 +188,12 @@ public class GameManager_StartScene : MonoBehaviour
     public void ExitSettingsOnClick()
     {
         Destroy(settingui_instantiate);
-        logincontroller.gameObject.SetActive(true); 
+        
+        if(status_ui == (int)UIStatus.Login) 
+        {
+            logincontroller.gameObject.SetActive(true);
+        }
+        
     }
     #endregion
 

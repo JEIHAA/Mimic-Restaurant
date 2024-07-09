@@ -50,7 +50,7 @@ public class SpawnManager : MonoBehaviour
         {
             InitMonster();
         }
-        //InitMonster(); 
+        InitMonster(); 
     }
     #endregion
 
