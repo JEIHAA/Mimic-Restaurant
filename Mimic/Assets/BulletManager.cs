@@ -8,7 +8,7 @@ public class BulletManager : MonoBehaviour
 
     public void UpgradeDamage()
     {
-        bulletData.bulletDamage += 100;
+        bulletData.bulletDamage += 20;
     }
     public void UpgradeSpeed()
     {

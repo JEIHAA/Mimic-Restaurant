@@ -8,20 +8,20 @@ public class VRPlayer : MonoBehaviour, IOnDamage
     [Header("최대 공복도")]
     [SerializeField] private int maxHungry = 100;
     [Header("현재 공복도")]
-    [SerializeField] private int hungry;
+    [SerializeField] public int hungry;
     [Header("초당 줄어드는 공복도")]
-    [SerializeField] private int decreaseHungry = 5;
+    [SerializeField] public int decreaseHungry = 5;
     [Header("플레이어 체력")]
     [SerializeField] private int playerHP = 10;
     [Header("햄버거 공복도 회복량")]
-    [SerializeField] private int increaseHungry = 50;
+    [SerializeField] public int increaseHungry = 50;
     [SerializeField] private Slider hungryGauge;
 
     private void Start()
     {
         hungry = maxHungry;
         hungryGauge.value = maxHungry;
-        StartCoroutine(HungerDecreaseRoutine());
+        //StartCoroutine(HungerDecreaseRoutine());
     }
 
     private IEnumerator HungerDecreaseRoutine()
@@ -33,7 +33,7 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         }
     }
 
-    private void DecreaseHungry(int amount)
+    public void DecreaseHungry(int amount)
     {
         hungry -= amount;
         hungryGauge.value -= amount;
@@ -44,7 +44,8 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         }
     }
 
-    private void IncreaseHungry(int amount)
+
+    public void IncreaseHungry(int amount)
     {
         hungry += amount;
         hungryGauge.value += amount;
@@ -56,25 +57,22 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         //Debug.Log("Hungry increased by: " + amount + ". Current hungry: " + hungry);
     }
 
-    public void OnDamage(int damage, GameObject _monster)
+
+    public void OnDamage(int damage)
     {
         //플레이어는 고기를 잃어버린다. 
-        MeatManager.instance.LoseMeatByMonster(_monster); 
+        MeatManager.instance.LoseMeatByMonster(); 
         playerHP -= damage;
-        if(playerHP <= 0)
-        {
-            //PC한테도 VR가 게임 오버됬는지 알려줘야 하나? 
-            //VR는 이상태에서 아무것도 못하게 된다. 
-        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void GunEnergyUpgrade()
     {
-        if (other.CompareTag("Hamburger"))
-        {
-            IncreaseHungry(increaseHungry);
-           // Debug.Log("hamburger +20 Current hungry: " + hungry);
-            other.gameObject.SetActive(false);
-        }
+        decreaseHungry -= 1;
     }
+
+   /* public void UpgardeMaxHungry()
+    {
+        maxHungry += 100;
+        hungryGauge.maxValue = maxHungry;
+    }*/
 }

@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     public float bulletLifetime = 3f;
 
     private List<GameObject> bulletPool;
+    public VRPlayer vrPlayer;
 
     private void Start()
     {
@@ -52,6 +53,8 @@ public class Gun : MonoBehaviour
             }
 
             StartCoroutine(DisableBulletAfterLifetime(bullet));
+
+            vrPlayer.DecreaseHungry(vrPlayer.decreaseHungry); 
         }
     }
 

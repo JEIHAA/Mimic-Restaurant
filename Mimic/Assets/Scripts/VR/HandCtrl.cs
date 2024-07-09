@@ -19,6 +19,7 @@ public class HandCtrl : MonoBehaviour
     private bool pistolOn = false;
     private Coroutine shootingCoroutine;
     [SerializeField] private float shootingSpeed = 1f;
+    public VRPlayer vrPlayer;
 
     private void Awake()
     {
@@ -39,7 +40,7 @@ public class HandCtrl : MonoBehaviour
         float leftValue = leftgripActionProperty.action.ReadValue<float>();
         float rightValue = rightgripActionProperty.action.ReadValue<float>();
 
-        if ((pistolOn && leftValue > 0.8f && !isColliding) || (rightValue > 0.8f && !isColliding))
+        if((leftValue > 0.8f && !isColliding) || (rightValue > 0.8f && !isColliding))
         {
             gun.SetActive(true);
         }
@@ -70,7 +71,7 @@ public class HandCtrl : MonoBehaviour
     private void TriggerButton()
     {
         float tvalue = triggerActionProperty.action.ReadValue<float>();
-        if (tvalue > 0.9f && gun.activeSelf)
+        if (tvalue > 0.9f && gun.activeSelf && vrPlayer.hungry > 0)
         {
             if (shootingCoroutine == null)
             {
@@ -92,7 +93,7 @@ public class HandCtrl : MonoBehaviour
         while (true)
         {
             gunComponent.ShootBullet();
-            yield return new WaitForSeconds(1f/shootingSpeed); // Adjust this time interval as needed
+            yield return new WaitForSeconds(1f/shootingSpeed); 
         }
     }
 
@@ -129,5 +130,4 @@ public class HandCtrl : MonoBehaviour
     {
         pistolOn = true;
     }
-
 }

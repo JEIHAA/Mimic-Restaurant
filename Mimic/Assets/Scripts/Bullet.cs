@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int bulletDamage = 100;
+    [SerializeField] private int bulletDamage = 70;
     [SerializeField] private int bulletSpeed = 20;
     [SerializeField] private BulletStat bulletData = null;
     [HideInInspector] public float activationTime;
@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
     public void UpgradeDamage()
     {
        // Debug.Log("UpgradeDamage");
-        bulletData.bulletDamage += 100;
+        bulletData.bulletDamage += 20;
     }
 
     public void UpgradeSpeed()
