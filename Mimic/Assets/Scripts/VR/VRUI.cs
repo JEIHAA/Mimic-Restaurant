@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -14,6 +16,7 @@ public class VRUI : MonoBehaviour
 
     private void Start()
     {
+        storeMenu.SetActive(false);
         totalMoney.ToString();
         UpdateTotalMoneyText();
     }
@@ -63,6 +66,7 @@ public class VRUI : MonoBehaviour
     public void StoreOnButton()
     {
         storeMenu.SetActive(true);
+        
     }
 
     public void StoreOffButton()

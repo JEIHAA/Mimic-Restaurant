@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\PC\DoorMove.cs" />
     <Compile Include="Assets\Scripts\PC\Food\Coke.cs" />
     <Compile Include="Assets\BulletManager.cs" />
+    <Compile Include="Assets\Scripts\MonsterHand.cs" />
     <Compile Include="Assets\Scripts\PC\CustomerSpawnManager.cs" />
     <Compile Include="Assets\Scripts\PC\Food\Foodnfo.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\DBManager.cs" />

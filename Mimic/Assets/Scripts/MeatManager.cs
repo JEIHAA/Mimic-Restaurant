@@ -8,7 +8,7 @@ using UnityEngine.Pool;
 public class MeatManager : MonoBehaviour
 {
     private int meatnum = 0;
-    private int meatnum_acummulated = 0; 
+    private int meatnum_acummulated = 0;
 
     public static MeatManager instance = null; //Singleton 
 
@@ -33,7 +33,7 @@ public class MeatManager : MonoBehaviour
 
     #region["고기 정산 정보 지우기"]
     public void ClearMeatAcummlated()
-    {
+    { 
         meatnum_acummulated = 0;
     }
     #endregion
@@ -51,17 +51,14 @@ public class MeatManager : MonoBehaviour
     #region["몬스터한테 플레이어가 데미지를 입으면 이 메소드를 실행함"] 
     public void LoseMeatByMonster(GameObject _monster)
     {
-        //맨 마지막에 있는거 파괴함. 
-        if (meatnum > 0)
-        {
-            //몬스터가 고기를 가지기 
-            GameObject monsterglove = _monster.GetComponentsInChildren<Transform>()[4].gameObject;  
-            GameObject hand = monsterglove.GetComponentsInChildren<Transform>()[3].gameObject; 
-            GetComponentsInChildren<Meat>()[meatnum - 1].transform.SetParent(hand.transform);
-            //Destroy(GetComponentsInChildren<Meat>()[meatnum - 1].gameObject);
-            _monster.GetComponent<Monster>().MonsterEscape(); //도망가기 
-            --meatnum;
-        }
+        //몬스터가 고기를 가지기 
+        GameObject monsterglove = _monster.GetComponentsInChildren<Transform>()[4].gameObject;
+        GameObject hand = monsterglove.GetComponentsInChildren<Transform>()[3].gameObject;
+        GetComponentsInChildren<Meat>()[meatnum - 1].transform.position = hand.transform.position;
+        GetComponentsInChildren<Meat>()[meatnum - 1].transform.SetParent(hand.transform);
+        //Destroy(GetComponentsInChildren<Meat>()[meatnum - 1].gameObject);
+        //_monster.GetComponent<Monster>().MonsterEscape(); //도망가기 
+        --meatnum;
     }
     #endregion
 
