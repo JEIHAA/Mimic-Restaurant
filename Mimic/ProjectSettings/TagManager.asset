@@ -37,7 +37,11 @@ TagManager:
   - Button
   - FoodBound
   - Ingredient
+<<<<<<< HEAD
   - MonsterStartPoint
+=======
+  - MonsterSpawnPoint
+>>>>>>> c1bf3c8ef14ad2fafba39fced517065b62977999
   - 
   - 
   - 

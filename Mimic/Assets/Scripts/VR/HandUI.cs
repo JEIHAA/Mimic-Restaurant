@@ -7,13 +7,18 @@ public class HandUI : MonoBehaviour
 
     private void Update()
     {   
-        InputDevice device = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand); 
-        InputFeatureUsage<Quaternion> handRotationUsage = CommonUsages.deviceRotation;
-        if (device.TryGetFeatureValue(handRotationUsage, out Quaternion handRotation))
+        InputDevice Ldevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand); 
+        InputFeatureUsage<Quaternion> LhandRotationUsage = CommonUsages.deviceRotation;
+
+        InputDevice Rdevice = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        InputFeatureUsage<Quaternion> RhandRotationUsage = CommonUsages.deviceRotation;
+
+        if (Ldevice.TryGetFeatureValue(LhandRotationUsage, out Quaternion LhandRotation) && Rdevice.TryGetFeatureValue(RhandRotationUsage, out Quaternion RhandRotation))
         {
-            Vector3 eulerRotation = handRotation.eulerAngles;
-           // Debug.Log($"Euler angles: x:{eulerRotation.x}, y:{eulerRotation.y}, z:{eulerRotation.z}");
-            if (eulerRotation.z > 50f && eulerRotation.z < 90f) 
+            Vector3 LeulerRotation = LhandRotation.eulerAngles;
+            Vector3 ReulerRotation = RhandRotation.eulerAngles;
+           // Debug.Log($"Euler angles: x:{ReulerRotation.x}, y:{ReulerRotation.y}, z:{ReulerRotation.z}");
+            if (LeulerRotation.z > 50f && LeulerRotation.z < 90f || ReulerRotation.z > 300f && ReulerRotation.z < 340f) 
             {
                 menuUI.SetActive(true);
             }

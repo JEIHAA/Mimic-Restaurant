@@ -13,7 +13,7 @@ public class VrStroeButton : MonoBehaviour
     
     private void Start()
     {
-        storeMenu.SetActive(false);
+       // storeMenu.SetActive(false);
         isPressed = false;
     }
 
