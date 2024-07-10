@@ -138,7 +138,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &-88011703886425357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +306,11 @@ MonoBehaviour:
   ingredient: 1
   nextLevel: {fileID: 1934070991157511254, guid: 0c42e70e85c111f4ba58f2e1cd4db443,
     type: 3}
+  materials:
+  - {fileID: 2100000, guid: 5e35b7f65068029469ab824029344ec4, type: 2}
+  - {fileID: 2100000, guid: 40f7d467885208d40976ac106104a2a2, type: 2}
+  - {fileID: 2100000, guid: 40f7d467885208d40976ac106104a2a2, type: 2}
+  rendererMaterial: []
 --- !u!114 &-8786363418678412424
 MonoBehaviour:
   m_ObjectHideFlags: 0

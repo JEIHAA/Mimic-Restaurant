@@ -39,7 +39,7 @@ public class AdjustUIManager : MonoBehaviourPun
     [Header("몬스터 매니저")]
     [SerializeField] private MonsterManager monstermanager = null;
     [Header("VR 정산 UI")]
-    [SerializeField] private AdjustUIManager vradjustui = null; 
+    [SerializeField] private AdjustUIManager vradjustui = null;
 
     [Header("받은 손님 텍스트")]
     [SerializeField] private TextMeshProUGUI customer_text = null;
@@ -51,6 +51,10 @@ public class AdjustUIManager : MonoBehaviourPun
     [SerializeField] private TextMeshProUGUI monster_text = null;
     [Header("고기 텍스트")]
     [SerializeField] private TextMeshProUGUI meat_text = null;
+
+    [Header("다음 날짜로 이동 안내 메시지")]
+    [SerializeField] private GameObject nextday_ui = null;
+    private GameObject nextday_ui_instantiate = null;
 
     //PC 
     private int currentcustomer = 0;
@@ -66,16 +70,16 @@ public class AdjustUIManager : MonoBehaviourPun
     private void OnEnable()
     {
         StartCoroutine(GIFCoroutine1());
-        StartCoroutine(GIFCoroutine2()); 
-        if(XRSettings.enabled)
+        StartCoroutine(GIFCoroutine2());
+        if (XRSettings.enabled)
         {
             //VR에서는 버튼 비활성화 
-            foreach(Button btn in pcbtn)
+            foreach (Button btn in pcbtn)
             {
-                btn.gameObject.SetActive(false); 
+                btn.gameObject.SetActive(false);
             }
             //VR
-            if(PhotonNetwork.IsConnected)
+            if (PhotonNetwork.IsConnected)
             {
                 photonView.RPC("SetTextVR", RpcTarget.All);
             }
@@ -83,7 +87,7 @@ public class AdjustUIManager : MonoBehaviourPun
         else
         {
             //PC 
-            if(PhotonNetwork.IsConnected)
+            if (PhotonNetwork.IsConnected)
             {
                 photonView.RPC("SetTextPC", RpcTarget.All);
             }
@@ -108,10 +112,10 @@ public class AdjustUIManager : MonoBehaviourPun
     [PunRPC]
     public void SetTextVR()
     {
-        currentmonster = monstermanager.GetMonster_Killed(); 
+        currentmonster = monstermanager.GetMonster_Killed();
         currentmeat = meatmanager.GetMeatNumAcummlated();
         monster_text.text = "몬스터 잡은 수: " + currentmonster + "마리";
-        meat_text.text = "고기 수:" + currentmeat + "개"; 
+        meat_text.text = "고기 수:" + currentmeat + "개";
     }
     #endregion
 
@@ -119,36 +123,36 @@ public class AdjustUIManager : MonoBehaviourPun
     private void OnDisable()
     {
         StopCoroutine(GIFCoroutine1());
-        StopCoroutine(GIFCoroutine2()); 
+        StopCoroutine(GIFCoroutine2());
     }
     #endregion
 
     private IEnumerator GIFCoroutine1() //Meteor 
     {
-        int count = 1; 
-        while(true)
+        int count = 1;
+        while (true)
         {
-            if(count > 48)
+            if (count > 48)
             {
-                count = 1; 
+                count = 1;
             }
             meteor.sprite = Resources.Load<Sprite>("Images\\Sprites\\Meteor_GIF\\" + count);
-            yield return new WaitForSeconds(0.5f);  
-            ++count; 
+            yield return new WaitForSeconds(0.5f);
+            ++count;
         }
     }
 
     private IEnumerator GIFCoroutine2() //Planet
     {
         int count = 1;
-        while(true)
+        while (true)
         {
-            if(count > 15)
+            if (count > 15)
             {
-                count = 1; 
+                count = 1;
             }
             planet.sprite = Resources.Load<Sprite>("Images\\Sprites\\Planet_GIF\\" + count);
-            yield return new WaitForSeconds(0.1f); 
+            yield return new WaitForSeconds(0.1f);
             ++count;
         }
     }
@@ -157,7 +161,7 @@ public class AdjustUIManager : MonoBehaviourPun
     public void StoreBtn()
     {
         gameObject.SetActive(false);
-        pcstore.SetActive(true);     
+        pcstore.SetActive(true);
     }
     #endregion
 
@@ -165,20 +169,30 @@ public class AdjustUIManager : MonoBehaviourPun
     public void Adjust()
     {
         Boolean success = currentcustomer >= min_customer && currentmoney >= min_money[level - 1]; //성공 조건 
-        photonView.RPC("NextRound", RpcTarget.All, success); 
+        if (nextday_ui_instantiate == null)
+        {
+            nextday_ui_instantiate = Instantiate(nextday_ui);
+            nextday_ui_instantiate.GetComponentsInChildren<Button>()[0].onClick.AddListener(() => NextRoundBtn(success));
+        }
     }
     #endregion
+
+    public void NextRoundBtn(Boolean _success)
+    {
+        photonView.RPC("NextRound", RpcTarget.All, _success);
+    }
 
     #region["정산이 끝나고 다음 라운드로 이동"] 
     [PunRPC]
     public void NextRound(Boolean _success)
     {
-        if(_success)
+        if (_success)
         {
             //조건 만족 
             ++level;
-            min_customer += 10; 
+            min_customer += 10;
             spawnmanager.GoNextWave();
+            daymanager.PlusDay();
         }
         else
         {
@@ -187,15 +201,16 @@ public class AdjustUIManager : MonoBehaviourPun
         }
         customerspawnmanager.Restart(); //손님 스폰 다시 시작 
         customerspawnmanager.ClearCustomer(); //PC 정산 정보 초기화
-        //VR 정산 정보 초기화 
+                                              //VR 정산 정보 초기화 
         monstermanager.ClearMonster();
-        meatmanager.ClearMeatAcummlated(); 
+        meatmanager.ClearMeatAcummlated();
         daymanager.StartTimer();
-        gameObject.SetActive(false); 
-        if(vradjustui != null)
+        gameObject.SetActive(false);
+        if (vradjustui != null)
         {
-            vradjustui.gameObject.SetActive(false); 
+            vradjustui.gameObject.SetActive(false);
         }
+        Destroy(nextday_ui_instantiate);
     }
-    #endregion  
+    #endregion
 }

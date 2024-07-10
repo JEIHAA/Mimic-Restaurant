@@ -16,7 +16,7 @@ public class BindFood : MonoBehaviour
         {
             return;
         }
-        if (_other.gameObject.layer == LayerMask.NameToLayer("Food") || _other.gameObject.layer == LayerMask.NameToLayer("Ingredient") && !_other.GetComponent<Ingredients>().IsCooking)
+        if (_other.gameObject.layer == LayerMask.NameToLayer("Food") || _other.gameObject.layer == LayerMask.NameToLayer("Ingredient") && _other.GetComponent<Ingredients>().State != CookState.Cooking)
         {
             CatchFood(_other);
         }

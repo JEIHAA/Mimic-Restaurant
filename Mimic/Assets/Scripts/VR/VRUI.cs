@@ -16,9 +16,8 @@ public class VRUI : MonoBehaviour
 
     private void Start()
     {
-        storeMenu.SetActive(false);
-        totalMoney.ToString();
         UpdateTotalMoneyText();
+        storeMenu.SetActive(false);
     }
 
     public void UpgradeUseMoney()   // 총업글시 사용머니 100원씩 증가

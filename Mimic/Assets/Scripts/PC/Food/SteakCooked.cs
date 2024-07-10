@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Ingredients;
 
-public class SteakCooed : Ingredients, ICooking
+public class SteakCooked : Ingredients, ICooking
 {
+    [SerializeField] Material[] materials;
+    [SerializeField] MeshRenderer renderer;
+
     private void Start()
     {
         ingredient = Ingredient.Steak;
-        isCooked = true;
+        state = CookState.Cooked;
+        renderer= GetComponent<MeshRenderer>();
     }
 
-    public void Cooking()
+    public void Burning()
     {
-        Debug.Log("Cooking...");
+        renderer.materials = materials;
+        Debug.Log("Burned out...");
     }
 }

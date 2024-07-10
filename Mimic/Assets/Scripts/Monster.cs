@@ -169,7 +169,7 @@ public class Monster : MonoBehaviourPun, IOnDamage
                 {
                     isEscape = true;
                     MeatManager.instance.LoseMeatByMonster(gameObject);
-                    MonsterEscape();
+                    MonsterEscape(); 
                 }
             }
         }
@@ -185,7 +185,12 @@ public class Monster : MonoBehaviourPun, IOnDamage
         //IOnDamage 인터페이스를 상속받는 오브젝트에게는 데미지를 입힐 수 있다. 
         if(_collider.GetComponent<IOnDamage>() != null)
         {
-            _collider.GetComponent<IOnDamage>().OnDamage(monsterDamage, gameObject); 
+            Debug.Log("monster triggerenter");
+            _collider.GetComponentInParent<IOnDamage>().OnDamage(monsterDamage, gameObject); 
+        }
+        if(_collider.GetComponentInParent<IOnDamage>() != null)
+        {
+            _collider.GetComponentInParent<IOnDamage>().OnDamage(monsterDamage, gameObject);
         }
     }
 

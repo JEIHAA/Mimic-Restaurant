@@ -21,7 +21,7 @@ public class DayManager : MonoBehaviourPun
         set { adjustonclick = value;  }
     }
 
-    private int day = 1; //1,2,3,4
+    private int day = 1; //1,2,3,4,5
     private float seconds = 0f;
     private float seconds_hidden = 0f; //
     private float breaktime = 0f;
@@ -51,9 +51,8 @@ public class DayManager : MonoBehaviourPun
             }
             if(seconds == 260f)
             {
-                if(day < 4)
+                if(day < 5)
                 {
-                    ++day;
                     seconds = 0f;
                     //정산화면 출력 
                     adjustonclick?.Invoke(); 
@@ -92,7 +91,7 @@ public class DayManager : MonoBehaviourPun
             yield return new WaitForSeconds(1f);
         }
         breaktime = 0f;
-        if (XRSettings.enabled && seconds >= 260f) 
+        if (XRSettings.enabled && seconds < 260f) 
         {
             //260초가 되면 쉬는시간이 끝나지만 라운드가 끝나기 때문에 정산이 끝날때까지는 몬스터를 스폰하지 않는다. 
             //몬스터 다시 스폰 
@@ -120,5 +119,8 @@ public class DayManager : MonoBehaviourPun
     }
     #endregion
 
-
+    public void PlusDay()
+    {
+        ++day; 
+    }
 }

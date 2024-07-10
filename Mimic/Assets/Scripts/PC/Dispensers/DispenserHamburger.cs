@@ -52,7 +52,7 @@ public class DispenserHamburger : DispenserWait, IDispenser
             Debug.Log("이미 사용중입니다!");
             return;
         }
-        else if (food.GetComponent<Ingredients>() == null || !food.GetComponent<Ingredients>().IsCooked)
+        else if (food.GetComponent<Ingredients>() == null || food.GetComponent<Ingredients>().State != CookState.Cooked)
         {
             Debug.Log("구워진 재료가 필요합니다!");
             return;
@@ -64,14 +64,14 @@ public class DispenserHamburger : DispenserWait, IDispenser
             _player.GetComponentInChildren<BindFood>().Food = null;
             StartCoroutine(GenerateFood(food));
         }
-        else { Debug.Log("뭐가 문제임?"); }
+        else { Debug.LogError("뭔가 문제가 있음"); }
     }
 
     public IEnumerator GenerateFood(GameObject _food)
     {
-        if (_food.GetComponent<Ingredients>().IsCooked)
+        if (_food.GetComponent<Ingredients>().State == CookState.Cooked)
         {
-            _food.GetComponent<Ingredients>().IsCooking = true;
+            _food.GetComponent<Ingredients>().State = CookState.Cooking;
             _food.transform.transform.parent = null;
             _food.transform.transform.position = foodGenerator.position;
             Debug.Log("음식 내려놓음");
@@ -79,7 +79,7 @@ public class DispenserHamburger : DispenserWait, IDispenser
             StartCoroutine(WaitTimer(timer_wait)); 
             yield return new WaitForSeconds(timer_wait);
 
-            _food.GetComponent<Ingredients>().IsCooking = false;
+            _food.GetComponent<Ingredients>().State = CookState.Cooked;
             Destroy(_food);
 
             if (!PhotonNetwork.IsConnected)

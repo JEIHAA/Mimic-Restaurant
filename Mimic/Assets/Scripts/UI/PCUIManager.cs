@@ -16,6 +16,7 @@ public class PCUIManager : MonoBehaviour
     public int Increase_Food_Hunger_Level;
 
     private GameObject settingui_instantiate = null;
+    private GameObject tutorialui_instantiate = null;
 
     [Header("UI 상자들. ")]
     [SerializeField] private GameObject uiboxholder = null;
@@ -25,11 +26,13 @@ public class PCUIManager : MonoBehaviour
     [SerializeField] private GameObject settingui = null;
 
     [Header("상자")]
-    [SerializeField] private GameObject StoreBox; 
-    [SerializeField] private GameObject HamBurgerBox;
-    [SerializeField] private GameObject SodaBox; 
-    [SerializeField] private GameObject FrencFriesBox;
+    [SerializeField] private GameObject StoreBox = null;
+    [SerializeField] private GameObject HamBurgerBox = null; 
+    [SerializeField] private GameObject SodaBox = null;
+    [SerializeField] private GameObject FrencFriesBox = null; 
 
+    [Header("튜토리얼 UI")]
+    [SerializeField] private GameObject tutorial_ui = null;
 
     #region["Start is called before the first frame update"] 
     private void Start()
@@ -119,7 +122,8 @@ public class PCUIManager : MonoBehaviour
         if(settingui_instantiate == null)
         {
             settingui_instantiate = Instantiate(settingui);
-            settingui_instantiate.GetComponentInChildren<GameController_Setting>().CloseSettingsOnClick = ExitSetting; 
+            settingui_instantiate.GetComponentInChildren<GameController_Setting>().CloseSettingsOnClick = ExitSetting;
+            Time.timeScale = 0f; 
         }
     }
     #endregion
@@ -135,10 +139,9 @@ public class PCUIManager : MonoBehaviour
     public void ExitSetting()
     {
         Destroy(settingui_instantiate);
-        AudioManager.instance.PlayBGM(); 
+        AudioManager.instance.PlayBGM();
+        Time.timeScale = 1f; 
     }
-
-    
 
     #endregion
     #endregion
@@ -147,6 +150,28 @@ public class PCUIManager : MonoBehaviour
     public void AdjustUI()
     {
         adjustui.SetActive(true); 
+    }
+    #endregion
+
+    #region["튜토리얼 버튼"] 
+    public void TutorialBtn()
+    {
+        if(tutorialui_instantiate == null)
+        {
+            tutorialui_instantiate = Instantiate(tutorial_ui);
+            tutorialui_instantiate.GetComponentsInChildren<Button>()[0].onClick.AddListener(CloseTutorialBtn); 
+            gameObject.SetActive(false);
+            Time.timeScale = 0f; 
+        }
+    }
+    #endregion
+
+    #region["튜토리얼 닫기 버튼"]
+    public void CloseTutorialBtn()
+    {
+        Destroy(tutorialui_instantiate);
+        gameObject.SetActive(true); 
+        Time.timeScale = 1f; 
     }
     #endregion
 

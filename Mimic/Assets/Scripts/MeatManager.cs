@@ -8,11 +8,8 @@ using UnityEngine.Pool;
 
 public class MeatManager : MonoBehaviour
 {
-<<<<<<< HEAD
-    [SerializeField] private int meatnum = 6; 
-=======
-    private int meatnum = 0;
->>>>>>> c1bf3c8ef14ad2fafba39fced517065b62977999
+    [SerializeField] private int meatnum = 0;
+
     private int meatnum_acummulated = 0;
 
     public static MeatManager instance = null; //Singleton 
@@ -56,8 +53,7 @@ public class MeatManager : MonoBehaviour
     #region["몬스터한테 플레이어가 데미지를 입으면 이 메소드를 실행함"] 
     public void LoseMeatByMonster(GameObject _monster)
     {
-<<<<<<< HEAD
-        if(meatnum >= 0)
+        if(meatnum > 0)
         {
             //몬스터가 고기를 가지기 
             GameObject hand = _monster.GetComponentInChildren<MonsterHand>().gameObject;
@@ -69,16 +65,6 @@ public class MeatManager : MonoBehaviour
             steak.transform.SetParent(hand.transform);
             --meatnum;
         }
-=======
-        //몬스터가 고기를 가지기 
-        GameObject monsterglove = _monster.GetComponentsInChildren<Transform>()[4].gameObject;
-        GameObject hand = monsterglove.GetComponentsInChildren<Transform>()[3].gameObject;
-        GetComponentsInChildren<Meat>()[meatnum - 1].transform.position = hand.transform.position;
-        GetComponentsInChildren<Meat>()[meatnum - 1].transform.SetParent(hand.transform);
-        //Destroy(GetComponentsInChildren<Meat>()[meatnum - 1].gameObject);
-        //_monster.GetComponent<Monster>().MonsterEscape(); //도망가기 
-        --meatnum;
->>>>>>> c1bf3c8ef14ad2fafba39fced517065b62977999
     }
     #endregion
 

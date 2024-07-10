@@ -14,9 +14,10 @@ public class HandCtrl : MonoBehaviour
     [SerializeField] private GameObject gun;
     [SerializeField] private Gun gunComponent;
     [SerializeField] private Animator handAnim;
-    private bool isColliding = false;
-   // private bool triggerPressed = false;  
-    private bool pistolOn = false;
+    public bool isColliding = false;
+    private bool isGunInHand = false;
+    // private bool triggerPressed = false;  
+    //private bool pistolOn = false;
     private Coroutine shootingCoroutine;
     [SerializeField] private float shootingSpeed = 1f;
     public VRPlayer vrPlayer;
@@ -39,8 +40,16 @@ public class HandCtrl : MonoBehaviour
     {
         float leftValue = leftgripActionProperty.action.ReadValue<float>();
         float rightValue = rightgripActionProperty.action.ReadValue<float>();
+        if ((leftValue > 0.8f && !isColliding) || (rightValue > 0.8f && !isColliding))
+        {
+            isGunInHand = true;
+        }
+        else
+        {
+            isGunInHand = false;
+        }
 
-        if((leftValue > 0.8f && !isColliding) || (rightValue > 0.8f && !isColliding))
+        if (isGunInHand && !isColliding) // 손에 총이 있고 다른 물체와 충돌하지 않을 때만 총을 활성화
         {
             gun.SetActive(true);
         }
@@ -71,7 +80,7 @@ public class HandCtrl : MonoBehaviour
     private void TriggerButton()
     {
         float tvalue = triggerActionProperty.action.ReadValue<float>();
-        if (tvalue > 0.9f && gun.activeSelf && vrPlayer.hungry > 0)
+        if (tvalue > 0.9f && gun.activeSelf && vrPlayer.Hungry > 0)
         {
             if (shootingCoroutine == null)
             {
@@ -104,12 +113,20 @@ public class HandCtrl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isColliding = true; 
+        isColliding = true;
+        if (isGunInHand)
+        {
+            gun.SetActive(false);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         isColliding = false;
+        if (isGunInHand)
+        {
+            gun.SetActive(true);
+        }
     }
 
     private void TriggerAnim()
@@ -121,13 +138,14 @@ public class HandCtrl : MonoBehaviour
     private void GripAnim()
     {
         float leftValue = leftgripActionProperty.action.ReadValue<float>();
+
         float rightValue = rightgripActionProperty.action.ReadValue<float>();
         handAnim.SetFloat("LeftGrip", leftValue);
         handAnim.SetFloat("RightGrip", rightValue);
     }
 
-    public void DoubleGun()
+/*    public void DoubleGun()
     {
         pistolOn = true;
-    }
+    }*/
 }

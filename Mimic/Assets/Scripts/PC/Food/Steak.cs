@@ -8,13 +8,12 @@ public class Steak : Ingredients, ICooking
     private void Start()
     {
         ingredient = Ingredient.Steak;
-        isCooked = false;
+        state = CookState.Raw;
     }
 
-    public void Cooking()
+    public void Burning()
     {
-        Debug.Log("ÆÄ±«!!!!!!!!!!!!!!!!!!!!");
-        //this.gameObject.SetActive(false);
+        Debug.Log("Burnd out...");
     }
 
     
