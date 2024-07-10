@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CookState
+{
+    None,
+    Raw,
+    Cooking,
+    Cooked,
+    Burn
+}
+
 public class Ingredients: MonoBehaviour
 {
     public enum Ingredient
@@ -11,16 +20,14 @@ public class Ingredients: MonoBehaviour
         Cheese
     }
 
-
     [SerializeField] protected Ingredient ingredient;
     [SerializeField] protected GameObject nextLevel = null;
     public GameObject NextLevel => nextLevel;
 
-    protected bool isCooked = false;
+    protected CookState state = CookState.None;
+    public CookState State { get => state; set => state = value; }
+
     protected bool isGoPC = false; 
-    public bool IsCooked => isCooked;
-    protected bool isCooking = false;
-    public bool IsCooking { get => isCooking; set => isCooking = value; }
 
     public bool IsGoPC
     {

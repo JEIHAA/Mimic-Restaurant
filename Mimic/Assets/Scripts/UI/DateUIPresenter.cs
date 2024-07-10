@@ -41,14 +41,13 @@ public class DateUIPresenter : MonoBehaviour
         }
         else //1Ка РЬЛѓ 
         {
-            if((_second - 60f) < 10f)
+            int minute = (int)(_second / 60f);
+            if ((_second - (60f * minute)) < 10f)
             {
-                int minute = (int)(_second / 60f); 
                 second_text.text = "0" + (int)(_second / 60f) + ":0" + (_second - (60f * minute)); 
             }
             else
             {
-                int minute = (int)(_second / 60f); 
                 second_text.text = "0" + (int)(_second / 60f) + ":" + (_second - (60f * minute));
             }
         }

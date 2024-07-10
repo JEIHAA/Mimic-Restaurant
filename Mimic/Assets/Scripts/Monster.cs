@@ -60,7 +60,6 @@ public class Monster : MonoBehaviourPun, IOnDamage
         Attackon = false;
         isRotate = false;
         isEscape = false; 
-        //Invoke("DestroySelf", 60f);
         SetMonsterStat(); 
     }
     #endregion

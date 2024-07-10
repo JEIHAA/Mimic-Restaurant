@@ -54,7 +54,7 @@ public class DispenserStove : DispenserWait, IDispenser
             Debug.Log("이미 사용중입니다!");
             return;
         }
-        else if (food.GetComponent<Ingredients>() == null || food.GetComponent<Ingredients>().IsCooked)
+        else if (food.GetComponent<Ingredients>() == null || food.GetComponent<Ingredients>().State != CookState.Raw)
         {
             Debug.Log("구울 수 없습니다!");
             return;
@@ -71,9 +71,9 @@ public class DispenserStove : DispenserWait, IDispenser
     public IEnumerator GenerateFood(GameObject _food)
     {
         Debug.Log("굽기");
-        if(!_food.GetComponent<Ingredients>().IsCooked)
+        if(_food.GetComponent<Ingredients>().State == CookState.Raw)
         {
-            _food.GetComponent<Ingredients>().IsCooking = true;
+            _food.GetComponent<Ingredients>().State = CookState.Cooking;
             _food.transform.transform.parent = null;
             _food.transform.transform.position = foodGenerator.position;
             Debug.Log("음식 내려놓음");
@@ -81,10 +81,15 @@ public class DispenserStove : DispenserWait, IDispenser
             StartCoroutine(WaitTimer(timer_wait)); 
             yield return new WaitForSeconds(timer_wait);
 
-            _food.GetComponent<Ingredients>().IsCooking = false;
+            _food.GetComponent<Ingredients>().State = CookState.Cooked;
             Destroy(_food);
             output = Instantiate(_food.GetComponent<Ingredients>().NextLevel, foodGenerator.position, Quaternion.Euler(-90f, 0, 0) );
             isGenerate = false;
+
+            StartCoroutine(WaitTimer(timer_wait * 2f));
+            yield return new WaitForSeconds(timer_wait*2f);
+            output.GetComponent<Ingredients>().State = CookState.Burn;
+            output.GetComponent<ICooking>()?.Burning();
         }
     }
 

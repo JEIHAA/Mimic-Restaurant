@@ -67,6 +67,10 @@ public class MoneyManager : MonoBehaviourPun
     [Header("VR UI")]
     [SerializeField] private VRUI vrui = null;
 
+    [Header("안내 메시지")]
+    [SerializeField] private GameObject nomoney_msg = null;
+    private GameObject nomoney_msg_instantiate = null;
+
     private void Awake()
     {
         if (instance == null)
@@ -79,14 +83,18 @@ public class MoneyManager : MonoBehaviourPun
         }
     }
 
+    private void Start()
+    {
+        Print_SalesAmount_Money();
+    }
     #region 각 추가금액,레벨,머니 표시
     public void Print_SalesAmount_Money()
     {
         TotalMoneyText.text = TotalMoney.ToString();
-        if(!XRSettings.enabled && PhotonNetwork.IsConnected)
+        if (!XRSettings.enabled && PhotonNetwork.IsConnected)
         {
             //PC -> VR
-            photonView.RPC("SendMoneyToVR", RpcTarget.OthersBuffered, TotalMoney); 
+            photonView.RPC("SendMoneyToVR", RpcTarget.OthersBuffered, TotalMoney);
         }
     }
 
@@ -157,20 +165,33 @@ public class MoneyManager : MonoBehaviourPun
         Debug.Log("Money: " + _Money);
         TotalMoney += _Money;
         Print_SalesAmount_Money();
-        
+
     }
 
+
+    #region["돈 쓰는 메소드"] 
     public void MinusMoney(int _Money)
     {
-        if(TotalMoney > 0)
+        TotalMoney -= _Money;
+        Print_SalesAmount_Money();
+    }
+    #endregion
+
+    #region["현재 돈을 쓸 수 있는지 체크: 폭탄 같은 경우는 이 체크를 무시하고 바로 MinusMoney 하면 됨."] 
+    public bool MoneyCheck(int _Money)
+    {
+        if (TotalMoney > 0)
         {
-            if(TotalMoney > _Money)
+            if (TotalMoney > _Money)
             {
-                TotalMoney -= _Money;
-                Print_SalesAmount_Money();
+                //돈을 사용할 수 있음. 
+                return true;
             }
         }
+        //돈을 사용할 수 없음. 
+        return false;
     }
+    #endregion
 
     #endregion
 
@@ -207,15 +228,22 @@ public class MoneyManager : MonoBehaviourPun
         {
             if (Increase_Food_Hunger_Lv < 5)
             {
-                MinusMoney(Food_Hunger_Money); //초기 비용만큼 돈을 뺀다. 
-                for(int i=0; i<foodstat.Length; ++i)
+                if(MoneyCheck(Food_Hunger_Money))
                 {
-                    float rate = foodstat[i].hungerrestore * (Food_Hunger_Rate / 100f);
-                    foodstat[i].hungerrestore += (int)rate;
+                    MinusMoney(Food_Hunger_Money); //초기 비용만큼 돈을 뺀다. 
+                    for (int i = 0; i < foodstat.Length; ++i)
+                    {
+                        float rate = foodstat[i].hungerrestore * (Food_Hunger_Rate / 100f);
+                        foodstat[i].hungerrestore += (int)rate;
+                    }
+                    Food_Hunger_Money += 100; //비용 증가(간격: 100) 
+                    ++Increase_Food_Hunger_Lv; //레벨 증가 
+                    Food_Hunger_Rate += 10; //비율 증가 
                 }
-                Food_Hunger_Money += 100; //비용 증가(간격: 100) 
-                ++Increase_Food_Hunger_Lv; //레벨 증가 
-                Food_Hunger_Rate += 10; //비율 증가 
+                else
+                {
+                    NoMoneyMessage(); 
+                }
             }
             PrintIncrease_Food_Hunger_Lv();
             PrintIncrease_Food_Hunger();
@@ -228,16 +256,23 @@ public class MoneyManager : MonoBehaviourPun
         {
             if (Increase_Sales_Money_Lv < 5)
             {
-                MinusMoney(Sale_Money_Cost);
-                for (int i = 0; i < foodMoneys.Length; ++i)
+                if(MoneyCheck(Sale_Money_Cost))
                 {
-                    foodMoneys[i] += Sale_Money; 
-                    foodstat[i].money += Sale_Money; 
+                    MinusMoney(Sale_Money_Cost);
+                    for (int i = 0; i < foodMoneys.Length; ++i)
+                    {
+                        foodMoneys[i] += Sale_Money;
+                        foodstat[i].money += Sale_Money;
+                    }
+                    PrintFoodMoney_Each();
+                    Sale_Money_Cost += 100;
+                    ++Increase_Sales_Money_Lv;
+                    Sale_Money += 50;
                 }
-                PrintFoodMoney_Each();
-                Sale_Money_Cost += 100;
-                ++Increase_Sales_Money_Lv;
-                Sale_Money += 50;
+                else
+                {
+                    NoMoneyMessage(); 
+                }
             }
             PrintIncrease_Sales_Money_Lv();
             PrintIncreaseSalesMoney();
@@ -250,37 +285,44 @@ public class MoneyManager : MonoBehaviourPun
         {
             if (MachineLevels[_index] < 5)
             {
-                MinusMoney(MachineMoneys[_index]); //쓴 만큼 뺀다. 
-                float newrate_int = _rateIncrement * MachineLevels[_index];
-                float minusrate = newrate_int / 100f;  
-                Debug.Log("minusrate: " + minusrate); 
-                switch (_index)
+                if (MoneyCheck(MachineMoneys[_index]))
                 {
-                    case (int)Machine.Grill:
-                        for (int i = 0; i < stovedispenser.Length; ++i)
-                        {
-                            stovedispenser[i].UpgradeTimer(minusrate);
-                        }
-                        for (int i = 0; i < hamburgerdispenser.Length; ++i)
-                        {
-                            hamburgerdispenser[i].UpgradeTimer(minusrate);
-                        }
-                        break;
-                    case (int)Machine.Drink:
-                        for (int i = 0; i < drinkdispenser.Length; ++i)
-                        {
-                            drinkdispenser[i].UpgradeTimer(minusrate);
-                        }
-                        break;
-                    case (int)Machine.Fryer:
-                        for (int i = 0; i < frydispenser.Length; ++i)
-                        {
-                            frydispenser[i].UpgradeTimer(minusrate);
-                        }
-                        break;
+                    MinusMoney(MachineMoneys[_index]); //쓴 만큼 뺀다. 
+                    float newrate_int = _rateIncrement * MachineLevels[_index];
+                    float minusrate = newrate_int / 100f;
+                    Debug.Log("minusrate: " + minusrate);
+                    switch (_index)
+                    {
+                        case (int)Machine.Grill:
+                            for (int i = 0; i < stovedispenser.Length; ++i)
+                            {
+                                stovedispenser[i].UpgradeTimer(minusrate);
+                            }
+                            for (int i = 0; i < hamburgerdispenser.Length; ++i)
+                            {
+                                hamburgerdispenser[i].UpgradeTimer(minusrate);
+                            }
+                            break;
+                        case (int)Machine.Drink:
+                            for (int i = 0; i < drinkdispenser.Length; ++i)
+                            {
+                                drinkdispenser[i].UpgradeTimer(minusrate);
+                            }
+                            break;
+                        case (int)Machine.Fryer:
+                            for (int i = 0; i < frydispenser.Length; ++i)
+                            {
+                                frydispenser[i].UpgradeTimer(minusrate);
+                            }
+                            break;
+                    }
+                    ++MachineLevels[_index];
+                    MachineMoneys[_index] += 100;
                 }
-                ++MachineLevels[_index];
-                MachineMoneys[_index] += 100;
+                else
+                {
+                    NoMoneyMessage(); 
+                }
             }
             PrintMachineLevel(_index);
             PrintMachineMoney(_index);
@@ -291,10 +333,25 @@ public class MoneyManager : MonoBehaviourPun
 
     #region["VR 쪽에 돈정보 전달"]
     [PunRPC]
-    public void SendMoneyToVR(int _totalMoney) 
+    public void SendMoneyToVR(int _totalMoney)
     {
-        vrui.GetTotalMoneyFromPC(_totalMoney); 
+        vrui.GetTotalMoneyFromPC(_totalMoney);
     }
     #endregion
 
+    public int GetTotalMoney()
+    {
+        return TotalMoney;
+    }
+
+    #region["돈 없을때 안내 메시지 출력: VR 플레이어가 죽었을때 폭탄 터지는건 상관없음"]
+    public void NoMoneyMessage()
+    {
+        if(nomoney_msg_instantiate == null)
+        {
+            nomoney_msg_instantiate = Instantiate(nomoney_msg);
+            nomoney_msg_instantiate.GetComponent<MessageUI>().SetText(0); 
+        }
+    } 
+    #endregion 
 }

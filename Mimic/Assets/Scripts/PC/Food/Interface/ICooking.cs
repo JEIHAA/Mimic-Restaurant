@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ICooking
 {
-    public void Cooking();
+    public void Burning();
 }

@@ -52,6 +52,10 @@ public class AdjustUIManager : MonoBehaviourPun
     [Header("고기 텍스트")]
     [SerializeField] private TextMeshProUGUI meat_text = null;
 
+    [Header("다음 날짜로 이동 안내 메시지")]
+    [SerializeField] private GameObject nextday_ui = null;
+    private GameObject nextday_ui_instantiate = null;
+
     //PC 
     private int currentcustomer = 0;
     private int currentcustomer_notgetted = 0;
@@ -165,9 +169,18 @@ public class AdjustUIManager : MonoBehaviourPun
     public void Adjust()
     {
         Boolean success = currentcustomer >= min_customer && currentmoney >= min_money[level - 1]; //성공 조건 
-        photonView.RPC("NextRound", RpcTarget.All, success); 
+        if(nextday_ui_instantiate == null)
+        {
+            nextday_ui_instantiate = Instantiate(nextday_ui);
+            nextday_ui_instantiate.GetComponentsInChildren<Button>()[0].onClick.AddListener(() => NextRoundBtn(success)); 
+        }
     }
     #endregion
+
+    public void NextRoundBtn(Boolean _success)
+    {
+        photonView.RPC("NextRound", RpcTarget.All, _success); 
+    }
 
     #region["정산이 끝나고 다음 라운드로 이동"] 
     [PunRPC]
@@ -179,6 +192,7 @@ public class AdjustUIManager : MonoBehaviourPun
             ++level;
             min_customer += 10; 
             spawnmanager.GoNextWave();
+            daymanager.PlusDay(); 
         }
         else
         {
@@ -187,15 +201,16 @@ public class AdjustUIManager : MonoBehaviourPun
         }
         customerspawnmanager.Restart(); //손님 스폰 다시 시작 
         customerspawnmanager.ClearCustomer(); //PC 정산 정보 초기화
-        //VR 정산 정보 초기화 
+                                              //VR 정산 정보 초기화 
         monstermanager.ClearMonster();
-        meatmanager.ClearMeatAcummlated(); 
+        meatmanager.ClearMeatAcummlated();
         daymanager.StartTimer();
-        gameObject.SetActive(false); 
-        if(vradjustui != null)
+        gameObject.SetActive(false);
+        if (vradjustui != null)
         {
-            vradjustui.gameObject.SetActive(false); 
+            vradjustui.gameObject.SetActive(false);
         }
+        Destroy(nextday_ui_instantiate); 
     }
-    #endregion  
+    #endregion
 }

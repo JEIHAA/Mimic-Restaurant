@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\VolumetricLineBehavior.cs" />
     <Compile Include="Assets\Scripts\VR\VRUI.cs" />
     <Compile Include="Assets\Scripts\VR\HandCtrl_Login.cs" />
+    <Compile Include="Assets\Scripts\UI\StoryUI.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\DayManager.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserWait.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\Scripts\2_Login_StartGame\WelcomeController.cs" />
     <Compile Include="Assets\Scripts\PC\OrderInfo.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\GameManager_StartScene.cs" />
+    <Compile Include="Assets\Scripts\UI\TutorialUI.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserDrink.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ControlAnimateLights.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\FactoryDispenser.cs" />
@@ -138,6 +140,7 @@
     <Compile Include="Assets\Scripts\Barrier.cs" />
     <Compile Include="Assets\Scripts\PC\Player\PCPlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\DateUIPresenter.cs" />
+    <Compile Include="Assets\Scripts\PC\Dispensers\DispenserWastebasket.cs" />
     <Compile Include="Assets\Scripts\PC\Food\FoodManager.cs" />
     <Compile Include="Assets\Scripts\FoodEnumInfo.cs" />
     <Compile Include="Assets\Scripts\PC\FoodSizeChanger.cs" />
@@ -150,6 +153,7 @@
     <Compile Include="Assets\Scripts\KeyBoard.cs" />
     <Compile Include="Assets\Scripts\VR\VrStroeButton.cs" />
     <Compile Include="Assets\Scripts\VRPlayer.cs" />
+    <Compile Include="Assets\Scripts\UI\MessageUI.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\MemberDTO.cs" />
     <Compile Include="Assets\Scripts\UI\PCUIManager.cs" />

@@ -19,7 +19,7 @@ MonoBehaviour:
     AppIdVoice: 
     AppVersion: 
     UseNameServer: 1
-    FixedRegion: kr
+    FixedRegion: 
     Server: 
     Port: 0
     ProxyServer: 
@@ -29,37 +29,22 @@ MonoBehaviour:
     EnableLobbyStatistics: 1
     NetworkLogging: 1
   DevRegion: kr
-<<<<<<< HEAD
-  PunLogging: 2
-=======
   PunLogging: 0
->>>>>>> c1bf3c8ef14ad2fafba39fced517065b62977999
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
   - ClickRpc
   - DestroyRpc
-  - DestroySpaceship
-  - Fire
-  - RespawnSpaceship
-  - StartGame
-  - GetDay
-  - GetSeconds
-  - SetDayRpc
-  - SetSecondRpc
-  - AddDay
-  - StartTimer
-  - SetSecondandDay
   - GoGameScene
-  - MonsterArrivedToRestaurant
-  - SetBreakTime
-  - STX_BSDC1
+  - NextRound
   - RestartGameOtherSide
   - SendMoneyToVR
-  - NextRound
+  - SetBreakTime
+  - SetSecondandDay
   - SetTextPC
   - SetTextVR
+  - STX_BSDC1
   DisableAutoOpenWizard: 1
   ShowSettings: 1
-  DevRegionSetOnce: 1
+  DevRegionSetOnce: 0
