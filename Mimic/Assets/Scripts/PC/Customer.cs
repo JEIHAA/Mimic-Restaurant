@@ -12,6 +12,7 @@ using Random = UnityEngine.Random;
 using Image = UnityEngine.UI.Image;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 //2024-05-22: CUSTOM UNITY TEMPLATE 
 
 public class Customer : MonoBehaviour
@@ -140,6 +141,15 @@ public class Customer : MonoBehaviour
             foodimage[i].gameObject.SetActive(true);
             foodimage[i].sprite = wantedfood_sprite[i];
         }
+        if (wantedfood.Count == 1)
+        {
+            foodimage[0].GetComponent<RectTransform>().localPosition = new Vector3(-1.3f, 5.8f, 0f);
+        }
+        else
+        {
+            foodimage[0].GetComponent<RectTransform>().localPosition = new Vector3(30.8f, 5.8f, 0f);
+            foodimage[1].GetComponent<RectTransform>().localPosition = new Vector3(-31.9f, 5.8f, 0f); 
+        }
     }        
     #endregion
 
@@ -155,15 +165,28 @@ public class Customer : MonoBehaviour
     #region["음식 받기"] 
     public void GetFood(GameObject _food, GameObject _player)
     {
+
         for(int i=0; i<wantedfood.Count; ++i)
         {
             if (_food.name.Contains(wantedfood[i]))
             {
+                EffectAudioManager.instance.PlayEffect("GiveFood", true); 
                 food_getted = _food;
                 wantedfood.Remove(wantedfood[i]);
                 wantedfood_sprite.Remove(i); 
                 foodimage[i].sprite = null;
                 foodimage[i].gameObject.SetActive(false);
+                switch(i)
+                {
+                    case 0:
+                        foodimage[1].GetComponent<RectTransform>().localPosition = new Vector3(-1.3f, 5.8f, 0f);
+                        break; 
+                    case 1:
+                        foodimage[0].GetComponent<RectTransform>().localPosition = new Vector3(-1.3f, 5.8f, 0f);
+                        break;
+                    default:
+                        break; 
+                }
                 break; 
             }
             else
@@ -242,6 +265,15 @@ public class Customer : MonoBehaviour
             //시간 초과 
             Debug.Log("Too Late");
             //화내는 효과음 재생 
+            if(name.Contains("Dog") || name.Contains("Alien"))
+            {
+                //강아지, 외계인: 흐음 
+                EffectAudioManager.instance.PlayEffect("EmotionChange", true); 
+            }
+            else
+            {
+                EffectAudioManager.instance.PlayEffect("AngryCustomer", true); 
+            }
             CustomerSpawnManager.instance.IncreaseCustomerNotGet(); //받지 못한 손님 명수 증가시키기 
             speechbubble.gameObject.SetActive(false); 
         }
@@ -270,6 +302,7 @@ public class Customer : MonoBehaviour
 
     public void Move(Transform foodtable_trigger)
     {
+        EffectAudioManager.instance.PlayEffect("BellSound", true);
         StartCoroutine(MoveCustomerAI(foodtable_trigger));
         foodtable_trigger_g = foodtable_trigger;
     }

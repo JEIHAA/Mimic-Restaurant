@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviourPun
     private GameObject pcexit_ui_instantiate = null;
     [SerializeField] private GameObject vrexit_ui_instantiate = null;
 
+    
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {

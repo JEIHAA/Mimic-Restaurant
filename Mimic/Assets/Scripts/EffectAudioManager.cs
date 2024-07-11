@@ -41,13 +41,21 @@ public class EffectAudioManager : MonoBehaviour
     }
     #endregion
 
-    public void PlayEffect(string _status)
+    public void PlayEffect(string _status, Boolean _NotStop)
     {
         if(PlayerPrefs.HasKey("Volume_Effect"))
         {
             audiosource.volume = PlayerPrefs.GetFloat("Volume_Effect") / 10f;
         }
         audiosource.clip = effectclip[(int)Enum.Parse(typeof(EffectEnum), _status)];
+        if(!audiosource.isPlaying && _NotStop)
+        {
+            audiosource.Play(); 
+        }
+        else if(!_NotStop)
+        {
+            audiosource.Stop(); 
+        }
     }
 
 }

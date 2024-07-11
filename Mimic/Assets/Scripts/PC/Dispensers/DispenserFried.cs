@@ -66,11 +66,11 @@ public class DispenserFried : DispenserWait, IDispenser
     public IEnumerator GenerateFood(GameObject _outputPrefab)
     {
         Debug.Log("Æ¢±â´Â Áß...");
+        EffectAudioManager.instance.PlayEffect("FryingFries", true); 
         StartCoroutine(WaitTimer(timer_wait)); 
         yield return new WaitForSeconds(timer_wait);
-
         output = Instantiate(_outputPrefab, foodGenerator.position, Quaternion.identity);
-
         isGenerate = false;
+        EffectAudioManager.instance.PlayEffect("FryingFries", false); 
     }
 }

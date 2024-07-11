@@ -30,10 +30,6 @@ public class VRUI : MonoBehaviour
             clickCount++;
             UpdateTotalMoneyText();
         }
-        else
-        {
-            Debug.Log("Not enough money!");
-        }
     }
 
     public void BarrierUseMoney()       //배리어 업글시 사용머니

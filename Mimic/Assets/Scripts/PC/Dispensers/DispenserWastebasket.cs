@@ -17,7 +17,11 @@ public class DispenserWastebasket : MonoBehaviour, IDispenser
     public void OperateDispenser(GameObject _player)
     {
         Debug.Log("버리기");
-        Destroy(_player.GetComponentInChildren<BindFood>().Food);
+        //탄 고기만 버릴 수 있게 함. 
+        if (_player.GetComponentInChildren<BindFood>().Food.GetComponent<Ingredients>()?.State == CookState.Burn)
+        {
+            Destroy(_player.GetComponentInChildren<BindFood>().Food);
+        }
     }
 
 }

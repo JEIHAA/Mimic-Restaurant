@@ -82,6 +82,7 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         MoneyManager.instance.MinusMoney(medicalPrice);
         playerHP = playerMaxHP;
         barrier.BarrierHP = barrier.MaxHP;
+        barrier.gameObject.SetActive(true);
     }
 
     private IEnumerator HitEffect()

@@ -73,6 +73,7 @@ public class DispenserStove : DispenserWait, IDispenser
         Debug.Log("±Á±â");
         if(_food.GetComponent<Ingredients>().State == CookState.Raw)
         {
+            EffectAudioManager.instance.PlayEffect("RoastingMeat", true);
             _food.GetComponent<Ingredients>().State = CookState.Cooking;
             _food.transform.transform.parent = null;
             _food.transform.transform.position = foodGenerator.position;
@@ -86,11 +87,11 @@ public class DispenserStove : DispenserWait, IDispenser
             output = Instantiate(_food.GetComponent<Ingredients>().NextLevel, foodGenerator.position, Quaternion.Euler(-90f, 0, 0) );
             isGenerate = false;
 
-            StartCoroutine(WaitTimer(timer_wait * 2f));
-            yield return new WaitForSeconds(timer_wait*2f);
-            output.GetComponent<Ingredients>().State = CookState.Burn;
-            output.GetComponent<ICooking>()?.Burning();
+            StartCoroutine(WaitTimer(timer_wait * 2f, output));
+            //yield return new WaitForSeconds(timer_wait*2f);
+            EffectAudioManager.instance.PlayEffect("RoastingMeat", false); 
         }
     }
 
+    
 }

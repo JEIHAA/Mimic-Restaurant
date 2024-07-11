@@ -44,16 +44,17 @@ public class DayManager : MonoBehaviourPun
             {
                 StartCoroutine(BreakTimeCoroutine());
             }
-            if(seconds >= 248f)
+            if(seconds >= 224f)
             {
                 //이때부터 손님 스폰을 중단한다. 
                 CustomerSpawnManager.instance.BreakTime(); 
             }
-            if(seconds == 260f)
+            if(seconds == 240f)
             {
                 if(day < 5)
                 {
                     seconds = 0f;
+                    StartCoroutine(BreakTimeCoroutine()); 
                     //정산화면 출력 
                     adjustonclick?.Invoke(); 
                     yield break; 
@@ -79,7 +80,7 @@ public class DayManager : MonoBehaviourPun
             //쉬는시간이 시작되면 몬스터를 삭제하고 리스트를 초기화한다. 
             SpawnManager.instance.deleteMonster(); 
         }
-        while (breaktime < 30f)
+        while (breaktime < 20f)
         {
             ++breaktime;
             //!XRSettings.enabled 
@@ -91,9 +92,9 @@ public class DayManager : MonoBehaviourPun
             yield return new WaitForSeconds(1f);
         }
         breaktime = 0f;
-        if (XRSettings.enabled && seconds < 260f) 
+        if (XRSettings.enabled && seconds < 240f) 
         {
-            //260초가 되면 쉬는시간이 끝나지만 라운드가 끝나기 때문에 정산이 끝날때까지는 몬스터를 스폰하지 않는다. 
+            //240초가 되면 쉬는시간이 끝나지만 라운드가 끝나기 때문에 정산이 끝날때까지는 몬스터를 스폰하지 않는다. 
             //몬스터 다시 스폰 
             SpawnManager.instance.GoNextWave();
         }

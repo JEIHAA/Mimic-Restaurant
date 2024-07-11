@@ -8,6 +8,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class VRBombBtn : MonoBehaviour
 {
+    [SerializeField] private int price = 1000;
     [SerializeField] private LayerMask layer;
     [SerializeField] private float radius = 5f;
     [SerializeField] private Collider[] monsters;
@@ -48,6 +49,7 @@ public class VRBombBtn : MonoBehaviour
         {
             monster.GetComponent<IOnDamage>()?.OnDamage(9999, monster.gameObject);
         }
+        MoneyManager.instance.MinusMoney(price);
         particle.Play();
     }
 

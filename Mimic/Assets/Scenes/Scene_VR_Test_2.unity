@@ -2152,12 +2152,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 188697207}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &242532120 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6517621672998369627, guid: 8b13a2b477b3f054f9a7194378e14123,
-    type: 3}
-  m_PrefabInstance: {fileID: 150979497}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &277182767
 GameObject:
   m_ObjectHideFlags: 0
@@ -377114,7 +377108,12 @@ MonoBehaviour:
   daymanager: {fileID: 653684468}
   vrplayer_transform: {fileID: 1077505412}
   pcplayer_transform: {fileID: 1820519388}
+  pcui: {fileID: 0}
+  vradjustui: {fileID: 0}
   isGameStarted: 1
+  pcexit_ui: {fileID: 0}
+  vrexit_ui: {fileID: 0}
+  vrexit_ui_instantiate: {fileID: 0}
 --- !u!4 &958753779
 Transform:
   m_ObjectHideFlags: 0
@@ -379221,12 +379220,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5734781358564658962, guid: ebf0fd41e5046f74bb6d4ecc7b307de0,
     type: 3}
   m_PrefabInstance: {fileID: 1108325987}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1121962996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7871989127378647840, guid: 8b13a2b477b3f054f9a7194378e14123,
-    type: 3}
-  m_PrefabInstance: {fileID: 150979497}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1124489331
 GameObject:
@@ -383485,8 +383478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultnum: 20
   maxnum: 50
-  monsterPrefab: {fileID: 7756792058649572844, guid: 1235f6fdfe904874cab3c83e4a67727c,
-    type: 3}
+  monsterPrefab_arr: []
   spawnpoint:
   - {fileID: 1438496084}
   - {fileID: 1124489331}
@@ -384169,11 +384161,12 @@ MonoBehaviour:
   customer_startpoint: {fileID: 77482622}
   customer_endpoint: {fileID: 1375934750}
   foodtable_trigger:
-  - {fileID: 242532120}
-  - {fileID: 2034841867}
-  - {fileID: 1815936885}
-  - {fileID: 2089905000}
-  - {fileID: 1121962996}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  orderinfo: {fileID: 0}
 --- !u!4 &1784107008
 Transform:
   m_ObjectHideFlags: 0
@@ -384528,12 +384521,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5734781358564658962, guid: ebf0fd41e5046f74bb6d4ecc7b307de0,
     type: 3}
   m_PrefabInstance: {fileID: 1810035216}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1815936885 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4647446081678843182, guid: 8b13a2b477b3f054f9a7194378e14123,
-    type: 3}
-  m_PrefabInstance: {fileID: 150979497}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1820519388 stripped
 Transform:
@@ -385728,13 +385715,22 @@ MonoBehaviour:
   IncreaseSalesMoney_Text: {fileID: 0}
   Increase_Food_Hunger_Lv_Text: {fileID: 0}
   Increase_Food_Hunger_Text: {fileID: 0}
+  TotalMoney: 0
   MachineLevels: 010000000100000001000000
   MachineMoneys: 78000000820000008c000000
-  rates: 000000000000000000000000
+  foodMoneys: 000000000000000000000000
+  foodMoney_text: []
   Food_Hunger_Money: 100
   Food_Hunger_Rate: 10
   Sale_Money_Cost: 150
   Sale_Money: 50
+  hamburgerdispenser: []
+  stovedispenser: []
+  drinkdispenser: []
+  frydispenser: []
+  foodstat: []
+  vrui: {fileID: 0}
+  nomoney_msg: {fileID: 0}
 --- !u!1 &2022434043
 GameObject:
   m_ObjectHideFlags: 0
@@ -386347,12 +386343,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2032405376}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2034841867 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 392470961395684221, guid: 8b13a2b477b3f054f9a7194378e14123,
-    type: 3}
-  m_PrefabInstance: {fileID: 150979497}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2036723872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386361,6 +386351,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 525181223660939473, guid: b92d60ece33e9284dae5f75cbf63b164,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1175897565083270492, guid: b92d60ece33e9284dae5f75cbf63b164,
         type: 3}
       propertyPath: m_Name
@@ -387042,12 +387037,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5734781358564658962, guid: ebf0fd41e5046f74bb6d4ecc7b307de0,
     type: 3}
   m_PrefabInstance: {fileID: 2080732365}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2089905000 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3326358194208674513, guid: 8b13a2b477b3f054f9a7194378e14123,
-    type: 3}
-  m_PrefabInstance: {fileID: 150979497}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2113848860
 PrefabInstance:
