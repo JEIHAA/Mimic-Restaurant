@@ -15,6 +15,10 @@ public class FoodInfo : MonoBehaviour
     }
 ;
     protected int fillHunger;
+    public int GetFillHunger()
+    {
+        return fillHunger; 
+    }
     protected int price;
 
     protected bool isGoVR = false;

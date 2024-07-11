@@ -19,6 +19,7 @@ public class EffectAudioManager : MonoBehaviour
         RoastingMeat,         //고기 굽는 소리 
         Razer,                //레이저 
         MonsterAttack,        //몬스터 공격 
+        //몬스터 맞는소리 구현예정
         MonsterAttackShield,  //몬스터가 보호막을 공격 
         RestoreShield,        //보호막 복구 
         DestroyShield,        //보호막 파괴 

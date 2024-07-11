@@ -30,7 +30,10 @@ public class VRBombBtn : MonoBehaviour
             button.transform.localPosition = new Vector3(0, 0.004f, 0);
             presser = other.gameObject;
             isPressed = true;
-            MegaMegaBomb();
+            if (MoneyManager.instance.MoneyCheck(price)) 
+            {
+                MegaMegaBomb();
+            }
         }       
     }
 
@@ -44,6 +47,7 @@ public class VRBombBtn : MonoBehaviour
     }
     public void MegaMegaBomb() 
     {
+
         monsters = Physics.OverlapSphere(transform.position, radius, layer);
         foreach (Collider monster in monsters) 
         {

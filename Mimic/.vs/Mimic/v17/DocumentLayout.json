@@ -3,8 +3,63 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\admin\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\mimic-restaurant\\mimic\\assets\\scripts\\effectaudiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\effectaudiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\ui\\adjustuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\adjustuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\AdjustUIManager (1).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\customerspawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\customerspawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\food\\hamburger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\food\\hamburger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vrplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vrplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\admin\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\mimic-restaurant\\mimic\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\monstermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monstermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\vrbombbtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\vrbombbtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\meatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\meatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\vrui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\vrui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\LocomotionSystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\LocomotionSystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Downloads\\AdjustUIManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -14,28 +69,12 @@
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\foodsizechanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\meatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\meatmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\moneymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|c:\\users\\admin\\onedrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\mimic-restaurant\\mimic\\assets\\scripts\\ui\\messageui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\ui\\messageui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\messageui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vrplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vrplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\dispensers\\dispensercounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -48,10 +87,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\handctrl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\vrbombbtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\vrbombbtn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,20 +105,12 @@
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\daymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\vrui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\vrui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\vrleveltext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\vrleveltext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\monstermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monstermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\conveyor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,10 +129,6 @@
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\vr\\bulletstat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vr\\bulletstat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -118,14 +141,6 @@
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\food\\foodnfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\customerspawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\customerspawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\ui\\pcuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\pcuimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -136,10 +151,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\foodstat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\foodstat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\food\\hamburger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pc\\food\\hamburger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0BB5820-673F-B4C6-C3B4-5539E4D3FE52}|Assembly-CSharp.csproj|C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\assets\\scripts\\pc\\food\\coke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -221,11 +232,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 25,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "EffectAudioManager.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\EffectAudioManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EffectAudioManager.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\EffectAudioManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EffectAudioManager.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAADwvxUAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T06:40:00.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdjustUIManager (1).cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Downloads\\AdjustUIManager (1).cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Downloads\\AdjustUIManager (1).cs",
+              "ToolTip": "C:\\Users\\admin\\Downloads\\AdjustUIManager (1).cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Downloads\\AdjustUIManager (1).cs",
+              "ViewState": "AQIAALIAAAAAAAAAAAAuwLgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T06:37:16.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LocomotionSystem.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\LocomotionSystem.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\LocomotionSystem.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\LocomotionSystem.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.5.4\\Runtime\\Locomotion\\LocomotionSystem.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAAAIIAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T05:18:46.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "AdjustUIManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Downloads\\AdjustUIManager.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Downloads\\AdjustUIManager.cs",
@@ -233,12 +283,11 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\Downloads\\AdjustUIManager.cs",
               "ViewState": "AQIAAIYAAAAAAAAAAADwv9gAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T07:51:12.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T07:51:12.441Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "MessageUI.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\MessageUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\MessageUI.cs",
@@ -246,12 +295,11 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\MessageUI.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T07:05:19.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-10T07:05:19.208Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "Rotate Test.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\Rotate Test.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\Rotate Test.cs",
@@ -262,46 +310,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "MoneyManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\MoneyManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\MoneyManager.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\MoneyManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\PC\\MoneyManager.cs",
-              "ViewState": "AQIAAOEAAAAAAAAAAAAowCgBAAAOAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAkwDEBAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T01:19:50.52Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
+              "Title": "VRBombBtn.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VRBombBtn.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\VRBombBtn.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VRBombBtn.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VR\\VRBombBtn.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAwCMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T09:17:20.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MeatManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\MeatManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MeatManager.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\MeatManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\MeatManager.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAIA+wEcAAAAQAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAtwEcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T01:19:50.759Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "VRPlayer.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VRPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VRPlayer.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VRPlayer.cs",
               "RelativeToolTip": "Assets\\Scripts\\VRPlayer.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAcwEYAAAAIAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAzwEsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T01:19:50.946Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "HandUI.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\HandUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\HandUI.cs",
@@ -313,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "HandCtrl.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\HandCtrl.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\HandCtrl.cs",
@@ -321,36 +382,25 @@
               "RelativeToolTip": "Assets\\Scripts\\VR\\HandCtrl.cs",
               "ViewState": "AQIAAHYAAAAAAAAAAAAgwCMAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:19:50.979Z"
+              "WhenOpened": "2024-07-08T01:19:50.979Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "VRBombBtn.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VRBombBtn.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\VRBombBtn.cs",
-              "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VRBombBtn.cs",
-              "RelativeToolTip": "Assets\\Scripts\\VR\\VRBombBtn.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T09:17:20.959Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Monster.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Monster.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Monster.cs",
               "RelativeToolTip": "Assets\\Scripts\\Monster.cs",
-              "ViewState": "AQIAAIgAAAAAAAAAAAAAAKoAAAA6AAAA",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAqwJwAAABwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-08T01:19:50.525Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "DispenserCounter.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Dispensers\\DispenserCounter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Dispensers\\DispenserCounter.cs",
@@ -358,12 +408,11 @@
               "RelativeToolTip": "Assets\\Scripts\\PC\\Dispensers\\DispenserCounter.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:19:50.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T01:19:50.959Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
@@ -371,12 +420,11 @@
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
               "ViewState": "AQIAALkAAAAAAAAAAAAlwNEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:19:50.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T01:19:50.955Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "VrStroeButton.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VrStroeButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\VrStroeButton.cs",
@@ -388,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "PhotonNetworkPart.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetworkPart.cs",
               "RelativeDocumentMoniker": "Assets\\Photon\\PhotonUnityNetworking\\Code\\PhotonNetworkPart.cs",
@@ -400,19 +448,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 13,
               "Title": "VRUI.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VRUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\VRUI.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VRUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\VR\\VRUI.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAADwvxIAAAAfAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAIwBIAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T03:23:54.826Z"
+              "WhenOpened": "2024-07-08T03:23:54.826Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "BindFood.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Player\\BindFood.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Player\\BindFood.cs",
@@ -424,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "Barrier.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Barrier.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Barrier.cs",
@@ -436,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "SpawnManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\SpawnManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpawnManager.cs",
@@ -448,19 +497,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 9,
               "Title": "MonsterManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\MonsterManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MonsterManager.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\MonsterManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\MonsterManager.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAABoAAAAEAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:19:50.945Z"
+              "WhenOpened": "2024-07-08T01:19:50.945Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 26,
               "Title": "VRLevelText.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VRLevelText.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\VRLevelText.cs",
@@ -472,7 +522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "DayManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\DayManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DayManager.cs",
@@ -484,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "Conveyor.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Conveyor.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Conveyor.cs",
@@ -496,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "VREatFood.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\VREatFood.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\VREatFood.cs",
@@ -508,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 16,
               "Title": "FoodSizeChanger.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\FoodSizeChanger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\FoodSizeChanger.cs",
@@ -516,12 +566,11 @@
               "RelativeToolTip": "Assets\\Scripts\\PC\\FoodSizeChanger.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:19:50.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T01:19:50.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "GameManager_StartScene.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\2_Login_StartGame\\GameManager_StartScene.cs",
@@ -533,32 +582,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AdjustUIManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\AdjustUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\AdjustUIManager.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\AdjustUIManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\AdjustUIManager.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAgwNgAAAAAAAAA",
+              "ViewState": "AQIAAOYAAAAAAAAAAAAuwPAAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-09T01:55:37.293Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 8,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Bullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAlAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T01:19:50.981Z"
+              "WhenOpened": "2024-07-08T01:19:50.981Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "Gun.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\Gun.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gun.cs",
@@ -570,7 +620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 32,
               "Title": "BulletStat.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\VR\\BulletStat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\VR\\BulletStat.cs",
@@ -582,7 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 33,
               "Title": "BulletManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\BulletManager.cs",
               "RelativeDocumentMoniker": "Assets\\BulletManager.cs",
@@ -594,7 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "Coke.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Food\\Coke.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Food\\Coke.cs",
@@ -606,7 +656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "DispenserFried.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Dispensers\\DispenserFried.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Dispensers\\DispenserFried.cs",
@@ -618,7 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 34,
               "Title": "Foodnfo.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Food\\Foodnfo.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Food\\Foodnfo.cs",
@@ -630,43 +680,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 6,
               "Title": "Hamburger.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Food\\Hamburger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Food\\Hamburger.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Food\\Hamburger.cs",
               "RelativeToolTip": "Assets\\Scripts\\PC\\Food\\Hamburger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAAAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVDhPzVHPT9NgGP7abmPrBvvVjS2brGxoDAWBRIFkkRAJhx3wphw4ePICF2O8j/0JXkmQAyfiwQsnT0sQxQRYKsKMwIRNWfeDdqVr19\u002B13cGbZ33e5M2TPN/3Pe/7fOCfA7GaYRgQsUogw7PDCMABjM/i8OTKJHTy9uSPBggAPxl\u002BAq3kV2CLW5oF2Gq733Y9DtJxv1wup1mUTfMon\u002Bbr/OjS5lJvpVLxC5\u002BFcURACCyNRZRDZZyqUWPRbNRl3UX29/fRBmjMVdnqar1df4pASCbgCWTCaDhB9BM/Q77QvWK9\u002BLJIFadlIAc0VXterBVnNEm7oGfpX7ZT8TTa5JovjqnjB3FfXBiNjp447I62oirXI5GRYJNvTlWYygQt0B1JlTw34s04L/GaBmvT/Wj/gW2nvONUDXXIhtjksejY\u002B7An/EbRlVpbafNYAONFQQwMBgdbZ82zVgpLFWJ9saHz5rkiK/JB/DQuwyRFgjJbNgKuwBUM4M2YM/Zh5u7Ml8xIppRAE7ogC32mo13WZCcjML6W1LKrumrXId3P9rBwN0Td0IGoiZ1CrXC5fmtdyhpZOJ/PI5IhBVmJxWvtGsp2WO8lc5kq0SWXqIpuDWi3uQHOhiw8Wwh7Ue9Sg2vYIQBV0lIaw\u002Bt4qgqqfhVSadSBCgzH2CmOOh4IDuwk/UmxxJS\u002Bm4G\u002BS3aSZWT51bLb2\u002BOdaAiNOxAEEeb\u002BD03XR5zMRc2fKcwl5o6uheuvNba2N0/MH0ZcEZK8Ij8xPFMkc6Rsw0Wcovvo1\u002BaOmikE937sgV60F4TcIdHtdOsYht1ks9n2xuqGYU4IDGBcL04tgi41AVlt6\u002BOWS4REfPtou\u002BeidQF8dh8wx20jPuRq7fGaYJ35G7oPWDBduoHmzMqa1eW5nN4l/zEA\u002BA2StF3sDwxHaQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-07-08T01:19:50.513Z"
+              "ViewState": "AQIAAAAAAAAAAAAAAAA+wAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T01:19:50.513Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 5,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Customer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Customer.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Customer.cs",
               "RelativeToolTip": "Assets\\Scripts\\PC\\Customer.cs",
-              "ViewState": "AQIAAOsAAAAAAAAAAAAcwAMBAAAOAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-07-08T01:19:50.528Z"
+              "ViewState": "AQIAAKIAAAAAAAAAAAAuwOIAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T01:19:50.528Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 4,
               "Title": "CustomerSpawnManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\CustomerSpawnManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\CustomerSpawnManager.cs",
               "ToolTip": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\CustomerSpawnManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\PC\\CustomerSpawnManager.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAgwDoAAAAAAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
-              "WhenOpened": "2024-07-08T01:19:50.53Z"
+              "ViewState": "AQIAAG0AAAAAAAAAAAAtwHsAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T01:19:50.53Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "DispenserWait.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Dispensers\\DispenserWait.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Dispensers\\DispenserWait.cs",
@@ -678,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "DispenserDrink.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Dispensers\\DispenserDrink.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Dispensers\\DispenserDrink.cs",
@@ -690,7 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "Ingredients.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Food\\Ingredients.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Food\\Ingredients.cs",
@@ -702,7 +755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "FrenchFries.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Food\\FrenchFries.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Food\\FrenchFries.cs",
@@ -714,7 +767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "PCUIManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\PCUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PCUIManager.cs",
@@ -726,7 +779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "Steak.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Food\\Steak.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Food\\Steak.cs",
@@ -738,7 +791,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "FoodStat.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\FoodStat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FoodStat.cs",
@@ -750,7 +803,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "DispenserStove.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Dispensers\\DispenserStove.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Dispensers\\DispenserStove.cs",
@@ -762,7 +815,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "DispenserHamburger.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Dispensers\\DispenserHamburger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Dispensers\\DispenserHamburger.cs",
@@ -774,7 +827,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "FoodTable.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\FoodTable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\FoodTable.cs",
@@ -786,7 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "PCPlayerManager.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Player\\PCPlayerManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Player\\PCPlayerManager.cs",
@@ -798,7 +851,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "PCPlayerController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Player\\PCPlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Player\\PCPlayerController.cs",
@@ -810,7 +863,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "FriesInfo.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\PC\\Food\\FriesInfo.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PC\\Food\\FriesInfo.cs",
@@ -822,7 +875,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "DateUIPresenter.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\UI\\DateUIPresenter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\DateUIPresenter.cs",
@@ -834,7 +887,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\2_Login_StartGame\\LoginController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\2_Login_StartGame\\LoginController.cs",
@@ -846,7 +899,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "Key.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Black Whale Studio\\VR Keyboard XRI\\Scripts\\Key.cs",
               "RelativeDocumentMoniker": "Assets\\Black Whale Studio\\VR Keyboard XRI\\Scripts\\Key.cs",
@@ -858,7 +911,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "ReadyRoom.cs",
               "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\git\\Mimic-Restaurant\\Mimic\\Assets\\Scripts\\4_Room\\ReadyRoom.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\4_Room\\ReadyRoom.cs",

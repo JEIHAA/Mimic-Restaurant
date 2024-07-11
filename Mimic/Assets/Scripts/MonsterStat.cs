@@ -7,7 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MonsterStat", menuName = "ScriptableObjects/MonsterStat", order = 1)]
 public class MonsterStat : ScriptableObject
 {
-    public int monsterHealth = 500; 
+    public int monsterHealth = 300; 
     public int monsterDamage = 10;
     public int meatnum = 3; 
 

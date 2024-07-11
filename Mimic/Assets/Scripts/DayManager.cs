@@ -13,6 +13,7 @@ using UnityEngine.XR;
 public class DayManager : MonoBehaviourPun
 {
     [SerializeField] private DateUIPresenter dateuipresenter = null;
+    [SerializeField] private LerpSkybox skybox = null;
 
     public delegate void OnAdjustDelegate();
     private OnAdjustDelegate adjustonclick = null;
@@ -25,6 +26,9 @@ public class DayManager : MonoBehaviourPun
     private float seconds = 0f;
     private float seconds_hidden = 0f; //
     private float breaktime = 0f;
+
+    private int daycount = 0;
+    private int lunchcount = 0;
 
     #region["시간 더하는 메소드"] 
     public void StartTimer()
@@ -40,6 +44,16 @@ public class DayManager : MonoBehaviourPun
         while (true)
         {
             ++seconds;  
+            if(seconds > 50f && daycount == 0)
+            {
+                skybox.SetDayToLunch();
+                daycount = 1; 
+            }
+            if(seconds > 145f && lunchcount == 0)
+            {
+                skybox.SetDayToNight();
+                lunchcount = 1; 
+            }
             if (seconds == 100f)
             {
                 StartCoroutine(BreakTimeCoroutine());
@@ -54,9 +68,12 @@ public class DayManager : MonoBehaviourPun
                 if(day < 5)
                 {
                     seconds = 0f;
-                    StartCoroutine(BreakTimeCoroutine()); 
+                    daycount = 0;
+                    lunchcount = 0; 
+                    //StartCoroutine(BreakTimeCoroutine()); 
                     //정산화면 출력 
-                    adjustonclick?.Invoke(); 
+                    adjustonclick?.Invoke();
+                    Time.timeScale = 0f; 
                     yield break; 
                 }
             }
@@ -112,7 +129,7 @@ public class DayManager : MonoBehaviourPun
         day = _day;
     }
 
-    [PunRPC]
+    [PunRPC]    
     public void SetBreakTime(float _breaktime, float _seconds_hidden)
     {
         breaktime = _breaktime;

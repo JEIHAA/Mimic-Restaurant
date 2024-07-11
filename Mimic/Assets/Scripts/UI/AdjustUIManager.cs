@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
@@ -56,6 +57,9 @@ public class AdjustUIManager : MonoBehaviourPun
     [SerializeField] private GameObject nextday_ui = null;
     private GameObject nextday_ui_instantiate = null;
 
+    [Header("스카이박스")]
+    [SerializeField] private LerpSkybox skybox = null;
+
     //PC 
     private int currentcustomer = 0;
     private int currentcustomer_notgetted = 0;
@@ -81,7 +85,7 @@ public class AdjustUIManager : MonoBehaviourPun
             //VR
             if (PhotonNetwork.IsConnected)
             {
-                photonView.RPC("SetTextVR", RpcTarget.All);
+                SetTextVR();
             }
         }
         else
@@ -89,14 +93,13 @@ public class AdjustUIManager : MonoBehaviourPun
             //PC 
             if (PhotonNetwork.IsConnected)
             {
-                photonView.RPC("SetTextPC", RpcTarget.All);
+                SetTextPC();
             }
         }
     }
     #endregion
 
     #region["PC 쪽 텍스트 설정"] 
-    [PunRPC]
     public void SetTextPC()
     {
         currentcustomer = customerspawnmanager.GetCustomerNum();
@@ -105,17 +108,47 @@ public class AdjustUIManager : MonoBehaviourPun
         customer_text.text = "받은 손님:" + currentcustomer + "명";
         customer_notget_text.text = "받지 못한 손님:" + currentcustomer_notgetted + "명";
         money_text.text = "번 돈:" + currentmoney.ToString();
+        List<int> pcinfo_list = new List<int>();
+        pcinfo_list.Add(currentcustomer);
+        pcinfo_list.Add(currentcustomer_notgetted);
+        pcinfo_list.Add(currentmoney);
+        int[] pcinfo_arr = pcinfo_list.ToArray(); //PunRPC에서는 바로 리스트 자료구조를 받을 수 없다. 
+        photonView.RPC("SendPCInfoToVR", RpcTarget.OthersBuffered, pcinfo_arr); //VR 쪽에서만 실행될꺼임. 
+    }
+    #endregion
+
+    #region["PC의 정보를 VR에 보내기"] 
+    [PunRPC]
+    public void SendPCInfoToVR(int[] pcinfo_arr)
+    {
+        //PC로부터 리스트를 받아서 VR쪽 UI에 출력한다. 
+        customer_text.text = "받은 손님: " + pcinfo_arr[0] + "명";
+        customer_notget_text.text = "받지 못한 손님: " + pcinfo_arr[1] + "명";
+        money_text.text = "번 돈: " + pcinfo_arr[2];
     }
     #endregion
 
     #region["VR 쪽 텍스트 설정"] 
-    [PunRPC]
     public void SetTextVR()
     {
         currentmonster = monstermanager.GetMonster_Killed();
         currentmeat = meatmanager.GetMeatNumAcummlated();
         monster_text.text = "몬스터 잡은 수: " + currentmonster + "마리";
         meat_text.text = "고기 수:" + currentmeat + "개";
+        List<int> vrinfo_list = new List<int>();
+        vrinfo_list.Add(currentmonster);
+        vrinfo_list.Add(currentmeat);
+        int[] vrinfo_arr = vrinfo_list.ToArray(); //PunRPC에서는 바로 리스트 자료구조를 받을 수 없다. 
+        photonView.RPC("SendVRInfoToPC", RpcTarget.OthersBuffered, vrinfo_arr); //PC 쪽에서만 실행될꺼임. 
+    }
+    #endregion
+
+    #region["VR의 정보를 PC에게 보내기"]
+    public void SendVRInfoToPC(int[] vrinfo_arr)
+    {
+        //VR로부터 리스트를 받아서 PC쪽 UI에 출력한다. 
+        monster_text.text = "몬스터 잡은 수: " + vrinfo_arr[0] + "명";
+        meat_text.text = "고기 수: " + vrinfo_arr[1] + "개";
     }
     #endregion
 
@@ -172,6 +205,7 @@ public class AdjustUIManager : MonoBehaviourPun
         if (nextday_ui_instantiate == null)
         {
             nextday_ui_instantiate = Instantiate(nextday_ui);
+            nextday_ui_instantiate.GetComponent<MessageUI>().SetText(0);
             nextday_ui_instantiate.GetComponentsInChildren<Button>()[0].onClick.AddListener(() => NextRoundBtn(success));
         }
     }
@@ -179,6 +213,10 @@ public class AdjustUIManager : MonoBehaviourPun
 
     public void NextRoundBtn(Boolean _success)
     {
+        if (!PhotonNetwork.IsConnected)
+        {
+            NextRound(_success);
+        }
         photonView.RPC("NextRound", RpcTarget.All, _success);
     }
 
@@ -186,6 +224,7 @@ public class AdjustUIManager : MonoBehaviourPun
     [PunRPC]
     public void NextRound(Boolean _success)
     {
+        Time.timeScale = 1f;
         if (_success)
         {
             //조건 만족 
@@ -209,6 +248,10 @@ public class AdjustUIManager : MonoBehaviourPun
         if (vradjustui != null)
         {
             vradjustui.gameObject.SetActive(false);
+        }
+        if (XRSettings.enabled)
+        {
+            skybox.ResetSkybox();
         }
         Destroy(nextday_ui_instantiate);
     }

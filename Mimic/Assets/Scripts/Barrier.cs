@@ -6,7 +6,7 @@ using UnityEngine.XR;
 
 public class Barrier : MonoBehaviour, IOnDamage
 {
-    [SerializeField] private int maxHP = 100;
+    [SerializeField] private int maxHP = 1500;
     public int MaxHP => maxHP;
     [SerializeField] private int barrierHP;
     public int BarrierHP { get { return barrierHP; } set { barrierHP = value; } }

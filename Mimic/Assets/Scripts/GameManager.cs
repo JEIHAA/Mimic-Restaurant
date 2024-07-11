@@ -72,8 +72,12 @@ public class GameManager : MonoBehaviourPun
         {
             CheckinMainScene();
         }
+        else
+        {
+            CustomerSpawnManager.instance.StartSpawnCustomer(); //임시(네트워크X) 
+            daymanager.StartTimer(); //임시(네트워크X) 
+        }
         AudioManager.instance.PlayBGM();
-        CustomerSpawnManager.instance.StartSpawnCustomer(); //임시(네트워크X) 
     }
     #endregion
 
@@ -120,7 +124,6 @@ public class GameManager : MonoBehaviourPun
         if (XRSettings.enabled && isGameStarted)
         {
             monstermanager?.MoveAll(vrplayer_transform);
-            SetSkyBox();
         }
         //monstermanager?.MoveAll(vrplayer_transform); 
         if (Input.GetKey(KeyCode.Escape)) //PC용 => 종료 
@@ -181,19 +184,6 @@ public class GameManager : MonoBehaviourPun
     }
     #endregion 
 
-    private void SetSkyBox()
-    {
-        int wave = SpawnManager.instance.GetWave();
-        switch (wave)
-        {
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                break;
-        }
-    }
 
     public void AdjustOnClick()
     {

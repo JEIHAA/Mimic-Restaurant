@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.ParticleSystem;
 
 public class VRPlayer : MonoBehaviour, IOnDamage
 {
@@ -16,14 +18,15 @@ public class VRPlayer : MonoBehaviour, IOnDamage
     [Header("플레이어 체력, 최대 체력")]
     [SerializeField] private int playerHP = 10;
     [SerializeField] private int playerMaxHP = 200;
-    [Header("햄버거 공복도 회복량")]
-    [SerializeField] private int increaseHungry = 50;
-    public int increasehungry => increaseHungry;
+    //[Header("햄버거 공복도 회복량")]
+    //[SerializeField] private int increaseHungry = 50;
     [SerializeField] private Slider hungryGauge;
+    [SerializeField] private ParticleSystem particle;
     [SerializeField] private VRBombBtn bomb;
     [SerializeField] private int medicalPrice = 500;
     [SerializeField] private GameObject hitEffect;
     [SerializeField] private Barrier barrier;
+    [SerializeField] XROrigin xrorigin;
 
     private void Start()
     {
@@ -33,14 +36,19 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         playerHP = playerMaxHP;
     }
 
-/*    private IEnumerator HungerDecreaseRoutine()
+    private void Update()
     {
-        while (true)
+        xrorigin.transform.position = new Vector3(0f, 2f, -0.6f);
+    }
+
+    /*    private IEnumerator HungerDecreaseRoutine()
         {
-            yield return new WaitForSeconds(1f);
-            DecreaseHungry(decreaseHungry);
-        }
-    }*/
+            while (true)
+            {
+                yield return new WaitForSeconds(1f);
+                DecreaseHungry(decreaseHungry);
+            }
+        }*/
 
     public void DecreaseHungry(int amount)
     {
@@ -76,13 +84,19 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         }
     }
 
-    private void PlayerDead() 
+    private void PlayerDead()
     {
         bomb.MegaMegaBomb();
         MoneyManager.instance.MinusMoney(medicalPrice);
+        StartCoroutine(PlayerReborn());
+    }
+    private IEnumerator PlayerReborn()
+    {
+        yield return new WaitForSeconds(1f);
         playerHP = playerMaxHP;
         barrier.BarrierHP = barrier.MaxHP;
-        barrier.gameObject.SetActive(true);
+        particle.Play();
+        //barrier.gameObject.SetActive(true);
     }
 
     private IEnumerator HitEffect()

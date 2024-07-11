@@ -8,12 +8,14 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int bulletSpeed = 20;
     [SerializeField] private BulletStat bulletData = null;
     [HideInInspector] public float activationTime;
+    [SerializeField] new private ParticleSystem particleSystem;
 
     private void OnTriggerEnter(Collider _collider)
     {
         if (_collider.CompareTag("Monster"))
         {
             _collider.GetComponent<IOnDamage>().OnDamage(bulletDamage, null);
+            particleSystem.Play();
         }
     }
 

@@ -36,6 +36,7 @@ public class Monster : MonoBehaviourPun, IOnDamage
     [SerializeField] private MonsterStat monsterData = null;
     [Header("고기 오브젝트")]
     [SerializeField] private GameObject steak = null;
+    [SerializeField] new private ParticleSystem particleSystem;
 
     private Animator animator = null;
     private int status = 0;
@@ -85,7 +86,7 @@ public class Monster : MonoBehaviourPun, IOnDamage
         monsterHealth -= playerDamage; 
         if (monsterHealth <= 0) 
         {
-            StartCoroutine(MonsterDeathCoroutine()); 
+            StartCoroutine(MonsterDeathCoroutine());
             //몬스터 사망, 고기 드랍 
         }
         else if(Attackon == false)
@@ -103,7 +104,6 @@ public class Monster : MonoBehaviourPun, IOnDamage
 
     private IEnumerator MonsterDeathCoroutine()
     {
-
         animator.SetTrigger("Death");
         status = (int)MonsterStatus.Death;
         yield return new WaitForSeconds(1f);
@@ -152,6 +152,11 @@ public class Monster : MonoBehaviourPun, IOnDamage
     {
         if(_collider.name.Equals("Barrier"))  
         {
+            if (particleSystem != null)
+            {
+                ParticleSystem newEffect = Instantiate(particleSystem, transform.position, Quaternion.identity);
+                Destroy(newEffect.gameObject, newEffect.main.duration);
+            }
             SpawnManager.instance.FadeMonster(this); //몬스터 비활성화 
         } 
         if(_collider.name.Equals("AttackSphere"))

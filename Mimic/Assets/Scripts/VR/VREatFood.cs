@@ -11,7 +11,7 @@ public class VREatFood : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
-            vrPlayer.IncreaseHungry(vrPlayer.increasehungry);
+            vrPlayer.IncreaseHungry(other.GetComponent<FoodInfo>().GetFillHunger());
             other.gameObject.SetActive(false);
             leftHand.isColliding = false;
             righthand.isColliding = false;
