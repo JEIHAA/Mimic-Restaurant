@@ -36,45 +36,47 @@ public class CustomerSpawnManager : MonoBehaviour
     private int customer_notgetted_num = 0;
     private int money_getted = 0;
 
+    private int max_foodnum = 1;
+
     #region["받은 손님 명수 증가시키기"] 
     public void IncreaseCustomer()
     {
-        ++customer_getted_num; 
+        ++customer_getted_num;
     }
     #endregion
 
     #region["받지 못한 손님 명수 증가시키기"]
     public void IncreaseCustomerNotGet()
     {
-        ++customer_notgetted_num; 
+        ++customer_notgetted_num;
     }
     #endregion
 
     #region["돈을 받을 때마다 이 메소드가 실행"]
     public void IncreaseMoney(int _money)
     {
-        money_getted += _money; 
+        money_getted += _money;
     }
     #endregion
 
     #region["받은 손님 명수 돌려주기"] 
     public int GetCustomerNum()
     {
-        return customer_getted_num; 
+        return customer_getted_num;
     }
     #endregion
 
     #region["받지 못한 손님 명수 돌려주기"]
     public int NotGetCustomerNum()
     {
-        return customer_notgetted_num; 
+        return customer_notgetted_num;
     }
     #endregion
 
     #region["돈 돌려주기"]
     public int GetMoney()
     {
-        return money_getted; 
+        return money_getted;
     }
     #endregion
 
@@ -83,7 +85,7 @@ public class CustomerSpawnManager : MonoBehaviour
     {
         customer_getted_num = 0;
         customer_notgetted_num = 0;
-        money_getted = 0; 
+        money_getted = 0;
     }
     #endregion
 
@@ -142,7 +144,15 @@ public class CustomerSpawnManager : MonoBehaviour
                 customer_object.SetActive(true);
                 customer_object.GetComponent<Customer>().SetEndPoint(customer_endpoint);
                 customer_object.GetComponent<Customer>().Move(foodtable_trigger[_i]);
-                customer_object.GetComponent<Customer>().SetOrderInfo(orderinfo); 
+                customer_object.GetComponent<Customer>().SetOrderInfo(orderinfo);
+                if (DayManager.instance.GetSeconds() < 120f)
+                {
+                    customer_object.GetComponent<Customer>().SetMaxWantedFoodNum(1);
+                }
+                else
+                {
+                    customer_object.GetComponent<Customer>().SetMaxWantedFoodNum(2);
+                }
             }
             else
             {
@@ -213,7 +223,7 @@ public class CustomerSpawnManager : MonoBehaviour
         for (int i = 0; i < customer_num_restaurant; ++i)
         {
             GetCustomer(i);
-           
+
             yield return new WaitForSeconds(Random.Range(4f, 8f));
         }
         yield break;
@@ -272,6 +282,8 @@ public class CustomerSpawnManager : MonoBehaviour
     {
         //쉬는시간 끝
         isBreakTime = false;
-        StartCoroutine(SpawnCustomer()); 
+        StartCoroutine(SpawnCustomer());
     }
+
+
 }

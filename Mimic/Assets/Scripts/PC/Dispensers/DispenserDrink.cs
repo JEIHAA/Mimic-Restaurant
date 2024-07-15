@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DispenserDrink : DispenserWait, IDispenser 
+public class DispenserDrink : DispenserWait, IDispenser
 {
     [SerializeField] private Transform foodGenerator;
     [SerializeField] private GameObject outputPrefab;
@@ -12,18 +13,18 @@ public class DispenserDrink : DispenserWait, IDispenser
 
     private float timer_wait = 3f;
 
-    public static DispenserDrink instance = null; 
+    public static DispenserDrink instance = null;
     protected override void Awake()
     {
-        base.Awake(); 
-        instance = this; 
+        base.Awake();
+        instance = this;
     }
 
     public void UpgradeTimer(float _timer)
     {
-        if(timer_wait > 0)
+        if (timer_wait > 0)
         {
-            timer_wait -= (_timer * timer_wait); 
+            timer_wait -= (_timer * timer_wait);
         }
     }
 
@@ -66,12 +67,20 @@ public class DispenserDrink : DispenserWait, IDispenser
     public IEnumerator GenerateFood(GameObject _outputPrefab)
     {
         Debug.Log("À½·á »Ì´Â Áß...");
-        EffectAudioManager.instance.PlayEffect("DrinkSound", true); 
-        StartCoroutine(WaitTimer(timer_wait)); 
+        EffectAudioManager.instance.PlayEffect("DrinkSound", true);
+        StartCoroutine(WaitTimer(timer_wait));
         yield return new WaitForSeconds(timer_wait);
-        output = Instantiate(_outputPrefab, foodGenerator.position, Quaternion.identity);
+        if (PhotonNetwork.IsConnected)
+        {
+            output = PhotonNetwork.Instantiate("Prefabs\\Food\\ColaDrink", foodGenerator.position, Quaternion.identity);
+        }
+        else
+        {
+            output = Instantiate(_outputPrefab, foodGenerator.position, Quaternion.identity);
+        }
+
         isGenerate = false;
-        EffectAudioManager.instance.PlayEffect("DrinkSound", false); 
+        EffectAudioManager.instance.PlayEffect("DrinkSound", false);
     }
 
 }

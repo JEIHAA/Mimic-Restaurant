@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,16 +16,16 @@ public class DispenserFried : DispenserWait, IDispenser
 
     public void UpgradeTimer(float _timer)
     {
-        if(timer_wait > 0)
+        if (timer_wait > 0)
         {
-            timer_wait -= (_timer * timer_wait); 
+            timer_wait -= (_timer * timer_wait);
         }
     }
 
     protected override void Awake()
     {
         base.Awake();
-        instance = this; 
+        instance = this;
     }
 
     public bool GetIsGenerate()
@@ -66,11 +67,18 @@ public class DispenserFried : DispenserWait, IDispenser
     public IEnumerator GenerateFood(GameObject _outputPrefab)
     {
         Debug.Log("Æ¢±â´Â Áß...");
-        EffectAudioManager.instance.PlayEffect("FryingFries", true); 
-        StartCoroutine(WaitTimer(timer_wait)); 
+        EffectAudioManager.instance.PlayEffect("FryingFries", true);
+        StartCoroutine(WaitTimer(timer_wait));
         yield return new WaitForSeconds(timer_wait);
-        output = Instantiate(_outputPrefab, foodGenerator.position, Quaternion.identity);
+        if (PhotonNetwork.IsConnected)
+        {
+            output = PhotonNetwork.Instantiate("Prefabs\\Food\\FrenchFries", foodGenerator.position, Quaternion.identity);
+        }
+        else
+        {
+            output = Instantiate(_outputPrefab, foodGenerator.position, Quaternion.identity);
+        }
         isGenerate = false;
-        EffectAudioManager.instance.PlayEffect("FryingFries", false); 
+        EffectAudioManager.instance.PlayEffect("FryingFries", false);
     }
 }

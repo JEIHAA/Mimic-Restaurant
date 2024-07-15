@@ -41,6 +41,8 @@ public class AdjustUIManager : MonoBehaviourPun
     [SerializeField] private MonsterManager monstermanager = null;
     [Header("VR 정산 UI")]
     [SerializeField] private AdjustUIManager vradjustui = null;
+    [Header("PC 정산 UI")]
+    [SerializeField] private AdjustUIManager pcadjustui = null;
 
     [Header("받은 손님 텍스트")]
     [SerializeField] private TextMeshProUGUI customer_text = null;
@@ -69,6 +71,7 @@ public class AdjustUIManager : MonoBehaviourPun
     private int currentmonster = 0;
     private int currentmeat = 0;
 
+    private bool isFirst = true;
     //유니티 생명 주기: Awake -> OnEnable -> Start 
     #region["활성화될때 실행"] 
     private void OnEnable()
@@ -83,18 +86,28 @@ public class AdjustUIManager : MonoBehaviourPun
                 btn.gameObject.SetActive(false);
             }
             //VR
+            /*
             if (PhotonNetwork.IsConnected)
             {
-                SetTextVR();
+                if(!isFirst)
+                {
+                    SetTextVR();
+                }
             }
+            */
         }
         else
         {
             //PC 
+            /*
             if (PhotonNetwork.IsConnected)
             {
-                SetTextPC();
+                if(!isFirst)
+                {
+                    SetTextPC();
+                }           
             }
+            */
         }
     }
     #endregion
@@ -122,9 +135,17 @@ public class AdjustUIManager : MonoBehaviourPun
     public void SendPCInfoToVR(int[] pcinfo_arr)
     {
         //PC로부터 리스트를 받아서 VR쪽 UI에 출력한다. 
-        customer_text.text = "받은 손님: " + pcinfo_arr[0] + "명";
-        customer_notget_text.text = "받지 못한 손님: " + pcinfo_arr[1] + "명";
-        money_text.text = "번 돈: " + pcinfo_arr[2];
+        Debug.LogError("받은 손님: " + pcinfo_arr[0]);
+        Debug.LogError("받지 못한 손님: " + pcinfo_arr[1]);
+        Debug.LogError("번 돈: " + pcinfo_arr[2]);
+
+        /*
+        vradjustui.customer_text.text = "받은 손님:" + pcinfo_arr[0] + "명";
+        vradjustui.customer_notget_text.text = "받지 못한 손님:" + pcinfo_arr[1] + "명";
+        vradjustui.money_text.text = "번 돈:" + pcinfo_arr[2].ToString();
+        */
+
+        vradjustui.GetComponent<AdjustUIManager>().SetPCTextToVRUI(pcinfo_arr);
     }
     #endregion
 
@@ -144,13 +165,39 @@ public class AdjustUIManager : MonoBehaviourPun
     #endregion
 
     #region["VR의 정보를 PC에게 보내기"]
+    [PunRPC]
     public void SendVRInfoToPC(int[] vrinfo_arr)
     {
+        /*
+        pcadjustui.monster_text.text = "몬스터 잡은 수 :" + vrinfo_arr[0] + "마리";
+        pcadjustui.meat_text.text = "고기 수: " + vrinfo_arr[1] + "개";
+        */
         //VR로부터 리스트를 받아서 PC쪽 UI에 출력한다. 
-        monster_text.text = "몬스터 잡은 수: " + vrinfo_arr[0] + "명";
-        meat_text.text = "고기 수: " + vrinfo_arr[1] + "개";
+        Debug.LogError("몬스터 잡은 수: " + vrinfo_arr[0]);
+        Debug.LogError("고기 수: " + vrinfo_arr[1]);
+        /*
+        currentmonster = vrinfo_arr[0];
+        currentmeat = vrinfo_arr[1];
+        Debug.LogError("currentmonster:" + currentmonster);
+        Debug.LogError("currentmeat: " + currentmeat);
+        */
+        //SetTextVRInfotoPC(); 
+        pcadjustui.GetComponent<AdjustUIManager>().SetVRTextToPCUI(vrinfo_arr);
     }
     #endregion
+
+    public void SetPCTextToVRUI(int[] pcinfo_arr)
+    {
+        customer_text.text = "받은 손님:" + pcinfo_arr[0] + "명";
+        customer_notget_text.text = "받지 못한 손님:" + pcinfo_arr[1] + "명";
+        money_text.text = "번 돈:" + pcinfo_arr[2].ToString();
+    }
+
+    public void SetVRTextToPCUI(int[] vrinfo_arr)
+    {
+        monster_text.text = "몬스터 잡은 수 :" + vrinfo_arr[0] + "마리";
+        meat_text.text = "고기 수: " + vrinfo_arr[1] + "개";
+    }
 
     #region["비활성화될때 실행"] 
     private void OnDisable()
@@ -224,7 +271,11 @@ public class AdjustUIManager : MonoBehaviourPun
     [PunRPC]
     public void NextRound(Boolean _success)
     {
-        Time.timeScale = 1f;
+        if (!XRSettings.enabled)
+        {
+            Time.timeScale = 1f;
+        }
+        Debug.LogError("Time.timeScale: " + 1f);
         if (_success)
         {
             //조건 만족 
@@ -232,6 +283,7 @@ public class AdjustUIManager : MonoBehaviourPun
             min_customer += 10;
             spawnmanager.GoNextWave();
             daymanager.PlusDay();
+            //customerspawnmanager.AddMaxWantedFoodNum(); 
         }
         else
         {
@@ -256,4 +308,21 @@ public class AdjustUIManager : MonoBehaviourPun
         Destroy(nextday_ui_instantiate);
     }
     #endregion
+
+    public void RunAdjustUI()
+    {
+        if (PhotonNetwork.IsConnected)
+        {
+            if (XRSettings.enabled)
+            {
+                //VR 
+                SetTextVR();
+            }
+            else
+            {
+                //PC 
+                SetTextPC();
+            }
+        }
+    }
 }

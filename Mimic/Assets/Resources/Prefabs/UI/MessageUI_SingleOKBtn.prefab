@@ -689,7 +689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TheInformation
+  m_text: "VR\uD50C\uB808\uC774\uC5B4\uAC00 \uB098\uAC14\uC2B5\uB2C8\uB2E4. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a516e79e45098a448dfb50d8b14996f, type: 2}
   m_sharedMaterial: {fileID: 4868709644806750326, guid: 3a516e79e45098a448dfb50d8b14996f,

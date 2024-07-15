@@ -148,8 +148,19 @@ public class MoneyManager : MonoBehaviourPun
     {
         TotalMoney -= _Money;
         Print_SalesAmount_Money();
+        if(XRSettings.enabled)
+        {
+            photonView.RPC("SendToPC", RpcTarget.OthersBuffered, TotalMoney); 
+        }
     }
     #endregion
+
+    [PunRPC]
+    public void SendToPC(int _money)
+    {
+        TotalMoney = _money;
+        Print_SalesAmount_Money(); 
+    }
     #region["현재 돈을 쓸 수 있는지 체크: 폭탄 같은 경우는 이 체크를 무시하고 바로 MinusMoney 하면 됨."]
     public bool MoneyCheck(int _Money)
     {
@@ -302,6 +313,13 @@ public class MoneyManager : MonoBehaviourPun
         vrui.GetTotalMoneyFromPC(_totalMoney);
     }
     #endregion
+
+    public void SetTotalMoney(int _money)
+    {
+        TotalMoney = _money;
+        Print_SalesAmount_Money();
+    }
+
     public int GetTotalMoney()
     {
         return TotalMoney;

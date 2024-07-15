@@ -13,7 +13,7 @@ public class VRPlayer : MonoBehaviour, IOnDamage
     [SerializeField] private int hungry;
     public int Hungry { get { return hungry; } set { hungry = value; } }
     [Header("총알 소모 에너지양")]
-    [SerializeField] private int decreaseHungry = 5;
+    [SerializeField] private int decreaseHungry = 1;
     public int decreasehungry => decreaseHungry;
     [Header("플레이어 체력, 최대 체력")]
     [SerializeField] private int playerHP = 10;
@@ -21,6 +21,7 @@ public class VRPlayer : MonoBehaviour, IOnDamage
     //[Header("햄버거 공복도 회복량")]
     //[SerializeField] private int increaseHungry = 50;
     [SerializeField] private Slider hungryGauge;
+    [SerializeField] private Slider hpGauge;
     [SerializeField] private ParticleSystem particle;
     [SerializeField] private VRBombBtn bomb;
     [SerializeField] private int medicalPrice = 500;
@@ -34,6 +35,7 @@ public class VRPlayer : MonoBehaviour, IOnDamage
         hungryGauge.value = maxHungry;
         //StartCoroutine(HungerDecreaseRoutine());
         playerHP = playerMaxHP;
+        hpGauge.value = playerMaxHP;
     }
 
     private void Update()
@@ -76,7 +78,8 @@ public class VRPlayer : MonoBehaviour, IOnDamage
 
     public void OnDamage(int damage, GameObject _monster)
     {
-         playerHP -= damage;
+        playerHP -= damage;
+        hpGauge.value -= damage;
         //StartCoroutine(HitEffect());
         if (playerHP <= 0)
         {
@@ -94,7 +97,9 @@ public class VRPlayer : MonoBehaviour, IOnDamage
     {
         yield return new WaitForSeconds(1f);
         playerHP = playerMaxHP;
+        hpGauge.value = playerMaxHP;
         barrier.BarrierHP = barrier.MaxHP;
+        barrier.BarrierGauge.value = barrier.MaxHP;
         particle.Play();
         //barrier.gameObject.SetActive(true);
     }
@@ -109,9 +114,6 @@ public class VRPlayer : MonoBehaviour, IOnDamage
 
     public void GunEnergyUpgrade()
     {
-        if (decreaseHungry > 1)
-        {
-            decreaseHungry -= 1;
-        }
+            decreaseHungry *= 1/2;
     }
 }

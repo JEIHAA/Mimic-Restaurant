@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviourPun
     private GameObject pcexit_ui_instantiate = null;
     [SerializeField] private GameObject vrexit_ui_instantiate = null;
 
-    
+
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
@@ -53,12 +53,12 @@ public class GameManager : MonoBehaviourPun
             //PC 
             vrplayer_transform.gameObject.SetActive(false);
             pcplayer_transform.GetComponentInChildren<Camera>().targetDisplay = 0;
-            vrexit_ui_instantiate = null; 
+            vrexit_ui_instantiate = null;
         }
         vradjustui.gameObject.SetActive(false);
-        if(vrexit_ui_instantiate != null)
+        if (vrexit_ui_instantiate != null)
         {
-            vrexit_ui_instantiate.SetActive(false); 
+            vrexit_ui_instantiate.SetActive(false);
         }
         daymanager.AdjustOnClick = AdjustOnClick;
     }
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviourPun
         else
         {
             //VR -> PC 
-            vrexit_ui_instantiate.SetActive(true); 
+            vrexit_ui_instantiate.SetActive(true);
             vrexit_ui_instantiate.GetComponent<MessageUI>().SetText(2);
         }
         vrexit_ui_instantiate.GetComponentsInChildren<Button>()[0].onClick.RemoveAllListeners();
@@ -195,6 +195,7 @@ public class GameManager : MonoBehaviourPun
         else
         {
             vradjustui.gameObject.SetActive(true);
+            vradjustui.GetComponent<AdjustUIManager>().RunAdjustUI();
         }
     }
 }

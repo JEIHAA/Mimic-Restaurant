@@ -122,8 +122,8 @@
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\Monitor.cs" />
     <Compile Include="Assets\Scripts\FoodStat.cs" />
     <Compile Include="Assets\Scripts\PC\Food\DrinkInfo.cs" />
-    <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
     <Compile Include="Assets\LJJ\DayCycle\LerpSkybox.cs" />
+    <Compile Include="Assets\Black Whale Studio\VR Keyboard XRI\Scripts\KeyChannel.cs" />
     <Compile Include="Assets\Scripts\Meat.cs" />
     <Compile Include="Assets\Scripts\PC\Food\Steak.cs" />
     <Compile Include="Assets\Scripts\PC\Food\Ingredients.cs" />
@@ -1091,6 +1091,10 @@
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">

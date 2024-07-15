@@ -11,6 +11,7 @@ public class Barrier : MonoBehaviour, IOnDamage
     [SerializeField] private int barrierHP;
     public int BarrierHP { get { return barrierHP; } set { barrierHP = value; } }
     [SerializeField] private Slider barrierGauge;
+    public Slider BarrierGauge => barrierGauge;
 
     private void Start()
     {

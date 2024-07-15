@@ -153,32 +153,31 @@ public class SpawnManager : MonoBehaviour
     }
     #endregion
 
-    #region["다음 웨이브로 이동"] 
+    #region["다음 웨이브로 이동"]
     public void GoNextWave()
     {
-        //몬스터 능력치 강화 
+        //몬스터 능력치 강화
         monstermanager.StrengthMonster(round, wave);
-        if(round % 2 == 0 && wave == 1)  
+        if (wave == 2)
         {
-            defaultnum += 1;
+            if (defaultnum <= 100)
+            {
+                defaultnum += 10;
+            }
         }
-        if(wave == 2)
-        {
-            defaultnum += 2; 
-        }
-        if (maxorder < 7) 
+        if (maxorder < 7)
         {
             maxorder += 2;
         }
         ++wave;
-        if(wave >= 2)
+        if (wave >= 2)
         {
-            ++round; 
+            ++round;
         }
-        InitMonster(); 
+        InitMonster();
     }
     #endregion
-   
+
     public int GetWave()
     {
         return wave; 

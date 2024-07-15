@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,16 +74,26 @@ public class MonsterManager : MonoBehaviour
     }
     #endregion
 
-    #region["몬스터가 죽을때 작동하는 콜백 메소드"] 
-    public void MonsterDeathOnClick(GameObject _steak, int _meat_num)
+    #region["몬스터가 죽을때 작동하는 콜백 메소드"]
+    public void MonsterDeathOnClick(int _meatnum)
     {
-        ++monster_killed; 
-        //고기 매니저에 등록하기 
-        for (int i = 0; i < _meat_num; ++i)
+        ++monster_killed;
+        /*
+        for(int i=0; i<_meatnum; ++i)
         {
-            meatmanager.SetMeat(_steak);
+            if(PhotonNetwork.IsConnected)
+            {
+                GameObject steak = PhotonNetwork.Instantiate("Prefabs\\Food\\Ingredient\\Steak", new Vector3(-1.2f, 1.5f, -1.5f), Quaternion.identity);
+                meatmanager.SetMeat(steak);
+            }
         }
+        */
+        if (PhotonNetwork.IsConnected)
+        {
+            GameObject steak = PhotonNetwork.Instantiate("Prefabs\\Food\\Ingredient\\Steak", new Vector3(-1.2f, 1.5f, -1.5f), Quaternion.identity);
+            meatmanager.SetMeat(steak);
+        }
+        //고기 매니저에 등록하기
     }
     #endregion
-
 }
