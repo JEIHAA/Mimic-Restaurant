@@ -20,6 +20,13 @@ public class WelcomeController : MonoBehaviour
         instance = this; 
     }
 
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.S))
+        {
+            SceneManager.LoadScene("Scnen_VRPC_Test0703"); 
+        }
+    }
     #region["아이디 설정"] 
     public void SetText(string _id)
     {

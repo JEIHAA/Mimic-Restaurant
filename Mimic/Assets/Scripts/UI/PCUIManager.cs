@@ -149,7 +149,8 @@ public class PCUIManager : MonoBehaviour
     #region["정산 UI 출력"]
     public void AdjustUI()
     {
-        adjustui.SetActive(true); 
+        adjustui.SetActive(true);
+        adjustui.GetComponent<AdjustUIManager>().RunAdjustUI(); 
     }
     #endregion
 

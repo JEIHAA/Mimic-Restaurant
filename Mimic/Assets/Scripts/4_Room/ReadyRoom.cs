@@ -34,8 +34,11 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject story_ui = null;
     [Header("스토리 버튼 이미지")]
     [SerializeField] private Image story_btn_img = null;
+    [Header("튜토리얼 UI")]
+    [SerializeField] private GameObject tutorial_ui = null;
 
-    private GameObject story_ui_instantiated = null; 
+    private GameObject story_ui_instantiated = null;
+    private GameObject tutorial_ui_instantiated = null;
 
     #region["다른 플레이어가 입장했을때 실행되는 메소드"] 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -187,11 +190,14 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
     #region["스토리 UI"]
     public void GoStoryUI()
     {
-        if(story_ui_instantiated == null)
+        if(!XRSettings.enabled)
         {
-            story_ui_instantiated = Instantiate(story_ui);
-            story_ui_instantiated.GetComponentsInChildren<Button>()[0].onClick.AddListener(CloseStoryUI); 
-            gameObject.SetActive(false); 
+            if (story_ui_instantiated == null)
+            {
+                story_ui_instantiated = Instantiate(story_ui);
+                story_ui_instantiated.GetComponentsInChildren<Button>()[0].onClick.AddListener(CloseStoryUI);
+                gameObject.SetActive(false);
+            }
         }
     }
     #endregion
@@ -219,6 +225,28 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
             ++count; 
         }
     }
-    #endregion 
+    #endregion
 
+    #region["튜토리얼 열기"]
+    public void OpenTutorial()
+    {
+        if(!XRSettings.enabled)
+        {
+            if (tutorial_ui_instantiated == null)
+            {
+                tutorial_ui_instantiated = Instantiate(tutorial_ui);
+                tutorial_ui_instantiated.GetComponentsInChildren<Button>()[0].onClick.AddListener(CloseTutorial);
+                gameObject.SetActive(false);
+            }
+        }
+    }
+    #endregion
+
+    #region["튜토리얼 닫기"]
+    public void CloseTutorial()
+    {
+        Destroy(tutorial_ui_instantiated);
+        gameObject.SetActive(true); 
+    }
+    #endregion 
 }

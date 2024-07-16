@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
     {
         bulletDamage = bulletData.bulletDamage;
         bulletSpeed = bulletData.bulletSpeed;
+        EffectAudioManager.instance.PlayEffect("Razer", true); 
        // Debug.Log("CurrentDamage: " + bulletDamage);
     }
 

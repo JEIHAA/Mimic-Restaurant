@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
@@ -29,6 +30,8 @@ public class GameManager_StartScene : MonoBehaviour
     [SerializeField] private GameObject messageui_instantiated = null;
 
     [SerializeField] private KeyboardManager vr_keyboard = null;
+    [SerializeField] private GameObject exitmessage = null;
+    private GameObject exitmessage_instantiated = null;
 
     //VRÀü¿ë
     private int status_ui = 0;
@@ -200,8 +203,27 @@ public class GameManager_StartScene : MonoBehaviour
     #region["´Ý±â ¹öÆ°"]
     public void CloseBtn()
     {
-        Application.Quit(); 
+        if (XRSettings.enabled)
+        {
+            RealExit();
+        }
+        else
+        {
+            if (exitmessage_instantiated == null)
+            {
+                exitmessage_instantiated = Instantiate(exitmessage);
+                exitmessage_instantiated.GetComponent<MessageUI>().SetText(2);
+                exitmessage_instantiated.GetComponentsInChildren<Button>()[0].onClick.AddListener(RealExit);
+            }
+        }
     }
     #endregion
+
+    #region["ÁøÂ¥ ´Ý±â"]
+    public void RealExit()
+    {
+        Application.Quit(); 
+    }
+    #endregion 
 
 }

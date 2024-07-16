@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\VolumetricLineBehavior.cs" />
     <Compile Include="Assets\Scripts\VR\VRUI.cs" />
     <Compile Include="Assets\Scripts\VR\HandCtrl_Login.cs" />
+    <Compile Include="Assets\Scripts\UI\StoryUI.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\DayManager.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserWait.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\PC\FoodTest.cs" />
     <Compile Include="Assets\Scripts\VR\HandCtrl.cs" />
     <Compile Include="Assets\Scripts\MeatManager.cs" />
+    <Compile Include="Assets\Scripts\VR\TutorialVRUI.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ButtonLamp.cs" />
     <Compile Include="Assets\Scripts\UI\SpeechBubble.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Assets\Scripts\2_Login_StartGame\WelcomeController.cs" />
     <Compile Include="Assets\Scripts\PC\OrderInfo.cs" />
     <Compile Include="Assets\Scripts\2_Login_StartGame\GameManager_StartScene.cs" />
+    <Compile Include="Assets\Scripts\UI\TutorialUI.cs" />
     <Compile Include="Assets\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
     <Compile Include="Assets\Scripts\PC\Dispensers\DispenserDrink.cs" />
     <Compile Include="Assets\Megapoly.Art\Vintage Controls\Scripts\ControlAnimateLights.cs" />

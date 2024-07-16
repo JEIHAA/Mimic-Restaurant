@@ -26,20 +26,22 @@ public class Barrier : MonoBehaviour, IOnDamage
     {
         barrierHP -= damage;
         if(XRSettings.enabled)
-        {
+        { 
             barrierGauge.value -= damage;
         }
         if (barrierHP <= 0)
         {
+            EffectAudioManager.instance.PlayEffect("DestroyShield", true);
             this.gameObject.SetActive(false);
         }
     }
 
     public void RepairingBarrier(int value) 
     {
+        EffectAudioManager.instance.PlayEffect("RestoreShield", true); 
         barrierHP += value;
         barrierGauge.value += value;
-        this.gameObject.SetActive(true);
+        this.gameObject.SetActive(true); 
         if (barrierHP > maxHP)
         {
             barrierHP = maxHP;

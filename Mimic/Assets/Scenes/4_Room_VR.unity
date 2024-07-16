@@ -959,6 +959,12 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5288589297015917546, guid: b280e8940a91c344b88110bbfde30a98,
+        type: 3}
+      propertyPath: tutorial_ui
+      value: 
+      objectReference: {fileID: 6598072763094296627, guid: f8839071639497b4385fb2e2fafaed2e,
+        type: 3}
     - target: {fileID: 5932767448991384262, guid: b280e8940a91c344b88110bbfde30a98,
         type: 3}
       propertyPath: m_Name

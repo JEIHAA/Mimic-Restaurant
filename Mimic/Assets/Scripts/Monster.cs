@@ -148,6 +148,7 @@ public class Monster : MonoBehaviourPun, IOnDamage
             {
                 status = (int)MonsterStatus.Attack;
                 animator.SetTrigger("Attack");
+                EffectAudioManager.instance.PlayEffect("MonsterAttack", true); 
                 //공격 애니메이션 재생
                 Attackon = true;
                 if (_collider.GetComponentInParent<IOnDamage>() != null)
@@ -179,8 +180,10 @@ public class Monster : MonoBehaviourPun, IOnDamage
         //IOnDamage 인터페이스를 상속받는 오브젝트에게는 데미지를 입힐 수 있다.
         if (_collider.GetComponent<IOnDamage>() != null)
         {
+            //방어막 공격 
+            EffectAudioManager.instance.PlayEffect("MonsterAttackShield", true); 
             Debug.Log("monster triggerenter");
-            _collider.GetComponentInParent<IOnDamage>().OnDamage(monsterDamage, gameObject);
+            _collider.GetComponent<IOnDamage>().OnDamage(monsterDamage, gameObject);
         }
     }
     private void OnTriggerStay(Collider _collider)

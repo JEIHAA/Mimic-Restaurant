@@ -273,9 +273,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3903912167945061695}
+      - m_Target: {fileID: 2198606877910320663}
         m_TargetAssemblyTypeName: StoryUI, Assembly-CSharp
-        m_MethodName: ForwardBtn
+        m_MethodName: NextBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4170371747173709297}
-  - component: {fileID: 3903912167945061695}
+  - component: {fileID: 2198606877910320663}
   m_Layer: 0
   m_Name: StoryUI
   m_TagString: Untagged
@@ -318,7 +318,7 @@ Transform:
   - {fileID: 3226774522330715450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3903912167945061695
+--- !u!114 &2198606877910320663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,11 +327,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4864859989895504252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e9a946191a129469b2106df0d7114a, type: 3}
+  m_Script: {fileID: 11500000, guid: 169d700258fc1bf42a44404e19f2012e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story_image: {fileID: 6342198413792640903}
-  story_image_sprite:
+  storyimage: {fileID: 6342198413792640903}
+  storysprite_arr:
   - {fileID: 21300000, guid: 8156303ac6e750c4ba08748cfe15c6a7, type: 3}
   - {fileID: 21300000, guid: b6b258d41bcda7f4997206ccb7a293ae, type: 3}
   - {fileID: 21300000, guid: bba0ac59d94d513458683fb839f3ebdf, type: 3}
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3903912167945061695}
+      - m_Target: {fileID: 2198606877910320663}
         m_TargetAssemblyTypeName: StoryUI, Assembly-CSharp
         m_MethodName: BackBtn
         m_Mode: 1

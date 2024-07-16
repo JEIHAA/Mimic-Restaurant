@@ -50,8 +50,6 @@ public class Conveyor : MonoBehaviour
         {
             MoveObject(rbs);
         }
-
-            
     }
 
     private void MoveObject(List<Rigidbody> _rbs) 
@@ -59,6 +57,7 @@ public class Conveyor : MonoBehaviour
         if (rbs.Count > 0)
         {
             Vector3 movement = direction.normalized * speed * Time.deltaTime; //direction.normalized * speed * Time.deltaTime;
+            EffectAudioManager.instance.PlayEffect("ConveySound", true); 
             foreach (Rigidbody rb in rbs) 
             {
                 rb.velocity = direction.normalized * speed * Time.deltaTime;

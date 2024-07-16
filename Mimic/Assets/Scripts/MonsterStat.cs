@@ -13,7 +13,7 @@ public class MonsterStat : ScriptableObject
 
     private void OnDisable()
     {
-        monsterHealth = 500; 
+        monsterHealth = 300; 
         monsterDamage = 10;
         meatnum = 3; 
     }

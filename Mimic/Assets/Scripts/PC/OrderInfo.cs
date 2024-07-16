@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,7 +46,7 @@ public class OrderInfo : MonoBehaviour
                     Debug.Log("enumstr: " + enumstr);
                     sprite = fries[foodnum];
                 }
-                else
+                else if(DayManager.instance.GetSeconds() >= 60f && PhotonNetwork.IsConnected)
                 {
                     foodnum = 0;
                     enumstr = GetFoodNameByTypeandNumber(typeof(BurgerInfo.Hamburger), foodnum);
@@ -76,7 +77,7 @@ public class OrderInfo : MonoBehaviour
                     Debug.Log("enumstr: " + enumstr);
                     sprite = fries[foodnum];
                 }
-                else
+                else if(DayManager.instance.GetSeconds() >= 90f && PhotonNetwork.IsConnected) 
                 {
                     foodnum = 0;
                     enumstr = GetFoodNameByTypeandNumber(typeof(BurgerInfo.Hamburger), foodnum);
