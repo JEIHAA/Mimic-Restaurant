@@ -8,80 +8,171 @@ using UnityEngine.UI;
 
 public class PCUIManager : MonoBehaviour
 {
+    public enum Machine{
+        Grill, Drink, Fries
+    }
+
+    public int Increase_Sales_Money;
+    public int Increase_Food_Hunger_Level;
+
+    private GameObject settingui_instantiate = null;
+    private GameObject tutorialui_instantiate = null;
+
     [Header("UI 상자들. ")]
     [SerializeField] private GameObject uiboxholder = null;
-    [Header("위로 올리는 버튼: UI 숨기기")]
-    [SerializeField] private Button upbutton = null;
-    [Header("아래로 내리는 버튼: UI 보여주기")]
-    [SerializeField] private Button downbutton = null;
-    #region["Awake is called when enable scriptable instance is loaded."] 
+    [Header("정산 UI")]
+    [SerializeField] private GameObject adjustui = null;
+    [Header("설정 UI")]
+    [SerializeField] private GameObject settingui = null;
 
-    private Vector3 originaluibox_transform = Vector3.zero;
-    private Vector3 newuibox_transform = Vector3.zero; 
-    private void Awake()
-    {
-        originaluibox_transform = uiboxholder.GetComponent<RectTransform>().position; 
-        uiboxholder.GetComponent<RectTransform>().position += new Vector3(0f, 1000f, 0f);
-        newuibox_transform = uiboxholder.GetComponent<RectTransform>().position; 
-    }
-    #endregion
+    [Header("상자")]
+    [SerializeField] private GameObject StoreBox = null;
+    [SerializeField] private GameObject HamBurgerBox = null; 
+    [SerializeField] private GameObject SodaBox = null;
+    [SerializeField] private GameObject FrencFriesBox = null; 
+
+    [Header("튜토리얼 UI")]
+    [SerializeField] private GameObject tutorial_ui = null;
 
     #region["Start is called before the first frame update"] 
     private void Start()
     {
-        
+        HamBurgerBox.SetActive(false);
+        SodaBox.SetActive(false);
+        FrencFriesBox.SetActive(false);
+
+        uiboxholder.SetActive(false); 
+        adjustui.SetActive(false);
+
+        MoneyManager.instance.Print_SalesAmount_Money(); 
+        MoneyManager.instance.PrintFoodMoney_Each();
     }
     #endregion
 
-    #region["Update is called once per frame"] 
-    private void Update()
+    #region UI 기능
+    #region 머신 업그레이드 기능
+    public void GrillMachine_LvMoney()
     {
-        
+        MoneyManager.instance.ShowMachineSpeedIncrease((int)Machine.Grill);
+    }
+
+    public void DrinkMachine_LvMoney()
+    {
+        MoneyManager.instance.ShowMachineSpeedIncrease((int)Machine.Drink);
+    }
+
+    public void FryingMachine_LvMoney()
+    {
+        MoneyManager.instance.ShowMachineSpeedIncrease((int)Machine.Fries);
     }
     #endregion
 
-    #region["UI 위로 숨기기"] 
-    public void SetUpButton()
+    #region 판매 및 배고픔 기능
+    public void Increase_Sales_Money_Lv()
     {
-        //uiboxholder.GetComponent<RectTransform>().position += new Vector3(0f, 1000f, 0f); 
-        StartCoroutine(UpUICoroutine()); 
+        MoneyManager.instance.ShowMoneyIncrease();
+    }
+
+    public void Increase_Food_Hunger_Lv()
+    {
+        MoneyManager.instance.ShowHungerIncrease(); 
     }
     #endregion
 
-
-    #region["UI 아래로 내리기"] 
-
-    public void SetDownButton()
+    #region 레시피 들어가기 및 뒤로가기 버튼 구현
+    public void HambugerBtn()
     {
-        //uiboxholder.GetComponent<RectTransform>().position = originaluibox_transform; 
-        StartCoroutine(DownUICoroutine()); 
+        StoreBox.SetActive(false);
+        HamBurgerBox.SetActive(true);
     }
-    #endregion
 
-
-    #region["위로 올리는 코루틴"] 
-    private IEnumerator UpUICoroutine()
+    public void SodaBtn()
     {
-        while(uiboxholder.GetComponent<RectTransform>().position.y < newuibox_transform.y)
+        StoreBox.SetActive(false);
+        SodaBox.SetActive(true);    
+    }
+
+    public void FrencFriesBtn()
+    {
+        StoreBox.SetActive(false);
+        FrencFriesBox.SetActive(true);
+    }
+
+    public void BackBtn_In_HambugerBox()
+    {
+        HamBurgerBox.SetActive(false);
+        StoreBox.SetActive(true);
+    }
+
+    public void BackBtn_In_SodaBox()
+    {
+        SodaBox.SetActive(false);
+        StoreBox.SetActive(true);
+    }
+
+    public void BackBtn_In_FrencFriesBox()
+    {
+        FrencFriesBox.SetActive(false);
+        StoreBox.SetActive(true);
+    }
+
+    #region["설정 버튼"] 
+    public void SettingBtn()
+    {
+        if(settingui_instantiate == null)
         {
-            uiboxholder.GetComponent<RectTransform>().position += new Vector3(0f, 4000f * Time.deltaTime, 0f);
-            yield return new WaitForEndOfFrame(); 
+            settingui_instantiate = Instantiate(settingui);
+            settingui_instantiate.GetComponentInChildren<GameController_Setting>().CloseSettingsOnClick = ExitSetting;
+            Time.timeScale = 0f; 
         }
-        uiboxholder.GetComponent<RectTransform>().position = newuibox_transform; 
-        yield break; 
     }
     #endregion
 
-    #region["아래로 내리는 코루틴"]
-    private IEnumerator DownUICoroutine()
+    #region["뒤로가기 버튼 => 정산 UI로 이동"] 
+    public void BackBtn()
     {
-        while(uiboxholder.GetComponent<RectTransform>().position.y > originaluibox_transform.y)
+        uiboxholder.SetActive(false);
+        adjustui.SetActive(true); 
+    }
+    #endregion
+
+    public void ExitSetting()
+    {
+        Destroy(settingui_instantiate);
+        AudioManager.instance.PlayBGM();
+        Time.timeScale = 1f; 
+    }
+
+    #endregion
+    #endregion
+
+    #region["정산 UI 출력"]
+    public void AdjustUI()
+    {
+        adjustui.SetActive(true);
+        adjustui.GetComponent<AdjustUIManager>().RunAdjustUI(); 
+    }
+    #endregion
+
+    #region["튜토리얼 버튼"] 
+    public void TutorialBtn()
+    {
+        if(tutorialui_instantiate == null)
         {
-            uiboxholder.GetComponent<RectTransform>().position -= new Vector3(0f, 4000f * Time.deltaTime, 0f);
-            yield return new WaitForEndOfFrame(); 
+            tutorialui_instantiate = Instantiate(tutorial_ui);
+            tutorialui_instantiate.GetComponentsInChildren<Button>()[0].onClick.AddListener(CloseTutorialBtn); 
+            gameObject.SetActive(false);
+            Time.timeScale = 0f; 
         }
-        uiboxholder.GetComponent<RectTransform>().position = originaluibox_transform; 
-        yield break; 
+    }
+    #endregion
+
+    #region["튜토리얼 닫기 버튼"]
+    public void CloseTutorialBtn()
+    {
+        Destroy(tutorialui_instantiate);
+        gameObject.SetActive(true); 
+        Time.timeScale = 1f; 
     }
     #endregion
 

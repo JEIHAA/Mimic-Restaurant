@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4413974243451997990}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: FoodGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 812743893093900726}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.117, z: 0}
+  m_LocalPosition: {x: -0.28, y: 1.66, z: 0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3625086153531389131}
   - component: {fileID: 1729971992679812060}
   - component: {fileID: 4886711901801347006}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 3089217910185825379}
   - component: {fileID: 5531998014586188442}
   - component: {fileID: 3906101007808303668}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 1616544673503133265}
   - component: {fileID: 2636274574424926235}
   - component: {fileID: 7312540469141188526}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 8072513938398354428}
   - component: {fileID: 483477420925117860}
   - component: {fileID: 6390858180619492352}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 4170838686422674218}
   - component: {fileID: 1151970207023298181}
   - component: {fileID: 3936620940489197513}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: StoveDispenser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,8 +391,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
   m_LocalPosition: {x: -0.5457425, y: 0.6646941, z: -1.8221506}
-  m_LocalScale: {x: 0.5504031, y: 0.5504031, z: 0.5504031}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1791280868904924363}
   - {fileID: 4413974243451997990}
@@ -417,8 +417,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 1.5, z: 1.5}
-  m_Center: {x: 0, y: 0.8, z: 1}
+  m_Size: {x: 3.1677377, y: 1.5, z: 3.3675642}
+  m_Center: {x: -0.2938655, y: 0.79999995, z: 1.0111957}
 --- !u!114 &3936620940489197513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,6 +432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodGenerator: {fileID: 4413974243451997990}
+  output: {fileID: 0}
+  isGenerate: 0
 --- !u!1 &2758914773619378225
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +445,7 @@ GameObject:
   - component: {fileID: 4130825683073081439}
   - component: {fileID: 9106288469023154518}
   - component: {fileID: 2880761015930450991}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ovendoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +528,7 @@ GameObject:
   - component: {fileID: 5678324189731358173}
   - component: {fileID: 8298469243341726258}
   - component: {fileID: 7553899807307982022}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +611,7 @@ GameObject:
   - component: {fileID: 2410505858054123527}
   - component: {fileID: 5187291538570428563}
   - component: {fileID: 643596372981880089}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +694,7 @@ GameObject:
   - component: {fileID: 7067587798262679770}
   - component: {fileID: 2306464823986342345}
   - component: {fileID: 5467597490681709498}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +777,7 @@ GameObject:
   - component: {fileID: 3405689974596129483}
   - component: {fileID: 6265540864304759192}
   - component: {fileID: 8869187442094463849}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +861,7 @@ GameObject:
   - component: {fileID: 4636689599091853779}
   - component: {fileID: 698122605677885864}
   - component: {fileID: 4802890615232344605}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,9 +877,9 @@ Transform:
   m_GameObject: {fileID: 5469012360062155546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3295317, y: 0.8059042, z: 0.09639724}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.3295317, y: 0.942, z: 0.09639724}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4130825683073081439}
   - {fileID: 5949114307923182645}
@@ -975,7 +977,7 @@ GameObject:
   - component: {fileID: 1584796224133753609}
   - component: {fileID: 7820316554747838197}
   - component: {fileID: 7687466457107822666}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,7 +1060,7 @@ GameObject:
   - component: {fileID: 8491597464972920787}
   - component: {fileID: 751929649327063677}
   - component: {fileID: 113601306727315457}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: stove_knob_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,7 +1143,7 @@ GameObject:
   - component: {fileID: 5949114307923182645}
   - component: {fileID: 3193675237773755965}
   - component: {fileID: 1972424423144030411}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ovendoor_
   m_TagString: Untagged
   m_Icon: {fileID: 0}

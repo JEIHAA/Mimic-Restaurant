@@ -1,14 +1,29 @@
+using Photon.Pun;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static FoodInfo;
-using static UnityEditor.Rendering.CameraUI;
 
-public class DispenserHamburger : MonoBehaviour, IDispenser
+public class DispenserHamburger : DispenserWait, IDispenser
 {
     [SerializeField] private Transform foodGenerator;
     [SerializeField] private GameObject output;
     [SerializeField] private bool isGenerate = false;
+
+    private float timer_wait = 2.5f; 
+
+    public static DispenserHamburger instance = null; 
+    protected override void Awake()
+    {
+        base.Awake();
+        instance = this; 
+    }
+
+    public void UpgradeTimer(float _timer)
+    {
+        if(timer_wait > 0)
+        {
+            timer_wait -= (_timer * timer_wait); 
+        }
+    }
 
     public bool GetIsGenerate()
     {
@@ -17,9 +32,9 @@ public class DispenserHamburger : MonoBehaviour, IDispenser
 
     public void OperateDispenser(GameObject _player)
     {
-        Debug.Log(this.name+"사용");        
+        Debug.Log(this.name + "사용");
         GameObject food = _player.GetComponentInChildren<BindFood>().Food;
-        
+
         if (food == null && output != null)
         {
             Debug.Log("음식 가져감");
@@ -37,7 +52,7 @@ public class DispenserHamburger : MonoBehaviour, IDispenser
             Debug.Log("이미 사용중입니다!");
             return;
         }
-        else if (food.GetComponent<Ingredients>() == null || !food.GetComponent<Ingredients>().IsCooked)
+        else if (food.GetComponent<Ingredients>() == null || food.GetComponent<Ingredients>().State != CookState.Cooked)
         {
             Debug.Log("구워진 재료가 필요합니다!");
             return;
@@ -49,24 +64,36 @@ public class DispenserHamburger : MonoBehaviour, IDispenser
             _player.GetComponentInChildren<BindFood>().Food = null;
             StartCoroutine(GenerateFood(food));
         }
-        else { Debug.Log("뭐가 문제임?");  }
+        else { Debug.LogError("뭔가 문제가 있음"); }
     }
 
     public IEnumerator GenerateFood(GameObject _food)
-    {   
-        if (_food.GetComponent<Ingredients>().IsCooked)
+    {
+        if (_food.GetComponent<Ingredients>().State == CookState.Cooked)
         {
-            _food.GetComponent<Ingredients>().IsCooking = true;
+            _food.GetComponent<Ingredients>().State = CookState.Cooking;
             _food.transform.transform.parent = null;
             _food.transform.transform.position = foodGenerator.position;
             Debug.Log("음식 내려놓음");
 
-            yield return new WaitForSeconds(3f);
+            StartCoroutine(WaitTimer(timer_wait)); 
+            yield return new WaitForSeconds(timer_wait);
 
-            _food.GetComponent<Ingredients>().IsCooking = false;
+            _food.GetComponent<Ingredients>().State = CookState.Cooked;
             Destroy(_food);
-            output = Instantiate(_food.GetComponent<Ingredients>().NextLevel, foodGenerator.position, Quaternion.identity);
+
+            if (!PhotonNetwork.IsConnected)
+            {
+                output = Instantiate(_food.GetComponent<Ingredients>().NextLevel, foodGenerator.position, Quaternion.identity);
+            }
+            else
+            {
+                output = PhotonNetwork.Instantiate("Prefabs\\Food\\Hamburger", foodGenerator.position, Quaternion.identity); 
+            }
+            
+
         }
         isGenerate = false;
     }
+
 }

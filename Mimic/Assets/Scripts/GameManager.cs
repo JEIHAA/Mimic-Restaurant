@@ -2,7 +2,9 @@ using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR;
 
 //2024-05-22: CUSTOM UNITY TEMPLATE 
@@ -10,7 +12,7 @@ using UnityEngine.XR;
  2024-06-20 작성자 : 고영석 
  수정 내용 : 
 */
-public class GameManager : MonoBehaviourPun 
+public class GameManager : MonoBehaviourPun
 {
     [Header("몬스터 매니저")]
     [SerializeField] private MonsterManager monstermanager = null;
@@ -22,34 +24,60 @@ public class GameManager : MonoBehaviourPun
     [SerializeField] private Transform vrplayer_transform = null;
     [Header("PC 플레이어")]
     [SerializeField] private Transform pcplayer_transform = null;
+    [Header("PC UI")]
+    [SerializeField] private PCUIManager pcui = null;
+    [Header("VR 정산 UI")]
+    [SerializeField] private AdjustUIManager vradjustui = null;
 
-    [Header("게임 시작 상태")] 
+    [Header("게임 시작 상태")]
     [SerializeField] private bool isGameStarted = false;
+
+    [Header("PC 게임 종료 안내 UI")]
+    [SerializeField] private GameObject pcexit_ui = null;
+    [Header("VR한테 알려주기")]
+    [SerializeField] private GameObject vrexit_ui = null;
+    private GameObject pcexit_ui_instantiate = null;
+    [SerializeField] private GameObject vrexit_ui_instantiate = null;
+
+
     #region["Awake is called when enable scriptable instance is loaded."] 
     private void Awake()
     {
-        if(XRSettings.enabled)
+        if (XRSettings.enabled)
         {
             //VR 
-            pcplayer_transform.gameObject?.SetActive(false); 
+            pcplayer_transform.gameObject.SetActive(false);
         }
         else
         {
             //PC 
-            //vrplayer_transform.gameObject?.SetActive(false);
-            pcplayer_transform.GetComponentInChildren<Camera>().targetDisplay = 0; 
+            vrplayer_transform.gameObject.SetActive(false);
+            pcplayer_transform.GetComponentInChildren<Camera>().targetDisplay = 0;
+            vrexit_ui_instantiate = null;
         }
+        vradjustui.gameObject.SetActive(false);
+        if (vrexit_ui_instantiate != null)
+        {
+            vrexit_ui_instantiate.SetActive(false);
+        }
+        daymanager.AdjustOnClick = AdjustOnClick;
     }
     #endregion
 
-    
+
     #region["Start is called before the first frame update"] 
     private void Start()
     {
-        if(PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected)
         {
             CheckinMainScene();
         }
+        else
+        {
+            CustomerSpawnManager.instance.StartSpawnCustomer(); //임시(네트워크X) 
+            daymanager.StartTimer(); //임시(네트워크X) 
+        }
+        AudioManager.instance.PlayBGM();
     }
     #endregion
 
@@ -73,19 +101,14 @@ public class GameManager : MonoBehaviourPun
             //다른 플레이어의 Scene Load상태가 true일때 => 다른 플레이어의 Start 메소드가 실행되었다는 뜻임. 
             if ((bool)PhotonNetwork.PlayerListOthers[0].CustomProperties["IsMainSceneLoaded"])
             {
-                /*
-                 * 방장일때만 모든 플레이어에서 StartGame 메소드를 실행한다.
-                 * => 방장은 항상 존재하며, 방장 플레이어 쪽에서 이 메소드가 실행되면 모든 플레이어에서 StartGame 메소드가 실행하게 된다.
-                 *    다른 플레이어에서는 IF문 조건 때문에 실행 자체가 안되어 메소드가 중복 실행되는 일이 없다. 
-                */
-                /*
-                if(PhotonNetwork.IsMasterClient)
+                //만약 다른 플레이어가 이미 들어와있는데 누가 나가서 게임이 멈췄을 경우 그 플레이어의 게임을 다시 시작시킴. 
+                photonView.RPC("RestartGameOtherSide", RpcTarget.Others);
+                isGameStarted = true;
+                daymanager.StartTimer();
+                if (!XRSettings.enabled)
                 {
-                    photonView.RPC("StartTimer", RpcTarget.All);
+                    CustomerSpawnManager.instance.StartSpawnCustomer();
                 }
-                */
-                isGameStarted = true; 
-                //daymanager.StartTimer();
                 break;
             }
             yield return new WaitForSeconds(1f);
@@ -98,22 +121,81 @@ public class GameManager : MonoBehaviourPun
     #region["Update is called once per frame"] 
     private void Update()
     {
-        if(XRSettings.enabled && isGameStarted)
+        if (XRSettings.enabled && isGameStarted)
         {
             monstermanager?.MoveAll(vrplayer_transform);
         }
-    }
-    #endregion
-
-    #region["PC 쪽에서 실행되야 하는거"]
-    [PunRPC]
-    public void MonsterArrivedToRestaurant()
-    {
-        if(!XRSettings.enabled)
+        //monstermanager?.MoveAll(vrplayer_transform); 
+        if (Input.GetKey(KeyCode.Escape)) //PC용 => 종료 
         {
-            CustomerSpawnManager.instance.IsMonsterArrivedToRestaurant(); 
+            if (pcexit_ui_instantiate == null)
+            {
+                pcexit_ui_instantiate = Instantiate(pcexit_ui);
+                pcexit_ui_instantiate.GetComponent<MessageUI>().SetText(2);
+                pcexit_ui_instantiate.GetComponentsInChildren<Button>()[0].onClick.AddListener(() => ExitGame(true));
+            }
         }
     }
     #endregion
 
+    #region["현재 플레이어가 나가면 다른 플레이어는 게임이 멈춤."]
+    [PunRPC]
+    public void STX_BSDC1()
+    {
+        Time.timeScale = 0f;
+        if (vrexit_ui_instantiate == null)
+        {
+            //PC -> VR 
+            vrexit_ui_instantiate = Instantiate(vrexit_ui);
+            vrexit_ui_instantiate.GetComponent<MessageUI>().SetText(1);
+        }
+        else
+        {
+            //VR -> PC 
+            vrexit_ui_instantiate.SetActive(true);
+            vrexit_ui_instantiate.GetComponent<MessageUI>().SetText(2);
+        }
+        vrexit_ui_instantiate.GetComponentsInChildren<Button>()[0].onClick.RemoveAllListeners();
+        vrexit_ui_instantiate.GetComponentsInChildren<Button>()[0].onClick.AddListener(() => ExitGame(false));
+    }
+    #endregion
+
+    #region["게임 종료"] 
+    public void ExitGame(bool _isyou)
+    {
+        if (PhotonNetwork.IsConnected)
+        {
+            if (_isyou)
+            {
+                photonView.RPC("STX_BSDC1", RpcTarget.Others);
+            }
+            PhotonNetwork.LeaveRoom();
+        }
+        Application.Quit();
+    }
+    #endregion
+
+
+    #region["새로운 플레이어가 들어오면 게임을 다시 시작"]
+    [PunRPC]
+    public void RestartGameOtherSide()
+    {
+        Time.timeScale = 1f;
+    }
+    #endregion 
+
+
+    public void AdjustOnClick()
+    {
+        //정산 UI 출력
+        if (!XRSettings.enabled)
+        {
+            pcui.AdjustUI();
+        }
+        else
+        {
+            vradjustui.gameObject.SetActive(true);
+            vradjustui.GetComponent<AdjustUIManager>().RunAdjustUI();
+        }
+    }
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7cb9ecb8bd6f874982f0552ac11f156, type: 3}
   m_Name: FrenchFriesStat
   m_EditorClassIdentifier: 
-  money: 150
-  hungerrestore: 0
+  money: 100
+  hungerrestore: 10

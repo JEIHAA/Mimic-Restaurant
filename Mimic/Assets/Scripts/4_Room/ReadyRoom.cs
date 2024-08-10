@@ -30,6 +30,15 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
     [SerializeField] private Image pc_astro = null;
     [Header("VR쪽 아이콘")]
     [SerializeField] private Image vr_astro = null;
+    [Header("스토리 UI")]
+    [SerializeField] private GameObject story_ui = null;
+    [Header("스토리 버튼 이미지")]
+    [SerializeField] private Image story_btn_img = null;
+    [Header("튜토리얼 UI")]
+    [SerializeField] private GameObject tutorial_ui = null;
+
+    private GameObject story_ui_instantiated = null;
+    private GameObject tutorial_ui_instantiated = null;
 
     #region["다른 플레이어가 입장했을때 실행되는 메소드"] 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -88,6 +97,7 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
+        StartCoroutine(StoryUIBtnGIFCoroutine()); 
         if (PhotonNetwork.IsConnected)
         {
             roomname.text = PhotonNetwork.CurrentRoom.Name;
@@ -176,4 +186,67 @@ public class ReadyRoom : MonoBehaviourPunCallbacks
     }
     #endregion
 
+
+    #region["스토리 UI"]
+    public void GoStoryUI()
+    {
+        if(!XRSettings.enabled)
+        {
+            if (story_ui_instantiated == null)
+            {
+                story_ui_instantiated = Instantiate(story_ui);
+                story_ui_instantiated.GetComponentsInChildren<Button>()[0].onClick.AddListener(CloseStoryUI);
+                gameObject.SetActive(false);
+            }
+        }
+    }
+    #endregion
+
+    #region["스토리 UI 닫기"] 
+    public void CloseStoryUI()
+    {
+        Destroy(story_ui_instantiated);
+        gameObject.SetActive(true); 
+    }
+    #endregion
+
+    #region["스토리 UI 실행 버튼 GIF 코루틴"]
+    public IEnumerator StoryUIBtnGIFCoroutine()
+    {
+        int count = 1; 
+        while(true)
+        {
+            if(count > 2)
+            {
+                count = 1; 
+            }
+            story_btn_img.sprite = Resources.Load<Sprite>("Images\\Icons\\StoryBookGIF\\" + count);
+            yield return new WaitForEndOfFrame(); 
+            ++count; 
+        }
+    }
+    #endregion
+
+    #region["튜토리얼 열기"]
+    public void OpenTutorial()
+    {
+        if(!XRSettings.enabled)
+        {
+            if (tutorial_ui_instantiated == null)
+            {
+                tutorial_ui_instantiated = Instantiate(tutorial_ui);
+                tutorial_ui_instantiated.GetComponentsInChildren<Button>()[0].onClick.AddListener(CloseTutorial);
+                gameObject.SetActive(false);
+            }
+        }
+    }
+    #endregion
+
+    #region["튜토리얼 닫기"]
+    public void CloseTutorial()
+    {
+        Destroy(tutorial_ui_instantiated);
+        gameObject.SetActive(true); 
+    }
+    #endregion 
 }

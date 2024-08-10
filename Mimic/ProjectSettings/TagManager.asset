@@ -4,13 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - meat
-  - Steak
-  - Bullet
-  - Monster
   - Hamburger
+  - Ingredient
+  - Monster
+  - Food
   - Customer
-  - FoodTable
+  - RGun
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -31,10 +31,10 @@ TagManager:
   - Dispenser
   - Customer
   - Food
+  - Button
   - FoodBound
   - Ingredient
-  - 
-  - 
+  - MonsterSpawnPoint
   - 
   - 
   - 

@@ -1,14 +1,32 @@
+using Photon.Pun;
 using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Rendering.CameraUI;
 
-public class DispenserFried : MonoBehaviour, IDispenser
+public class DispenserFried : DispenserWait, IDispenser
 {
     [SerializeField] private Transform foodGenerator;
     [SerializeField] private GameObject outputPrefab;
     [SerializeField] private GameObject output;
     [SerializeField] private bool isGenerate = false;
+
+    public static DispenserFried instance = null;
+
+    private float timer_wait = 3f;
+
+    public void UpgradeTimer(float _timer)
+    {
+        if (timer_wait > 0)
+        {
+            timer_wait -= (_timer * timer_wait);
+        }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        instance = this;
+    }
 
     public bool GetIsGenerate()
     {
@@ -49,10 +67,18 @@ public class DispenserFried : MonoBehaviour, IDispenser
     public IEnumerator GenerateFood(GameObject _outputPrefab)
     {
         Debug.Log("Æ¢±â´Â Áß...");
-        yield return new WaitForSeconds(3f);
-
-        output = Instantiate(_outputPrefab, foodGenerator.position, Quaternion.identity);
-
+        EffectAudioManager.instance.PlayEffect("FryingFries", true);
+        StartCoroutine(WaitTimer(timer_wait));
+        yield return new WaitForSeconds(timer_wait);
+        if (PhotonNetwork.IsConnected)
+        {
+            output = PhotonNetwork.Instantiate("Prefabs\\Food\\FrenchFries", foodGenerator.position, Quaternion.identity);
+        }
+        else
+        {
+            output = Instantiate(_outputPrefab, foodGenerator.position, Quaternion.identity);
+        }
         isGenerate = false;
+        EffectAudioManager.instance.PlayEffect("FryingFries", false);
     }
 }

@@ -6,5 +6,6 @@ using UnityEngine;
 public class FoodStat : ScriptableObject 
 {
     public int money;
-    public int hungerrestore; 
+    public int hungerrestore;
+
 }

@@ -16,8 +16,9 @@ public class BindFood : MonoBehaviour
         {
             return;
         }
-        if (_other.gameObject.layer == LayerMask.NameToLayer("Food") || _other.gameObject.layer == LayerMask.NameToLayer("Ingredient") && !_other.GetComponent<Ingredients>().IsCooking)
+        if (_other.gameObject.layer == LayerMask.NameToLayer("Food") || _other.gameObject.layer == LayerMask.NameToLayer("Ingredient") && _other.GetComponent<Ingredients>().State != CookState.Cooking)
         {
+            
             CatchFood(_other);
         }
     }
@@ -28,6 +29,7 @@ public class BindFood : MonoBehaviour
         {
             //if (_other.GetComponent<Ingredients>().IsCooking) return;
             Debug.Log("GetFood");
+            EffectAudioManager.instance.PlayEffect("ChooseIngredient", true);
             if (_other.gameObject.transform.parent != null)
             {
                 food = _other.gameObject.transform.parent.gameObject;
@@ -36,16 +38,19 @@ public class BindFood : MonoBehaviour
             { 
                 food = _other.gameObject;
             }
+            food.GetComponent<Collider>().enabled = false; 
             SetFoodPos();
         }
     }
 
+    
     public void DropFood() 
     {
         if (hasFood)
         {
             if (Input.GetKeyDown("e"))
             {
+                food.GetComponent<Collider>().enabled = true;
                 food.transform.parent = null;
                 foreach (Rigidbody rb in food.GetComponentsInChildren<Rigidbody>())
                 {

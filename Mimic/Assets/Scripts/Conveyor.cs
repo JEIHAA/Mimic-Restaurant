@@ -5,7 +5,6 @@ using UnityEngine;
 public class Conveyor : MonoBehaviour
 { 
     [SerializeField] private float speed = 1f;
-    [SerializeField] private float rotationSpeed = 1f; 
     [SerializeField] private Vector3 direction = Vector3.forward;
     [SerializeField] private int capacity = 0;
     [SerializeField] private int maxCapacity = 10;
@@ -22,13 +21,13 @@ public class Conveyor : MonoBehaviour
 
     private void OnCollisionEnter(Collision _collision)
     {
+        ++capacity;
+        Debug.Log(capacity);
         if (_collision.gameObject.layer == LayerMask.NameToLayer("Food") || _collision.gameObject.layer == LayerMask.NameToLayer("Ingredient"))
         {
-            ++capacity;
-            _collision.gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
             rbs.Add(_collision.gameObject.GetComponent<Rigidbody>());
+            Debug.Log("rbs Cnt"+rbs.Count);
         }
-
         else
         { 
             // Æ¨°Ü³»±â
@@ -38,27 +37,31 @@ public class Conveyor : MonoBehaviour
     {
         if (ActiveConveyor(capacity)) 
         {
+            Debug.Log(_collision.gameObject.name);
             MoveObject(rbs);
         }
     }
 
     private void OnCollisionExit(Collision _collision)
     {
-        if (_collision.gameObject.layer == LayerMask.NameToLayer("Food") || _collision.gameObject.layer == LayerMask.NameToLayer("Ingredient")) 
+        --capacity;
+        rbs.Remove(_collision.gameObject.GetComponent<Rigidbody>());
+        if (ActiveConveyor(capacity))
         {
-            --capacity;
-            rbs.Remove(_collision.gameObject.GetComponent<Rigidbody>());
-        }            
+            MoveObject(rbs);
+        }
     }
 
     private void MoveObject(List<Rigidbody> _rbs) 
     {
         if (rbs.Count > 0)
         {
-            Vector3 movement = direction.normalized * speed * Time.deltaTime;
+            Vector3 movement = direction.normalized * speed * Time.deltaTime; //direction.normalized * speed * Time.deltaTime;
+            EffectAudioManager.instance.PlayEffect("ConveySound", true); 
             foreach (Rigidbody rb in rbs) 
             {
-               rb.MovePosition(rb.position + movement);
+                rb.velocity = direction.normalized * speed * Time.deltaTime;
+                rb.MovePosition(rb.position + movement);
             }
         }
     }

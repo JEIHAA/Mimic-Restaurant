@@ -3,6 +3,7 @@ using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,17 +12,33 @@ using UnityEngine.XR;
 
 public class DayManager : MonoBehaviourPun
 {
-    private int day = 1; //1,2,3,4,5,6 
-    private float seconds = 0f;
+    [SerializeField] private DateUIPresenter dateuipresenter = null;
+    [SerializeField] private LerpSkybox skybox = null;
 
-    //실제로는 여기서 직접 내용을 출력하지는 않을꺼임.  
-    [SerializeField] private TextMeshProUGUI daytext = null;
-    [SerializeField] private TextMeshProUGUI minutetext = null;
-    [SerializeField] private TextMeshProUGUI secondtext = null;
-    //실제로는 튜토리얼이 다 끝나면 상태값을 true로 바꿈. 
+    public static DayManager instance = null;
+
+    public delegate void OnAdjustDelegate();
+    private OnAdjustDelegate adjustonclick = null;
+    public OnAdjustDelegate AdjustOnClick
+    {
+        set { adjustonclick = value; }
+    }
+
+    private int day = 1; //1,2,3,4,5
+    private float seconds = 0f;
+    private float seconds_hidden = 0f; //
+    private float breaktime = 0f;
+
+    private int daycount = 0;
+    private int lunchcount = 0;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     #region["시간 더하는 메소드"] 
-    public void StartTimer() 
+    public void StartTimer()
     {
         Debug.LogError("All Player's Scene Loaded... Now Start Game...");
         StartCoroutine(AddDayCoroutine());
@@ -31,49 +48,112 @@ public class DayManager : MonoBehaviourPun
     #region["날짜 더하는 코루틴"] 
     private IEnumerator AddDayCoroutine()
     {
-        while (seconds <= 360f)
+        while (true)
         {
-            Debug.LogError("PhotonNetwork.Time: " + PhotonNetwork.Time);
             ++seconds;
-            if (seconds == 30f)
+            if (seconds > 50f && daycount == 0)
             {
-                //쉬는시간
-                Debug.LogError("Break Time!");
+                skybox.SetDayToLunch();
+                daycount = 1;
             }
-            if (seconds == 60f)
+            if (seconds > 145f && lunchcount == 0)
             {
-                seconds = 0f;
-                //XRSettings.enabled
-                if (!PhotonNetwork.IsMasterClient) 
+                skybox.SetDayToNight();
+                lunchcount = 1;
+            }
+            if (seconds == 100f)
+            {
+                StartCoroutine(BreakTimeCoroutine());
+            }
+            if (seconds >= 224f)
+            {
+                //이때부터 손님 스폰을 중단한다. 
+                CustomerSpawnManager.instance.BreakTime();
+            }
+            if (seconds == 240f)
+            {
+                if (day < 5)
                 {
-                    SpawnManager.instance.GoNextWave();
+                    seconds = 0f;
+                    daycount = 0;
+                    lunchcount = 0;
+                    //StartCoroutine(BreakTimeCoroutine()); 
+                    //정산화면 출력 
+                    adjustonclick?.Invoke();
+                    if (!XRSettings.enabled)
+                    {
+                        Time.timeScale = 0f;
+                    }
+                    yield break;
                 }
-                else
-                {
-                    Debug.LogError("Client Wave...");
-                    //손님 다음 웨이브 
-                }
-                ++day;
             }
-            //!XRSettings.enabled 
-            if(PhotonNetwork.IsMasterClient)
+            //!XRSettings.enabled
+            if (!XRSettings.enabled) //PC -> VR
             {
-                //PC쪽에서 VR쪽으로 정보를 보내준다. 
-                photonView.RPC("SetSecondandDay", RpcTarget.OthersBuffered, day, seconds); 
+                photonView.RPC("SetSecondandDay", RpcTarget.OthersBuffered, day, seconds, seconds_hidden);
             }
-            secondtext.text = "Second: " + seconds;
-            daytext.text = "Day: " + day;
+            dateuipresenter.SetSecond(seconds);
+            dateuipresenter.SetDay(day);
             yield return new WaitForSeconds(1f);
+        }
+    }
+    #endregion
+
+    #region["쉬는시간 코루틴"] 
+    private IEnumerator BreakTimeCoroutine()
+    {
+        if (XRSettings.enabled)
+        {
+            //쉬는시간이 시작되면 몬스터를 삭제하고 리스트를 초기화한다. 
+            SpawnManager.instance.deleteMonster();
+        }
+        while (breaktime < 20f)
+        {
+            ++breaktime;
+            //!XRSettings.enabled 
+            if (!XRSettings.enabled) //PC -> VR 
+            {
+                photonView.RPC("SetBreakTime", RpcTarget.OthersBuffered, breaktime, seconds_hidden);
+            }
+            dateuipresenter.SetBreakTime(breaktime);
+            yield return new WaitForSeconds(1f);
+        }
+        breaktime = 0f;
+        if (XRSettings.enabled && seconds < 240f)
+        {
+            //240초가 되면 쉬는시간이 끝나지만 라운드가 끝나기 때문에 정산이 끝날때까지는 몬스터를 스폰하지 않는다. 
+            //몬스터 다시 스폰 
+            SpawnManager.instance.GoNextWave();
         }
         yield break;
     }
-    #endregion 
+    #endregion
 
+
+    #region["VR와 PC끼리 동기화"] 
     [PunRPC]
-    public void SetSecondandDay(int _day, float _seconds)
+    public void SetSecondandDay(int _day, float _seconds, float _seconds_hidden)
     {
         seconds = _seconds;
-        day = _day; 
+        seconds_hidden = _seconds_hidden;
+        day = _day;
     }
 
+    [PunRPC]
+    public void SetBreakTime(float _breaktime, float _seconds_hidden)
+    {
+        breaktime = _breaktime;
+        seconds_hidden = _seconds_hidden;
+    }
+    #endregion
+
+    public void PlusDay()
+    {
+        ++day;
+    }
+
+    public float GetSeconds()
+    {
+        return seconds;
+    }
 }

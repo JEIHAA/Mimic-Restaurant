@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +13,24 @@ using UnityEngine;
 public class MonsterManager : MonoBehaviour
 {
     [SerializeField] private MonsterStat monsterData = null;
-    [SerializeField] private MeatManager meatmanager = null; 
+    [SerializeField] private MeatManager meatmanager = null;
+
+    private int monster_killed = 0;
+
+    #region["죽인 몬스터 수 가져오기"] 
+
+    public int GetMonster_Killed()
+    {
+        return monster_killed; 
+    }
+    #endregion
+
+    #region["VR 정산: 몬스터 수 초기화하기"] 
+    public void ClearMonster()
+    {
+        monster_killed = 0; 
+    }
+    #endregion
 
     #region["전체 다 움직이기"] 
     public void MoveAll(Transform _vrplayer_position)
@@ -55,15 +74,26 @@ public class MonsterManager : MonoBehaviour
     }
     #endregion
 
-    #region["몬스터가 죽을때 작동하는 콜백 메소드"] 
-    public void MonsterDeathOnClick(GameObject _steak, int _meat_num)
+    #region["몬스터가 죽을때 작동하는 콜백 메소드"]
+    public void MonsterDeathOnClick(int _meatnum)
     {
-        //고기 매니저에 등록하기 
-        for (int i = 0; i < _meat_num; ++i)
+        ++monster_killed;
+        /*
+        for(int i=0; i<_meatnum; ++i)
         {
-            meatmanager.SetMeat(_steak);
+            if(PhotonNetwork.IsConnected)
+            {
+                GameObject steak = PhotonNetwork.Instantiate("Prefabs\\Food\\Ingredient\\Steak", new Vector3(-1.2f, 1.5f, -1.5f), Quaternion.identity);
+                meatmanager.SetMeat(steak);
+            }
         }
+        */
+        if (PhotonNetwork.IsConnected)
+        {
+            GameObject steak = PhotonNetwork.Instantiate("Prefabs\\Food\\Ingredient\\Steak", new Vector3(-1.2f, 1.5f, -1.5f), Quaternion.identity);
+            meatmanager.SetMeat(steak);
+        }
+        //고기 매니저에 등록하기
     }
     #endregion
-
 }

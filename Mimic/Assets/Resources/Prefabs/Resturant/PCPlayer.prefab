@@ -358,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 4290885776062783506}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.28, z: 0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -721,7 +721,7 @@ Transform:
   m_GameObject: {fileID: 4290885776062783598}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1123,8 +1123,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9065474, y: 2.3351197, z: 1.6142193}
-  m_Center: {x: 0.014621439, y: -0.25799468, z: -0.6318277}
+  m_Size: {x: 1.1310492, y: 2.3923535, z: 2.3580346}
+  m_Center: {x: 0.015928324, y: -0.28661194, z: -0.38528898}
 --- !u!114 &7183940366371460226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,6 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasFood: 0
+  food: {fileID: 0}
 --- !u!1 &6932221325894093040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pcControll: {fileID: 0}
   cameraMove: {fileID: 0}
+  bindFood: {fileID: 0}
 --- !u!1 &7764810020192631186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,7 +1261,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 518400
+    m_Bits: 1566976
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 1

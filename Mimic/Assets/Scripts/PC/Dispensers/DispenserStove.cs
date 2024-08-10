@@ -4,11 +4,28 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static FoodInfo;
 
-public class DispenserStove : MonoBehaviour, IDispenser
+public class DispenserStove : DispenserWait, IDispenser
 {
     [SerializeField] private Transform foodGenerator;
     [SerializeField] private GameObject output;
     [SerializeField] private bool isGenerate = false;
+
+    private float timer_wait = 3f;
+
+    [HideInInspector] public static DispenserStove instance = null; 
+    protected override void Awake()
+    {
+        base.Awake();
+        instance = this; 
+    }
+
+    public void UpgradeTimer(float _timer)
+    {
+        if(timer_wait > 0)
+        {
+            timer_wait -= (_timer * timer_wait); 
+        }
+    }
 
     public bool GetIsGenerate() 
     {
@@ -37,7 +54,7 @@ public class DispenserStove : MonoBehaviour, IDispenser
             Debug.Log("이미 사용중입니다!");
             return;
         }
-        else if (food.GetComponent<Ingredients>() == null || food.GetComponent<Ingredients>().IsCooked)
+        else if (food.GetComponent<Ingredients>() == null || food.GetComponent<Ingredients>().State != CookState.Raw)
         {
             Debug.Log("구울 수 없습니다!");
             return;
@@ -54,27 +71,27 @@ public class DispenserStove : MonoBehaviour, IDispenser
     public IEnumerator GenerateFood(GameObject _food)
     {
         Debug.Log("굽기");
-        if(!_food.GetComponent<Ingredients>().IsCooked)
+        if(_food.GetComponent<Ingredients>().State == CookState.Raw)
         {
-            _food.GetComponent<Ingredients>().IsCooking = true;
+            EffectAudioManager.instance.PlayEffect("RoastingMeat", true);
+            _food.GetComponent<Ingredients>().State = CookState.Cooking;
             _food.transform.transform.parent = null;
             _food.transform.transform.position = foodGenerator.position;
             Debug.Log("음식 내려놓음");
 
-            yield return new WaitForSeconds(3f);
+            StartCoroutine(WaitTimer(timer_wait)); 
+            yield return new WaitForSeconds(timer_wait);
 
-            _food.GetComponent<Ingredients>().IsCooking = false;
+            _food.GetComponent<Ingredients>().State = CookState.Cooked;
             Destroy(_food);
             output = Instantiate(_food.GetComponent<Ingredients>().NextLevel, foodGenerator.position, Quaternion.Euler(-90f, 0, 0) );
             isGenerate = false;
+
+            StartCoroutine(WaitTimer(timer_wait * 2f, output));
+            //yield return new WaitForSeconds(timer_wait*2f);
+            EffectAudioManager.instance.PlayEffect("RoastingMeat", false); 
         }
     }
 
-    /*private void OnTriggerExit(Collider _other)
-    {
-        if (_other.gameObject.layer == LayerMask.NameToLayer("Food") || _other.gameObject.layer == LayerMask.NameToLayer("Ingredients")) 
-        {
-            isGenerate = false;
-        }       
-    }*/
+    
 }

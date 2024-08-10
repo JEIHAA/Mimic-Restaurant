@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterHealth: 300
   monsterDamage: 10
+  meatnum: 3

@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: -2600645323466171029}
   - component: {fileID: -1964004660518098900}
   - component: {fileID: -7778097804319678657}
+  - component: {fileID: -3746614774362735449}
+  - component: {fileID: 3273809035834959297}
   m_Layer: 18
   m_Name: Hamburger
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +136,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &-1964004660518098900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,3 +301,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c6b118014e55b42b1bef7d63b5587b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodstat: {fileID: 11400000, guid: 6cbc82a1448273142ac08162923e6909, type: 2}
+--- !u!114 &-3746614774362735449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934070991157511254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 1
+  m_UseLocal: 1
+--- !u!114 &3273809035834959297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934070991157511254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -3746614774362735449}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
